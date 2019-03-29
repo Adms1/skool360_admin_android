@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+
+        android:background="@drawable/box_blue">
+
+        <TextView
+            android:id="@+id/index_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/index"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/date_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/date"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/createby_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1.5"
+            android:text="@string/createby"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+</LinearLayout>

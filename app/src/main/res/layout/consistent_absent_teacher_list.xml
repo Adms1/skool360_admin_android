@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="1dp"
+            android:background="@drawable/linear_square_border"
+            android:visibility="visible"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/studentname_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/searchstudent"
+                android:padding="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+            <TextView
+                android:id="@+id/standard_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/standard"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+            <!--<TextView-->
+            <!--android:id="@+id/section_txt"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@string/section"-->
+            <!--android:paddingTop="@dimen/_7sdp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="@dimen/_11sdp" />-->
+            <TextView
+                android:id="@+id/days_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/days"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

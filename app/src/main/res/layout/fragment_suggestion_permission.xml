@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/app_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/main_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_65sdp" />
+
+            <LinearLayout
+                android:id="@+id/mainstudent_linear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/main_linear_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/type_txt_view"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8"
+                            android:text="@string/type"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/type_spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/dropdown_button"
+                            android:forceHasOverlappingRendering="false"
+                            android:gravity="center"
+                            android:overlapAnchor="false" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/tv_type"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8"
+                            android:text="@string/assign"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/assign_spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/dropdown_button"
+                            android:forceHasOverlappingRendering="false"
+                            android:gravity="center"
+                            android:overlapAnchor="false" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/search_btn"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_weight="0.22"
+                        android:background="@drawable/round_button"
+                        android:text="@string/save"
+                        android:textAllCaps="true"
+                        android:textColor="@color/app_bg"
+                        android:textSize="@dimen/_11sdp" />
+
+
+                    <TextView
+                        android:id="@+id/txtNoRecords"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:gravity="center"
+                        android:text="@string/no_records_found"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lv_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <include layout="@layout/suggestion_header" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/recycler_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:background="@drawable/linear_border"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/suggestion_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--</ScrollView>-->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

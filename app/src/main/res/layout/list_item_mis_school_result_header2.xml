@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_31sdp"
+        android:background="@drawable/box_blue"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_3sdp"
+        android:paddingLeft="@dimen/_8sdp"
+        android:paddingRight="@dimen/_8sdp"
+        android:paddingTop="@dimen/_3sdp"
+        android:visibility="visible">
+
+        <!--<TextView-->
+        <!--android:id="@+id/grade_txt"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_weight="0.6"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:text="@string/grade"-->
+        <!--android:gravity="left"-->
+        <!--android:layout_marginLeft="@dimen/_10ssp"-->
+        <!--android:textAlignment="textStart"-->
+        <!--android:textColor="@color/app_bg"-->
+        <!--android:textSize="@dimen/_11sdp"-->
+        <!--tools:ignore="RtlCompat" />-->
+
+        <TextView
+            android:id="@+id/section_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.8"
+            android:gravity="left|center_vertical"
+            android:text="@string/classes"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/student_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.8"
+            android:gravity="left|center_vertical"
+            android:text="@string/student_label"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/percentage_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="%"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/grade_txt_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="Grade"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+    </LinearLayout>
+
+</LinearLayout>

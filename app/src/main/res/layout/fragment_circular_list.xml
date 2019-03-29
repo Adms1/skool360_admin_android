@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@id/header"
+        layout="@layout/main_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_65sdp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/header">
+
+        <LinearLayout
+            android:id="@+id/exp_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_annoucement_list_header" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/linear_border2"
+                android:orientation="vertical">
+
+                <ExpandableListView
+                    android:id="@+id/annoucement_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:childDivider="@android:color/transparent"
+                    android:divider="@android:color/white"
+                    android:groupIndicator="@null"
+                    android:scrollbars="none" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txt_empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/no_records_found"
+            android:textColor="@color/red"
+            android:textSize="17sp"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_annoucement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/_12sdp"
+        android:src="@drawable/ic_add"
+        android:tint="@color/white1"
+        app:fabCustomSize="@dimen/_40sdp"
+        app:rippleColor="@color/white1" />
+
+</RelativeLayout>

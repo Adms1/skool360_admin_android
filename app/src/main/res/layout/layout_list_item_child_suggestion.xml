@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:background="@drawable/greybg_border">
+
+    <LinearLayout
+        android:id="@+id/sug_llUppder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:elevation="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/sug_tvReply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sug_tvStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/sug_tvComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/sug_tvReplydate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11sdp" />
+
+        <Button
+            android:id="@+id/sug_btnReply"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/round_button"
+            android:text="@string/reply"
+            android:textAllCaps="true"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_12ssp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/sug_llLower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sug_llUppder"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/sug_etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/linear_border2"
+            android:gravity="top"
+            android:hint="@string/message"
+            android:padding="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sug_etMessage"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/sug_btnSend"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:background="@drawable/round_button"
+                android:text="@string/send"
+                android:textAllCaps="true"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_12ssp" />
+
+            <Button
+                android:id="@+id/sug_btnCancel"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@drawable/round_button"
+                android:text="@string/mdtp_cancel"
+                android:textAllCaps="true"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

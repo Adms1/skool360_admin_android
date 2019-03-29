@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/app_bg">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/main_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_65sdp" />
+
+            <LinearLayout
+                android:id="@+id/applyleave_linear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/btnSubmit"
+                android:layout_below="@+id/header"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/applyleave_linear_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/applyleave_tvLeaveDays"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8"
+                            android:text="@string/leave_days"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/applyleave_spLeaveDays"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.2"
+                            android:background="@drawable/dropdown_button"
+                            android:forceHasOverlappingRendering="false"
+                            android:gravity="center"
+                            android:overlapAnchor="false" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/applyleave_tvsDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8"
+                            android:text="@string/startdate"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/applyleave_btnsDate"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.2"
+                            android:background="@drawable/linear_border"
+                            android:textSize="@dimen/_11sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/applyleave_tveDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8"
+                            android:text="@string/enddate"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/applyleave_btneDate"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.2"
+                            android:background="@drawable/linear_border"
+                            android:textSize="@dimen/_11sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/applyleave_tvHead"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8"
+                            android:text="@string/head"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/applyleave_spHead"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.2"
+                            android:background="@drawable/dropdown_button"
+                            android:forceHasOverlappingRendering="false"
+                            android:gravity="center"
+                            android:overlapAnchor="false" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/applyleave_tvReason"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
+                            android:text="@string/reason"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/applyleave_etReason"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.8"
+                            android:background="@drawable/linear_border"
+                            android:gravity="top"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_11sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/applyleave_btnSend"
+                            android:layout_width="@dimen/_85sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/round_button"
+                            android:text="@string/send"
+                            android:textAllCaps="true"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:textColor="@color/app_bg"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="normal" />
+
+                        <Button
+                            android:id="@+id/applyleave_btnCancel"
+                            android:layout_width="@dimen/_85sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/round_button"
+                            android:text="@string/mdtp_cancel"
+                            android:textAllCaps="true"
+                            android:textColor="@color/app_bg"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="normal"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtNoRecords"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:gravity="center"
+                        android:text="@string/no_records_found"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/list_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <include layout="@layout/applyleave_not_header" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/recycler_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <ExpandableListView
+                        android:id="@+id/applyleave_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:childDivider="@android:color/transparent"
+                        android:divider="@android:color/white"
+                        android:groupIndicator="@null"
+                        android:scrollbars="none"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

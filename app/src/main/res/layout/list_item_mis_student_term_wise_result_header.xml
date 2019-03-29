@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:background="@drawable/box_blue">
+
+        <TextView
+            android:id="@+id/subject_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/subject"
+            android:layout_weight="1.5"
+            android:paddingTop="@dimen/_7sdp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/term1_marks_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:text="Term1 Marks"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="textStart"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp"
+            android:gravity="center"
+            android:layout_gravity="center" />
+        <TextView
+            android:id="@+id/term2_marks_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Term2 Marks"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+</LinearLayout>

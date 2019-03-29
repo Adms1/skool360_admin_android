@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/vieww"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/linear_border2"
+        android:orientation="horizontal"
+        android:padding="@dimen/_3sdp"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/transportd_class_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/transportd_stuname_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.35"
+            android:gravity="center"
+            android:padding="@dimen/_1sdp"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/transportd_grno_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.15"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/transportd_phno_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_11sdp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vieww1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/linear_border2"
+        android:orientation="horizontal"
+        android:padding="@dimen/_3sdp"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/transportd_class_txt2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/transportd_stuname_txt2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/transportd_grno_txt2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.15"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/transportd_phno_txt2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_11sdp" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/transportd_exp_txt2"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_weight="0.2"-->
+        <!--android:gravity="center"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textColor="@color/blue"-->
+        <!--android:textSize="@dimen/_11sdp" />-->
+
+        <ImageView
+            android:id="@+id/transportd_view_txt2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:src="@drawable/arrow_1_42" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/child_header_route"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box_blue"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.35"
+            android:gravity="center"
+            android:text="@string/routename"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:text="@string/pickuppoint"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.15"
+            android:text="Pickup Time"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="Drop\nPoint"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="Drop Time"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+    </LinearLayout>
+
+</LinearLayout>

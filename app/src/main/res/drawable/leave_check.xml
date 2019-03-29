@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/orange" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/_5sdp"
+        android:drawable="@drawable/truesign_30x30"
+        android:left="@dimen/_5sdp"
+        android:right="@dimen/_5sdp"
+        android:top="@dimen/_5sdp" />
+</layer-list>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".bhadajadmin.Fragment.Fragment.MISStudentRangeDetailFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/range_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_57sdp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="@drawable/header_blue"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/range_btnBack"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_38sdp"
+                android:background="@drawable/back_btn" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/range_textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignTop="@+id/header"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_38sdp"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/range_btnmenu"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_marginLeft="@dimen/_270sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_39sdp"
+            android:background="@drawable/menu" />
+
+        <TextView
+            android:id="@+id/range_tv_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/range_header"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/scheduleheadertextcolor"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/range_tv_txt"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp">
+
+            <include
+                android:id="@+id/range_lvExp_header"
+                layout="@layout/list_item_mis_school_result_header" />
+
+            <TextView
+                android:id="@+id/range_tv_no_records"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="No Records Found."
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone" />
+
+            <ExpandableListView
+                android:id="@+id/range_lvExpstudentlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/header"
+                android:layout_marginLeft="@dimen/_1sdp"
+                android:layout_marginRight="@dimen/_1sdp"
+                android:childDivider="@android:color/transparent"
+                android:divider="@android:color/white"
+                android:dividerHeight="1dp"
+                android:groupIndicator="@null"
+                android:scrollbars="none"
+                tools:ignore="NotSibling" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

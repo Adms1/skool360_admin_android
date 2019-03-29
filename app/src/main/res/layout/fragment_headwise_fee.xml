@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mdtp_white"
+    android:orientation="vertical">
+
+    <!--<ScrollView-->
+    <!--android:id="@+id/scroller"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:fillViewport="true">-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_bg">
+
+        <LinearLayout
+            android:id="@+id/headwisefee_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_57sdp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="@drawable/header_blue"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/headwisefee_btnBack"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_38sdp"
+                android:background="@drawable/back_btn" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/headwisefee_textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignTop="@+id/headwisefee_header"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_38sdp"
+            android:text="@string/marks_syllabus_label"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/headwisefee_btnmenu"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_39sdp"
+            android:background="@drawable/menu" />
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/headwisefee_header"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/headwisefee_mainstudent_linear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/headwisefee_main_linear_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/headwisefee_term_txt_view"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_weight="0.3"
+                            android:text="@string/academicyear"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_weight="0.05"
+                            android:gravity="center"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/headwisefee_term_spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_weight="0.35"
+                            android:background="@drawable/dropdown_button"
+                            android:forceHasOverlappingRendering="false"
+                            android:gravity="right|center_vertical"
+                            android:overlapAnchor="false"
+                            android:paddingBottom="1dp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/headwisefee_stndrd_txt_view"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_weight="0.3"
+                            android:text="@string/standard"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_weight="0.05"
+                            android:gravity="center"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/headwisefee_stndrd_spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_weight="0.35"
+                            android:background="@drawable/dropdown_button"
+                            android:forceHasOverlappingRendering="false"
+                            android:overlapAnchor="false"
+                            android:paddingBottom="1dp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11sdp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/headwisefee_txtNoRecords"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_firstconatiner"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:gravity="center"
+                        android:text="No Records Found..."
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/llHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/box_blue"
+                            android:orientation="horizontal"
+                            android:paddingBottom="1dp"
+                            android:visibility="visible"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:layout_weight="0.3"
+                                android:paddingTop="@dimen/_7sdp"
+                                android:text="@string/classes"
+                                android:textAlignment="center"
+                                android:textColor="@color/app_bg"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:layout_weight="0.2"
+                                android:paddingTop="@dimen/_7sdp"
+                                android:text="@string/student1"
+                                android:textAlignment="center"
+                                android:textColor="@color/app_bg"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <TextView
+                                android:id="@+id/head_frg_tvphone"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:layout_weight="0.3"
+                                android:paddingTop="@dimen/_7sdp"
+                                android:text="@string/phone"
+                                android:textAlignment="center"
+                                android:textColor="@color/app_bg"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <TextView
+                                android:id="@+id/head_frg_ivphone"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:layout_weight="0.2"
+                                android:paddingTop="@dimen/_7sdp"
+                                android:text="@string/phone"
+                                android:textAlignment="center"
+                                android:textColor="@color/app_bg"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <TextView
+                                android:id="@+id/head_frg_sms"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:layout_weight="0.1"
+                                android:paddingTop="@dimen/_7sdp"
+                                android:text="@string/m_sms"
+                                android:textAlignment="center"
+                                android:textColor="@color/app_bg"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:layout_weight="0.2"
+                                android:paddingTop="@dimen/_7sdp"
+                                android:text="@string/view"
+                                android:textAlignment="center"
+                                android:textColor="@color/app_bg"
+                                android:textSize="@dimen/_11sdp" />
+
+                        </LinearLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/headwisefee_rv_students"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/tv_colon"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <!--<ExpandableListView-->
+                    <!--android:id="@+id/headwisefee_rv_students"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentStart="true"-->
+                    <!--android:layout_below="@+id/header"-->
+                    <!--android:layout_marginLeft="@dimen/_1sdp"-->
+                    <!--android:layout_marginRight="@dimen/_1sdp"-->
+                    <!--android:childDivider="@android:color/transparent"-->
+                    <!--android:divider="@android:color/white"-->
+                    <!--android:dividerHeight="1dp"-->
+                    <!--android:groupIndicator="@null"-->
+                    <!--android:scrollbars="none"-->
+                    <!--tools:ignore="NotSibling" />-->
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <ProgressBar
+            android:id="@+id/headwisefee_loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:background="@drawable/box_blue">
+
+        <TextView
+            android:id="@+id/date_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:text="@string/date"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:textColor="@color/app_bg"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/name_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:textColor="@color/app_bg"
+            android:text="@string/name"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/grade_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/app_bg"
+            android:text="@string/grade"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/gender_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:textColor="@color/app_bg"
+            android:text="@string/gender"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/current_status_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:textColor="@color/app_bg"
+            android:text="@string/current_status"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/phone_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:textColor="@color/app_bg"
+            android:text="@string/phone"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:background="@drawable/box_blue">
+
+        <TextView
+            android:id="@+id/index_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/index"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:visibility="gone"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/studentname_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/searchstudent"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/grnno_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/grno"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/Standard_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/standard"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/totalpaid_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/total_paid"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/view_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="View"
+            android:paddingTop="@dimen/_7sdp"
+
+            android:textAlignment="textStart"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+</LinearLayout>

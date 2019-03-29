@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/linear_border2"
+    android:orientation="horizontal"
+    android:padding="@dimen/_3sdp"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/transport_class_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.34"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:id="@+id/transport_transport_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.33"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:id="@+id/transport_personal_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.33"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_11sdp" />
+
+</LinearLayout>

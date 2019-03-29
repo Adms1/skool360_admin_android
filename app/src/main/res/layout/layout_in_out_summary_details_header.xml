@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box_blue"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/index_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="@string/index"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/teachername_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1.7"
+            android:gravity="center"
+            android:text="@string/teacher_name"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/dept_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1.8"
+            android:gravity="center"
+            android:text="@string/department"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+
+</LinearLayout>

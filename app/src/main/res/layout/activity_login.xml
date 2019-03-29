@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_back"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        tools:context=".bhadajadmin.Activity.LoginActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sdp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="@color/white1"
+                    app:cardCornerRadius="@dimen/_3sdp"
+                    app:cardElevation="@dimen/_3sdp"
+                    app:cardMaxElevation="@dimen/_5sdp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="@dimen/_3sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp">
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/edtUserName"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_marginLeft="@dimen/_3sdp"
+                                android:layout_marginRight="@dimen/_3sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/login_edt_back"
+                                android:drawableLeft="@drawable/ic_login_user"
+                                android:hint="User Name"
+                                android:singleLine="true"
+                                android:textColorHint="?android:textColorHint"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/edtPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_marginLeft="@dimen/_3sdp"
+                                android:layout_marginRight="@dimen/_3sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/login_edt_back"
+                                android:drawableLeft="@drawable/ic_login_pswd"
+                                android:hint="Password"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPassword"
+                                android:singleLine="true"
+                                android:textColorHint="?android:textColorHint"
+                                android:textSize="@dimen/_12sdp" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                        <android.support.v7.widget.AppCompatCheckBox
+                            android:id="@+id/chkRemember"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:button="@drawable/check_uncheck"
+                            android:padding="@dimen/_4sdp"
+                            android:text="Remember Credentials"
+                            android:textColor="@color/design_change_d2"
+                            android:textSize="@dimen/_11sdp"
+                            android:visibility="gone" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/forgot_title_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|end"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="Forgot Password ?"
+                            android:textColor="@color/txt_blue"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/btnLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/round_button"
+                            android:gravity="center"
+                            android:padding="@dimen/_10sdp"
+                            android:text="LOG IN"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/skool360_footer" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

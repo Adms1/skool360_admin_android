@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:background="@drawable/box_blue">
+
+        <TextView
+            android:id="@+id/name_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_weight="1.2"
+            android:text="@string/name"
+            android:layout_gravity="center"
+            android:textColor="@color/app_bg"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/code_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:textColor="@color/app_bg"
+            android:text="@string/code"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/dept_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/app_bg"
+            android:text="@string/department"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/status_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:textColor="@color/app_bg"
+            android:text="@string/status"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp" />
+
+    </LinearLayout>
+</layout>

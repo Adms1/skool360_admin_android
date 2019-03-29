@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box_blue"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_1sdp"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="@dimen/_145sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/student_name_label"
+            android:textColor="@color/white1"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/unchecked"
+            android:gravity="center"
+            android:text="P"
+            android:textColor="@color/present"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/unchecked"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/absent"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/unchecked"
+            android:gravity="center"
+            android:text="L"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+
+        <!--<TextView-->
+
+
+        <!--android:layout_width="@dimen/_39sdp"-->
+
+
+        <!--android:layout_height="wrap_content"-->
+
+
+        <!--android:layout_marginLeft="@dimen/_3sdp"-->
+
+
+        <!--android:gravity="center"-->
+
+
+        <!--android:padding="@dimen/_5sdp"-->
+
+
+        <!--android:textSize="@dimen/_11sdp"-->
+
+
+        <!--android:text="O.D"-->
+
+
+        <!--android:textColor="@color/yellow"-->
+
+
+        <!--android:textStyle="bold" />-->
+
+
+    </LinearLayout>
+
+</LinearLayout>

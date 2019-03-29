@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/app_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/main_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_65sdp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/mainstudent_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/main_linear_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <RadioGroup
+                                android:id="@+id/usertype_radioGroup"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <RadioButton
+                                    android:id="@+id/teacher_radiobutton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginStart="@dimen/_95sdp"
+                                    android:layout_weight=".8"
+                                    android:checked="true"
+                                    android:text="@string/teacher"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <RadioButton
+                                    android:id="@+id/other_radiobutton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".8"
+                                    android:text="@string/other_label"
+                                    android:textSize="@dimen/_11sdp" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/user_linear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <TextView
+                                android:id="@+id/teacher_txt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center"
+                                android:layout_weight="0.8"
+                                android:text="@string/user"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_11sdp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center"
+                                android:layout_weight="0.1"
+                                android:text=":"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_11sdp"
+                                android:textStyle="bold" />
+
+                            <Spinner
+                                android:id="@+id/teacher_spinner"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_weight="1.8"
+                                android:background="@drawable/dropdown_button"
+                                android:forceHasOverlappingRendering="false"
+                                android:overlapAnchor="false"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtNoRecords"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:gravity="center"
+                            android:text="@string/no_records_found"
+                            android:textColor="@android:color/holo_red_dark"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/list_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/llHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/box_blue"
+                            android:orientation="vertical"
+                            android:paddingBottom="1dp"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="5">
+
+                                <TextView
+                                    android:id="@+id/index_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".6"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:text="@string/index"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/pagename_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight="2.3"
+                                    android:paddingStart="@dimen/_9sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:text="@string/pagename"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                                <CheckBox
+                                    android:id="@+id/addall_chk"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".70"
+                                    android:button="@drawable/checkbox_linear_bg"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:gravity="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <CheckBox
+                                    android:id="@+id/update_chk"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".70"
+                                    android:button="@drawable/checkbox_linear_bg"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:gravity="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <CheckBox
+                                    android:id="@+id/delete_chk"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".70"
+                                    android:button="@drawable/checkbox_linear_bg"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:gravity="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_1sdp"
+                                android:orientation="horizontal"
+                                android:weightSum="5">
+
+                                <TextView
+                                    android:id="@+id/index1_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".6"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/pagename1_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight="2.3"
+                                    android:paddingStart="@dimen/_9sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/addAll_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_gravity="center|center_horizontal"
+                                    android:layout_weight="0.70"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    android:text="Add\nAll"
+                                    android:gravity="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/update1_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_gravity="center|center_horizontal"
+                                    android:layout_weight="0.70"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    android:text="Is Update"
+                                    android:gravity="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/delete1_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_gravity="center|center_horizontal"
+                                    android:layout_weight="0.70"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    android:text="Is Delete"
+                                    android:gravity="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <!--<include layout="@layout/menu_permission_header" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/recycler_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_220sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:background="@drawable/linear_border"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/page_list_detail_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:scrollbars="none" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/list_header1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <!--<include layout="@layout/other_menu_permission_header" />-->
+                        <LinearLayout
+                            android:id="@+id/llHeader1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/box_blue"
+                            android:orientation="vertical"
+                            android:paddingBottom="1dp"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="6">
+
+                                <TextView
+                                    android:id="@+id/other_index_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".6"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:text="@string/index"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/other_underpagename_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight="1.4"
+                                    android:paddingStart="@dimen/_9sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:text="@string/underpagename"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/other_pagename_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight="1.9"
+                                    android:paddingStart="@dimen/_9sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:text="@string/pagename"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                                <CheckBox
+                                    android:id="@+id/other_addall_chk"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".60"
+                                    android:button="@drawable/checkbox_linear_bg"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:gravity="center"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <CheckBox
+                                    android:id="@+id/other_update_chk"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".73"
+                                    android:button="@drawable/checkbox_linear_bg"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:gravity="center"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <CheckBox
+                                    android:id="@+id/other_delete_chk"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".70"
+                                    android:gravity="center"
+                                    android:button="@drawable/checkbox_linear_bg"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_1sdp"
+                                android:orientation="horizontal"
+                                android:weightSum="6">
+
+                                <TextView
+                                    android:id="@+id/other_index1_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight=".6"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/other_underpagename_txt1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight="1.4"
+                                    android:paddingStart="@dimen/_9sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/other_pagename1_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_weight="1.9"
+                                    android:paddingStart="@dimen/_9sdp"
+                                    android:paddingTop="@dimen/_7sdp"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/other_addAll_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_gravity="center|center_horizontal"
+                                    android:layout_weight="0.60"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    android:text="Add\nAll"
+                                    android:gravity="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/other_update1_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_gravity="center|center_horizontal"
+                                    android:layout_weight="0.73"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    android:text="Is Update"
+                                    android:gravity="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/other_delete1_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_31sdp"
+                                    android:layout_gravity="center|center_horizontal"
+                                    android:layout_weight="0.70"
+                                    android:paddingStart="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_1sdp"
+                                    android:text="Is Delete"
+                                    android:gravity="center"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/recycler_linear1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_220sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:background="@drawable/linear_border"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/page_list_detail_list1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:scrollbars="none" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/save_btn"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:alpha="0.5"
+                        android:background="@drawable/round_button"
+                        android:enabled="false"
+                        android:text="@string/submit"
+                        android:textAllCaps="true"
+                        android:textColor="@color/app_bg"
+                        android:textSize="@dimen/_11sdp" />
+
+                </LinearLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

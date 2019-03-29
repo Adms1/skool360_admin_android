@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/linear_border2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_31sdp"
+        android:orientation="horizontal"
+        android:padding="@dimen/_1sdp"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/range_txt_range"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.4"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/range_txt_no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.4"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="@dimen/_11sdp" />
+
+
+        <ImageView
+            android:id="@+id/range_iv_indicatior"
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/arrow_1_42" />
+
+    </LinearLayout>
+
+</LinearLayout>

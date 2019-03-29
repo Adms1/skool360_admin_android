@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white1"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_1sdp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/_3sdp"
+        app:contentPadding="@dimen/_1sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/subject_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="2"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_text"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/createdate_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1.1"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_text"
+            android:textSize="@dimen/_11sdp" />
+
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_weight="1"
+            android:src="@drawable/unchecked"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:tint="@color/green"
+            android:paddingLeft="@dimen/_2sdp" />
+
+        <ImageView
+            android:id="@+id/iv_indicator"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/arrow_1_42"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:paddingLeft="@dimen/_2sdp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

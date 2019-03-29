@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:background="@drawable/divider"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/std_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/_7sdp"
+            android:text="Std"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/total_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1"
+            android:text="Total"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:paddingRight="@dimen/_3sdp"
+            android:textSize="@dimen/_12sdp" />
+        <TextView
+            android:id="@+id/received_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1"
+            android:text="Received"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="textEnd"
+            android:paddingRight="@dimen/_3sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/dues_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1"
+            android:text="Dues"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="textEnd"
+            android:paddingRight="@dimen/_3sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llHeader1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:weightSum="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/total_per_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:paddingRight="@dimen/_3sdp"
+            android:textSize="@dimen/_12sdp" />
+        <TextView
+            android:id="@+id/received_per_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:paddingRight="@dimen/_3sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/dues_per_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:paddingRight="@dimen/_3sdp"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+</LinearLayout>

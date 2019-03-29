@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_1sdp"
+        android:weightSum="3"
+        android:background="@drawable/box_blue"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:padding="@dimen/_3sdp"
+            android:text="Name"
+            android:textSize="@dimen/_11sdp"
+            android:textColor="@color/app_bg"
+            android:textStyle="normal"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:text="Login Type"
+            android:layout_weight="1"
+            android:textSize="@dimen/_11sdp"
+            android:textColor="@color/app_bg"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:text="Date"
+            android:layout_weight="1"
+            android:textSize="@dimen/_11sdp"
+            android:textColor="@color/app_bg"
+            android:textStyle="normal" />
+    </LinearLayout>
+</LinearLayout>

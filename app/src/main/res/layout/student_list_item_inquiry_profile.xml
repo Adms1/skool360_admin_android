@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/box_shadow"
+        android:elevation="@dimen/_2sdp"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/student_profile_image"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_7sdp"
+            android:src="@drawable/person_placeholder" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tag_txt_View"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/studenttag"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/tag_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/studenttag"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/firstname_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/firstname"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/firstname_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/middle_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/middlename"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/middle_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lastname_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/lastname"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/lastname_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/grade_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/grade_section"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/grade_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/session_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="Session"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/session_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/form_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/form_no"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/form_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/date_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/date"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/date_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/grno_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/grno"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/grno_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/gender_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/gender"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/gender_txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/bloodgroup_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/bloodgroup"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/bloodgroup_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dob_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/dob"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/dob_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/birthplace_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/birthplace"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/birthplace_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/nationality_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/nationality"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/nationality_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/hometown_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/hometown"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/hometown_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mother_toungue_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/mother_toungue"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/mother_toungue_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/currently_residewith_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/currently_reside"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/currently_residewith_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/previous_school_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/previous_school"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/previous_school_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/festivals_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/festival_celebrated"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/festivals_txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/state_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/state"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/state_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/board_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/board"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/board_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sibling_name1_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/name_of_sibling_one"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/sibling_name1_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sibling1_brother_sistertxt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/sibling1_brother_sister"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/sibling1_brother_sister_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sibling_one_grade_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/sibling_one_grade"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/sibling_one_grade_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sibling1_school_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/sibling1_school"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/sibling1_school_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sibling_name2_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/name_of_sibling_two"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/sibling_name2_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sibling2_brother_sistertxt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/sibling2_brother_sister"
+                android:textAlignment="textStart"
+
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/sibling2_brother_sister_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sibling_grade2_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/sibling_two_grade"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/sibling_grade2_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sibling_school2_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/sibling2_school"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/sibling_school2_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/guardian_name_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/name_of_local_guardian"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/guardian_name_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/guardian_contact_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_of_local_guardian"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/guardian_contact_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/address_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/address"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/address_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ecno_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_contact"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/ecno_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/avail_transport_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/would_like_avail_transport_facility"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/avail_transport_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/age_txt_View"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/age_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/seeking_admission_for_grade_txtView"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/seeking_admission_for_grade"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/seeking_admission_for_grade_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sibling_in_anand_niketan_txt_View"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/sibling_in_anand_niketan_school"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/sibling_in_anand_niketan_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/distance_txt_View"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/distance_from_school_in_kms"
+                android:textAlignment="textStart"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@color/scheduleheadertextcolor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/distance_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="normal" />
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</layout>

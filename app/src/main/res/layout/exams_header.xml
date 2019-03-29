@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:background="@drawable/box_blue"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="0.77"
+            android:text="Sr No."
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1.2"
+            android:text="TestName"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1"
+            android:text="Grade"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1"
+            android:text="Subject"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1"
+            android:text="TestDate"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+</LinearLayout>

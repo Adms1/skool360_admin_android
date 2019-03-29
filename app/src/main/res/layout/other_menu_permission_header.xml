@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box_blue"
+        android:orientation="vertical"
+        android:paddingBottom="1dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="6">
+
+            <TextView
+                android:id="@+id/other_index_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_weight=".6"
+                android:paddingLeft="@dimen/_2sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:text="@string/index"
+                android:textAlignment="center"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/other_underpagename_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_weight="1.4"
+                android:paddingLeft="@dimen/_9sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:text="@string/underpagename"
+                android:textAlignment="textStart"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+            <TextView
+                android:id="@+id/other_pagename_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_weight="1.9"
+                android:paddingLeft="@dimen/_9sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:text="@string/pagename"
+                android:textAlignment="textStart"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+
+            <CheckBox
+                android:id="@+id/other_addall_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_weight=".70"
+                android:button="@drawable/checkbox_linear_bg"
+                android:paddingLeft="@dimen/_2sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+            <CheckBox
+                android:id="@+id/other_update_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_weight=".70"
+                android:button="@drawable/checkbox_linear_bg"
+                android:paddingLeft="@dimen/_2sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+            <CheckBox
+                android:id="@+id/other_delete_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_weight=".70"
+                android:button="@drawable/checkbox_linear_bg"
+                android:paddingLeft="@dimen/_2sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:orientation="horizontal"
+            android:weightSum="6">
+            <TextView
+                android:id="@+id/other_index1_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_weight=".6"
+                android:paddingLeft="@dimen/_2sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp"  />
+            <TextView
+                android:id="@+id/other_underpagename_txt1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_weight="1.4"
+                android:paddingLeft="@dimen/_9sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+            <TextView
+                android:id="@+id/other_pagename1_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_weight="1.9"
+                android:paddingLeft="@dimen/_9sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/other_addAll_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_weight="0.70"
+                android:text="Add      All"
+                android:paddingLeft="@dimen/_2sdp"
+                android:paddingTop="@dimen/_1sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/other_update1_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_weight="0.70"
+                android:text="Is Update"
+                android:paddingLeft="@dimen/_2sdp"
+                android:paddingTop="@dimen/_1sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/other_delete1_txt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31sdp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_weight="0.70"
+                android:text="Is Delete"
+                android:paddingLeft="@dimen/_2sdp"
+                android:paddingTop="@dimen/_1sdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

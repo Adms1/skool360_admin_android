@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:descendantFocusability="blocksDescendants"
+        tools:context=".bhadajadmin.Fragment.Fragment.MISStudentTermIWiseResultList">
+
+        <RelativeLayout
+            android:id="@+id/LL_list_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/list_item_mis_student_term_wise_result_header"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_termwiselist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header"
+                android:orientation="vertical"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_no_records"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No Records Found"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:textColor="@color/red"/>
+
+    </RelativeLayout>
+</layout>

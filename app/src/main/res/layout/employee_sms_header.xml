@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box_blue"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/index_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight=".7"
+            android:paddingLeft="@dimen/_2sdp"
+           android:gravity="center"
+            android:text="@string/index"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/employee_name_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1.6"
+            android:paddingLeft="@dimen/_9sdp"
+            android:text="@string/pagename"
+            android:gravity="center"
+            android:textAlignment="textStart"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/mobileno_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight="1.3"
+            android:paddingLeft="@dimen/_9sdp"
+            android:text="@string/mobileno"
+            android:gravity="center"
+            android:textAlignment="textStart"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <CheckBox
+            android:id="@+id/sms_checkbox"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_weight=".40"
+            android:button="@drawable/checkbox_linear_bg"
+            android:paddingLeft="@dimen/_5sdp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+</LinearLayout>
+</layout>

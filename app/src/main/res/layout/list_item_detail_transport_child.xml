@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/child_header_route"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/greybg_border"
+    android:orientation="horizontal"
+    android:padding="@dimen/_5sdp"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/transport_child_route"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.35"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:id="@+id/transport_child_pp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.2"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:id="@+id/transport_child_pt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.15"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:id="@+id/transport_child_dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:id="@+id/transport_child_dt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/_3sdp"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp" />
+
+</LinearLayout>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white1">
+
+        <RelativeLayout
+            android:id="@+id/transport_main_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_bg"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/transport_header"
+                layout="@layout/main_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_65sdp" />
+
+            <RelativeLayout
+                android:id="@+id/transport_ll_firstconatiner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transport_header"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/transport_tv_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_11sdp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/transport_txtNoRecords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transport_ll_firstconatiner"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="No Records Found..."
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <!--<anandniketan.com.bhadajadmin.StickyNestedScrollView-->
+            <!--android:id="@+id/scroller"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:fillViewport="true"-->
+            <!--android:layout_below="@+id/txtNoRecords">-->
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/transport_txtNoRecords"
+                android:background="@color/white1"
+                android:orientation="vertical">
+
+                <!--<TextView-->
+                <!--android:id="@+id/transport_studetail_header_txt"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/_23sdp"-->
+                <!--android:background="@drawable/box"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:text=""-->
+                <!--android:textAlignment="center"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:textColor="@color/scheduleheadertextcolor"-->
+                <!--android:textSize="@dimen/_12sdp"-->
+                <!--android:textStyle="bold" />-->
+
+                <LinearLayout
+                    android:id="@+id/transport_lv_header2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/transport_main_header"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/transport_misstudent_llHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_31sdp"
+                        android:background="@drawable/box_blue"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_1sdp"
+                        android:paddingBottom="1dp"
+                        android:visibility="visible"
+                        android:weightSum="1">
+
+                        <!--<TextView-->
+                        <!--android:id="@+id/grade_txt"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_weight="1.6"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:text="Class"-->
+                        <!--android:gravity="left"-->
+                        <!--android:layout_marginLeft="@dimen/_10ssp"-->
+                        <!--android:textAlignment="textStart"-->
+                        <!--android:textColor="@color/app_bg"-->
+                        <!--android:textSize="@dimen/_11sdp"-->
+                        <!--tools:ignore="RtlCompat" />-->
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.33"
+                            android:gravity="center"
+                            android:text="@string/classes"
+                            android:textAlignment="center"
+                            android:textColor="@color/app_bg"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.33"
+                            android:gravity="center"
+                            android:text="@string/transport1"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textColor="@color/app_bg"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.33"
+                            android:gravity="center"
+                            android:text="@string/personal"
+                            android:textAlignment="center"
+                            android:textColor="@color/app_bg"
+                            android:textSize="@dimen/_11sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/transport_recycler_linear1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:background="@drawable/linear_border"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/transport_rv_misdata_list1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/transport_header"
+                        android:layout_marginLeft="@dimen/_1sdp"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:childDivider="@android:color/transparent"
+                        android:divider="@android:color/white"
+                        android:dividerHeight="1dp"
+                        android:groupIndicator="@null"
+                        android:scrollbars="none"
+                        tools:ignore="NotSibling" />
+                </LinearLayout>
+
+                <!--<LinearLayout-->
+                <!--android:id="@+id/lv_header"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/lv_header2"-->
+                <!--android:layout_marginLeft="@dimen/_5sdp"-->
+                <!--android:layout_marginRight="@dimen/_5sdp"-->
+                <!--android:layout_marginTop="@dimen/_15sdp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:tag="sticky"-->
+                <!--android:visibility="visible">-->
+
+                <!--<ViewStub-->
+                <!--android:id="@+id/layout_stub"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout="@layout/mark_syllabus_item_header" />-->
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                <!--android:id="@+id/recycler_linear"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/linear_border"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_marginLeft="@dimen/_5sdp"-->
+                <!--android:layout_marginRight="@dimen/_5sdp"-->
+                <!--android:layout_marginBottom="@dimen/_5sdp"-->
+                <!--android:visibility="gone">-->
+
+                <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/rv_misdata_list"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:nestedScrollingEnabled="false"-->
+                <!--android:scrollbars="vertical" />-->
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                <!--android:id="@+id/list_header"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/_5sdp"-->
+                <!--android:layout_marginRight="@dimen/_5sdp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:visibility="gone">-->
+
+                <!--<ExpandableListView-->
+                <!--android:id="@+id/lvExpviewsmsreport"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/_1sdp"-->
+                <!--android:childDivider="@android:color/transparent"-->
+                <!--android:divider="@android:color/white"-->
+                <!--android:nestedScrollingEnabled="true"-->
+                <!--android:dividerHeight="5dp"-->
+                <!--android:groupIndicator="@null"-->
+                <!--android:scrollbars="none"-->
+                <!--/>-->
+                <!--</LinearLayout>-->
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <!--</anandniketan.com.bhadajadmin.StickyNestedScrollView>-->
+
+            <ProgressBar
+                android:id="@+id/transport_loader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</layout>
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_1sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:visibility="visible"
+        android:weightSum="3">
+
+        <CheckBox
+            android:id="@+id/create_Checkbox"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_weight=".3"
+            android:paddingTop="@dimen/_3sdp"
+            android:textAlignment="center"
+            android:button="@drawable/check_uncheck"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:id="@+id/student_name_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/_5sdp"
+            android:text="@string/student_name"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:id="@+id/gr_no_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/_5sdp"
+            android:text="@string/grno"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:weightSum="6"
+        android:visibility="visible"
+        android:background="@drawable/box_blue">
+
+        <TextView
+            android:id="@+id/type_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/type"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/name_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/name"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/startdate_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1.7"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/startdate"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/endate_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1.7"
+            android:layout_height="@dimen/_31sdp"
+            android:text="@string/enddate"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/_2sdp" />
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/_2sdp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:src="@drawable/person_placeholder" />
+
+        <TextView
+            android:id="@+id/student_name_txt"
+            android:layout_width="@dimen/_135sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/searchstudent"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
+        <RadioGroup
+            android:id="@+id/attendance_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp">
+
+            <RadioButton
+                android:id="@+id/present_chk"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:button="@drawable/custom_checkbox"
+                android:padding="@dimen/_5sdp"
+                android:tag="1"
+                android:textAlignment="center"
+                android:textSize="@dimen/_9sdp" />
+
+            <RadioButton
+                android:id="@+id/absent_chk"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginLeft="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:button="@drawable/absent_custom_checkbox"
+                android:padding="@dimen/_5sdp"
+                android:tag="0"
+                android:textAlignment="center"
+                android:textSize="@dimen/_9sdp" />
+
+            <RadioButton
+                android:id="@+id/leave_chk"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginLeft="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:button="@drawable/leave_custome_checkbox"
+                android:padding="@dimen/_5sdp"
+                android:tag="-1"
+                android:textAlignment="center"
+                android:textSize="@dimen/_9sdp" />
+
+            <!--<RadioButton-->
+
+
+            <!--android:id="@+id/onduty_chk"-->
+
+
+            <!--android:layout_width="@dimen/_35sdp"-->
+
+
+            <!--android:layout_height="@dimen/_30sdp"-->
+
+
+            <!--android:layout_gravity="center|center_horizontal"-->
+
+
+            <!--android:layout_marginLeft="@dimen/_1sdp"-->
+
+
+            <!--android:layout_marginTop="@dimen/_1sdp"-->
+
+
+            <!--android:button="@drawable/onduty_custome_checkbox"-->
+
+
+            <!--android:padding="@dimen/_5sdp"-->
+
+
+            <!--android:tag="-1"-->
+
+
+            <!--android:textSize="@dimen/_9sdp"-->
+
+
+            <!--android:textAlignment="center" />-->
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>

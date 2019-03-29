@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/box_shadow"
+            android:elevation="@dimen/_2sdp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/father_profile_image"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_7sdp"
+                android:src="@drawable/person_placeholder" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fatherfirst_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fatherfirstname"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/fatherfirstname_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fathermiddle_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fathermiddlename"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/fathermiddle_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fatherlastname_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fatherlastname"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/fatherlastname_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fatherdob_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fatherdob"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/fatherdob1_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fbloodgroup_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bloodgroup"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/fbloodgroup1_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/foccupation_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/occupation"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/foccupation1_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_name_of_company_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_of_compnay"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_name_of_company_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_qualification_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/qualification"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+
+                <TextView
+                    android:id="@+id/fqualification_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_desg_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/designation"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_desg_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_nationality_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nationality"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_nationality_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_lang_known_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lang_known"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_lang_known_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fmobile_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fathermobileno"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/fmobile_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_contact_office_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_office"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_contact_office_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_contact_home_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_home"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_contact_home_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_email_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_email_home_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_home_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_address"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_home_home_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_office_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/office_address"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_office_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_status_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_status_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/f_annunal_income_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/annual_income"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/f_annunal_income_txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fphone_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fatherphoneno"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/fphone_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/femail_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fatheremailaddress"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/femail_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fqualification_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fatherqualification"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/fqualification_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/forganisation_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fatheroragnization"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/forganisation_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fdesignation_txt_View"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fatherdesignation"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAlignment="center"
+                    android:textColor="@color/scheduleheadertextcolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/fdesignation_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

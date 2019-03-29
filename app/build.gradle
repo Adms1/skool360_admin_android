@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    flavorDimensions "version"
+
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "anandniketan.com.bhadajadmin"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+//    productFlavors{
+//        bhadajadmin{
+//            applicationIdSuffix ".bhadajadmin"
+//            buildConfigField 'String', 'HOST', '"http://192.168.1.22:8086/MobileApp_Service.asmx/"'
+//        }
+//        skool{
+//            applicationIdSuffix ".skool360"
+//            buildConfigField 'String', 'HOST', '"http://192.168.1.22:8089/MobileApp_Service.asmx/"'
+//        }
+//    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    afterEvaluate {
+        android.applicationVariants.all {
+            def name = it.name.capitalize()
+        }
+    }
+
+    dexOptions {
+        preDexLibraries true
+    }
+    aaptOptions {
+        cruncherEnabled = false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    // Temporary fix until alpha10
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+
+}
+repositories {
+    maven { url "https://jitpack.io" }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation project(':MPChartLib')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation files('libs/universal-image-loader-1.9.4.jar')
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.intuit.sdp:sdp-android:1.0.5'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+    implementation 'com.squareup.retrofit:retrofit:1.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.wdullaer:materialdatetimepicker:3.6.3'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    implementation 'com.koushikdutta.ion:ion:2.2.1'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    // implementation 'com.amitshekhar.android:android-networking:1.0.2'
+    // implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'com.android.support:multidex:1.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+//    compile 'com.google.firebase:firebase-messaging:9.6.0'
+//    compile project(path: ':MPChartLib')
+}
+
+//apply plugin: 'com.google.gms.google-services'

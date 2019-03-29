@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_37sdp"
+        android:background="@drawable/shadow_box"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_8sdp"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:visibility="visible"
+            android:weightSum="1">
+
+            <!--<TextView-->
+            <!--android:id="@+id/index_txt"-->
+            <!--android:layout_width="@dimen/_60sdp"-->
+            <!--android:layout_height="@dimen/_33sdp"-->
+            <!--android:text="@string/index"-->
+            <!--android:paddingTop="@dimen/_5sdp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:paddingLeft="@dimen/_2sdp"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="@dimen/_10sdp" />-->
+
+            <TextView
+                android:id="@+id/studentname_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:singleLine="true"
+                android:text="@string/searchstudent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/grnno_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="@string/grno"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/grade_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:text="@string/grade"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/view_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:text="@string/view"
+                android:textColor="@color/absent"
+                android:textSize="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

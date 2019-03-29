@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".bhadajadmin.Fragment.Fragment.MISSchoolCalendarFragment">
+
+    <TextView
+        android:id="@+id/cal_tv_no_records"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center"
+        android:text="No Records Found."
+        android:textColor="@color/red"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/cal_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/child_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_31sdp"
+            android:background="@drawable/box_blue"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_3sdp"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:visibility="visible"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:gravity="left|center_vertical"
+                android:text="@string/name"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.35"
+                android:gravity="left|center_vertical"
+                android:text="@string/date"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.15"
+                android:gravity="right|center_vertical"
+                android:text="@string/days"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.1"
+                android:gravity="right|center_vertical"
+                android:text="@string/view"
+                android:textColor="@color/app_bg"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+        <ExpandableListView
+            android:id="@+id/schoolcalendar_lvExpstudentlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/header"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:childDivider="@android:color/transparent"
+            android:divider="@android:color/white"
+            android:dividerHeight="0.5dp"
+            android:groupIndicator="@null"
+            android:transcriptMode="disabled" />
+
+    </LinearLayout>
+
+</LinearLayout>

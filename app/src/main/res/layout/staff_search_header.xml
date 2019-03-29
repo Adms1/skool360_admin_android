@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:background="@drawable/box_blue">
+
+        <TextView
+            android:id="@+id/employee_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:text="@string/employeename_label"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/fh_name_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/father_husband_name"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/dob_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/dob"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/department_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/department"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/view_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/view"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+</LinearLayout>

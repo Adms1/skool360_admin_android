@@ -1,0 +1,571 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Bhadaj(Admin)</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_example">Example action</string>
+    <!--use for menu-->
+    <string-array name="menuoption1">
+        <item>Home</item>
+    </string-array>
+
+    <string name="Dashboard">DASHBOARD</string>
+    <string name="student">STUDENT</string>
+    <string name="staff">STAFF</string>
+    <string name="account">ACCOUNT</string>
+    <string name="transport">TRANSPORT</string>
+    <string name="admin">Admin</string>
+    <string name="hr_head">Hr Head</string>
+    <string name="house_keeping">House Keeping</string>
+    <string name="info_tech">Information Technology</string>
+
+    <string name="student_label">Student</string>
+    <string name="staff_detail">Staff Detail</string>
+
+    <string name="hr">HR</string>
+    <string name="m_sms">SMS</string>
+    <string name="other">OTHER</string>
+    <string name="my_leave">MY LEAVE</string>
+    <string name="student_permission">PERMISSION</string>
+    <string name="resultpermission">RESULT PERMISSION</string>
+    <string name="attendace">STUDENT ATTENDACE</string>
+    <string name="student_title">STUDENT</string>
+    <string name="allDetails">STUDENT DETAILS</string>
+    <string name="searchstaff">SEARCH STAFF</string>
+    <string name="staffleave">STAFF LEAVE</string>
+    <string name="attendencereport">ATTENDENCE REPORT</string>
+    <string name="dailyreport">DAILY REPORT</string>
+    <string name="standardwiseattendace">Standard Wise Attendace</string>
+    <string name="consistent_absent">Consistence Absent Teacher</string>
+    <string name="consistent_absent_student">Consistence Absent Student</string>
+    <string name="alert_msg">Alert Msg</string>
+    <string name="ok">OK</string>
+    <string name="attendancesummary">ATTENDANCE SUMMARY</string>
+    <string name="studentattendancesummary">STUDENT ATTENDANCE</string>
+    <string name="internet_error">Internet Connection !</string>
+    <string name="search_student">Search Student</string>
+    <string name="internet_connection_error">Admin requires an internet connection.Make sure Wi-Fi or mobile networks are turned on, then try again.</string>
+    <string name="something_wrong">Something Wrong</string>
+    <string name="blank">Blank Filed Not Allowed</string>
+    <string name="false_msg">Record not found</string>
+    <string name="true_msg">Send Successfully</string>
+    <string name="student_txt"><u>Student</u></string>
+    <string name="staff_txt"><u>Staff</u></string>
+    <string name="absent">Absent</string>
+    <string name="present">Present</string>
+    <string name="leave">Leave</string>
+    <string name="total">Total</string>
+    <string name="total_paid">Total Paid</string>
+    <string name="leave_balance">Leave Balance</string>
+    <string name="leave_req" tools:ignore="ExtraTranslation">Leave Request</string>
+
+    <string name="onduty">Onduty</string>
+    <string name="ondate">On Date</string>
+
+    <string name="send_time">Send Time</string>
+    <string name="receive_time">Receive Time</string>
+    <string name="resultstatus">Result Status</string>
+    <string name="standardname">Standarname</string>
+    <string name="standardstatus">Status</string>
+    <string name="employeename">Employee</string>
+    <string name="employeename_label">Employee Name</string>
+    <string name="employeecode_label">Employee Code</string>
+
+    <string name="days">Days</string>
+    <string name="searchtype">Parents Name</string>
+    <string name="index">Index</string>
+    <string name="searchparents">Parents Name</string>
+    <string name="searchstudent">Student Name</string>
+    <string name="student1">Student</string>
+    <string name="grno">GR NO</string>
+    <string name="grade">Grade</string>
+    <string name="absent_from">Absent From</string>
+    <string name="detail">Detail</string>
+
+    <string name="bank_bal">Bank Balance</string>
+    <string name="petty_cash">Petty Cash</string>
+    <string name="expenses">Expenses</string>
+    <string name="fees">Fees</string>
+
+    <string name="fees_rec">Fees Received</string>
+    <string name="deposited_bank">Deposited In Bank</string>
+
+    <string name="route_problem">Route Problem</string>
+    <string name="driver_complaint">Driver Complaint</string>
+    <string name="parent_complaint">Parents Complaint</string>
+    <string name="timing_problem">Timing Problem</string>
+    <string name="vehicle_problem">Vehicle Problem</string>
+
+    <string name="total_student_strength">Total Strength Of Students</string>
+    <string name="new_admission">New Admission</string>
+    <string name="withdrawals">Withdrawals</string>
+    <string name="student_db_update">Student Database Updating</string>
+    <string name="overall_admin">Overall Admin</string>
+    <string name="no_of_teacher_present_absent">No. Of Teacher Present/Absent</string>
+    <string name="total_num_visitor">Total Number Of Visitors</string>
+    <string name="complaints_parents">Any Comaplain of Parents by Phone/Email</string>
+    <string name="suggestion_by_parent_teacher">Suggestion By Parent/Teacher</string>
+
+    <string name="admission_inquiry">Admission Inquiry</string>
+    <string name="total_new_admission">Total New Admission</string>
+    <string name="event_of_the_day">Event Of The  Day</string>
+    <string name="fb_update">FB Update</string>
+    <string name="major_concern">Major Concern</string>
+    <string name="update">Update</string>
+
+    <string name="laptop_issued">Laptop Issued</string>
+    <string name="tab_issued">Tablet Issued</string>
+    <string name="printing">Printing</string>
+    <string name="it">IT</string>
+    <string name="other_label">Other</string>
+
+
+    <string name="grade_section">Grade/Section</string>
+
+    <string name="current_status">Current Status</string>
+
+    <string name="form_no">Form No</string>
+    <string name="session">Session</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+
+    <string name="hometown">Hometown</string>
+    <string name="currently_reside">Currently Residing with</string>
+    <string name="previous_school" tools:ignore="ExtraTranslation">Previous School Attended</string>
+    <string name="festival_celebrated">Festivals Celebrated at home</string>
+
+    <string name="pagename">Page Name</string>
+    <string name="underpagename">Under Page</string>
+    <string name="view" tools:ignore="ExtraTranslation"><u>View</u></string>
+
+    <string name="studenttag">Tag</string>
+    <string name="firstname">First Name</string>
+    <string name="middlename">Middle Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="dob">Date Of Birth</string>
+    <string name="birthplace">Birth Place</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="aadhar">Aadhaar Card No.</string>
+    <string name="studenttype">Student Type</string>
+    <string name="acedamic">Acedamic Year</string>
+    <string name="section">Section</string>
+    <string name="assign">Assign To</string>
+    <string name="lastschool">Last School</string>
+    <string name="doa">Date Of Admission</string>
+    <string name="doataken">Admission Taken</string>
+    <string name="bloodgroup">Blood Group</string>
+    <string name="house">House</string>
+    <string name="oldgr">Old GRNO</string>
+    <string name="religion">Religion</string>
+    <string name="nationality">Nationality</string>
+    <string name="lang_known">Languages Known</string>
+    <string name="contact_office">Contact Office</string>
+    <string name="contact_home">Contact Home</string>
+
+    <string name="username">User Name</string>
+    <string name="password">Password</string>
+    <string name="registration">Registration Date</string>
+    <string name="pickup">Pickup Bus</string>
+    <string name="pickuppoint">Pickup Point</string>
+    <string name="pickuptime">Pickup Point Time</string>
+    <string name="dropbus">Drop Bus</string>
+    <string name="droppoint">Drop Point</string>
+    <string name="droptime">Drop Point Time</string>
+    <string name="phone">Phone No.</string>
+    <string name="mobile">Mobile No.</string>
+    <string name="email">Email Address</string>
+    <string name="home_address">Home Address</string>
+    <string name="office_address">Office Address</string>
+
+
+    <string name="qualification">Qualification</string>
+    <string name="occupation">Occupation</string>
+    <string name="organization">Organization</string>
+    <string name="designation">Designation</string>
+    <string name="department">Department</string>
+    <string name="createby">Created By</string>
+    <string name="task">Task</string>
+    <string name="taken_label">Taken</string>
+    <string name="not_taken_label">Not Taken</string>
+
+    <string name="inoutdetails">In Out Details</string>
+    <string name="workinghours">Working Hours</string>
+
+    <string name="sms">SMS No.</string>
+    <string name="city">City</string>
+    <string name="zipcode">Zip Code</string>
+    <string name="address">Address</string>
+    <string name="studentdetail">STUDENT DETAILS</string>
+    <string name="transportdetail">Transport Detail</string>
+    <string name="fatherdetail">Father Detail</string>
+    <string name="motherdetail">Mother Detail</string>
+    <string name="communication">Communication Detail</string>
+    <string name="viewsummary"><u>View Summar</u>y<u> Details >></u></string>
+    <string name="select_term_label">Select Term</string>
+    <string name="unique_no">Student UniqueId No.</string>
+    <string name="class_wise"><u>View Class Wise</u></string>
+
+
+    <string name="term">Term</string>
+    <string name="term_label">Term</string>
+    <string name="range_label">Range</string>
+
+    <string name="marks_label">Marks</string>
+    <string name="syllabus_label">Syllabus</string>
+    <string name="marks_syllabus_label">Marks/Syllabus</string>
+
+    <string name="test_name_label">Test Name</string>
+    <string name="due_amount">Due Amount</string>
+
+    <string name="select_date">Select Date</string>
+    <string name="route">Route</string>
+    <string name="teacher">Teacher</string>
+    <string name="teacher_name">Teacher Name</string>
+
+    <string name="user">User\'s</string>
+    <string name="classTeacher">Class Teacher</string>
+    <string name="pick">Pickup Point</string>
+    <string name="routename">Route Name</string>
+    <string name="pickuppointname">Pickup Point</string>
+    <string name="km">KM</string>
+    <string name="mobileno">Mobile No.</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+
+    <string name="family">Family</string>
+    <string name="gradesection">Grade/Section</string>
+    <string name="message">Message</string>
+    <string name="smsnumber">SMS Number</string>
+    <string name="singlesms">SINGLE SMS</string>
+    <string name="studenttransport">STUDENT TRANSPORT</string>
+    <string name="transportcharge">TRANSPORT CHARHES</string>
+    <string name="assignsubject">ASSIGN SUBJECT</string>
+    <string name="classteacher">CLASS TEACHER</string>
+    <string name="menupermission">MENU PERMISSION</string>
+    <string name="employeesms">STAFF SMS</string>
+    <string name="bulksms">STUDENT BULK SMS</string>
+    <string name="studenttrasportsms">STUDENT TRASPORT SMS</string>
+    <string name="appsms">APP SMS</string>
+    <string name="grregister">NEW REGISTER</string>
+    <string name="attendance">ATTENDANCE</string>
+    <string name="leftdetail">Left/Active</string>
+    <string name="studentviewmarks">VIEW MARKS</string>
+    <string name="profilepermission">PROFILE PERMISSION</string>
+    <string name="suggestionpermission">SUGGESTION</string>
+    <string name="type">Type</string>
+    <string name="studentabsent">STUDENT ABSENT</string>
+    <string name="term1">Term 1</string>
+    <string name="term2">Term 2</string>
+    <string name="vehiclename">Vehicle Name</string>
+    <string name="registrationno">Registration No.</string>
+    <string name="passengercapacity">Passenger Capacity</string>
+    <string name="vehicledetail">VEHICLE DETAIL</string>
+    <string name="Routepick">ROUTE PICK UP POINT DETAIL</string>
+    <string name="status">Status</string>
+    <string name="vehicleroute">VEHICLE ROUTE</string>
+    <string name="feesstructure">FEES  STRUCTURE</string>
+    <string name="studentdiscount">STUDENT DISCOUNT</string>
+    <string name="discount">Waive Off Type</string>
+    <string name="standard">Standard</string>
+    <string name="checkno">Cheque No</string>
+    <string name="totalamount">Total Amount</string>
+    <string name="WaveOffamount">W.Off Amount</string>
+    <string name="discountamount">Dis. Amount</string>
+    <string name="totalpayamount">Pay Amount</string>
+    <string name="checkamount">Amount</string>
+    <string name="imprest">IMPREST</string>
+    <string name="totalimprest">Total Imprest</string>
+    <string name="imprestdeduct">Imprest Deduct</string>
+    <string name="remainimprest">Remain Imprest</string>
+    <string name="dailyfeescollection">DAILY FEES COLLECTION</string>
+    <string name="datefeescollection">DATE WISE FEES COLLECTION</string>
+    <string name="tally_transcation1">TALLY TRANSACTION</string>
+
+    <string name="tally_transcation">Tally Transaction</string>
+    <string name="online_transcation">Online Transaction</string>
+
+    <string name="viewlessonplan">VIEW LESSON PLAN</string>
+    <string name="checkpayment">CHEQUE PAYMENT</string>
+    <string name="activitylogging">ACTIVITY LOGGING</string>
+    <string name="announcment">ANNOUNCMENT</string>
+    <string name="circular">CIRCULAR</string>
+    <string name="planner">PLANNER</string>
+    <string name="transportation">Transportation</string>
+
+    <string name="inoutsummary">In Out Summary</string>
+    <string name="employeepresentdetail">Employee Present Details</string>
+    <string name="inoutsummarydetail">Employee In Out Details</string>
+
+    <string name="announcment1">Announcment</string>
+    <string name="homeworknotdone">Home Work Not Done</string>
+
+    <string name="viewinquiry">VIEW INQUIRY</string>
+    <string name="addinquiry">ADD ENQUIRY</string>
+
+    <string name="gallery">Gallery</string>
+
+    <string name="SMS_report">SMS REPORT</string>
+    <string name="holiday">HOLIDAY</string>
+    <string name="onlinepayment">ONLINE PAYMENT</string>
+    <string name="onlinetrans">ONLINE TRANSACTION</string>
+
+    <string name="termdetail">Term Detail</string>
+    <string name="date">Date</string>
+    <string name="name">Name</string>
+
+    <string name="paymentmode">Payment Mode</string>
+    <string name="paymenttype">Payment Type</string>
+
+    <string name="totalfees">Total Fees</string>
+    <string name="totalrecfees">Total Rev.Fee</string>
+    <string name="pendingfees">Pending Fees</string>
+    <string name="timetable">TIME TABLE</string>
+    <string name="lecture">Lecture</string>
+    <string name="subject">Subject</string>
+    <string name="summary">SUMMARY</string>
+    <string name="ptm">PTM</string>
+    <string name="classes">Class</string>
+    <string name="studentledger">STUDENT LEDGER</string>
+    <string name="student_type">Student</string>
+    <string name="receipt">Receipt Detail</string>
+    <string name="previousbal">Previous Balance</string>
+    <string name="tutionfees">Tution Fees</string>
+    <string name="admissionfees">Admission Fees</string>
+    <string name="cautionfees">Caution Fees</string>
+    <string name="transportfees">Transport Fees</string>
+    <string name="imprestfees">Imprest Fees</string>
+    <string name="latefees">Late Fees</string>
+    <string name="discountfees">Discount Fees</string>
+    <string name="totalpayfees">Total Payable Fees</string>
+    <string name="paidfees">Paid Fees</string>
+    <string name="balance">Balance</string>
+    <string name="accountsummmary">ACCOUNT SUMMARY</string>
+    <string name="collection">Collection\'s</string>
+    <string name="collection_label">Collection</string>
+
+    <string name="collected">Collected</string>
+
+    <string name="amount"><u>Amount</u></string>
+    <string name="amount1">Amount</string>
+
+    <string name="Studentcoll"><u>Student</u></string>
+    <string name="standardwisecoll">Standard Wise Collection</string>
+    <string name="exam">EXAMS</string>
+    <string name="exams">Exam</string>
+    <string name="academicyear">Academic Year</string>
+    <string name="edit">Edit</string>
+    <string name="studentstatus">Student Status</string>
+    <string name="fatherfirstname">First Name</string>
+    <string name="fathermiddlename">Middle Name</string>
+    <string name="fatherdob">Date of Birth</string>
+
+    <string name="fatherlastname">Last Name</string>
+    <string name="fatherphoneno">Phone no</string>
+    <string name="fathermobileno">Mobile no</string>
+    <string name="fatheremailaddress">Email Address</string>
+    <string name="fatherqualification">Qualification</string>
+    <string name="fatheroccupation">Occupation</string>
+    <string name="fatheroragnization">Organization</string>
+    <string name="fatherdesignation">Designation</string>
+    <string name="motherfirstname">First Name</string>
+    <string name="mothermiddlename">Middle Name</string>
+    <string name="name_of_compnay">Name of Compnay</string>
+
+    <string name="motherlastname">Last Name</string>
+    <string name="motherphoneno">Phone no</string>
+    <string name="mothermobileno">Mobile no</string>
+    <string name="motheremailaddress">Email Address</string>
+    <string name="motherqualification">Qualification</string>
+    <string name="motheroccupation">Occupation</string>
+    <string name="motheroragnization">Organization</string>
+    <string name="motherdesignation">Designation</string>
+    <string name="transportkms">Transport KMs</string>
+    <string name="test">Test</string>
+    <string name="description">Discription</string>
+    <string name="order">Order</string>
+    <string name="inquirycount">Enquiry Count</string>
+    <string name="student_name">Megha Shah</string>
+    <string name="student_name_label">Student Name</string>
+
+    <string name="totalstudent">Total Students</string>
+    <string name="activatetoday">Activate Today</string>
+    <string name="totalteacher">Total Teacher</string>
+    <string name="totaladmin">Total Admin</string>
+    <string name="holidaycategory">Holiday Category</string>
+    <string name="startdate">Start Date</string>
+    <string name="enddate">End Date</string>
+    <string name="father_husband_name">Father/Husband Name</string>
+    <string name="code">Code</string>
+
+    <string name="holidayheading">Holiday Name</string>
+    <string name="chapterno">Chapter No</string>
+    <string name="chaptername">Chapter Name</string>
+    <string name="objective">Objective</string>
+    <string name="keypoint">Keypoint</string>
+    <string name="assesmentquestion">Assesment Question</string>
+    <string name="pdfheader">PDF</string>
+    <string name="wordheader">WORD</string>
+    <string name="arrow">\u2192</string>
+    <string name="back">\u226A</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="please_wait">Please Wait..</string>
+    <string name="logout_confirm_msg">Are you sure want to logout?</string>
+    <string name="delete_confirm_msg">Are you sure want to delete?</string>
+    <string name="approve_confirm_msg">Are you sure want to approve leave?</string>
+    <string name="reject_confirm_msg">Are you sure want to reject leave?</string>
+    <string name="delete_leave_confirm_msg">Are you sure you want to delete Leave?</string>
+    <string name="msg_confirm_msg">Are you sure want to send sms on mobile no?</string>
+    <string name="confirmed">Confirmed</string>
+
+    <string-array name="SearchStudent">
+        <item>Current Student</item>
+        <item>Detain</item>
+        <item>Left School</item>
+        <item>Passout</item>
+    </string-array>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="time_ago_now">Now</string>
+    <string name="time_ago_minute">Minute ago</string>
+    <string name="time_ago_minutes">Minutes ago</string>
+    <string name="time_ago_hour">Hour ago</string>
+    <string name="time_ago_hours">Hours ago</string>
+    <string name="time_ago_day">Day ago</string>
+    <string name="time_ago_days">Days ago</string>
+
+    <string name="server_error">Oops,Skool360Bhadaj server is down keep Calm and try after sometime</string>
+    <string name="server_error1">Thank You!</string>
+    <string name="create_date">Create Date</string>
+    <string name="pdf_link_txt"><b><u>View PDF >> </u></b></string>
+    <string name="report_card">Report Card</string>
+    <string name="inactive">Inactive</string>
+    <string name="active">Active</string>
+    <string name="all">All</string>
+    <string name="individual">Individual</string>
+    <string name="enter_announcment">Enter Announcment</string>
+    <string name="enter_circular">Enter Circular</string>
+    <string name="leave_date">Leave Date</string>
+    <string name="leave_days">Leave Days</string>
+
+    <string name="application_date">Application Date</string>
+
+    <string name="view_inquiry_detail"><u>View Profile >></u></string>
+    <string name="student_profile">STUDENT PROFILE</string>
+    <string name="state">State</string>
+    <string name="status1">Status</string>
+    <string name="annual_income">Annual Income</string>
+    <string name="mother_toungue">Mother Toungue</string>
+    <string name="seeking_admission_for_grade" tools:ignore="DuplicateDefinition">Seeking Admission for Grade</string>
+    <string name="transport_required">Transport Required</string>
+    <string name="board">Board</string>
+    <string name="sibling_in_anand_niketan_school">Sibling in Anand Niketan School</string>
+    <string name="no_of_days">No. of Days</string>
+
+    <string name="name_of_sibling_one">Name of Sibling 1</string>
+    <string name="sibling1_brother_sister">Sibling 1 Brother/Sister</string>
+    <string name="sibling2_brother_sister">Sibling 2 Brother/Sister</string>
+    <string name="sibling1_school">Sibling 1 School</string>
+    <string name="sibling2_school">Sibling 2 School</string>
+
+    <string name="sibling_one_grade">Sibling 1 Grade</string>
+    <string name="name_of_sibling_two">Name of Sibling 2</string>
+    <string name="sibling_two_grade">Sibling 2 Grade</string>
+    <string name="distance_from_school_in_kms">Distance from School in Kms</string>
+    <string name="name_of_local_guardian">Name of Local Guardian</string>
+    <string name="contact_of_local_guardian">Contact No. of Local Guardian</string>
+    <string name="emergency_contact">Emergency Contact No.</string>
+    <string name="would_like_avail_transport_facility">Would you like to avail the school transport facility</string>
+
+    <string name="anns_success_msg">Announcement added successfully</string>
+    <string name="anns_delete_msg">Announcement deleted successfully</string>
+
+    <string name="date_time">Date Time</string>
+    <string name="schedule_date_time">Schedule Date Time</string>
+    <string name="in_schedule">Is Schedule</string>
+
+    <string name="reg_date">Registration Date</string>
+    <string name="doc_certificate_birth_certificate">Document Birth Certificate</string>
+    <string name="doc_photographs">Document Photographs</string>
+    <string name="doc_orignal_tc">Document Original TC</string>
+    <string name="ld_prrof_parent_father_name">I.D. Proof of Parent Father Name</string>
+    <string name="ld_prrof_father_name">I.D. Proof of Father</string>
+
+    <string name="father_passport_copy">Father Passport Copy</string>
+    <string name="father_liecnce_copy">Father License Copy</string>
+    <string name="father_adhar_card_copy">Father Adhar-Card Copy</string>
+    <string name="ld_prrof_parent_mother_name">I.D. Proof of Parent Mother Name</string>
+    <string name="mother_passport_copy">Mother Passport Copy</string>
+    <string name="mother_liecnce_copy">Mother License Copy</string>
+    <string name="mother_adhar_card_copy">Mother Adhar-Card Copy</string>
+    <string name="admitted_to_grade">Admitted to Grade</string>
+    <string name="wait_listed">Wait listed</string>
+    <string name="remarks">Remarks</string>
+    <string name="admission_mang">Admission Manager</string>
+    <string name="ld_prrof_mother_name">I.D. Proof of Mother</string>
+
+    <string name="time">Time</string>
+    <string name="title">Title</string>
+
+    <string name="with">With</string>
+
+    <string name="personal">Personal</string>
+    <string name="transport1">Transport</string>
+    <string name="todo">TODO</string>
+    <string name="location">Location</string>
+    <string name="search">Search</string>
+    <string name="Add">add</string>
+    <string name="no_records_found">No Records Found...</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="select">Select</string>
+    <string name="is_schedule">Is Schedule</string>
+    <string name="upload_pdf">Upload PDF</string>
+    <string name="choose_file">Choose File</string>
+    <string name="from_date">From Date</string>
+    <string name="to_date">To Date</string>
+    <string name="trans_id">Transaction ID</string>
+    <string name="delivered">Delivered</string>
+    <string name="today_sms">Today SMS</string>
+    <string name="sr_no">SR\nNo</string>
+    <string name="submit">Submit</string>
+    <string name="send">Send</string>
+    <string name="clear">Clear</string>
+    <string name="comment">Comment</string>
+    <string name="photo">Photo</string>
+    <string name="teachers">Teachers</string>
+    <string name="mdtp_notdone_label">Not Done</string>
+    <string name="head">Head</string>
+    <string name="applyleave">Apply Leave</string>
+    <string name="reason">Reason</string>
+    <string name="approve_date">Approve Date</string>
+    <string name="approve_by">Approve By</string>
+    <string name="repair_maintenance"><![CDATA[Repair & Maintenance]]></string>
+    <string name="toilets">Toilets</string>
+    <string name="wash_area">Wash Area</string>
+    <string name="class_room">Class Room</string>
+    <string name="teacher_complain">Teacher Complain</string>
+    <string name="gardner">Gardner</string>
+    <string name="suggestion">Suggestion</string>
+    <string name="category">Category</string>
+    <string name="paid">Paid</string>
+    <string name="remaining">Remaining</string>
+    <string name="notifications">Notifications</string>
+    <string name="voucher_no">Voucher No.</string>
+    <string name="view_marks">View Marks</string>
+    <string name="details">Details</string>
+    <string name="day">Day</string>
+    <string name="approve">Approve</string>
+    <string name="reject">Reject</string>
+    <string name="modify">Modify</string>
+    <string name="reply">Reply</string>
+    <string name="birthday_wishes">Birthday Wishes</string>
+    <string name="ask_to_wish">Would You like to send wishes?</string>
+
+</resources>

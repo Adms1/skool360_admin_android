@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white1">
+
+    <LinearLayout
+        android:id="@+id/timetable_child_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/timetable_txtLecture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.55"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/timetable_tvSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="English"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/timetable_tvTeacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timetable_tvSubject"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="Shradhha Rao"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_below="@+id/timetable_tvTeacher"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/timetable_ivEdit"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginRight="@dimen/_7sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/edit_pen"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/timetable_ivDelete"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/delete"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/timetable_ivAdd"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/round_back_add"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/_11sdp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

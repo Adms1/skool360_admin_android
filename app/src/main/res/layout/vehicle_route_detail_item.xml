@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<layout>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:visibility="visible"
+        android:background="@drawable/divider">
+
+        <TextView
+            android:id="@+id/index_txt"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:text="@string/index"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/vehiclename_txt"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:text="@string/vehiclename"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+        <TextView
+            android:id="@+id/routename_txt"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:text="@string/routename"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
+    </LinearLayout>
+</LinearLayout>
+<!--</layout>-->

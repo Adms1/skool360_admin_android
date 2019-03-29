@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:background="@drawable/greybg_border"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/grade_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_weight="0.8"
+            android:text=""
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/teacher_name_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_weight="1.4"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/section_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/student_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/grno_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="@dimen/_11sdp" />
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_weight="0.6"
+            android:tint="@color/scheduleheadertextcolor"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_phone"/>
+
+        <TextView
+            android:id="@+id/status_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/iv_sms"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_weight="0.5"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:tint="@color/scheduleheadertextcolor"
+            android:src="@drawable/ic_sms"/>
+
+    </LinearLayout>
+</layout>

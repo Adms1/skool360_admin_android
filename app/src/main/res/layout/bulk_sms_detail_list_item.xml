@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/divider"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/index_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:text="@string/sr_no"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:id="@+id/student_name_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1.3"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="@dimen/_2sdp"
+            android:text="@string/student1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+        <TextView
+            android:id="@+id/family_name_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.3"
+            android:gravity="center"
+            android:text="@string/family"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:id="@+id/grade_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.1"
+            android:gravity="center"
+            android:text="@string/gradesection"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+        <EditText
+            android:id="@+id/mobileno_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/_2sdp"
+            android:layout_weight="1.3"
+            android:text="@string/mobileno"
+            android:background="@drawable/linearlayout_border"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+        <CheckBox
+            android:id="@+id/sms_chk"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_weight="0.40"
+            android:layout_gravity="center"
+            android:button="@drawable/check_uncheck"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_9sdp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/light_blue" />
+
+</LinearLayout>

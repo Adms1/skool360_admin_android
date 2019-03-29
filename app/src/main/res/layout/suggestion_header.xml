@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="@dimen/_5sdp"
+        android:visibility="visible"
+        android:weightSum="1"
+        android:background="@drawable/box_blue">
+
+        <TextView
+            android:id="@+id/index_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/index"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_weight="0.1"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/type_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            android:layout_weight="0.25"
+            android:textAlignment="center"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <TextView
+            android:id="@+id/assign_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:text="@string/assign"
+            android:paddingStart="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/delete_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:paddingStart="@dimen/_2sdp"
+            android:text="@string/delete"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+</LinearLayout>

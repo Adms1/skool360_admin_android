@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/check_standard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Standard"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_5sdp"
+        android:button="@drawable/check_uncheck"
+        android:textColor="#000000"
+        android:textSize="@dimen/_10sdp"
+        android:typeface="normal" />
+</LinearLayout>

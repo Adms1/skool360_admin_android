@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/divider"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:weightSum="6"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/other_index_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_33sdp"
+            android:paddingLeft="@dimen/_2sdp"
+            android:paddingTop="@dimen/_7sdp"
+            android:text="@string/index"
+            android:layout_weight=".6"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+        <TextView
+            android:id="@+id/other_underpagename_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_33sdp"
+            android:paddingLeft="@dimen/_9sdp"
+            android:paddingTop="@dimen/_7sdp"
+            android:layout_weight="1.4"
+            android:text="@string/underpagename"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/other_pagename_txt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_weight="1.9"
+            android:paddingLeft="@dimen/_9sdp"
+            android:paddingTop="@dimen/_7sdp"
+            android:text="@string/pagename"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
+        <CheckBox
+            android:id="@+id/other_addall_chk"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_weight="0.70"
+            android:button="@drawable/check_uncheck"
+            android:paddingTop="@dimen/_7sdp"
+            android:layout_gravity="center|center_horizontal"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+        <CheckBox
+            android:id="@+id/other_update_chk"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_weight="0.70"
+            android:button="@drawable/check_uncheck"
+            android:paddingTop="@dimen/_7sdp"
+            android:layout_gravity="center|center_horizontal"
+            android:textAlignment="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+        <CheckBox
+            android:id="@+id/other_delete_chk"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_weight=".70"
+            android:button="@drawable/check_uncheck"
+            android:paddingTop="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:layout_gravity="center|center_horizontal"
+            android:paddingLeft="@dimen/_2sdp"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/_11sdp" />
+
+    </LinearLayout>
+</LinearLayout>

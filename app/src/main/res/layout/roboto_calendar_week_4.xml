@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:tag="weekRow4"
+    android:weightSum="7">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:tag="dayOfMonthContainer22">
+
+        <LinearLayout
+            android:tag="dayOfMonthTextContainer22"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:padding="@dimen/_2sdp"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_3sdp"
+            android:gravity="center">
+
+
+            <TextView
+                android:tag ="tv_intime22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:text="00:00"/>
+
+            <anandniketan.com.bhadajadmin.calendarview.DayView
+                style="@style/CalendarView.DayOfTheMonth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:gravity="center"
+                android:tag="dayOfMonthText22"
+                android:text="22" />
+            <TextView
+                android:tag ="tv_outtime22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom|center"
+                android:text="00:00"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:tag="dayOfMonthContainer23">
+        <LinearLayout
+            android:tag="dayOfMonthTextContainer23"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_2sdp"
+            android:orientation="vertical"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_3sdp"
+            android:gravity="center">
+
+
+            <TextView
+                android:tag ="tv_intime23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:text="00:00"/>
+
+            <anandniketan.com.bhadajadmin.calendarview.DayView
+                style="@style/CalendarView.DayOfTheMonth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:gravity="center"
+                android:tag="dayOfMonthText23"
+                android:text="23" />
+            <TextView
+                android:tag ="tv_outtime23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom|center"
+                android:text="00:00"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:tag="dayOfMonthContainer24">
+
+        <LinearLayout
+            android:tag="dayOfMonthTextContainer24"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:background="@color/gray"
+            android:padding="@dimen/_2sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:gravity="center">
+
+
+            <TextView
+                android:tag ="tv_intime24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:text="00:00"/>
+
+            <anandniketan.com.bhadajadmin.calendarview.DayView
+                style="@style/CalendarView.DayOfTheMonth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:gravity="center"
+                android:tag="dayOfMonthText24"
+                android:text="24" />
+            <TextView
+                android:tag ="tv_outtime24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom|center"
+                android:text="00:00"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:tag="dayOfMonthContainer25">
+
+        <LinearLayout
+            android:tag="dayOfMonthTextContainer25"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_3sdp"
+            android:padding="@dimen/_2sdp"
+            android:gravity="center">
+
+
+            <TextView
+                android:tag ="tv_intime25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:text="00:00"/>
+
+            <anandniketan.com.bhadajadmin.calendarview.DayView
+                style="@style/CalendarView.DayOfTheMonth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:gravity="center"
+                android:tag="dayOfMonthText25"
+                android:text="25" />
+            <TextView
+                android:tag ="tv_outtime25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom|center"
+                android:text="00:00"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:tag="dayOfMonthContainer26">
+
+        <LinearLayout
+            android:tag="dayOfMonthTextContainer26"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_3sdp"
+            android:padding="@dimen/_2sdp"
+            android:gravity="center">
+
+
+            <TextView
+                android:tag ="tv_intime26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:text="00:00"/>
+
+            <anandniketan.com.bhadajadmin.calendarview.DayView
+                style="@style/CalendarView.DayOfTheMonth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:gravity="center"
+                android:tag="dayOfMonthText26"
+                android:text="26" />
+            <TextView
+                android:tag ="tv_outtime26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom|center"
+                android:text="00:00"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:tag="dayOfMonthContainer27">
+
+        <LinearLayout
+            android:tag="dayOfMonthTextContainer27"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:padding="@dimen/_2sdp"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_3sdp"
+            android:gravity="center">
+
+
+            <TextView
+                android:tag ="tv_intime27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:text="00:00"/>
+
+            <anandniketan.com.bhadajadmin.calendarview.DayView
+                style="@style/CalendarView.DayOfTheMonth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:gravity="center"
+                android:tag="dayOfMonthText27"
+                android:text="27" />
+            <TextView
+                android:tag ="tv_outtime27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom|center"
+                android:text="00:00"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:tag="dayOfMonthContainer28">
+        <LinearLayout
+            android:tag="dayOfMonthTextContainer28"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_3sdp"
+            android:padding="@dimen/_2sdp"
+            android:gravity="center">
+
+
+            <TextView
+                android:tag ="tv_intime28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:text="00:00"/>
+
+            <anandniketan.com.bhadajadmin.calendarview.DayView
+                style="@style/CalendarView.DayOfTheMonth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:gravity="center"
+                android:tag="dayOfMonthText28"
+                android:text="28" />
+            <TextView
+                android:tag ="/tv_outtime28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom|center"
+                android:text="00:00"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

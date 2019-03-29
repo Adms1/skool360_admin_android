@@ -1,0 +1,2750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_bg">
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_57sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@drawable/header_blue"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_38sdp"
+                    android:background="@drawable/back_btn" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignTop="@+id/header"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_38sdp"
+                android:text="MIS"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/btnmenu"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_39sdp"
+                android:background="@drawable/menu" />
+
+
+            <Spinner
+                android:id="@+id/term_spinner"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_below="@+id/header"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/dropdown_button"
+                android:ellipsize="marquee"
+                android:forceHasOverlappingRendering="false"
+                android:gravity="center"
+                android:overlapAnchor="false"
+                android:paddingBottom="1dp"
+                android:paddingRight="@dimen/_3sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="gone" />
+
+
+            <anandniketan.com.bhadajadmin.StickyScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/term_spinner"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/main_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <!--<anandniketan.com.bhadajadmin.Utility.ArcView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:elevation="@dimen/_3sdp"-->
+                    <!--app:shape_arc_height="@dimen/_10sdp"-->
+                    <!--app:shape_arc_position="right">-->
+
+                    <LinearLayout
+                        android:id="@+id/finance_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/linear_border2"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/finance_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center_vertical"
+                                android:text="Finance"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progress_finance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/LL_finance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linear_finance"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/linear_border2"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <TextView
+                                        android:id="@+id/finance_year_txt_view"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal|center"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:text="@string/academicyear"
+                                        android:textColor="@color/scheduleheadertextcolor"
+                                        android:textSize="@dimen/_12ssp"
+
+                                        />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal|center"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_weight="0.14"
+                                        android:text=":"
+                                        android:textColor="@color/scheduleheadertextcolor"
+                                        android:textSize="@dimen/_11ssp"
+                                        android:textStyle="bold" />
+
+
+                                    <Spinner
+                                        android:id="@+id/spinner_finance"
+                                        android:layout_width="0dp"
+                                        android:layout_height="@dimen/_30sdp"
+                                        android:layout_below="@+id/header"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_gravity="center"
+                                        android:layout_marginBottom="@dimen/_5sdp"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:layout_weight="1.2"
+                                        android:background="@drawable/dropdown_button"
+                                        android:ellipsize="marquee"
+                                        android:forceHasOverlappingRendering="false"
+                                        android:gravity="center"
+                                        android:overlapAnchor="false"
+                                        android:paddingBottom="1dp"
+                                        android:paddingRight="@dimen/_3sdp"
+                                        android:paddingTop="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_11sdp"
+                                        android:visibility="visible" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_no_records_of_finance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="No Records Found"
+                                    android:textColor="@color/red"
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <!--<anandniketan.com.bhadajadmin.StickyScrollView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:scrollbars="none">-->
+
+                                <LinearLayout
+                                    android:id="@+id/linear_finance_recyler_grid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white1"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:tag="sticky">
+
+                                        <include layout="@layout/list_item_mis_finance_header" />
+
+                                        <include layout="@layout/list_item_mis_finance_sub_header" />
+
+                                    </LinearLayout>
+
+                                    <android.support.v7.widget.RecyclerView
+                                        android:id="@+id/rv_finance_list"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clipToPadding="false"
+                                        android:orientation="horizontal" />
+
+
+                                </LinearLayout>
+
+                                <!--</anandniketan.com.bhadajadmin.StickyScrollView>-->
+
+                                <LinearLayout
+                                    android:id="@+id/linear_finance_recyler_list2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/linear_border2"
+                                    android:orientation="vertical">
+
+                                    <android.support.v7.widget.RecyclerView
+                                        android:id="@+id/rv_finance_list2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/linear_border2"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/Attendace_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center_vertical"
+                                android:text="Student"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progress_student"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+
+                        <LinearLayout
+                            android:id="@+id/LL_studentcontainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linear_date1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/linear_border2"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:id="@+id/date_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal|center"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_weight="0.77"
+                                    android:text="@string/select_date"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal|center"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_weight="0.14"
+                                    android:text=":"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp"
+                                    android:textStyle="bold" />
+
+                                <Button
+                                    android:id="@+id/student_date_btn"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginBottom="@dimen/_3sdp"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:layout_weight="1.5"
+                                    android:background="@drawable/linear_border"
+                                    android:paddingBottom="1dp"
+                                    android:paddingLeft="@dimen/_1sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llHeader"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_31sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/box_blue"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:visibility="visible"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/range_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1"
+                                    android:gravity="left"
+                                    android:text="@string/type"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:text="@string/total"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:text="Boys"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:text="Girls"
+                                    android:textColor="@color/app_bg"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/absentstudent_count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1"
+                                    android:text="Total"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/student_total_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/boy_total_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/girl_total_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/leavestudent_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1"
+                                    android:text="Present"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/student_present_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/boy_present_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/girl_present_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/presentstudent_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1"
+                                    android:text="Absent"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/student_absent_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/boy_absent_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/girl_absent_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1"
+                                    android:text="Attendance less than 70%"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/student_attendance_less_70_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/boy_attendance_less_70_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/girl_attendance_less_70_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1"
+                                    android:text="Leave"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/student_leave_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/boy_leave_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/girl_leave_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/antstudent_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1"
+                                    android:text="A.N.T"
+                                    android:textColor="@color/red"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/antstudent_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/red"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/antboy_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/red"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/antgirl_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/red"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_1sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/abstudent_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1"
+                                    android:text="Ab > 3"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/abstudent_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/abboy_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/abgirl_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_1sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/ba_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1"
+                                    android:text="Between alumini left"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/ba_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/baboy_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/bagirl_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.33"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_transport"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:text="Student Transport"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <!--</anandniketan.com.bhadajadmin.Utility.ArcView>-->
+
+                    <LinearLayout
+                        android:id="@+id/staff_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/linear_border2"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/staff_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center_vertical"
+                                android:text="Staff"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progress_staff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/LL_staffcontainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/_100sdp"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/absentstaff_count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Total"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/staff_total_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/presentstaff_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Present"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/staff_present_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/absentstaff_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Absent"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/absent_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Leave"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/staffleave_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/abstaff_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Ab > 3"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/abstaff_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/antstaff_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="A.N.T Class Teacher"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/antstaff_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/staff_workplan"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Work Plan"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/staff_workplan_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/staff_cw"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Cw Submitted"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/staff_cw_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_1sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/staff_hw_submitted"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Hw Submitted"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/staff_hw_submitted_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/staff_new_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/linear_border2"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/staff_new_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center"
+                                android:text="Staff"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <ProgressBar
+                            android:id="@+id/progress_staff1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/staff_new_innercontainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linear_staff_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/linear_border2"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:id="@+id/staff_date_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal|center"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_weight="0.77"
+                                    android:text="@string/select_date"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal|center"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_weight="0.14"
+                                    android:text=":"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp"
+                                    android:textStyle="bold" />
+
+                                <Button
+                                    android:id="@+id/staff_date_btn"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginBottom="@dimen/_3sdp"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:layout_weight="1.5"
+                                    android:background="@drawable/linear_border"
+                                    android:paddingBottom="1dp"
+                                    android:paddingLeft="@dimen/_1sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/linear_recyler_grid"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:orientation="vertical">
+
+                                <include layout="@layout/list_item_mis_staff_grid_header" />
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/rv_staff_grid_list"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clipToPadding="false"
+                                    android:orientation="horizontal" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linear_recyler_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="vertical">
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/rv_staff_list"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/task_report_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/linear_border2"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/task_report_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center_vertical"
+                                android:text="Task Report"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <ProgressBar
+                            android:id="@+id/progress_task_report"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/task_report_innercontainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linear_taskreport_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/linear_border2"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:id="@+id/task_reportdate_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal|center"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_weight="0.77"
+                                    android:text="@string/select_date"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal|center"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_weight="0.14"
+                                    android:text=":"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp"
+                                    android:textStyle="bold" />
+
+                                <Button
+                                    android:id="@+id/taskreport_date_btn"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginBottom="@dimen/_3sdp"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:layout_weight="1.5"
+                                    android:background="@drawable/linear_border"
+                                    android:paddingBottom="1dp"
+                                    android:paddingLeft="@dimen/_1sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/linear_task_report_recyler_grid"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:orientation="vertical">
+
+                                <include layout="@layout/list_item_mis_task_report_header" />
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/rv_taskreport_grid_list"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clipToPadding="false"
+                                    android:orientation="horizontal" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linear_taskreport_recyler_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="vertical">
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/rv_taskreport_list"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/result_of_school_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/linear_border2"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/result_of_school_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center_vertical"
+                                android:text="Result Of School"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <ProgressBar
+                            android:id="@+id/progress_result_of_school"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/result_of_school_innercontainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linear_result_of_school_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/linear_border2"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <TextView
+                                        android:id="@+id/grade_txt_view"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal|center"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_weight="0.77"
+                                        android:text="@string/select_term_label"
+                                        android:textColor="@color/scheduleheadertextcolor"
+                                        android:textSize="@dimen/_12ssp"
+
+                                        />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal|center"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_weight="0.14"
+                                        android:text=":"
+                                        android:textColor="@color/scheduleheadertextcolor"
+                                        android:textSize="@dimen/_11ssp"
+                                        android:textStyle="bold" />
+
+
+                                    <Spinner
+                                        android:id="@+id/result_of_school_term_spinner"
+                                        android:layout_width="0dp"
+                                        android:layout_height="@dimen/_30sdp"
+                                        android:layout_below="@+id/header"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_gravity="center"
+                                        android:layout_marginBottom="@dimen/_5sdp"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:layout_weight="1.2"
+                                        android:background="@drawable/dropdown_button"
+                                        android:ellipsize="marquee"
+                                        android:forceHasOverlappingRendering="false"
+                                        android:gravity="center"
+                                        android:overlapAnchor="false"
+                                        android:paddingBottom="1dp"
+                                        android:paddingRight="@dimen/_3sdp"
+                                        android:paddingTop="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_11sdp"
+                                        android:visibility="visible" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_no_records_of_school_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="No Records Found"
+                                    android:textColor="@color/red"
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/linear_result_of_school_recyler_grid"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:orientation="vertical">
+
+
+                                <include layout="@layout/layout_mis_topper_list_header" />
+
+                                <include layout="@layout/list_item_mis_school_result_header2" />
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/rv_result_of_school_grid_list"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clipToPadding="false"
+                                    android:orientation="horizontal" />
+
+                                <TextView
+                                    android:id="@+id/tv_gradewise"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:text="View All Results"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/linear_border2"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/account_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center_vertical"
+                                android:text="Account"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progress_account"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/LL_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/_100sdp"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/actotaltobecall_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Total to be coll"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/actotaltobecall_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/acterm1fess_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Term 1 Fees"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/acterm1fess_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/acterm2fess_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Term 2 Fees"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/acterm2fess_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/acterm1_collection_label"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Term 1 Collection"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/acterm1_collection"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/acterm2_collection_label"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Term 2 Collection"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/acterm2_collection"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/acos_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="O/S"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/acos_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/accashcollection_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Cash Collection"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/accashcollection_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/acchhqdd_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Chq/DD"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/acchhqdd_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_1sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/aconline_Count_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Online"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/aconline_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/linear_border2"
+
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/newAdmission_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center_vertical"
+                                android:text="New Addmission"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <ProgressBar
+                            android:id="@+id/progress_na"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/LL_nacontainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/linear_border2"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:id="@+id/na_year_txt_view"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal|center"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    android:text="@string/academicyear"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_12ssp"
+
+                                    />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal|center"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_weight="0.14"
+                                    android:text=":"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11ssp"
+                                    android:textStyle="bold" />
+
+                                <Spinner
+                                    android:id="@+id/spinner_na"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_below="@+id/header"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_weight="1.2"
+                                    android:background="@drawable/dropdown_button"
+                                    android:ellipsize="marquee"
+                                    android:forceHasOverlappingRendering="false"
+                                    android:gravity="center"
+                                    android:overlapAnchor="false"
+                                    android:paddingBottom="1dp"
+                                    android:paddingRight="@dimen/_3sdp"
+                                    android:paddingTop="@dimen/_5sdp"
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp"
+                                    android:visibility="visible" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/na_inquirycount_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Enquiry"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/na_inquiry_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/na_issueadd_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Issue Addmission Form"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/na_issueadd_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/na_rcvform_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Rcv Form"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/na_rcvform_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="0.6"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/na_CallForInterview_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Call For Interview"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/na_CallForInterview_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/na_comeforinterview_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Come for Interview"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/na_comeforinterview_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/na_confirmaddmission_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Confirm Addmission"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/na_confirmaddmission_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/na_rejected_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Rejected"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/na_rejected_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_1sdp"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/na_fees_rec_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Fees Received"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/na_fees_rec_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/na_fees_not_rec_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Fees Not Received"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/na_fees_not_rec_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:gravity="right"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_7sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:background="@drawable/linear_border2"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/message_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center_vertical"
+                                android:text="Message"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <ProgressBar
+                            android:id="@+id/progress_msg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/LL_msgcontainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/smssent_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="SMS Sent"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/smssent_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/smsdelivered_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Delivered"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/smsdelivered_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/linear_border2"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_3sdp"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/smspedning_label_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginLeft="@dimen/_3sdp"
+                                    android:layout_weight="1.4"
+                                    android:text="Pending"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/smspedning_txt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:textColor="@color/scheduleheadertextcolor"
+                                    android:textSize="@dimen/_11sdp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/schoolcalendar_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/linear_border2"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="sticky-nonconstant-hastransparancy">
+
+                            <TextView
+                                android:id="@+id/schoolcalendar_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:background="@drawable/box"
+                                android:gravity="center_vertical"
+                                android:text="School Calendar"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/scheduleheadertextcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progress_schoolcalendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/LL_schoolcalendar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linear_schoolcalendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/linear_border2"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <TextView
+                                        android:id="@+id/schoolcalendar_year_txt_view"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal|center"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:text="@string/academicyear"
+                                        android:textColor="@color/scheduleheadertextcolor"
+                                        android:textSize="@dimen/_12ssp" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal|center"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_weight="0.14"
+                                        android:text=":"
+                                        android:textColor="@color/scheduleheadertextcolor"
+                                        android:textSize="@dimen/_11ssp"
+                                        android:textStyle="bold" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner_schoolcalendar"
+                                        android:layout_width="0dp"
+                                        android:layout_height="@dimen/_30sdp"
+                                        android:layout_below="@+id/header"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_gravity="center"
+                                        android:layout_marginBottom="@dimen/_5sdp"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:layout_weight="1.2"
+                                        android:background="@drawable/dropdown_button"
+                                        android:ellipsize="marquee"
+                                        android:forceHasOverlappingRendering="false"
+                                        android:gravity="center"
+                                        android:overlapAnchor="false"
+                                        android:paddingBottom="1dp"
+                                        android:paddingRight="@dimen/_3sdp"
+                                        android:paddingTop="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_11sdp"
+                                        android:visibility="visible" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_no_records_of_schoolcalendar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="No Records Found"
+                                    android:textColor="@color/red"
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <android.support.design.widget.TabLayout
+                                    android:id="@+id/schoolcalendar_tabLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="?actionBarSize"
+                                    app:tabBackground="@color/orange"
+                                    app:tabGravity="fill"
+                                    app:tabIndicatorColor="@color/white1"
+                                    app:tabIndicatorHeight="@dimen/_4sdp"
+                                    app:tabMode="fixed"
+                                    app:tabMaxWidth="0dp"
+                                    app:tabSelectedTextColor="@color/white1"
+                                    app:tabTextColor="@color/white1" />
+
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/schoolcalendar_viewPager"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_200sdp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </anandniketan.com.bhadajadmin.StickyScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>
