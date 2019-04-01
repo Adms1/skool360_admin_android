@@ -85,8 +85,7 @@
             android:textSize="@dimen/_11sdp" />
 
 
-
-        <anandniketan.com.bhadajadmin.StickyScrollView
+        <anandniketan.com.skool360.StickyScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
@@ -1445,7 +1444,7 @@
 
                 </LinearLayout>
             </LinearLayout>
-        </anandniketan.com.bhadajadmin.StickyScrollView>
+        </anandniketan.com.skool360.StickyScrollView>
 
     </RelativeLayout>
 

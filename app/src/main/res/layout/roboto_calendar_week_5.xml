@@ -33,7 +33,7 @@
 
                 android:text="00:00"/>
 
-            <anandniketan.com.bhadajadmin.calendarview.DayView
+            <anandniketan.com.skool360.calendarview.DayView
                 style="@style/CalendarView.DayOfTheMonth"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_20sdp"
@@ -80,7 +80,7 @@
 
                 android:text="00:00"/>
 
-            <anandniketan.com.bhadajadmin.calendarview.DayView
+            <anandniketan.com.skool360.calendarview.DayView
                 style="@style/CalendarView.DayOfTheMonth"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_20sdp"
@@ -126,7 +126,7 @@
                 android:textColor="@color/black"
                 android:text="00:00"/>
 
-            <anandniketan.com.bhadajadmin.calendarview.DayView
+            <anandniketan.com.skool360.calendarview.DayView
                 style="@style/CalendarView.DayOfTheMonth"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_20sdp"
@@ -171,7 +171,7 @@
                 android:textColor="@color/black"
                 android:text="00:00"/>
 
-            <anandniketan.com.bhadajadmin.calendarview.DayView
+            <anandniketan.com.skool360.calendarview.DayView
                 style="@style/CalendarView.DayOfTheMonth"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_20sdp"
@@ -215,7 +215,7 @@
                 android:textColor="@color/black"
                 android:text="00:00"/>
 
-            <anandniketan.com.bhadajadmin.calendarview.DayView
+            <anandniketan.com.skool360.calendarview.DayView
                 style="@style/CalendarView.DayOfTheMonth"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_20sdp"
@@ -261,7 +261,7 @@
                 android:textColor="@color/black"
                 android:text="00:00"/>
 
-            <anandniketan.com.bhadajadmin.calendarview.DayView
+            <anandniketan.com.skool360.calendarview.DayView
                 style="@style/CalendarView.DayOfTheMonth"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_20sdp"
@@ -306,7 +306,7 @@
 
                 android:text="00:00"/>
 
-            <anandniketan.com.bhadajadmin.calendarview.DayView
+            <anandniketan.com.skool360.calendarview.DayView
                 style="@style/CalendarView.DayOfTheMonth"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_20sdp"

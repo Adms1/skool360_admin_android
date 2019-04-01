@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="anandniketan.com.bhadajadmin"
+    package="anandniketan.com.skool360"
     tools:node="replace">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +13,7 @@
     <supports-screens android:xlargeScreens="true" />
 
     <application
-        android:name="anandniketan.com.bhadajadmin.base.BaseApp"
+        android:name="anandniketan.com.skool360.base.BaseApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -21,14 +21,14 @@
         android:theme="@style/AppTheme1">
 
         <activity
-            android:name="anandniketan.com.bhadajadmin.Activity.DashboardActivity"
+            android:name="anandniketan.com.skool360.Activity.DashboardActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="orientation|screenSize|keyboardHidden"/>
 
         <activity
-            android:name="anandniketan.com.bhadajadmin.Activity.SplashScreen"
+            android:name="anandniketan.com.skool360.Activity.SplashScreen"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme"
@@ -50,13 +50,14 @@
             android:value="26.1.0"
             tools:node="replace" />
 
-        <activity android:name="anandniketan.com.bhadajadmin.Activity.LoginActivity"
+        <activity
+            android:name="anandniketan.com.skool360.Activity.LoginActivity"
             android:screenOrientation="portrait"
             android:configChanges="screenLayout|screenSize"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan" />
 
-        <activity android:name="anandniketan.com.bhadajadmin.Activity.Server_Error"/>
+        <activity android:name="anandniketan.com.skool360.Activity.Server_Error" />
 
         <!-- Firebase Notifications -->
         <!--<service android:name=".MyFirebaseMessagingService">-->
