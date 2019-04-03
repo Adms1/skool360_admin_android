@@ -94,7 +94,6 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
         rootView = fragmentPlannerBinding.getRoot();
         mContext = getActivity().getApplicationContext();
 
-
         //Set Thread Policy
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().build());
         StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().build());
@@ -116,7 +115,6 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
 
         setListner();
         callStandardApi();
-
     }
 
     private void setListner() {
@@ -139,14 +137,18 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
         fragmentPlannerBinding.rbHoliday.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                FinalType = compoundButton.getText().toString();
+                if (b) {
+                    FinalType = compoundButton.getText().toString();
+                }
             }
         });
 
         fragmentPlannerBinding.rbEvent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                FinalType = compoundButton.getText().toString();
+                if (b) {
+                    FinalType = compoundButton.getText().toString();
+                }
             }
         });
 

@@ -364,7 +364,7 @@ public class StudentFragment extends Fragment {
                     fragment = new SuggestionFragment();
 
                     Bundle bundle = new Bundle();
-                    bundle.putString("type", "student");
+                    bundle.putString("ntype", "student");
                     bundle.putString("leavedeletestatus", permissionMap.get("Suggestion").getIsuserdelete());
                     bundle.putString("leaveupdatestatus", permissionMap.get("Suggestion").getIsuserupdate());
                     bundle.putString("leaveviewstatus", permissionMap.get("Suggestion").getIsuserview());

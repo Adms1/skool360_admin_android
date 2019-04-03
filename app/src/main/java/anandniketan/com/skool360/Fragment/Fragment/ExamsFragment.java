@@ -125,6 +125,7 @@ public class ExamsFragment extends Fragment implements DatePickerDialog.OnDateSe
             public void onClick(View v) {
                 isFromDate = true;
                 datePickerDialog = DatePickerDialog.newInstance(ExamsFragment.this, Year, Month, Day);
+                datePickerDialog.setMaxDate(calendar);
                 datePickerDialog.setThemeDark(false);
                 datePickerDialog.setOkText("Done");
                 datePickerDialog.showYearPickerFirst(false);
@@ -138,6 +139,7 @@ public class ExamsFragment extends Fragment implements DatePickerDialog.OnDateSe
             public void onClick(View v) {
                 isFromDate = false;
                 datePickerDialog = DatePickerDialog.newInstance(ExamsFragment.this, Year, Month, Day);
+                datePickerDialog.setMaxDate(calendar);
                 datePickerDialog.setThemeDark(false);
                 datePickerDialog.setOkText("Done");
                 datePickerDialog.showYearPickerFirst(false);

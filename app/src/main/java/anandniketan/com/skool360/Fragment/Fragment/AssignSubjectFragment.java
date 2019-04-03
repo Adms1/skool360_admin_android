@@ -470,7 +470,7 @@ public class AssignSubjectFragment extends Fragment {
                     return;
                 }
                 if (insertAssignSubjectModel.getSuccess().equalsIgnoreCase("false")) {
-                    Utils.ping(mContext, getString(R.string.false_msg));
+                    Utils.ping(mContext, insertAssignSubjectModel.getYear());
                     return;
                 }
                 if (insertAssignSubjectModel.getSuccess().equalsIgnoreCase("True")) {

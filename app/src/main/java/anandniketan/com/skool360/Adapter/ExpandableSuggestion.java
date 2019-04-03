@@ -79,7 +79,10 @@ public class ExpandableSuggestion extends BaseExpandableListAdapter {
         tvReply.setText(childData.get(childPosition).getReply());
         tvComment.setText(childData.get(childPosition).getComment());
         tvStudent.setText(childData.get(childPosition).getStu_name() + ", " + childData.get(childPosition).getStandard() + " - " + childData.get(childPosition).getClassname());
-        tvReplyDate.setText(parseDateToddMMyyyy("yyyy-MM-dd'T'HH:mm:ss.SSSS", "dd MMM yyyy HH:mm a", childData.get(childPosition).getSuggestiondatetime()));
+
+        if (childData.get(childPosition).getSuggestiondatetime() != "") {
+            tvReplyDate.setText(parseDateToddMMyyyy("yyyy-MM-dd'T'HH:mm:ss.SSSS", "dd MMM yyyy HH:mm a", childData.get(childPosition).getSuggestiondatetime()));
+        }
 
         if (childData.get(childPosition).getStatus().equalsIgnoreCase("Replying")) {
 

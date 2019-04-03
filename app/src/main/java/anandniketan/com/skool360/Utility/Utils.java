@@ -326,7 +326,6 @@ public class Utils {
                 dataMap.put(keys.get(pos) + keyPrefix, values.get(pos));
             }
 
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -346,7 +345,7 @@ public class Utils {
 
                     return;
                 }
-//
+
                 if (response.body().getSuccess().equalsIgnoreCase("false")) {
 
                     return;

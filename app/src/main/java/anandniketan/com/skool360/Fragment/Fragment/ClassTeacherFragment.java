@@ -62,7 +62,7 @@ public class ClassTeacherFragment extends Fragment {
     List<FinalArrayStaffModel> finalArrayClassTeacherDetailModelList;
     List<FinalArrayStaffModel> finalArrayInsertClassTeachersModelList;
     List<FinalArrayGetTermModel> finalArrayGetTermModels;
-    String finalStandardIdStr, finalTeacherIdStr, finalClassIdStr, standardName, finalTermIdStr, finalClassTeacherIdStr = "0", editClassteacherStr = "", editGradeStr = "", editSectionStr = "";
+    String finalStandardIdStr, finalTeacherIdStr, finalClassIdStr = "1", standardName, finalTermIdStr, finalClassTeacherIdStr = "0", editClassteacherStr = "", editGradeStr = "", editSectionStr = "";
     ClassTeacherDetailListAdapter classTeacherDetailListAdapter;
     String getEditValuearray;
     String[] spinnerteacherIdArray;

@@ -208,8 +208,12 @@ public interface WebServices {
 //    @POST("/TeacherGetTimetable")
 //    void getTimeTable(@FieldMap Map<String, String> map, @Field"LocationID,  String locationidCallback<StaffAttendaceModel> callback);
 
+//    @FormUrlEncoded
+//    @POST("/AdminGetTimetable")
+//    void getTimeTable(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
+
     @FormUrlEncoded
-    @POST("/AdminGetTimetable")
+    @POST("/GetTimetableByClass")
     void getTimeTable(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
@@ -564,8 +568,7 @@ public interface WebServices {
     @POST("/TeacherStudentHomeworkStatus")
     void teacherStudentHomeworkStatus(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
-    @retrofit2.http.FormUrlEncoded
-    @retrofit2.http.POST()
+    @retrofit2.http.GET
     Call<JsonObject> teacherStudentHomeworkStatusInsertUpdate(@Url String url);
 
     @FormUrlEncoded
@@ -970,8 +973,7 @@ public interface WebServices {
     @retrofit2.http.GET
     Call<PermissionDataModel> getPermissionData(@Url String url);
 
-    @retrofit2.http.FormUrlEncoded
-    @retrofit2.http.POST
+    @retrofit2.http.GET
     Call<GalleryDataModel> getGalleryData(@Url String url);
 
     @retrofit2.http.FormUrlEncoded
@@ -998,7 +1000,7 @@ public interface WebServices {
     @retrofit2.http.POST("GetCountRangeWise")
     Call<RangeChartModel> getRangeChart(@Field("TermID") String TermID, @Field("LocationID") String LocationID);
 
-    @FormUrlEncoded
+    @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("GetTerm")
     Call<TermModel> getTerm(@Field("LocationID") String locationid);
 

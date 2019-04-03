@@ -209,6 +209,7 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
             @Override
             public void onClick(View v) {
                 datePickerDialog = DatePickerDialog.newInstance(StudentAttendaneFragment.this, Year, Month, Day);
+                datePickerDialog.setMaxDate(calendar);
                 datePickerDialog.setThemeDark(false);
                 datePickerDialog.setOkText("Done");
                 datePickerDialog.showYearPickerFirst(false);
@@ -701,7 +702,7 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
     private Map<String, String> getTermDetail() {
         HashMap<String, String> map = new HashMap<>();
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
-        return new HashMap<>();
+        return map;
     }
 
     public void fillTermSpinner() {

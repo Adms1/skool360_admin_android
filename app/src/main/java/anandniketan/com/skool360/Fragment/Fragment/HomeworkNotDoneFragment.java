@@ -63,7 +63,7 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
     private FragmentManager fragmentManager = null;
     private Spinner teacherSpinner, gradeSpinner, subjectSpinner;
     private Button btnDate, btnSearch;
-    private List<FinalArrayStaffModel> finalArrayTeachersModelList, finalArrayGradeModelList, finalArraySubjectModelList;
+    private List<FinalArrayStaffModel> finalArrayTeachersModelList, finalArrayGradeModelList = new ArrayList<>(), finalArraySubjectModelList = new ArrayList<>();
     private HashMap<Integer, String> spinnerTeacherMap, spinnerStandardMap, spinnerSubjectMap;
     private DatePickerDialog datePickerDialog;
     private int Year, Month, Day;
@@ -133,6 +133,7 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
             @Override
             public void onClick(View view) {
                 datePickerDialog = DatePickerDialog.newInstance(HomeworkNotDoneFragment.this, Year, Month, Day);
+                datePickerDialog.setMaxDate(calendar);
                 datePickerDialog.setThemeDark(false);
                 datePickerDialog.setOkText("Done");
                 datePickerDialog.showYearPickerFirst(false);

@@ -252,7 +252,7 @@ public class StudentTranspotFragment extends Fragment {
     private Map<String, String> getTermDetail() {
         HashMap<String, String> map = new HashMap<>();
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
-        return new HashMap<>();
+        return map;
     }
 
     // CALL RoputeDetail API HERE
@@ -302,7 +302,7 @@ public class StudentTranspotFragment extends Fragment {
     }
 
     private Map<String, String> getRouteDetail() {
-HashMap<String, String> map = new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }

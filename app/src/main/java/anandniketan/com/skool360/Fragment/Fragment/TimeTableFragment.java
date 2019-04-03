@@ -386,8 +386,8 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         Map<String, String> map = new HashMap<>();
         map.put("TermID", FinalTermIdStr);
         map.put("ClassID", finalStandardIdStr);
-        map.put("Type", "GradeWise");
-        map.put("StaffID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", "0"));
+//        map.put("Type", "GradeWise");
+//        map.put("StaffID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", "0"));
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }

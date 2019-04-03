@@ -174,11 +174,11 @@ public class SMSStudentMarksFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String name = fragmentSmsstudentMarksBinding.smsMarksSubjectSpinner.getSelectedItem().toString();
-                String getid = finalArraySMSDataModelList.get(position).getSubjectid();
+                String getid = spinnerSubjectMap.get(position);
 
                 Log.d("value", name + " " + getid);
                 FinalSubjectIdStr = getid;
-                Log.d("FinalStandardIdStr", FinalSubjectIdStr);
+//                Log.d("FinalStandardIdStr", FinalSubjectIdStr);
                 SubjectName = name;
                 FinalSubjectStr = name;
                 Log.d("StandardName", SubjectName);
@@ -455,7 +455,7 @@ public class SMSStudentMarksFragment extends Fragment {
         map.put("TermID", FinalTermIdStr);
         map.put("StaffID", "0");
         map.put("ClassID", FinalStandardIdStr);
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

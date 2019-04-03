@@ -276,6 +276,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
             public void onClick(View v) {
                 whichDatePickerCalled = 1;
                 datePickerDialog = DatePickerDialog.newInstance(FragmentAddUpdateInquiry.this, Year, Month, Day);
+                datePickerDialog.setMaxDate(calendar);
                 datePickerDialog.setThemeDark(false);
                 datePickerDialog.setOkText("Done");
                 datePickerDialog.showYearPickerFirst(false);
@@ -290,6 +291,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
             public void onClick(View v) {
                 whichDatePickerCalled = 2;
                 datePickerDialog = DatePickerDialog.newInstance(FragmentAddUpdateInquiry.this, Year, Month, Day);
+                datePickerDialog.setMaxDate(calendar);
                 datePickerDialog.setThemeDark(false);
                 datePickerDialog.setOkText("Done");
                 datePickerDialog.showYearPickerFirst(false);
@@ -459,6 +461,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

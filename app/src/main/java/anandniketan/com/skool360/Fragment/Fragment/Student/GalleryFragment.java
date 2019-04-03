@@ -264,6 +264,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
             @Override
             public void onClick(View v) {
                 datePickerDialog = DatePickerDialog.newInstance(GalleryFragment.this, Year, Month, Day);
+                datePickerDialog.setMaxDate(calendar);
                 datePickerDialog.setThemeDark(false);
                 datePickerDialog.setOkText("Done");
                 datePickerDialog.showYearPickerFirst(false);
@@ -499,7 +500,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
 
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<GalleryDataModel> call = apiService.getGalleryData(AppConfiguration.BASEURL + "GetGalleryData" + "&LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        Call<GalleryDataModel> call = apiService.getGalleryData(AppConfiguration.BASEURL + "GetGalleryData" + "?LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<GalleryDataModel>() {
             //
             @Override

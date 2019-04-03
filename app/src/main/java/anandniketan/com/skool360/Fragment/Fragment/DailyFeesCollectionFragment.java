@@ -356,6 +356,7 @@ public class DailyFeesCollectionFragment extends Fragment implements DatePickerD
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

@@ -276,7 +276,7 @@ public class SuggestionFragment extends Fragment implements DatePickerDialog.OnD
         map.put("ToDate", fragmentSuggestionBinding.sugTodateBtn.getText().toString());
         map.put("Status", fragmentSuggestionBinding.assignSpinner.getSelectedItem().toString());
         map.put("UserID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", "0"));
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -411,7 +411,7 @@ public class SuggestionFragment extends Fragment implements DatePickerDialog.OnD
         map.put("PK_SuggestionID", listDataChild.get(listDataHeader.get(gr)).get(ch).getPk_suggestionid());
         map.put("Reply", msg);
         map.put("UserID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", "0"));
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

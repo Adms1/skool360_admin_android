@@ -397,7 +397,7 @@ public class ResultPermisssionFragment extends Fragment {
                                 fragmentResultPermisssionBinding.cancelBtn.setVisibility(View.VISIBLE);
                                 UpdatePermission();
                             }
-                        }, status);
+                        }, updatestatus);
                         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
                         fragmentResultPermisssionBinding.studentResultPermissionList.setLayoutManager(mLayoutManager);
                         fragmentResultPermisssionBinding.studentResultPermissionList.setItemAnimator(new DefaultItemAnimator());
@@ -469,13 +469,12 @@ public class ResultPermisssionFragment extends Fragment {
                 Utils.ping(mContext, getString(R.string.something_wrong));
             }
         });
-
     }
 
     private Map<String, String> getStandardDetail() {
         HashMap<String, String> map = new HashMap<>();
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
-        return new HashMap<>();
+        return map;
     }
 
     // CALL InsertResultPermission
@@ -525,6 +524,7 @@ public class ResultPermisssionFragment extends Fragment {
         map.put("GradeID", FinalGradeIsStr);
         map.put("Status", FinalStatusStr);
         map.put("TermDetailsID", FinalTermDetailIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

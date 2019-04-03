@@ -213,13 +213,12 @@ public class SearchStudentFragment extends Fragment {
                 Utils.ping(mContext, getString(R.string.something_wrong));
             }
         });
-
     }
 
     private Map<String, String> getTermDetail() {
         HashMap<String, String> map = new HashMap<>();
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
-        return new HashMap<>();
+        return map;
     }
 
     // CALL Standard API HERE
@@ -307,6 +306,9 @@ public class SearchStudentFragment extends Fragment {
                     return;
                 }
                 if (parentsNameModel.getSuccess().equalsIgnoreCase("True")) {
+
+                    parentName.clear();
+
                     for (int i = 0; i < parentsNameModel.getFinalArray().size(); i++) {
                         parentName.add(parentsNameModel.getFinalArray().get(i).getName());
                     }
@@ -451,6 +453,7 @@ public class SearchStudentFragment extends Fragment {
                     return;
                 }
                 if (studentNameModel.getSuccess().equalsIgnoreCase("True")) {
+                    studentName.clear();
                     for (int i = 0; i < studentNameModel.getFinalArray().size(); i++) {
                         studentName.add(studentNameModel.getFinalArray().get(i).getName());
                     }

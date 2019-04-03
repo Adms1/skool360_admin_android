@@ -225,6 +225,7 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
                 datePickerDialog.setAccentColor(Color.parseColor("#1B88C8"));
                 datePickerDialog.setTitle("Select Date");
                 datePickerDialog.show(Objects.requireNonNull(getActivity()).getFragmentManager(), "DatePickerDialog");
+
             }
         });
         fragmentLeaveRequestBinding.todateBtn.setOnClickListener(new View.OnClickListener() {
@@ -443,7 +444,7 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
             map.put("UserID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", ""));
 
         }
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
