@@ -127,7 +127,7 @@ public class MyLeaveBalanceFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStaffLeaveRequest(getApplyLeaveParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<LeaveModel>() {
+        ApiHandler.getApiService().getStaffLeaveRequest(getApplyLeaveParams(), new retrofit.Callback<LeaveModel>() {
             @Override
             public void success(LeaveModel leaveModel, Response response) {
                 Utils.dismissDialog();
@@ -204,7 +204,7 @@ public class MyLeaveBalanceFragment extends Fragment {
     private Map<String, String> getApplyLeaveParams() {
         HashMap<String, String> map = new HashMap<>();
         map.put("StaffID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", "0"));
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

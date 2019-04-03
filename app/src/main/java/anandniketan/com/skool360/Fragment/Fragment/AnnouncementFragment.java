@@ -362,7 +362,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -415,7 +415,9 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
     }
 
     private Map<String, String> getStandardDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
 
@@ -427,7 +429,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertAnnouncement(getInsertAnnouncement(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<AnnouncementModel>() {
+        ApiHandler.getApiService().InsertAnnouncement(getInsertAnnouncement(), new retrofit.Callback<AnnouncementModel>() {
             @Override
             public void success(AnnouncementModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -564,7 +566,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         return map;
     }

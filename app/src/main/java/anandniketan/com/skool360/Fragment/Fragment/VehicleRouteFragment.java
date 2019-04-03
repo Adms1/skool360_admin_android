@@ -83,11 +83,11 @@ public class VehicleRouteFragment extends Fragment {
         if (!Utils.checkNetwork(mContext)) {
             Utils.showCustomDialog(getResources().getString(R.string.internet_error), getResources().getString(R.string.internet_connection_error), getActivity());
             return;
-            a
+
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getVehicleRouteDetail(getVehicleRouteDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TransportChargesModel>() {
+        ApiHandler.getApiService().getVehicleRouteDetail(getVehicleRouteDetail(), new retrofit.Callback<TransportChargesModel>() {
             @Override
             public void success(TransportChargesModel vehicleRouteDetailModel, Response response) {
 //                Utils.dismissDialog();
@@ -145,7 +145,7 @@ public class VehicleRouteFragment extends Fragment {
 
     private Map<String, String> getVehicleRouteDetail() {
         Map<String, String> map = new HashMap<>();
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

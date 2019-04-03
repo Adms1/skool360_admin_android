@@ -116,7 +116,7 @@ public class SingleSmsFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertSingleSMSData(InsertSingleSMSDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().InsertSingleSMSData(InsertSingleSMSDetail(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel insertsms, Response response) {
                 Utils.dismissDialog();
@@ -154,6 +154,7 @@ public class SingleSmsFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("SMS", FinalSMSStr);
         map.put("MobileNo", FinalMobileNoStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 }

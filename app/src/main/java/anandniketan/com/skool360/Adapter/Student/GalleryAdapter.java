@@ -19,6 +19,7 @@ import anandniketan.com.skool360.Model.Student.GalleryDataModel;
 import anandniketan.com.skool360.R;
 import anandniketan.com.skool360.Utility.ApiClient;
 import anandniketan.com.skool360.Utility.AppConfiguration;
+import anandniketan.com.skool360.Utility.PrefUtils;
 import anandniketan.com.skool360.Utility.Utils;
 import anandniketan.com.skool360.Utility.WebServices;
 import retrofit2.Call;
@@ -94,7 +95,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
         Utils.showDialog(context);
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<JsonObject> call = apiService.deleteGalleryData(AppConfiguration.BASEURL + "DeleteGallery?GalleryID=" + galleryid);
+        Call<JsonObject> call = apiService.deleteGalleryData(AppConfiguration.BASEURL + "DeleteGallery?GalleryID=" + galleryid + "&LocationID=" + PrefUtils.getInstance(context).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<JsonObject>() {
 
             @Override

@@ -99,110 +99,110 @@ public interface WebServices {
 
     @FormUrlEncoded
     @POST("/GetTerm")
-    void getTerm(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<TermModel> callback);
+    void getTerm(@FieldMap Map<String, String> map, Callback<TermModel> callback);
 
     @FormUrlEncoded
     @POST("/GetPermissionData")
-    void getPermissionData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getPermissionData(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/Admin_StudentAttendence")
-    void getStudentAttendace(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getStudentAttendace(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
 
     @FormUrlEncoded
     @POST("/Admin_StaffAttendence")
-    void getStaffAttendace(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getStaffAttendace(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/Admin_StudentSearchByParentName")
-    void getParentName(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getParentName(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/Admin_StudentSearchByStuName")
-    void getStudentName(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getStudentName(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/Admin_StudentShowFilteredData")
-    void getAdmin_StudentFilterData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getAdmin_StudentFilterData(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/Admin_SearchStudent")
-    void getAdmin_SearchStudent(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getAdmin_SearchStudent(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStaffFullDetail")
-    void getAdmin_SearchStaff(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<SearchStaffModel> callback);
+    void getAdmin_SearchStaff(@FieldMap Map<String, String> map, Callback<SearchStaffModel> callback);
 
     @FormUrlEncoded
     @POST("/Admin_StudentFullDetail")
-    void getStudentFullDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getStudentFullDetail(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/StudentTransportDetail")
-    void getStudentTransportDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getStudentTransportDetail(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/StudentTransportDetail")
-    void getStudentTransportDetail1(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getStudentTransportDetail1(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/SendSMS")
-    void sendSMS(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void sendSMS(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/GetResultPermissionAdmin")
-    void getResultPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getResultPermission(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertResultPermission")
-    void InsertResultPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertResultPermission(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetOnlinePaymentPermission")
-    void getOnlinePaymentPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getOnlinePaymentPermission(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetRoutePickUpPointDetail")
-    void getRouteDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<TransportChargesModel> callback);
+    void getRouteDetail(@FieldMap Map<String, String> map, Callback<TransportChargesModel> callback);
 
 
     @FormUrlEncoded
     @POST("/GetVehicleToRouteDetail")
-    void getVehicleRouteDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<TransportChargesModel> callback);
+    void getVehicleRouteDetail(@FieldMap Map<String, String> map, Callback<TransportChargesModel> callback);
 
     @FormUrlEncoded
     @POST("/Admin_AccountFeesStatus")
-    void getAccountFeesStatusDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AccountFeesStatusModel> callback);
+    void getAccountFeesStatusDetail(@FieldMap Map<String, String> map, Callback<AccountFeesStatusModel> callback);
 
     @FormUrlEncoded
     @POST("/Admin_AccountFeesStructure")
-    void getAccountFeesStructureDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AccountFeesStatusModel> callback);
+    void getAccountFeesStructureDetail(@FieldMap Map<String, String> map, Callback<AccountFeesStatusModel> callback);
 
 
     @FormUrlEncoded
     @POST("/DatewiseCollection")
-    void getDatewiseFeesCollection(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<DateWiseFeesCollectionModel> callback);
+    void getDatewiseFeesCollection(@FieldMap Map<String, String> map, Callback<DateWiseFeesCollectionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStandardSection")
-    void getStandardDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStandardModel> callback);
+    void getStandardDetail(@FieldMap Map<String, String> map, Callback<GetStandardModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStandardSectionCombine")
-    void getStandardSectionCombine(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStandardModel> callback);
+    void getStandardSectionCombine(@FieldMap Map<String, String> map, Callback<GetStandardModel> callback);
 
     @FormUrlEncoded
     @POST("/GetDiscountDetail")
-    void getDiscountDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AccountFeesStatusModel> callback);
+    void getDiscountDetail(@FieldMap Map<String, String> map, Callback<AccountFeesStatusModel> callback);
 
     @FormUrlEncoded
     @POST("/GetImprestDetail")
-    void getImprestDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AccountFeesStatusModel> callback);
+    void getImprestDetail(@FieldMap Map<String, String> map, Callback<AccountFeesStatusModel> callback);
 
     @FormUrlEncoded
     @POST("/DailyFeeColleCtion")
-    void getDailyFeeColleCtionDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AccountFeesStatusModel> callback);
+    void getDailyFeeColleCtionDetail(@FieldMap Map<String, String> map, Callback<AccountFeesStatusModel> callback);
 
 //    @FormUrlEncoded
 //    @POST("/TeacherGetTimetable")
@@ -210,327 +210,327 @@ public interface WebServices {
 
     @FormUrlEncoded
     @POST("/AdminGetTimetable")
-    void getTimeTable(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getTimeTable(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetPaymentLedger")
-    void getPaymentLedger(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AccountFeesStatusModel> callback);
+    void getPaymentLedger(@FieldMap Map<String, String> map, Callback<AccountFeesStatusModel> callback);
 
     @FormUrlEncoded
     @POST("/GetAllPaymentLedger")
-    void getAllPaymentLedger(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AccountFeesStatusModel> callback);
+    void getAllPaymentLedger(@FieldMap Map<String, String> map, Callback<AccountFeesStatusModel> callback);
 
     @FormUrlEncoded
     @POST("/GetExams")
-    void getExams(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getExams(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTeachers")
-    void getTeachers(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getTeachers(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTeacherbyTermID")
-    void getTeachersbyTerm(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getTeachersbyTerm(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetSubject")
-    void getSubject(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getSubject(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetSubjectAssgin")
-    void getSubjectAssgin(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getSubjectAssgin(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertAssignSubject")
-    void InsertAssignSubject(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void InsertAssignSubject(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/DeleteAssginSubject")
-    void DeleteAssignSubject(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void DeleteAssignSubject(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetClassTeacherDetail")
-    void getClassTeacherDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getClassTeacherDetail(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertClassTeachers")
-    void InsertClassTeachers(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void InsertClassTeachers(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/DeleteClassTeacher")
-    void DeleteClassTeacher(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void DeleteClassTeacher(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertMenuPermission")
-    void InsertMenuPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertMenuPermission(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertSingleSMSData")
-    void InsertSingleSMSData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertSingleSMSData(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStaffSMSData")
-    void getStaffSMSData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getStaffSMSData(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertStaffSMSData")
-    void InsertStaffSMSData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertStaffSMSData(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetBulkSMSData")
-    void getBulkSMSData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getBulkSMSData(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertBulkSMSData")
-    void InsertBulkSMSData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertBulkSMSData(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetAppSMSData")
-    void getAppSMSData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getAppSMSData(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/SendAppSMS")
-    void SendAppSMS(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void SendAppSMS(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertAbsentTodaySMS")
-    void InsertAbsentTodaySMS(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertAbsentTodaySMS(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStudentProfilePermission")
-    void getStudentProfilePermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getStudentProfilePermission(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertProfilePermission")
-    void InsertProfilePermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertProfilePermission(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertOnlinePaymentPermission")
-    void InsertOnlinePaymentPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertOnlinePaymentPermission(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetEmployeeForSuggestionPermission")
-    void getEmployeeForSuggestionPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getEmployeeForSuggestionPermission(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetSuggestionPermission")
-    void getSuggestionPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getSuggestionPermission(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertSuggestionPermission")
-    void InsertSuggestionPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertSuggestionPermission(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/DeleteSuggestionPermission")
-    void deleteSuggestionPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void deleteSuggestionPermission(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTestNameForMarksSyllabusPermission")
-    void getTestNameForMarksSyllabusPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<TestModel> callback);
+    void getTestNameForMarksSyllabusPermission(@FieldMap Map<String, String> map, Callback<TestModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMarksSyllabusPermission")
-    void getMarksSyllabusPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MarkSyllabusModel> callback);
+    void getMarksSyllabusPermission(@FieldMap Map<String, String> map, Callback<MarkSyllabusModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertMarksSyllabusPermission")
-    void insertMarksSyllabusPermission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void insertMarksSyllabusPermission(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetGRRegister")
-    void getGRRegister(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getGRRegister(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetNewRegister")
-    void getNewRegister(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getNewRegister(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetLeftDetainStudent")
-    void getLeftDetainStudent(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getLeftDetainStudent(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTestName")
-    void getTestName(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<FinalArrayStudentModel> callback);
+    void getTestName(@FieldMap Map<String, String> map, Callback<FinalArrayStudentModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStudentMarks")
-    void getStudentMarks(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getStudentMarks(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/ViewMarks")
-    void getStudentViewMarks(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<ViewMarksModel> callback);
+    void getStudentViewMarks(@FieldMap Map<String, String> map, Callback<ViewMarksModel> callback);
 
     @FormUrlEncoded
     @POST("/GetPlanner")
-    void getPlanner(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<PlannerModel> callback);
+    void getPlanner(@FieldMap Map<String, String> map, Callback<PlannerModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertPlanner")
-    void insertPlanner(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<PlannerModel> callback);
+    void insertPlanner(@FieldMap Map<String, String> map, Callback<PlannerModel> callback);
 
     @FormUrlEncoded
     @POST("/DeletePlanner")
-    void deletePlanner(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<PlannerModel> callback);
+    void deletePlanner(@FieldMap Map<String, String> map, Callback<PlannerModel> callback);
 
     @FormUrlEncoded
     @POST("/GetAnnouncementData")
-    void getAnnouncementData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AnnouncementModel> callback);
+    void getAnnouncementData(@FieldMap Map<String, String> map, Callback<AnnouncementModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertAnnouncement")
-    void InsertAnnouncement(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AnnouncementModel> callback);
+    void InsertAnnouncement(@FieldMap Map<String, String> map, Callback<AnnouncementModel> callback);
 
     @FormUrlEncoded
     @POST("/DeleteAnnouncement")
-    void deleteAnnouncement(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AnnouncementModel> callback);
+    void deleteAnnouncement(@FieldMap Map<String, String> map, Callback<AnnouncementModel> callback);
 
     @FormUrlEncoded
     @POST("/GetInquiryCount")
-    void getInquiryCount(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getInquiryCount(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetInquiryData")
-    void getInquiryData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentInquiryModel> callback);
+    void getInquiryData(@FieldMap Map<String, String> map, Callback<StudentInquiryModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertInquiry")
-    void insertInquiryData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentInquiryModel> callback);
+    void insertInquiryData(@FieldMap Map<String, String> map, Callback<StudentInquiryModel> callback);
 
     @FormUrlEncoded
     @POST("/GetInduiryDataByID")
-    void getInquiryDataByID(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentInquiryProfileModel> callback);
+    void getInquiryDataByID(@FieldMap Map<String, String> map, Callback<StudentInquiryProfileModel> callback);
 
     @FormUrlEncoded
     @POST("/RejectInquiry")
-    void rejectInquiry(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void rejectInquiry(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetAllSMSDetail")
-    void getAllSMSDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getAllSMSDetail(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetAttendence_Admin")
-    void getAttendence_Admin(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getAttendence_Admin(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertAttendance")
-    void insertAttendance(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void insertAttendance(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetReceiptDetails")
-    void getReceiptDetails(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AccountFeesStatusModel> callback);
+    void getReceiptDetails(@FieldMap Map<String, String> map, Callback<AccountFeesStatusModel> callback);
 
     @FormUrlEncoded
     @POST("/PTMTeacherStudentGetDetail")
-    void getPTMTeacherStudentGetDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getPTMTeacherStudentGetDetail(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/PTMTeacherStudentInsertDetail")
-    void PTMTeacherStudentInsertDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void PTMTeacherStudentInsertDetail(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/PTMDeleteMeeting")
-    void PTMDeleteMeeting(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void PTMDeleteMeeting(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/TeacherGetClassSubjectWiseStudent")
-    void getTeacherGetClassSubjectWiseStudent(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getTeacherGetClassSubjectWiseStudent(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMonthlyCount")
-    void getMonthlyCount(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getMonthlyCount(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/GetDateCountPerMonth")
-    void getDateCountPerMonth(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getDateCountPerMonth(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/GetLoginDetailsDatewise")
-    void getLoginDetailsDatewise(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getLoginDetailsDatewise(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/GetHolidayCategory")
-    void getHolidayCategory(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StudentAttendanceModel> callback);
+    void getHolidayCategory(@FieldMap Map<String, String> map, Callback<StudentAttendanceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetHoliday")
-    void getHoliday(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getHoliday(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertHoliday")
-    void InsertHoliday(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<InsertMenuPermissionModel> callback);
+    void InsertHoliday(@FieldMap Map<String, String> map, Callback<InsertMenuPermissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetEmployeeBySubject")
-    void getEmployeeBySubject(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getEmployeeBySubject(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetLessonPlanSubject")
-    void getLessonPlanSubject(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getLessonPlanSubject(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetLessonPlan")
-    void getLessonPlan(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getLessonPlan(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetGalleryData")
-    void getGalleryData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getGalleryData(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertGallery")
-    void insertGalleryData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void insertGalleryData(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/DeleteGallery")
-    void deleteGalleryData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void deleteGalleryData(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetCircularDataAdmin")
-    void getCircularDataAdmin(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<CircularModel> callback);
+    void getCircularDataAdmin(@FieldMap Map<String, String> map, Callback<CircularModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertCircular")
-    void insertCircular(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<CircularModel> callback);
+    void insertCircular(@FieldMap Map<String, String> map, Callback<CircularModel> callback);
 
     @FormUrlEncoded
     @POST("/DeleteCircular")
-    void deleteCircular(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<CircularModel> callback);
+    void deleteCircular(@FieldMap Map<String, String> map, Callback<CircularModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStandardSection")
-    void getStandardSection(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getStandardSection(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTimetableByClass")
-    void getTimetableByClass(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getTimetableByClass(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/AdminInsertTimetable")
-    void adminInsertTimetable(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<JsonObject> callback);
+    void adminInsertTimetable(@FieldMap Map<String, String> map, Callback<JsonObject> callback);
 
     @FormUrlEncoded
     @POST("/DeleteTimetable")
-    void deleteTimetable(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void deleteTimetable(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTeacherBySubject")
-    void getTeacherBySubjecte(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getTeacherBySubjecte(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetHead")
-    void getHead(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getHead(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/InsertStaffLeaveRequest")
-    void insertStaffLeaveRequest(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void insertStaffLeaveRequest(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStaffLeaveRequest")
-    void getStaffLeaveRequest(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<LeaveModel> callback);
+    void getStaffLeaveRequest(@FieldMap Map<String, String> map, Callback<LeaveModel> callback);
 
     @FormUrlEncoded
     @POST("/GetLeaveDays")
-    void getleaveDays(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<LeaveDayModel> callback);
+    void getleaveDays(@FieldMap Map<String, String> map, Callback<LeaveDayModel> callback);
 
     @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("GetAllStaffLeaveRequest")
@@ -542,126 +542,127 @@ public interface WebServices {
 
     @FormUrlEncoded
     @POST("/DeleteStaffLeave")
-    void deleteStaffLeave(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void deleteStaffLeave(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTeacherlist")
-    void getTeacherlist(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getTeacherlist(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStandardTeacher")
-    void getStandardTeacher(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getStandardTeacher(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/GetSubjectByTeacher")
-    void getSubjectByTeacher(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void getSubjectByTeacher(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
     @POST("/TeacherStudentHomeworkStatus")
-    void getHomeDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<HomeWorkModel> callback);
+    void getHomeDetail(@FieldMap Map<String, String> map, Callback<HomeWorkModel> callback);
 
     @FormUrlEncoded
     @POST("/TeacherStudentHomeworkStatus")
-    void teacherStudentHomeworkStatus(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<StaffAttendaceModel> callback);
+    void teacherStudentHomeworkStatus(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
-    @retrofit2.http.GET()
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST()
     Call<JsonObject> teacherStudentHomeworkStatusInsertUpdate(@Url String url);
 
     @FormUrlEncoded
     @POST("/TallyTransactionList")
-    void getTallyTransactionList(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<TallyTranscationModel> callback);
+    void getTallyTransactionList(@FieldMap Map<String, String> map, Callback<TallyTranscationModel> callback);
 
     @FormUrlEncoded
     @POST("/OnlineTransactionList")
-    void getOnlineTransactionList(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<OnlineTransactionModel> callback);
+    void getOnlineTransactionList(@FieldMap Map<String, String> map, Callback<OnlineTransactionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTrasportCharges")
-    void getTransportChargesDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<TransportChargesModel> callback);
+    void getTransportChargesDetail(@FieldMap Map<String, String> map, Callback<TransportChargesModel> callback);
 
     @FormUrlEncoded
     @POST("/GetVehicleDetail")
-    void getVehicleDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<TransportChargesModel> callback);
+    void getVehicleDetail(@FieldMap Map<String, String> map, Callback<TransportChargesModel> callback);
 
     @FormUrlEncoded
     @POST("/GetLeaveStatus")
-    void getLeaveStatus(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<LeaveStatusModel> callback);
+    void getLeaveStatus(@FieldMap Map<String, String> map, Callback<LeaveStatusModel> callback);
 
     @FormUrlEncoded
     @POST("/UpdateLeaveStatus")
-    void updateLeaveStatus(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<LeaveRequestModel> callback);
+    void updateLeaveStatus(@FieldMap Map<String, String> map, Callback<LeaveRequestModel> callback);
 
     @FormUrlEncoded
     @POST("/LeaveBalance")
-    void leaveBalance(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<LeaveModel> callback);
+    void leaveBalance(@FieldMap Map<String, String> map, Callback<LeaveModel> callback);
 
     @FormUrlEncoded
     @POST("/GetPageList")
-    void getPageList(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetPageListModel> callback);
+    void getPageList(@FieldMap Map<String, String> map, Callback<GetPageListModel> callback);
 
     @FormUrlEncoded
     @POST("/DailyTransportation")
-    void getDailyTransportation(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<DailyTransportationModel> callback);
+    void getDailyTransportation(@FieldMap Map<String, String> map, Callback<DailyTransportationModel> callback);
 
     @FormUrlEncoded
     @POST("/DailyAccount")
-    void getDailyAccount(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<DailyAccountModel> callback);
+    void getDailyAccount(@FieldMap Map<String, String> map, Callback<DailyAccountModel> callback);
 
     @FormUrlEncoded
     @POST("/DailyInformationTechnology")
-    void getDailyInformationTechnology(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<DailyInfoTechnology> callback);
+    void getDailyInformationTechnology(@FieldMap Map<String, String> map, Callback<DailyInfoTechnology> callback);
 
     @FormUrlEncoded
     @POST("/DailyHRHead")
-    void getDailyHRHead(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<HrHeadModel> callback);
+    void getDailyHRHead(@FieldMap Map<String, String> map, Callback<HrHeadModel> callback);
 
     @FormUrlEncoded
     @POST("/DailyAdmin")
-    void getDailyAdmin(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<DailyHrAdminModel> callback);
+    void getDailyAdmin(@FieldMap Map<String, String> map, Callback<DailyHrAdminModel> callback);
 
     @FormUrlEncoded
     @POST("/DailyHousekeeping")
-    void getDailyHousekeeping(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<DailyHouseKeepingModel> callback);
+    void getDailyHousekeeping(@FieldMap Map<String, String> map, Callback<DailyHouseKeepingModel> callback);
 
     @FormUrlEncoded
     @POST("/EmployeeInOutSummary")
-    void getEmployeeInOutSummary(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<EmployeeInOutSummaryModel> callback);
+    void getEmployeeInOutSummary(@FieldMap Map<String, String> map, Callback<EmployeeInOutSummaryModel> callback);
 
     @FormUrlEncoded
     @POST("/EmployeePresentDetails")
-    void getEmployeePresentDetails(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<EmployeePresentDetailsModel> callback);
+    void getEmployeePresentDetails(@FieldMap Map<String, String> map, Callback<EmployeePresentDetailsModel> callback);
 
     @FormUrlEncoded
     @POST("/EmployeeInOutDetails")
-    void getEmployeeInOutDetails(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<EmployeeInOutDetailsModel> callback);
+    void getEmployeeInOutDetails(@FieldMap Map<String, String> map, Callback<EmployeeInOutDetailsModel> callback);
 
     @FormUrlEncoded
     @POST("/GetDepartment")
-    void getDepartment(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<DepartmentModel> callback);
+    void getDepartment(@FieldMap Map<String, String> map, Callback<DepartmentModel> callback);
 
     @FormUrlEncoded
     @POST("/GetDesignation")
-    void getDesignation(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<DesignationModel> callback);
+    void getDesignation(@FieldMap Map<String, String> map, Callback<DesignationModel> callback);
 
     @FormUrlEncoded
     @POST("/GetStaffFullDetail")
-    void getStaffFullDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<SearchStaffModel> callback);
+    void getStaffFullDetail(@FieldMap Map<String, String> map, Callback<SearchStaffModel> callback);
 
     @FormUrlEncoded
     @POST("/GetAbsentToday")
-    void getAbsentToday(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getAbsentToday(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTestForMarks")
-    void getTestForMarks(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getTestForMarks(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMarks")
-    void getMarks(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void getMarks(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @FormUrlEncoded
     @POST("/SendStudentMarksSMS")
-    void sendStudentMarksSMS(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<GetStaffSMSDataModel> callback);
+    void sendStudentMarksSMS(@FieldMap Map<String, String> map, Callback<GetStaffSMSDataModel> callback);
 
     @Multipart
     @POST("uploadpdf.aspx")
@@ -681,75 +682,75 @@ public interface WebServices {
 
     @FormUrlEncoded
     @POST("/TotalFeesCollectionByTerm")
-    void totalFeesCollectionByTerm(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<AccountFeesModel> callback);
+    void totalFeesCollectionByTerm(@FieldMap Map<String, String> map, Callback<AccountFeesModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISData")
-    void getMISdata(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISModel> callback);
+    void getMISdata(@FieldMap Map<String, String> map, Callback<MISModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISStudent")
-    void getMISStudentdata(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISStudentModel> callback);
+    void getMISStudentdata(@FieldMap Map<String, String> map, Callback<MISStudentModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISStaff")
-    void getMISStaffdata(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISStaffModel> callback);
+    void getMISStaffdata(@FieldMap Map<String, String> map, Callback<MISStaffModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISAccountByType")
-    void getMISAccountByType(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISAccountModel> callback);
+    void getMISAccountByType(@FieldMap Map<String, String> map, Callback<MISAccountModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISAccountByStandard")
-    void getMISAccountByStandard(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISAccountModel> callback);
+    void getMISAccountByStandard(@FieldMap Map<String, String> map, Callback<MISAccountModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISAccountByStudent")
-    void getMISAccountByStudent(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISAccountModel> callback);
+    void getMISAccountByStudent(@FieldMap Map<String, String> map, Callback<MISAccountModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISNewAddmission")
-    void getMISNewAddmission(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISNewAdmissionModel> callback);
+    void getMISNewAddmission(@FieldMap Map<String, String> map, Callback<MISNewAdmissionModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISStaffAttendance")
-    void getMISStaffAttendance(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISStaffNewModel> callback);
+    void getMISStaffAttendance(@FieldMap Map<String, String> map, Callback<MISStaffNewModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISStaffAttendanceDetail")
-    void getMISStaffAttendanceDetail(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISStaffNewDetailModel> callback);
+    void getMISStaffAttendanceDetail(@FieldMap Map<String, String> map, Callback<MISStaffNewDetailModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISTask")
-    void getMISTask(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISTaskReportModel> callback);
+    void getMISTask(@FieldMap Map<String, String> map, Callback<MISTaskReportModel> callback);
 
     @FormUrlEncoded
     @POST("/GetMISTaskData")
-    void getMISTaskData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISTaskReportDetailModel> callback);
+    void getMISTaskData(@FieldMap Map<String, String> map, Callback<MISTaskReportDetailModel> callback);
 
     @FormUrlEncoded
     @POST("/GetTopperList")
-    void getTopperList(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISSchoolResultModel> callback);
+    void getTopperList(@FieldMap Map<String, String> map, Callback<MISSchoolResultModel> callback);
 
     @FormUrlEncoded
     @POST("/GetResultClassWise")
-    void getResultClassWise(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISClassWiseResultModel> callback);
+    void getResultClassWise(@FieldMap Map<String, String> map, Callback<MISClassWiseResultModel> callback);
 
     @FormUrlEncoded
     @POST("/GetResultStudentWise")
-    void getResultStudentWise(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MIStudentWiseResultModel> callback);
+    void getResultStudentWise(@FieldMap Map<String, String> map, Callback<MIStudentWiseResultModel> callback);
 
     @FormUrlEncoded
     @POST("/GetResultData")
-    void getResultData(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISStudentResultDataModel> callback);
+    void getResultData(@FieldMap Map<String, String> map, Callback<MISStudentResultDataModel> callback);
 
     @FormUrlEncoded
     @POST("/HeadWiseFeesCollection")
-    void getHeadWiseFeesCollection(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISFinanaceModel> callback);
+    void getHeadWiseFeesCollection(@FieldMap Map<String, String> map, Callback<MISFinanaceModel> callback);
 
     @FormUrlEncoded
     @POST("/AddDeviceDetailAdmin")
-    void addDeviceDetailAdmin(@FieldMap Map<String, String> map, @Field("LocationID") String locationid, Callback<MISModel> callback);
+    void addDeviceDetailAdmin(@FieldMap Map<String, String> map, Callback<MISModel> callback);
 
 //    static let baseUrl:String            = "http://192.168.1.11:8086/MobileApp_Service.asmx/"
 //
@@ -946,52 +947,60 @@ public interface WebServices {
 
     //Antra from 7/1/2018
 
-    @FormUrlEncoded
-    @retrofit2.http.GET
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST
     Call<HeadwiseStudent> getHeadWiseFeesCollectionStudent(@Url String url);
 
-    @retrofit2.http.GET
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST
     Call<MISHeadwiseFee> getHeadwiseFeeDetail(@Url String url);
 
-    @retrofit2.http.GET
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST
     Call<MISStudentRange> getStudentRange(@Url String url);
 
-    @retrofit2.http.GET
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST
     Call<TransportMainModel> getTransportDetail(@Url String url);
 
-    @retrofit2.http.GET
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST
     Call<MIStudentWiseCalendarModel> getSchoolCalendarDetail(@Url String url);
 
     @retrofit2.http.GET
     Call<PermissionDataModel> getPermissionData(@Url String url);
 
-    @retrofit2.http.GET
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST
     Call<GalleryDataModel> getGalleryData(@Url String url);
 
-    @retrofit2.http.GET
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST
     Call<JsonObject> deleteGalleryData(@Url String url);
 
-    @retrofit2.http.GET
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST
     Call<GalleryDataModel> insertGalleryData(@Url String url);
 
     @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("CheckStaffActive")
-    Call<JsonObject> getUserStatus(@Field("UserID") String userid, @Field("LocationID") String locationid);
+    Call<JsonObject> getUserStatus(@Field("UserID") String userid);
 
     @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("AdminMessage")
-    Call<NotificationModel> getNotification(@Field("StaffID") String StaffID, @Field("LocationID") String locationid);
+    Call<NotificationModel> getNotification(@Field("StaffID") String StaffID, @Field("LocationID") String LocationID);
 
     @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("GetTopperWithComparison")
-    Call<TopperChartModel> getTopperChart(@Field("TermDetailID") String TermDetailID, @Field("LocationID") String locationid);
+    Call<TopperChartModel> getTopperChart(@Field("TermDetailID") String TermDetailID, @Field("LocationID") String LocationID);
 
     @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("GetCountRangeWise")
-    Call<RangeChartModel> getRangeChart(@Field("TermID") String TermID, @Field("LocationID") String locationid);
+    Call<RangeChartModel> getRangeChart(@Field("TermID") String TermID, @Field("LocationID") String LocationID);
 
-    @retrofit2.http.GET("GetTerm")
-    Call<TermModel> getTerm();
+    @FormUrlEncoded
+    @retrofit2.http.POST("GetTerm")
+    Call<TermModel> getTerm(@Field("LocationID") String locationid);
 
     @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("GetParentSuggestion")
@@ -1001,11 +1010,12 @@ public interface WebServices {
     @retrofit2.http.POST("ReplyToParentSuggestion")
     Call<JsonObject> getReplyParentSuggestion(@retrofit2.http.FieldMap HashMap<String, String> map);
 
-    @retrofit2.http.GET("GetInquiryStatus")
-    Call<TermModel> getInquiryStatus();
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST("GetInquiryStatus")
+    Call<TermModel> getInquiryStatus(@Field("LocationID") String locationid);
 
     @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("BirthdayWish")
-    Call<JsonObject> getBirthdaywish(@Field("StaffID") String StaffID, @Field("Type") String Type, @Field("ReceiverID") String ReceiverID, @Field("LocationID") String locationid);
+    Call<JsonObject> getBirthdaywish(@Field("LocationID") String locationid, @Field("StaffID") String StaffID, @Field("Type") String Type, @Field("ReceiverID") String ReceiverID);
 
 }

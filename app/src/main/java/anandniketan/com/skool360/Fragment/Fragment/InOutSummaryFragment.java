@@ -202,7 +202,7 @@ public class InOutSummaryFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getEmployeeInOutSummary(getInOutParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<EmployeeInOutSummaryModel>() {
+        ApiHandler.getApiService().getEmployeeInOutSummary(getInOutParams(), new retrofit.Callback<EmployeeInOutSummaryModel>() {
             @Override
             public void success(EmployeeInOutSummaryModel announcementModel, Response response) {
 
@@ -279,6 +279,7 @@ public class InOutSummaryFragment extends Fragment {
 
         map.put("Month", monthId);
         map.put("Year", yearId);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

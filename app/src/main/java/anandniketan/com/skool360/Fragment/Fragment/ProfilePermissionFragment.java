@@ -168,7 +168,7 @@ public class ProfilePermissionFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -205,6 +205,7 @@ public class ProfilePermissionFragment extends Fragment {
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -217,7 +218,7 @@ public class ProfilePermissionFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStudentProfilePermission(getProfilePermissionDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getStudentProfilePermission(getProfilePermissionDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel profilePermissionModel, Response response) {
                 Utils.dismissDialog();
@@ -263,6 +264,7 @@ public class ProfilePermissionFragment extends Fragment {
 
     private Map<String, String> getProfilePermissionDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -275,7 +277,7 @@ public class ProfilePermissionFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertProfilePermission(getInsertProfilePermission(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().InsertProfilePermission(getInsertProfilePermission(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -313,6 +315,7 @@ public class ProfilePermissionFragment extends Fragment {
         map.put("GradeID", FinalStandardIdStr);
         map.put("SectionID", FinalSectionIdStr);
         map.put("Status", FinalStatusStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

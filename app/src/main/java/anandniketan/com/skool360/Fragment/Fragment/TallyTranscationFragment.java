@@ -210,7 +210,7 @@ public class TallyTranscationFragment extends Fragment implements DatePickerDial
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTallyTransactionList(getTallyDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TallyTranscationModel>() {
+        ApiHandler.getApiService().getTallyTransactionList(getTallyDetail(), new retrofit.Callback<TallyTranscationModel>() {
             @Override
             public void success(TallyTranscationModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -269,6 +269,7 @@ public class TallyTranscationFragment extends Fragment implements DatePickerDial
         map.put("EndDate", fragmentTallyTranscationBinding.toDate2Edt.getText().toString());
         map.put("Status", FinalStatusIdStr);
         map.put("StandardID", FinalClassIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -321,7 +322,7 @@ public class TallyTranscationFragment extends Fragment implements DatePickerDial
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -360,6 +361,7 @@ public class TallyTranscationFragment extends Fragment implements DatePickerDial
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

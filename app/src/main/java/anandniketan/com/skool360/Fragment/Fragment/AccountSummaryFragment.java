@@ -145,7 +145,7 @@ public class AccountSummaryFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -184,6 +184,7 @@ public class AccountSummaryFragment extends Fragment {
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -196,7 +197,7 @@ public class AccountSummaryFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getAccountFeesStatusDetail(getAccountDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<AccountFeesStatusModel>() {
+        ApiHandler.getApiService().getAccountFeesStatusDetail(getAccountDetail(), new retrofit.Callback<AccountFeesStatusModel>() {
 
             @Override
             public void success(AccountFeesStatusModel accountFeesStatusModel, Response response) {
@@ -253,6 +254,7 @@ public class AccountSummaryFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("Term_ID", FinalTermIdStr);
         map.put("TermDetailID", FinalTermDetailIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

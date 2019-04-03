@@ -23,6 +23,7 @@ import anandniketan.com.skool360.Model.MIS.TransportMainModel;
 import anandniketan.com.skool360.R;
 import anandniketan.com.skool360.Utility.ApiClient;
 import anandniketan.com.skool360.Utility.AppConfiguration;
+import anandniketan.com.skool360.Utility.PrefUtils;
 import anandniketan.com.skool360.Utility.Utils;
 import anandniketan.com.skool360.Utility.WebServices;
 import retrofit2.Call;
@@ -107,7 +108,7 @@ public class MISStudentTransportFragment extends Fragment {
     private void callTransportDetail() {
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<TransportMainModel> call = apiService.getTransportDetail(AppConfiguration.BASEURL + "GetMISTransport?RequestType=" + "&TermID=" + termid + "&StandardID=" + stdid);
+        Call<TransportMainModel> call = apiService.getTransportDetail(AppConfiguration.BASEURL + "GetMISTransport?RequestType=" + "&TermID=" + termid + "&StandardID=" + stdid + "&LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<TransportMainModel>() {
 
             @Override

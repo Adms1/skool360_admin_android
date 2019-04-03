@@ -200,7 +200,7 @@ public class HrHouseKeepingFragment extends Fragment implements DatePickerDialog
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getDailyHousekeeping(getInOutParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<DailyHouseKeepingModel>() {
+        ApiHandler.getApiService().getDailyHousekeeping(getInOutParams(), new retrofit.Callback<DailyHouseKeepingModel>() {
             @Override
             public void success(DailyHouseKeepingModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -256,6 +256,7 @@ public class HrHouseKeepingFragment extends Fragment implements DatePickerDialog
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", fragmentHrHouseKeepingBinding.housekeepingFromdateBtn.getText().toString());
         map.put("EndDate", fragmentHrHouseKeepingBinding.housekeepingTodateBtn.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

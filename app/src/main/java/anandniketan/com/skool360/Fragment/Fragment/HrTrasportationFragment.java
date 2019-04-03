@@ -194,7 +194,7 @@ public class HrTrasportationFragment extends Fragment implements DatePickerDialo
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getDailyTransportation(getInOutParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<DailyTransportationModel>() {
+        ApiHandler.getApiService().getDailyTransportation(getInOutParams(), new retrofit.Callback<DailyTransportationModel>() {
             @Override
             public void success(DailyTransportationModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -250,6 +250,7 @@ public class HrTrasportationFragment extends Fragment implements DatePickerDialo
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", fragmentInOutSummaryBinding.fromdateBtn.getText().toString());
         map.put("EndDate", fragmentInOutSummaryBinding.todateBtn.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

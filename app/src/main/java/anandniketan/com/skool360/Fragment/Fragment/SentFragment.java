@@ -83,7 +83,7 @@ public class SentFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getPTMTeacherStudentGetDetail(getSentDataDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getPTMTeacherStudentGetDetail(getSentDataDetail(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel getBulkSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -156,6 +156,7 @@ public class SentFragment extends Fragment {
         map.put("UserID", "0");
         map.put("UserType", "Staff");
         map.put("MessgaeType", "Sent");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -185,7 +186,7 @@ public class SentFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().PTMDeleteMeeting(getDeleteSentDataDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().PTMDeleteMeeting(getDeleteSentDataDetail(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel insertinboxModel, Response response) {
                 Utils.dismissDialog();
@@ -220,7 +221,7 @@ public class SentFragment extends Fragment {
     private Map<String, String> getDeleteSentDataDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("MessageID", finalMessageIdArray.trim());
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

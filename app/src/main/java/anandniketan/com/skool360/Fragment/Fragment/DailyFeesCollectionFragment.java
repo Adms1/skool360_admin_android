@@ -266,7 +266,7 @@ public class DailyFeesCollectionFragment extends Fragment implements DatePickerD
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -305,6 +305,7 @@ public class DailyFeesCollectionFragment extends Fragment implements DatePickerD
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -317,7 +318,7 @@ public class DailyFeesCollectionFragment extends Fragment implements DatePickerD
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -367,7 +368,7 @@ public class DailyFeesCollectionFragment extends Fragment implements DatePickerD
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getDatewiseFeesCollection(getFeesCollectionDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<DateWiseFeesCollectionModel>() {
+        ApiHandler.getApiService().getDatewiseFeesCollection(getFeesCollectionDetail(), new retrofit.Callback<DateWiseFeesCollectionModel>() {
             @Override
             public void success(DateWiseFeesCollectionModel dailyFeeCollectionModel, Response response) {
 //                Utils.dismissDialog();
@@ -426,6 +427,7 @@ public class DailyFeesCollectionFragment extends Fragment implements DatePickerD
         map.put("FromDate", fragmentDailyFeesCollectionBinding.fromDateButton.getText().toString());
         map.put("ToDate", fragmentDailyFeesCollectionBinding.todateButton.getText().toString());
         map.put("PaymentMode", FinalPaymentmodeStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         return map;
     }

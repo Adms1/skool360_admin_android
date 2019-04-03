@@ -323,7 +323,7 @@ public class MenuPermissionFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTeachers(getTeacherDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getTeachers(getTeacherDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel teachersModel, Response response) {
                 Utils.dismissDialog();
@@ -360,6 +360,7 @@ public class MenuPermissionFragment extends Fragment {
 
     private Map<String, String> getTeacherDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -372,7 +373,7 @@ public class MenuPermissionFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getPageList(getPageListDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetPageListModel>() {
+        ApiHandler.getApiService().getPageList(getPageListDetail(), new retrofit.Callback<GetPageListModel>() {
             @Override
             public void success(GetPageListModel getPageListModel, Response response) {
                 Utils.dismissDialog();
@@ -422,6 +423,7 @@ public class MenuPermissionFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("EmployeeID", FinalTeacherIdStr);
         map.put("flag", Finalflag);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -434,7 +436,7 @@ public class MenuPermissionFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertMenuPermission(getInsertMenuPermissionDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().InsertMenuPermission(getInsertMenuPermissionDetail(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel insertMenuPermissionModel, Response response) {
                 Utils.dismissDialog();
@@ -473,6 +475,7 @@ public class MenuPermissionFragment extends Fragment {
     private Map<String, String> getInsertMenuPermissionDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("Pk_EmployeID", FinalTeacherIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         map.put("Pages", FinalPageStr);//FinalPageStr
         return map;
     }

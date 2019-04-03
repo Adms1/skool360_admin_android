@@ -226,7 +226,7 @@ public class SearchStaffFragment extends Fragment {
         }
 
         Utils.showDialog(mcontext);
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -265,6 +265,7 @@ public class SearchStaffFragment extends Fragment {
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -277,7 +278,7 @@ public class SearchStaffFragment extends Fragment {
         }
 
         Utils.showDialog(mcontext);
-        ApiHandler.getApiService().getDesignation(getDesDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<DesignationModel>() {
+        ApiHandler.getApiService().getDesignation(getDesDetail(), new retrofit.Callback<DesignationModel>() {
             @Override
             public void success(DesignationModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -315,6 +316,7 @@ public class SearchStaffFragment extends Fragment {
 
     private Map<String, String> getDesDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -327,7 +329,7 @@ public class SearchStaffFragment extends Fragment {
         }
 
         Utils.showDialog(mcontext);
-        ApiHandler.getApiService().getDepartment(getDeptDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<DepartmentModel>() {
+        ApiHandler.getApiService().getDepartment(getDeptDetail(), new retrofit.Callback<DepartmentModel>() {
             @Override
             public void success(DepartmentModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -366,6 +368,7 @@ public class SearchStaffFragment extends Fragment {
 
     private Map<String, String> getDeptDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -377,7 +380,7 @@ public class SearchStaffFragment extends Fragment {
         }
 
 //        Utils.showDialog(mcontext);
-        ApiHandler.getApiService().getAdmin_SearchStaff(getStaffParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<SearchStaffModel>() {
+        ApiHandler.getApiService().getAdmin_SearchStaff(getStaffParams(), new retrofit.Callback<SearchStaffModel>() {
             @Override
             public void success(SearchStaffModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -436,6 +439,7 @@ public class SearchStaffFragment extends Fragment {
         map.put("TermID", FinalTermIdStr);
         map.put("DepartmentID", FinalDeptId);
         map.put("DesignationID", FinalDesgId);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         //map.put("Status",FinalStatus);
         return map;
     }

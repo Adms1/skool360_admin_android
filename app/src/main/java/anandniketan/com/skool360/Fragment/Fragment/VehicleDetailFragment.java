@@ -89,7 +89,7 @@ public class VehicleDetailFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getVehicleDetail(getVehicleDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TransportChargesModel>() {
+        ApiHandler.getApiService().getVehicleDetail(getVehicleDetail(), new retrofit.Callback<TransportChargesModel>() {
             @Override
             public void success(TransportChargesModel vehicleDetailModel, Response response) {
                 Utils.dismissDialog();
@@ -141,6 +141,7 @@ public class VehicleDetailFragment extends Fragment {
 
     private Map<String, String> getVehicleDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

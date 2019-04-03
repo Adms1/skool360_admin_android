@@ -91,8 +91,7 @@ public class AccountFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Utils.callPermissionDetail(getActivity(), PrefUtils.getInstance(getActivity()).getStringValue("StaffID", "0"),
-                PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        Utils.callPermissionDetail(getActivity(), PrefUtils.getInstance(getActivity()).getStringValue("StaffID", "0"), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         tvHeader = view.findViewById(R.id.home_sname_txt);
         btnBack = view.findViewById(R.id.home_btnBack);
@@ -253,15 +252,15 @@ public class AccountFragment extends Fragment {
                                 break;
                         }
                     }
-//                    callAccountFeesStatusApi();
                 }
             }
         });
-
     }
 
     private Map<String, String> getTermDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     // CALL Term API HERE
@@ -273,7 +272,7 @@ public class AccountFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -356,7 +355,7 @@ public class AccountFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().totalFeesCollectionByTerm(getAccountDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<AccountFeesModel>() {
+        ApiHandler.getApiService().totalFeesCollectionByTerm(getAccountDetail(), new retrofit.Callback<AccountFeesModel>() {
 
             @Override
             public void success(AccountFeesModel accountFeesStatusModel, Response response) {
@@ -405,6 +404,7 @@ public class AccountFragment extends Fragment {
     private Map<String, String> getAccountDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("TermID", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         // map.put("TermDetailID", FinalTermtermdetailId);
         return map;
     }

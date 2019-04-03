@@ -31,6 +31,7 @@ import anandniketan.com.skool360.Model.MIS.HeadwiseStudent;
 import anandniketan.com.skool360.R;
 import anandniketan.com.skool360.Utility.ApiClient;
 import anandniketan.com.skool360.Utility.AppConfiguration;
+import anandniketan.com.skool360.Utility.PrefUtils;
 import anandniketan.com.skool360.Utility.SpacesItemDecoration;
 import anandniketan.com.skool360.Utility.Utils;
 import anandniketan.com.skool360.Utility.WebServices;
@@ -141,7 +142,7 @@ public class HeadCollectionStudentFragment extends Fragment {
 //        ApiHandler.getApiService().getHeadWiseFeesCollectionStudent(getFinanceListParams(studentId, term),new retrofit.Callback<MISFinanaceModel>() {
         WebServices apiService =
                 ApiClient.getClient().create(WebServices.class);
-        Call<HeadwiseStudent> call = apiService.getHeadWiseFeesCollectionStudent("http://192.168.1.8:8086/MobileApp_Service.asmx/GetHeadDetailByStudentID?StudentID=" + studentId + "&Term=" + termId);
+        Call<HeadwiseStudent> call = apiService.getHeadWiseFeesCollectionStudent(AppConfiguration.BASEURL + "GetHeadDetailByStudentID?StudentID=" + studentId + "&Term=" + termId + "&LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         call.enqueue(new Callback<HeadwiseStudent>() {
 

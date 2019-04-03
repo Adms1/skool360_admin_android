@@ -288,7 +288,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getleaveDays(getLeaveDayParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<LeaveDayModel>() {
+        ApiHandler.getApiService().getleaveDays(getLeaveDayParams(), new retrofit.Callback<LeaveDayModel>() {
             @Override
             public void success(LeaveDayModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -325,6 +325,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
     private Map<String, String> getLeaveDayParams() {
         Map<String, String> map = new HashMap<>();
         map.put("UserID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", ""));
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -396,7 +397,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getHead(getHeadParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getHead(getHeadParams(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -432,6 +433,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
 
     private Map<String, String> getHeadParams() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -479,7 +481,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStaffLeaveRequest(getApplyLeaveParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<LeaveModel>() {
+        ApiHandler.getApiService().getStaffLeaveRequest(getApplyLeaveParams(), new retrofit.Callback<LeaveModel>() {
             @Override
             public void success(LeaveModel leaveModel, Response response) {
                 Utils.dismissDialog();
@@ -579,7 +581,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
     private Map<String, String> getApplyLeaveParams() {
         HashMap<String, String> map = new HashMap<>();
         map.put("StaffID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", "0"));
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -611,7 +613,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().deleteStaffLeave(getDeleteLeaveParams(id), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().deleteStaffLeave(getDeleteLeaveParams(id), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -657,6 +659,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
     private Map<String, String> getDeleteLeaveParams(String id) {
         Map<String, String> map = new HashMap<>();
         map.put("LeaveID", id);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -667,7 +670,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().insertStaffLeaveRequest(getLeaveParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().insertStaffLeaveRequest(getLeaveParams(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -714,6 +717,7 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
         map.put("HeadID", finalHeadId);
         map.put("LeaveDays", finalDayId);
         map.put("Reason", etReason.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

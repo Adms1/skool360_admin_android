@@ -2,6 +2,7 @@ package anandniketan.com.skool360.Adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -60,10 +61,14 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         viewholder.type.setText("(" + finalArrays.get(i).getType() + ")");
         viewholder.discription.setText(finalArrays.get(i).getDepartment());
 
-        if (finalArrays.get(i).getFlag().equalsIgnoreCase("true")) {
-            viewholder.llMain.setBackground(context.getResources().getDrawable(R.drawable.greybg_border, null));
-        } else {
-            viewholder.llMain.setBackground(context.getResources().getDrawable(R.drawable.linear_light_border, null));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (finalArrays.get(i).getFlag().equalsIgnoreCase("true")) {
+
+                viewholder.llMain.setBackground(context.getResources().getDrawable(R.drawable.greybg_border, null));
+
+            } else {
+                viewholder.llMain.setBackground(context.getResources().getDrawable(R.drawable.linear_light_border, null));
+            }
         }
 
         if (finalArrays.get(i).getNotificationtype().equalsIgnoreCase("StudentLeave") || finalArrays.get(i).getNotificationtype()
@@ -167,7 +172,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<JsonObject> call = apiService.getBirthdaywish(PrefUtils.getInstance(context).getStringValue("StaffID", "0"), finalArrays.get(i).getType(), finalArrays.get(i).getId(), PrefUtils.getInstance(context).getStringValue("LocationID", "0"));
+        Call<JsonObject> call = apiService.getBirthdaywish(PrefUtils.getInstance(context).getStringValue("LocationID", "0"), PrefUtils.getInstance(context).getStringValue("StaffID", "0"), finalArrays.get(i).getType(), finalArrays.get(i).getId());
         call.enqueue(new Callback<JsonObject>() {
 
             @Override

@@ -456,7 +456,7 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().updateLeaveStatus(getUpdateDetail(dataItem), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<LeaveRequestModel>() {
+        ApiHandler.getApiService().updateLeaveStatus(getUpdateDetail(dataItem), new retrofit.Callback<LeaveRequestModel>() {
             @Override
             public void success(LeaveRequestModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -524,6 +524,7 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
             map.put("ApproveDays", String.valueOf(dataItem.getApproveDays()));
             map.put("EmployeeID", String.valueOf(dataItem.getEmployeeID()));
             map.put("UserID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", ""));
+            map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
             return map;
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -541,7 +542,7 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getLeaveStatus(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<LeaveStatusModel>() {
+        ApiHandler.getApiService().getLeaveStatus(getTermDetail(), new retrofit.Callback<LeaveStatusModel>() {
             @Override
             public void success(LeaveStatusModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -577,7 +578,9 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
     }
 
     private Map<String, String> getTermDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
 
@@ -590,7 +593,7 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getleaveDays(getLeaveDayParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<LeaveDayModel>() {
+        ApiHandler.getApiService().getleaveDays(getLeaveDayParams(), new retrofit.Callback<LeaveDayModel>() {
             @Override
             public void success(LeaveDayModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -628,6 +631,7 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
     private Map<String, String> getLeaveDayParams() {
         Map<String, String> map = new HashMap<>();
         map.put("UserID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", ""));
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

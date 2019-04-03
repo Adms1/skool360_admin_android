@@ -299,9 +299,10 @@ public class HeadWiseFeeCollectionDetailFragment extends Fragment implements Rec
         }
 
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(map, PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(map, new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -344,9 +345,10 @@ public class HeadWiseFeeCollectionDetailFragment extends Fragment implements Rec
             return;
         }
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(map, PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(map, new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -386,7 +388,7 @@ public class HeadWiseFeeCollectionDetailFragment extends Fragment implements Rec
     private void callTotalFeesTerm1(final String term, final String request, String stndrd) {
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<MISHeadwiseFee> call = apiService.getHeadwiseFeeDetail(AppConfiguration.BASEURL + "HeadWiseFeesCollectionDetail?TermID=" + term + "&RequestType=" + request + "&StandardID=" + stndrd);
+        Call<MISHeadwiseFee> call = apiService.getHeadwiseFeeDetail(AppConfiguration.BASEURL + "HeadWiseFeesCollectionDetail?TermID=" + term + "&RequestType=" + request + "&StandardID=" + stndrd + "&LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<MISHeadwiseFee>() {
 
             @Override

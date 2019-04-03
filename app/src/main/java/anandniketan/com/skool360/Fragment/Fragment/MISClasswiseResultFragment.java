@@ -255,7 +255,7 @@ public class MISClasswiseResultFragment extends Fragment implements ResponseCall
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -292,6 +292,7 @@ public class MISClasswiseResultFragment extends Fragment implements ResponseCall
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -540,7 +541,7 @@ public class MISClasswiseResultFragment extends Fragment implements ResponseCall
         Utils.showDialog(getActivity());
         //progressBar.setVisibility(View.VISIBLE);
 
-        ApiHandler.getApiService().getResultData(getClasswiseResultParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISStudentResultDataModel>() {
+        ApiHandler.getApiService().getResultData(getClasswiseResultParams(), new retrofit.Callback<MISStudentResultDataModel>() {
             @Override
             public void success(MISStudentResultDataModel studentFullDetailModel, Response response) {
                 Utils.dismissDialog();
@@ -622,7 +623,7 @@ public class MISClasswiseResultFragment extends Fragment implements ResponseCall
     private Map<String, String> getClasswiseResultParams() {
         Map<String, String> map = new HashMap<>();
         map.put("TermDetailID", AppConfiguration.schoolResultTermID);
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         if (FinalStandardStr.equalsIgnoreCase("0")) {
             map.put("StandardID", "");
         } else {
@@ -655,7 +656,7 @@ public class MISClasswiseResultFragment extends Fragment implements ResponseCall
     }
 
     private void callChildItemAPI(String studentId) {
-        ApiHandler.getApiService().getResultStudentWise(getStudentwiseResultParams(studentId), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MIStudentWiseResultModel>() {
+        ApiHandler.getApiService().getResultStudentWise(getStudentwiseResultParams(studentId), new retrofit.Callback<MIStudentWiseResultModel>() {
             @Override
             public void success(MIStudentWiseResultModel studentFullDetailModel, Response response) {
                 Utils.dismissDialog();
@@ -698,6 +699,7 @@ public class MISClasswiseResultFragment extends Fragment implements ResponseCall
     private Map<String, String> getStudentwiseResultParams(String studentId) {
         Map<String, String> map = new HashMap<>();
         map.put("StudentID", studentId);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -726,7 +728,7 @@ public class MISClasswiseResultFragment extends Fragment implements ResponseCall
 //        ApiHandler.getApiService().getHeadWiseFeesCollectionStudent(getFinanceListParams(studentId, term),new retrofit.Callback<MISFinanaceModel>() {
         WebServices apiService =
                 ApiClient.getClient().create(WebServices.class);
-        Call<MISStudentRange> call = apiService.getStudentRange(AppConfiguration.BASEURL + "GetResultRangeWise?StandardID=" + standardid + "&ClassID=" + classid);
+        Call<MISStudentRange> call = apiService.getStudentRange(AppConfiguration.BASEURL + "GetResultRangeWise?StandardID=" + standardid + "&ClassID=" + classid + "&LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         call.enqueue(new Callback<MISStudentRange>() {
 

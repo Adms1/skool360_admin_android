@@ -196,7 +196,7 @@ public class HrAccountFragment extends Fragment implements DatePickerDialog.OnDa
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getDailyAccount(getInOutParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<DailyAccountModel>() {
+        ApiHandler.getApiService().getDailyAccount(getInOutParams(), new retrofit.Callback<DailyAccountModel>() {
             @Override
             public void success(DailyAccountModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -252,6 +252,7 @@ public class HrAccountFragment extends Fragment implements DatePickerDialog.OnDa
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", fragmentHrAccountBinding.fromdateBtn.getText().toString());
         map.put("EndDate", fragmentHrAccountBinding.todateBtn.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

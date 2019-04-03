@@ -340,7 +340,7 @@ public class ChartFragment extends Fragment {
 
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<TermModel> call = apiService.getTerm();
+        Call<TermModel> call = apiService.getTerm(PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<TermModel>() {
 
             @Override

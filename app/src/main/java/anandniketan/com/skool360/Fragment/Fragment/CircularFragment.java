@@ -365,7 +365,7 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -419,6 +419,7 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -431,7 +432,7 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().insertCircular(getInsertCircular(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<CircularModel>() {
+        ApiHandler.getApiService().insertCircular(getInsertCircular(), new retrofit.Callback<CircularModel>() {
             @Override
             public void success(CircularModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -569,7 +570,7 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         return map;
     }

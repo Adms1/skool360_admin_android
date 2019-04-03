@@ -125,7 +125,7 @@ public class StudentInquiryProfileFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getInquiryDataByID(getStudentFullDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentInquiryProfileModel>() {
+        ApiHandler.getApiService().getInquiryDataByID(getStudentFullDetail(), new retrofit.Callback<StudentInquiryProfileModel>() {
 
             @Override
             public void success(StudentInquiryProfileModel studentFullDetailModel, Response response) {
@@ -190,6 +190,7 @@ public class StudentInquiryProfileFragment extends Fragment {
     private Map<String, String> getStudentFullDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("StudentID", AppConfiguration.StudentId);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

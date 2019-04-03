@@ -220,7 +220,7 @@ public class MISAccountStudentFeesFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISAccountByStandard(getAccountParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISAccountModel>() {
+        ApiHandler.getApiService().getMISAccountByStandard(getAccountParams(), new retrofit.Callback<MISAccountModel>() {
             @Override
             public void success(MISAccountModel staffSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -317,6 +317,7 @@ public class MISAccountStudentFeesFragment extends Fragment {
         map.put("StandardID", standardID);
         map.put("RequestType", requestType);
         map.put("FeesType", feesType);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -329,7 +330,7 @@ public class MISAccountStudentFeesFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISAccountByStudent(getAccountStudentParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISAccountModel>() {
+        ApiHandler.getApiService().getMISAccountByStudent(getAccountStudentParams(), new retrofit.Callback<MISAccountModel>() {
 
             @Override
             public void success(MISAccountModel staffSMSDataModel, Response response) {
@@ -418,6 +419,7 @@ public class MISAccountStudentFeesFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("StudentID", studentId);
         map.put("Term", termID);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 }

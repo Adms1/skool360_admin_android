@@ -87,7 +87,7 @@ public class OtherAttendaceSummaryFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStaffAttendace(getStaffDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getStaffAttendace(getStaffDetail(), new retrofit.Callback<StaffAttendaceModel>() {
 
 
             @Override
@@ -144,6 +144,7 @@ public class OtherAttendaceSummaryFragment extends Fragment {
     private Map<String, String> getStaffDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("Date", Datestr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -156,7 +157,7 @@ public class OtherAttendaceSummaryFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStudentAttendace(getStudentDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getStudentAttendace(getStudentDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel studentUser, Response response) {
                 Utils.dismissDialog();
@@ -210,6 +211,8 @@ public class OtherAttendaceSummaryFragment extends Fragment {
     private Map<String, String> getStudentDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("Date", Datestr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+
         return map;
     }
 }

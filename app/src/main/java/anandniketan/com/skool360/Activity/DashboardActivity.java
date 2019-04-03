@@ -144,7 +144,7 @@ public class DashboardActivity extends FragmentActivity {
         Utils.showDialog(DashboardActivity.this);
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<JsonObject> call = apiService.getUserStatus(PrefUtils.getInstance(DashboardActivity.this).getStringValue("StaffID", "0"), PrefUtils.getInstance(DashboardActivity.this).getStringValue("LocationID", "0"));
+        Call<JsonObject> call = apiService.getUserStatus(PrefUtils.getInstance(DashboardActivity.this).getStringValue("StaffID", "0"));
         call.enqueue(new Callback<JsonObject>() {
 
             @Override

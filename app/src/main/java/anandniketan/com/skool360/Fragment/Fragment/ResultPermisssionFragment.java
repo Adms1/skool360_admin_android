@@ -247,7 +247,7 @@ public class ResultPermisssionFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -284,7 +284,9 @@ public class ResultPermisssionFragment extends Fragment {
     }
 
     private Map<String, String> getTermDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     public void fillTermSpinner() {
@@ -364,7 +366,7 @@ public class ResultPermisssionFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getResultPermission(getResultPermission(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getResultPermission(getResultPermission(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel resultPermissionModel, Response response) {
                 Utils.dismissDialog();
@@ -418,6 +420,7 @@ public class ResultPermisssionFragment extends Fragment {
     private Map<String, String> getResultPermission() {
         Map<String, String> map = new HashMap<>();
         map.put("TermId", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -430,7 +433,7 @@ public class ResultPermisssionFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -470,6 +473,8 @@ public class ResultPermisssionFragment extends Fragment {
     }
 
     private Map<String, String> getStandardDetail() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return new HashMap<>();
     }
 
@@ -481,7 +486,7 @@ public class ResultPermisssionFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertResultPermission(getInsertResultPermission(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().InsertResultPermission(getInsertResultPermission(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel permissionModel, Response response) {
                 Utils.dismissDialog();

@@ -149,7 +149,7 @@ public class CreateFragment extends Fragment implements DatePickerDialog.OnDateS
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTeacherGetClassSubjectWiseStudent(getInboxDataDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getTeacherGetClassSubjectWiseStudent(getInboxDataDetail(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel displayStudentModel, Response response) {
                 Utils.dismissDialog();
@@ -192,6 +192,7 @@ public class CreateFragment extends Fragment implements DatePickerDialog.OnDateS
     private Map<String, String> getInboxDataDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("StaffID", "0");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -259,7 +260,7 @@ public class CreateFragment extends Fragment implements DatePickerDialog.OnDateS
                 for (int i = 0; i < updatedData.size(); i++) {
                     if (updatedData.get(i).getCheck().equalsIgnoreCase("1")) {
                         data = true;
-                        Log.d("Position , Checked or not", "" + i + " : " + updatedData.get(i).getCheck());
+                        Log.d("Position,Checked or not", "" + i + " : " + updatedData.get(i).getCheck());
                     }
                 }
                 if (data) {
@@ -383,7 +384,7 @@ public class CreateFragment extends Fragment implements DatePickerDialog.OnDateS
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().PTMTeacherStudentInsertDetail(getCreateMessageDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().PTMTeacherStudentInsertDetail(getCreateMessageDetail(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel insertinboxModel, Response response) {
                 Utils.dismissDialog();
@@ -424,6 +425,7 @@ public class CreateFragment extends Fragment implements DatePickerDialog.OnDateS
         map.put("SubjectLine", finalmessageSubject);
         map.put("Description", finalmessageMessageLine);
         map.put("Flag", "Staff");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 }

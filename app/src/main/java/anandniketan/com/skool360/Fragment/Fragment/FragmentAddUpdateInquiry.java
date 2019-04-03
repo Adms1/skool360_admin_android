@@ -336,7 +336,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -373,6 +373,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -421,7 +422,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -579,7 +580,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().insertInquiryData(getEnquiryParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentInquiryModel>() {
+        ApiHandler.getApiService().insertInquiryData(getEnquiryParams(), new retrofit.Callback<StudentInquiryModel>() {
             @Override
             public void success(StudentInquiryModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -638,6 +639,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
         map.put("FatherLName", fragmentAddInquiryBinding.fatherLastnameTxt.getText().toString());
         map.put("FatherMName", fragmentAddInquiryBinding.fatherMiddlenameTxt.getText().toString() == null || fragmentAddInquiryBinding.fatherMiddlenameTxt.getText().toString().length() <= 0 ? "" : fragmentAddInquiryBinding.fatherMiddlenameTxt.getText().toString());
         map.put("FatherContactMobile", fragmentAddInquiryBinding.fatherMobilenoTxt.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

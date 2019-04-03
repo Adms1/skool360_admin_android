@@ -150,7 +150,7 @@ public class CheckPaymentFragment extends Fragment implements DatePickerDialog.O
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getReceiptDetails(getCheckPaymentDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<AccountFeesStatusModel>() {
+        ApiHandler.getApiService().getReceiptDetails(getCheckPaymentDetail(), new retrofit.Callback<AccountFeesStatusModel>() {
             @Override
             public void success(AccountFeesStatusModel checkReceiptModel, Response response) {
 //                Utils.dismissDialog();
@@ -210,7 +210,7 @@ public class CheckPaymentFragment extends Fragment implements DatePickerDialog.O
         map.put("Chequeno", FinalChequeNoStr);
         map.put("FromDate", FinalStartDateStr);
         map.put("ToDate", FinalEndDateStr);
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         return map;
     }

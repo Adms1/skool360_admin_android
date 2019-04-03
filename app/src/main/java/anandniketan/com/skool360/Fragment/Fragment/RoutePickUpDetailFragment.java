@@ -117,7 +117,7 @@ public class RoutePickUpDetailFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getRouteDetail(getRouteDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TransportChargesModel>() {
+        ApiHandler.getApiService().getRouteDetail(getRouteDetail(), new retrofit.Callback<TransportChargesModel>() {
             @Override
             public void success(TransportChargesModel routeDetail, Response response) {
 //                Utils.dismissDialog();
@@ -157,7 +157,7 @@ public class RoutePickUpDetailFragment extends Fragment {
 
     private Map<String, String> getRouteDetail() {
         Map<String, String> map = new HashMap<>();
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

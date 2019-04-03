@@ -254,6 +254,7 @@ public class LoginActivity extends Activity {
         Map<String, String> map = new HashMap<>();
         map.put("UserID", userId);
         map.put("Password", pwd);
+
         return map;
     }
 
@@ -274,7 +275,7 @@ public class LoginActivity extends Activity {
             return;
         }
         Utils.showDialog(LoginActivity.this);
-        ApiHandler.getApiService().addDeviceDetailAdmin(getAdminDeviceDetail(), PrefUtils.getInstance(LoginActivity.this).getStringValue("LocationID", "0"), new retrofit.Callback<MISModel>() {
+        ApiHandler.getApiService().addDeviceDetailAdmin(getAdminDeviceDetail(), new retrofit.Callback<MISModel>() {
             @Override
             public void success(MISModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -351,7 +352,7 @@ public class LoginActivity extends Activity {
         prefUtils.setValue("DesignationName", desgName);
         prefUtils.setValue("DeviceId", deviceId);
         prefUtils.setValue("pwd", pwd);
-        prefUtils.setValue("LocatiobID", locId);
+        prefUtils.setValue("LocationID", locId);
 
     }
 

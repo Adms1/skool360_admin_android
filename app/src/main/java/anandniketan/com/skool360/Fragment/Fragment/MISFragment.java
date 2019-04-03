@@ -805,7 +805,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -843,6 +843,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1187,7 +1188,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         fragmentMisBinding.progressStudent.setVisibility(View.VISIBLE);
         fragmentMisBinding.LLStudentcontainer.setVisibility(View.GONE);
         // Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISdata(getStudentParams(requestType, date), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISModel>() {
+        ApiHandler.getApiService().getMISdata(getStudentParams(requestType, date), new retrofit.Callback<MISModel>() {
 
             @Override
             public void success(MISModel staffSMSDataModel, Response response) {
@@ -1353,7 +1354,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
 
 
         // Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISStaffAttendance(getStaffNewParams(date), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISStaffNewModel>() {
+        ApiHandler.getApiService().getMISStaffAttendance(getStaffNewParams(date), new retrofit.Callback<MISStaffNewModel>() {
             @Override
             public void success(MISStaffNewModel staffSMSDataModel, Response response) {
                 //  Utils.dismissDialog();
@@ -1467,7 +1468,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
 
 
         // Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISTask(getTaskReportParams(date), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISTaskReportModel>() {
+        ApiHandler.getApiService().getMISTask(getTaskReportParams(date), new retrofit.Callback<MISTaskReportModel>() {
             @Override
             public void success(MISTaskReportModel staffSMSDataModel, Response response) {
                 //  Utils.dismissDialog();
@@ -1538,7 +1539,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         fragmentMisBinding.progressResultOfSchool.setVisibility(View.VISIBLE);
         fragmentMisBinding.resultOfSchoolInnercontainer.setVisibility(View.GONE);
         // Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTopperList(getTopperListParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISSchoolResultModel>() {
+        ApiHandler.getApiService().getTopperList(getTopperListParams(), new retrofit.Callback<MISSchoolResultModel>() {
 
             @Override
             public void success(MISSchoolResultModel staffSMSDataModel, Response response) {
@@ -1622,7 +1623,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         fragmentMisBinding.progressFinance.setVisibility(View.VISIBLE);
         fragmentMisBinding.LLFinance.setVisibility(View.GONE);
         // Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getHeadWiseFeesCollection(getFinanceListParams(termId), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISFinanaceModel>() {
+        ApiHandler.getApiService().getHeadWiseFeesCollection(getFinanceListParams(termId), new retrofit.Callback<MISFinanaceModel>() {
 
             @Override
             public void success(MISFinanaceModel staffSMSDataModel, Response response) {
@@ -1814,7 +1815,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         //  Utils.showDialog(getActivity());
         fragmentMisBinding.progressNa.setVisibility(View.GONE);
 
-        ApiHandler.getApiService().getMISdata(getNAParams(requestType), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISModel>() {
+        ApiHandler.getApiService().getMISdata(getNAParams(requestType), new retrofit.Callback<MISModel>() {
             @Override
             public void success(MISModel staffSMSDataModel, Response response) {
                 //Utils.dismissDialog();
@@ -1949,6 +1950,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         Map<String, String> map = new HashMap<>();
         map.put("TermID", String.valueOf(termId));
         map.put("stop", "");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1956,6 +1958,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         Map<String, String> map = new HashMap<>();
         map.put("TermDetailID", String.valueOf(FinalSchoolResultTermID));
         map.put("stop", "");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1965,6 +1968,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         map.put("TermID", FinalTermIdStr);
         map.put("RequestType", reqType);
         map.put("stop", "");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1983,6 +1987,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         map.put("TermID", FinalNATermID);
         map.put("RequestType", params);
         map.put("stop", "");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1991,6 +1996,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         map.put("Date", date);
         map.put("TermID", FinalTermIdStr);
         map.put("stop", "");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1999,6 +2005,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         map.put("Date", date);
         map.put("TermID", FinalTermIdStr);
         map.put("stop", "");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -3017,7 +3024,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         llCalendar.setVisibility(View.GONE);
 
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
-        Call<MIStudentWiseCalendarModel> call = apiService.getSchoolCalendarDetail(AppConfiguration.BASEURL + "GetMISCalender?TermID=" + term + "&stop=");
+        Call<MIStudentWiseCalendarModel> call = apiService.getSchoolCalendarDetail(AppConfiguration.BASEURL + "GetMISCalender?TermID=" + term + "&stop=" + "&LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<MIStudentWiseCalendarModel>() {
             //
             @Override

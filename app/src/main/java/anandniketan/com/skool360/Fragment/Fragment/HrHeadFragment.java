@@ -199,7 +199,7 @@ public class HrHeadFragment extends Fragment implements DatePickerDialog.OnDateS
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getDailyHRHead(getInOutParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<HrHeadModel>() {
+        ApiHandler.getApiService().getDailyHRHead(getInOutParams(), new retrofit.Callback<HrHeadModel>() {
             @Override
             public void success(HrHeadModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -255,6 +255,7 @@ public class HrHeadFragment extends Fragment implements DatePickerDialog.OnDateS
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", fragmentHrAdminBinding.fromdateBtn.getText().toString());
         map.put("EndDate", fragmentHrAdminBinding.todateBtn.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

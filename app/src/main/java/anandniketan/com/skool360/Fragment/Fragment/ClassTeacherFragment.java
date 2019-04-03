@@ -263,7 +263,7 @@ public class ClassTeacherFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -300,7 +300,9 @@ public class ClassTeacherFragment extends Fragment {
     }
 
     private Map<String, String> getTermDetail() {
-        return new HashMap<>();
+       HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     // CALL Standard API HERE
@@ -312,7 +314,7 @@ public class ClassTeacherFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -348,7 +350,9 @@ public class ClassTeacherFragment extends Fragment {
     }
 
     private Map<String, String> getStandardDetail() {
-        return new HashMap<>();
+      HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     // CALL Teacher API HERE
@@ -360,7 +364,7 @@ public class ClassTeacherFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTeachersbyTerm(getTeacherDetail(id), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getTeachersbyTerm(getTeacherDetail(id), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel teachersModel, Response response) {
                 Utils.dismissDialog();
@@ -402,6 +406,7 @@ public class ClassTeacherFragment extends Fragment {
     private Map<String, String> getTeacherDetail(String id) {
         Map<String, String> map = new HashMap<>();
         map.put("TermID", id);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -414,7 +419,7 @@ public class ClassTeacherFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getClassTeacherDetail(getClassTeacherDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getClassTeacherDetail(getClassTeacherDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel getClassTeacherDetailModel, Response response) {
                 Utils.dismissDialog();
@@ -461,6 +466,7 @@ public class ClassTeacherFragment extends Fragment {
     private Map<String, String> getClassTeacherDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("TermID", finalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -473,7 +479,7 @@ public class ClassTeacherFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertClassTeachers(getInsertClassTeacherDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().InsertClassTeachers(getInsertClassTeacherDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel insertClassTeachersModel, Response response) {
                 Utils.dismissDialog();
@@ -535,6 +541,7 @@ public class ClassTeacherFragment extends Fragment {
         map.put("Pk_EmployeID", finalTeacherIdStr);
         map.put("TermID", finalTermIdStr);
         map.put("Pk_ClsTeacherID", finalClassTeacherIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -797,7 +804,7 @@ public class ClassTeacherFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().DeleteClassTeacher(getDeleteClassTeacherDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().DeleteClassTeacher(getDeleteClassTeacherDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel insertClassTeachersModel, Response response) {
                 Utils.dismissDialog();
@@ -845,6 +852,7 @@ public class ClassTeacherFragment extends Fragment {
     private Map<String, String> getDeleteClassTeacherDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("Pk_ClsTeacherID", finalClassTeacherIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

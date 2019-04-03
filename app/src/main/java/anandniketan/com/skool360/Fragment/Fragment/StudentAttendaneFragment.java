@@ -240,7 +240,7 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -276,6 +276,7 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -286,7 +287,7 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
             return;
         }
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getAttendence_Admin(getAttendence_AdminDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getAttendence_Admin(getAttendence_AdminDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel attendanceModel, Response response) {
 //                Utils.dismissDialog();
@@ -378,6 +379,7 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
         map.put("StdID", FinalStandardIdStr);
         map.put("ClsID", FinalClassIdStr);
         map.put("TermID", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -538,7 +540,7 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
             return;
         }
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().insertAttendance(getAttanceParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().insertAttendance(getAttanceParams(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel attendanceModel, Response response) {
 //                Utils.dismissDialog();
@@ -639,6 +641,7 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
                     map.put("StudentID", studentidstr);
                     map.put("AttendanceID", Attendanceidstr);
                     map.put("TermID", FinalTermIdStr);
+                    map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
                 }
 
             }
@@ -660,7 +663,7 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -696,6 +699,8 @@ public class StudentAttendaneFragment extends Fragment implements DatePickerDial
     }
 
     private Map<String, String> getTermDetail() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return new HashMap<>();
     }
 

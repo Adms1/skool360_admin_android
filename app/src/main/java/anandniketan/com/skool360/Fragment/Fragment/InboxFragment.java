@@ -84,7 +84,7 @@ public class InboxFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getPTMTeacherStudentGetDetail(getInboxDataDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getPTMTeacherStudentGetDetail(getInboxDataDetail(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel getBulkSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -158,6 +158,7 @@ public class InboxFragment extends Fragment {
         map.put("UserID", "0");
         map.put("UserType", "Staff");
         map.put("MessgaeType", "Inbox");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -188,7 +189,7 @@ public class InboxFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().PTMTeacherStudentInsertDetail(getInsertInboxDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().PTMTeacherStudentInsertDetail(getInsertInboxDetail(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel insertinboxModel, Response response) {
                 Utils.dismissDialog();
@@ -229,6 +230,7 @@ public class InboxFragment extends Fragment {
         map.put("SubjectLine", messageSubjectstr);
         map.put("Description", messageMessageLinestr);
         map.put("Flag", "Student");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

@@ -169,7 +169,7 @@ public class ExamsFragment extends Fragment implements DatePickerDialog.OnDateSe
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getExams(getExamsDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getExams(getExamsDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel examsModel, Response response) {
                 Utils.dismissDialog();
@@ -221,6 +221,7 @@ public class ExamsFragment extends Fragment implements DatePickerDialog.OnDateSe
         Map<String, String> map = new HashMap<>();
         map.put("Stdt", FinalStartDateStr);
         map.put("EndDt", FinalEndDateStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

@@ -31,7 +31,6 @@ public class ApiHandler {
     public static String BASE_URL = AppConfiguration.BASEURL;
     private static WebServices apiService, apiServiceForFileUpload;
 
-
     public static WebServices getApiService() {
         if (apiService == null) {
             OkHttpClient okHttpClient = new OkHttpClient();

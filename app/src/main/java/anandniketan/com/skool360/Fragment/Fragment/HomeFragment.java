@@ -83,15 +83,15 @@ public class HomeFragment extends Fragment {
         fragmentHomeBinding.btnNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                fragment = new NotificationFragment();
-//                fragmentManager = getFragmentManager();
-//                if (fragmentManager != null) {
-//                    fragmentManager.beginTransaction()
-//                            .setCustomAnimations(R.anim.zoom_in, R.anim.zoom_out)
-//                            .replace(R.id.frame_container, fragment).commit();
-//                }
-//                AppConfiguration.firsttimeback = true;
-//                AppConfiguration.position = 1;
+                fragment = new NotificationFragment();
+                fragmentManager = getFragmentManager();
+                if (fragmentManager != null) {
+                    fragmentManager.beginTransaction()
+                            .setCustomAnimations(R.anim.zoom_in, R.anim.zoom_out)
+                            .replace(R.id.frame_container, fragment).commit();
+                }
+                AppConfiguration.firsttimeback = true;
+                AppConfiguration.position = 1;
             }
         });
 

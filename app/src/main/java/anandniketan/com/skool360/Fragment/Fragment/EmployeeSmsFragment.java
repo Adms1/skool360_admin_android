@@ -150,7 +150,7 @@ public class EmployeeSmsFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStaffSMSData(getStaffSMSData(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getStaffSMSData(getStaffSMSData(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel staffSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -194,6 +194,7 @@ public class EmployeeSmsFragment extends Fragment {
 
     private Map<String, String> getStaffSMSData() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -305,7 +306,7 @@ public class EmployeeSmsFragment extends Fragment {
                 }
                 if (!finalEmployeeIdArray.equalsIgnoreCase("") && !finalmessageMessageLine.equalsIgnoreCase("") && !finalDateStr.equalsIgnoreCase("")) {
                     Utils.showDialog(getActivity());
-                    ApiHandler.getApiService().InsertStaffSMSData(InsertSingleSMSDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+                    ApiHandler.getApiService().InsertStaffSMSData(InsertSingleSMSDetail(), new retrofit.Callback<InsertMenuPermissionModel>() {
                         @Override
                         public void success(InsertMenuPermissionModel insertMenuPermissionModel, Response response) {
                             Utils.dismissDialog();
@@ -349,6 +350,7 @@ public class EmployeeSmsFragment extends Fragment {
         map.put("SMS", finalmessageMessageLine);
         map.put("Date", finalDateStr);
         map.put("MobileNo", finalEmployeeIdArray);//finalEmployeeIdArray  "1|8672952197"
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

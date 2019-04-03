@@ -51,6 +51,7 @@ import anandniketan.com.skool360.Utility.ApiClient;
 import anandniketan.com.skool360.Utility.ApiHandler;
 import anandniketan.com.skool360.Utility.AppConfiguration;
 import anandniketan.com.skool360.Utility.PathUtil;
+import anandniketan.com.skool360.Utility.PrefUtils;
 import anandniketan.com.skool360.Utility.Utils;
 import anandniketan.com.skool360.Utility.WebServices;
 import okhttp3.MediaType;
@@ -498,7 +499,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
 
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<GalleryDataModel> call = apiService.getGalleryData(AppConfiguration.BASEURL + "GetGalleryData");
+        Call<GalleryDataModel> call = apiService.getGalleryData(AppConfiguration.BASEURL + "GetGalleryData" + "&LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<GalleryDataModel>() {
             //
             @Override
@@ -640,7 +641,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
             }
         }
 
-        Call<GalleryDataModel> call = apiService.getGalleryData(AppConfiguration.BASEURL + "InsertGallery?Title=" + tvTitle.getText().toString() + "&Date=" + tvDate.getText().toString() + "&Comment=" + tvComment.getText().toString() + "&Phohtos=" + TextUtils.join(",", imgArray) + "&ID=" + id);
+        Call<GalleryDataModel> call = apiService.getGalleryData(AppConfiguration.BASEURL + "InsertGallery?Title=" + tvTitle.getText().toString() + "&Date=" + tvDate.getText().toString() + "&Comment=" + tvComment.getText().toString() + "&Phohtos=" + TextUtils.join(",", imgArray) + "&ID=" + id + "&LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         call.enqueue(new Callback<GalleryDataModel>() {
 

@@ -179,7 +179,7 @@ public class SearchStudentFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -217,6 +217,8 @@ public class SearchStudentFragment extends Fragment {
     }
 
     private Map<String, String> getTermDetail() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return new HashMap<>();
     }
 
@@ -229,7 +231,7 @@ public class SearchStudentFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -266,7 +268,9 @@ public class SearchStudentFragment extends Fragment {
     }
 
     private Map<String, String> getStandardDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
 
@@ -279,7 +283,7 @@ public class SearchStudentFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getParentName(getParentDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getParentName(getParentDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel parentsNameModel, Response response) {
                 Utils.dismissDialog();
@@ -327,6 +331,7 @@ public class SearchStudentFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("SearchType", searchtypeStr);
         map.put("InputValue", parentNameStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -422,7 +427,7 @@ public class SearchStudentFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStudentName(getStudentDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getStudentName(getStudentDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel studentNameModel, Response response) {
 //                Utils.dismissDialog();
@@ -470,6 +475,7 @@ public class SearchStudentFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("SearchType", searchtypeStr);
         map.put("InputValue", studentNameStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -484,7 +490,7 @@ public class SearchStudentFragment extends Fragment {
             return;
         }
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getAdmin_SearchStudent(getStudentShowFilteredDataDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getAdmin_SearchStudent(getStudentShowFilteredDataDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel filteredDataModel, Response response) {
 //                Utils.dismissDialog();
@@ -552,6 +558,7 @@ public class SearchStudentFragment extends Fragment {
         map.put("StudentName", studentNameStr);
         map.put("GRNO", grnoStr);
         map.put("ClassID", FinalClassIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

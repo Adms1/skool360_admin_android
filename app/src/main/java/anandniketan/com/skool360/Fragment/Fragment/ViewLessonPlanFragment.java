@@ -189,7 +189,7 @@ public class ViewLessonPlanFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -227,6 +227,7 @@ public class ViewLessonPlanFragment extends Fragment {
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -239,7 +240,7 @@ public class ViewLessonPlanFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -276,6 +277,7 @@ public class ViewLessonPlanFragment extends Fragment {
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -288,7 +290,7 @@ public class ViewLessonPlanFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getEmployeeBySubject(getEmployeeDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getEmployeeBySubject(getEmployeeDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel employeeModel, Response response) {
                 Utils.dismissDialog();
@@ -328,6 +330,7 @@ public class ViewLessonPlanFragment extends Fragment {
         map.put("TermId", FinalTermIdStr);
         map.put("StandardID", FinalStandardIdStr);
         map.put("SubjectID", FinalSubjectIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -340,7 +343,7 @@ public class ViewLessonPlanFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getLessonPlanSubject(getSubjectDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getLessonPlanSubject(getSubjectDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel lessonplanSubjectModel, Response response) {
                 Utils.dismissDialog();
@@ -379,6 +382,7 @@ public class ViewLessonPlanFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("TermId", FinalTermIdStr);
         map.put("StandardID", FinalStandardIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -391,7 +395,7 @@ public class ViewLessonPlanFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getLessonPlan(getLessonPlanDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getLessonPlan(getLessonPlanDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel lessonPlanModel, Response response) {
 //                Utils.dismissDialog();
@@ -448,7 +452,7 @@ public class ViewLessonPlanFragment extends Fragment {
         map.put("StandardId", FinalStandardIdStr);
         map.put("SubjectId", FinalSubjectIdStr);
         map.put("EmployeeId", FinalEmployeeIdStr);
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

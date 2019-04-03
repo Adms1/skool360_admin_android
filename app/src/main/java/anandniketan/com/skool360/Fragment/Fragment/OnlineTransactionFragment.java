@@ -195,7 +195,7 @@ public class OnlineTransactionFragment extends Fragment implements DatePickerDia
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -233,6 +233,7 @@ public class OnlineTransactionFragment extends Fragment implements DatePickerDia
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -242,6 +243,7 @@ public class OnlineTransactionFragment extends Fragment implements DatePickerDia
         map.put("EndDate", fragmentTallyTranscationBinding.toDate2Edt.getText().toString());
         map.put("Status", finalStatus);
         map.put("TransactionID", fragmentTallyTranscationBinding.etTranscationid.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -253,7 +255,7 @@ public class OnlineTransactionFragment extends Fragment implements DatePickerDia
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getOnlineTransactionList(getOnlineDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<OnlineTransactionModel>() {
+        ApiHandler.getApiService().getOnlineTransactionList(getOnlineDetail(), new retrofit.Callback<OnlineTransactionModel>() {
             @Override
             public void success(OnlineTransactionModel standardModel, Response response) {
                 Utils.dismissDialog();

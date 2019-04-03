@@ -245,7 +245,7 @@ public class SMSStudentMarksFragment extends Fragment {
 
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<TermModel> call = apiService.getTerm();
+        Call<TermModel> call = apiService.getTerm(PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<TermModel>() {
 
             @Override
@@ -316,7 +316,7 @@ public class SMSStudentMarksFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -353,6 +353,7 @@ public class SMSStudentMarksFragment extends Fragment {
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -411,7 +412,7 @@ public class SMSStudentMarksFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTestForMarks(getTestformarks(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getTestForMarks(getTestformarks(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -519,7 +520,7 @@ public class SMSStudentMarksFragment extends Fragment {
         }
         if (!finalBulkIdArray.equalsIgnoreCase("")) {
             Utils.showDialog(getActivity());
-            ApiHandler.getApiService().SendAppSMS(InsertAppSMSData(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+            ApiHandler.getApiService().SendAppSMS(InsertAppSMSData(), new retrofit.Callback<InsertMenuPermissionModel>() {
                 @Override
                 public void success(InsertMenuPermissionModel insertMenuPermissionModel, Response response) {
                     Utils.dismissDialog();
@@ -560,6 +561,7 @@ public class SMSStudentMarksFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("TermID", FinalTermIdStr);
         map.put("StuIDMobile", finalBulkIdArray);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -573,7 +575,7 @@ public class SMSStudentMarksFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMarks(getGetBulkSMSDataDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getMarks(getGetBulkSMSDataDetail(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel getBulkSMSDataModel, Response response) {
                 Utils.dismissDialog();

@@ -140,7 +140,7 @@ public class AnnoucementListFragment extends Fragment implements onDeleteWithId,
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getAnnouncementData(getDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<AnnouncementModel>() {
+        ApiHandler.getApiService().getAnnouncementData(getDetail(), new retrofit.Callback<AnnouncementModel>() {
             @Override
             public void success(AnnouncementModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -186,6 +186,7 @@ public class AnnoucementListFragment extends Fragment implements onDeleteWithId,
 
     private Map<String, String> getDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -218,7 +219,7 @@ public class AnnoucementListFragment extends Fragment implements onDeleteWithId,
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().deleteAnnouncement(getDeleteAnnouncementParams(announcementId), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<AnnouncementModel>() {
+        ApiHandler.getApiService().deleteAnnouncement(getDeleteAnnouncementParams(announcementId), new retrofit.Callback<AnnouncementModel>() {
             @Override
             public void success(AnnouncementModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -254,6 +255,7 @@ public class AnnoucementListFragment extends Fragment implements onDeleteWithId,
     private Map<String, String> getDeleteAnnouncementParams(String id) {
         Map<String, String> map = new HashMap<>();
         map.put("PK_AnnouncmentID", id);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

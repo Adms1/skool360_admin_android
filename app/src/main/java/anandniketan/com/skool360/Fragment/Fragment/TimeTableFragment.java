@@ -233,7 +233,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -270,6 +270,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -282,7 +283,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardSectionCombine(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -318,6 +319,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -330,7 +332,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTimeTable(getTimeTableDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getTimeTable(getTimeTableDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel timeTableModel, Response response) {
                 Utils.dismissDialog();
@@ -386,6 +388,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         map.put("ClassID", finalStandardIdStr);
         map.put("Type", "GradeWise");
         map.put("StaffID", PrefUtils.getInstance(getActivity()).getStringValue("StaffID", "0"));
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -502,7 +505,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().deleteTimetable(getDeleteTimetable(ids), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().deleteTimetable(getDeleteTimetable(ids), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel timeTableModel, Response response) {
                 Utils.dismissDialog();
@@ -541,6 +544,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
     private HashMap<String, String> getDeleteTimetable(String ids) {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("TimetableID", ids);
+        hashMap.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return hashMap;
     }
 
@@ -553,6 +557,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         map.put("LectureName", lecture);
         map.put("TimeTableID", tid);
         map.put("TermID", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -563,7 +568,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().adminInsertTimetable(getAddTimeTableDetail(sid, teacherid, day, lecture, tid), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<JsonObject>() {
+        ApiHandler.getApiService().adminInsertTimetable(getAddTimeTableDetail(sid, teacherid, day, lecture, tid), new retrofit.Callback<JsonObject>() {
             @Override
             public void success(JsonObject subjectModel, Response response) {
                 Utils.dismissDialog();
@@ -600,7 +605,9 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
     }
 
     private Map<String, String> getSubjectDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     // CALL Subject API HERE
@@ -612,7 +619,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getSubject(getSubjectDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getSubject(getSubjectDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel subjectModel, Response response) {
                 Utils.dismissDialog();
@@ -701,6 +708,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         HashMap<String, String> map = new HashMap<>();
         map.put("TermID", "3");
         map.put("SubjectID", teachername);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -712,7 +720,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTeacherBySubjecte(getTeacherDetail(teachername), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getTeacherBySubjecte(getTeacherDetail(teachername), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel subjectModel, Response response) {
                 Utils.dismissDialog();

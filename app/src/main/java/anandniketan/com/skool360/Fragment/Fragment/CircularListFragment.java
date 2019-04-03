@@ -142,7 +142,7 @@ public class CircularListFragment extends Fragment implements onDeleteWithId, On
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getCircularDataAdmin(getDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<CircularModel>() {
+        ApiHandler.getApiService().getCircularDataAdmin(getDetail(), new retrofit.Callback<CircularModel>() {
             @Override
             public void success(CircularModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -188,6 +188,7 @@ public class CircularListFragment extends Fragment implements onDeleteWithId, On
 
     private Map<String, String> getDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -220,7 +221,7 @@ public class CircularListFragment extends Fragment implements onDeleteWithId, On
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().deleteCircular(getDeleteAnnouncementParams(Id), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<CircularModel>() {
+        ApiHandler.getApiService().deleteCircular(getDeleteAnnouncementParams(Id), new retrofit.Callback<CircularModel>() {
             @Override
             public void success(CircularModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -256,6 +257,7 @@ public class CircularListFragment extends Fragment implements onDeleteWithId, On
     private Map<String, String> getDeleteAnnouncementParams(String id) {
         Map<String, String> map = new HashMap<>();
         map.put("CircularID", id);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

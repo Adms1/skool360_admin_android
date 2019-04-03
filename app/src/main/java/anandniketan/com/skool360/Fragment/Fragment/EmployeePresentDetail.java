@@ -160,7 +160,7 @@ public class EmployeePresentDetail extends Fragment implements DatePickerDialog.
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getEmployeePresentDetails(getInOutParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<EmployeePresentDetailsModel>() {
+        ApiHandler.getApiService().getEmployeePresentDetails(getInOutParams(), new retrofit.Callback<EmployeePresentDetailsModel>() {
             @Override
             public void success(EmployeePresentDetailsModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -217,6 +217,7 @@ public class EmployeePresentDetail extends Fragment implements DatePickerDialog.
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", fragmentEmployeePresentDetailBinding.fromdateBtn.getText().toString());
         map.put("EndDate", fragmentEmployeePresentDetailBinding.todateBtn.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

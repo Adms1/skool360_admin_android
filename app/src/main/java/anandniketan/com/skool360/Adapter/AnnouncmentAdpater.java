@@ -11,7 +11,6 @@ import android.widget.TextView;
 import anandniketan.com.skool360.Model.Student.AnnouncementModel;
 import anandniketan.com.skool360.R;
 
-
 /**
  * Created by admsandroid on 1/30/2018.
  */

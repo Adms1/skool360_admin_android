@@ -198,7 +198,7 @@ public class HrAdminFragment extends Fragment implements DatePickerDialog.OnDate
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getDailyAdmin(getInOutParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<DailyHrAdminModel>() {
+        ApiHandler.getApiService().getDailyAdmin(getInOutParams(), new retrofit.Callback<DailyHrAdminModel>() {
             @Override
             public void success(DailyHrAdminModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -254,6 +254,7 @@ public class HrAdminFragment extends Fragment implements DatePickerDialog.OnDate
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", fragmentHrAdminBinding.fromdateBtn.getText().toString());
         map.put("EndDate", fragmentHrAdminBinding.todateBtn.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

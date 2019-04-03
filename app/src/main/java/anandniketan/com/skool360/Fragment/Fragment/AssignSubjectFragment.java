@@ -240,7 +240,7 @@ public class AssignSubjectFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -276,7 +276,9 @@ public class AssignSubjectFragment extends Fragment {
     }
 
     private Map<String, String> getTermDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     // CALL Teacher API HERE
@@ -288,7 +290,7 @@ public class AssignSubjectFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTeachersbyTerm(getTeacherDetail(id), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getTeachersbyTerm(getTeacherDetail(id), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel teachersModel, Response response) {
                 Utils.dismissDialog();
@@ -328,6 +330,7 @@ public class AssignSubjectFragment extends Fragment {
     private Map<String, String> getTeacherDetail(String id) {
         Map<String, String> map = new HashMap<>();
         map.put("TermID", id);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -340,7 +343,7 @@ public class AssignSubjectFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getSubject(getSubjectDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getSubject(getSubjectDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel subjectModel, Response response) {
                 Utils.dismissDialog();
@@ -376,7 +379,9 @@ public class AssignSubjectFragment extends Fragment {
     }
 
     private Map<String, String> getSubjectDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map= new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     // CALL AssignSubject API HERE
@@ -388,7 +393,7 @@ public class AssignSubjectFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getSubjectAssgin(getAssignSubjectDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getSubjectAssgin(getAssignSubjectDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel getSubjectAssginModel, Response response) {
                 Utils.dismissDialog();
@@ -439,6 +444,7 @@ public class AssignSubjectFragment extends Fragment {
     private Map<String, String> getAssignSubjectDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("Term", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -451,7 +457,7 @@ public class AssignSubjectFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertAssignSubject(getInsertAssignSubjectDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().InsertAssignSubject(getInsertAssignSubjectDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel insertAssignSubjectModel, Response response) {
                 Utils.dismissDialog();
@@ -507,6 +513,7 @@ public class AssignSubjectFragment extends Fragment {
         map.put("Pk_EmployeID", FinalTeacherIdStr);
         map.put("Status", statusstr);
         map.put("Pk_AssignID", assignID);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -706,7 +713,7 @@ public class AssignSubjectFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().DeleteAssignSubject(getDeleteAssignSubjectDetail(did), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().DeleteAssignSubject(getDeleteAssignSubjectDetail(did), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel insertAssignSubjectModel, Response response) {
                 Utils.dismissDialog();
@@ -757,7 +764,7 @@ public class AssignSubjectFragment extends Fragment {
 
     private Map<String, String> getDeleteAssignSubjectDetail(String did) {
         Map<String, String> map = new HashMap<>();
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         map.put("Pk_AssignID", did);
         return map;
     }

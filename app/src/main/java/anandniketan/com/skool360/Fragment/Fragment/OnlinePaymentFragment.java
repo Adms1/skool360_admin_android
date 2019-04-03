@@ -249,7 +249,7 @@ public class OnlinePaymentFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -288,6 +288,7 @@ public class OnlinePaymentFragment extends Fragment {
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -300,7 +301,7 @@ public class OnlinePaymentFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -341,6 +342,7 @@ public class OnlinePaymentFragment extends Fragment {
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -353,7 +355,7 @@ public class OnlinePaymentFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getOnlinePaymentPermission(getOnlinePaymentPermission(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getOnlinePaymentPermission(getOnlinePaymentPermission(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel resultPermissionModel, Response response) {
                 Utils.dismissDialog();
@@ -408,6 +410,7 @@ public class OnlinePaymentFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("TermId", FinalTermIdStr);
         map.put("TermDetailId", FinalTermDetailIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -419,7 +422,7 @@ public class OnlinePaymentFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertOnlinePaymentPermission(getInsertOnlinePaymentPermission(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().InsertOnlinePaymentPermission(getInsertOnlinePaymentPermission(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -458,6 +461,7 @@ public class OnlinePaymentFragment extends Fragment {
         map.put("TermDetailID", FinalTermDetailIdStr);
         map.put("GradeID", FinalGradeIsStr);
         map.put("Status", FinalStatusStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

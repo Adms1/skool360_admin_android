@@ -166,7 +166,7 @@ public class HolidayFragment extends Fragment implements DatePickerDialog.OnDate
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getHolidayCategory(getHolidayCategoryDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getHolidayCategory(getHolidayCategoryDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel holidayModel, Response response) {
                 if (holidayModel == null) {
@@ -205,6 +205,7 @@ public class HolidayFragment extends Fragment implements DatePickerDialog.OnDate
 
     private Map<String, String> getHolidayCategoryDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -217,7 +218,7 @@ public class HolidayFragment extends Fragment implements DatePickerDialog.OnDate
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getHoliday(getHolidayDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getHoliday(getHolidayDetail(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel holidaydataModel, Response response) {
                 if (holidaydataModel == null) {
@@ -274,6 +275,7 @@ public class HolidayFragment extends Fragment implements DatePickerDialog.OnDate
 
     private Map<String, String> getHolidayDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -286,7 +288,7 @@ public class HolidayFragment extends Fragment implements DatePickerDialog.OnDate
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertHoliday(getInsertHolidayDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().InsertHoliday(getInsertHolidayDetail(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel insertHoliday, Response response) {
                 if (insertHoliday == null) {
@@ -327,7 +329,7 @@ public class HolidayFragment extends Fragment implements DatePickerDialog.OnDate
         map.put("Category", FinalHolidayStr);
         map.put("PK_HolidayID", FinalholidayId);
         map.put("PK_CategoryId", FinalCategoryIdStr);
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         return map;
     }

@@ -151,11 +151,12 @@ public class MISStudentRangeDetailFragment extends Fragment implements ResponseC
     private Map<String, String> getStudentwiseResultParams(String studentId) {
         Map<String, String> map = new HashMap<>();
         map.put("StudentID", studentId);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
     private void callChildItemAPI(String studentId) {
-        ApiHandler.getApiService().getResultStudentWise(getStudentwiseResultParams(studentId), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MIStudentWiseResultModel>() {
+        ApiHandler.getApiService().getResultStudentWise(getStudentwiseResultParams(studentId), new retrofit.Callback<MIStudentWiseResultModel>() {
             @Override
             public void success(MIStudentWiseResultModel studentFullDetailModel, Response response) {
                 Utils.dismissDialog();
@@ -202,7 +203,7 @@ public class MISStudentRangeDetailFragment extends Fragment implements ResponseC
     private Map<String, String> getClasswiseResultParams() {
         Map<String, String> map = new HashMap<>();
         map.put("TermDetailID", termId);
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         if (stndrdID.equalsIgnoreCase("0")) {
             map.put("StandardID", "");
         } else {
@@ -228,7 +229,7 @@ public class MISStudentRangeDetailFragment extends Fragment implements ResponseC
         Utils.showDialog(getActivity());
         //progressBar.setVisibility(View.VISIBLE);
 
-        ApiHandler.getApiService().getResultData(getClasswiseResultParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISStudentResultDataModel>() {
+        ApiHandler.getApiService().getResultData(getClasswiseResultParams(), new retrofit.Callback<MISStudentResultDataModel>() {
             @Override
             public void success(MISStudentResultDataModel studentFullDetailModel, Response response) {
                 Utils.dismissDialog();

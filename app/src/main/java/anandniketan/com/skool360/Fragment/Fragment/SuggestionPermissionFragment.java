@@ -306,7 +306,7 @@ public class SuggestionPermissionFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getEmployeeForSuggestionPermission(getEmployeeDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getEmployeeForSuggestionPermission(getEmployeeDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel employeeModel, Response response) {
                 Utils.dismissDialog();
@@ -350,7 +350,9 @@ public class SuggestionPermissionFragment extends Fragment {
     }
 
     private Map<String, String> getEmployeeDetail() {
-        return new HashMap<>();
+       HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     // CALL SuggestionPermission API HERE
@@ -362,7 +364,7 @@ public class SuggestionPermissionFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getSuggestionPermission(getSuggestionPermissionDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getSuggestionPermission(getSuggestionPermissionDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel suggestionPermissionModel, Response response) {
                 Utils.dismissDialog();
@@ -418,7 +420,9 @@ public class SuggestionPermissionFragment extends Fragment {
     }
 
     private Map<String, String> getSuggestionPermissionDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
 
@@ -430,7 +434,7 @@ public class SuggestionPermissionFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().InsertSuggestionPermission(getInsertSuggestionPermission(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().InsertSuggestionPermission(getInsertSuggestionPermission(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -471,6 +475,7 @@ public class SuggestionPermissionFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("Type", FinaltypeStr);
         map.put("StaffIDs", FinalEmployeeIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -483,7 +488,7 @@ public class SuggestionPermissionFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().deleteSuggestionPermission(getDeleteSuggestionPermission(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().deleteSuggestionPermission(getDeleteSuggestionPermission(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel permissionModel, Response response) {
                 Utils.dismissDialog();
@@ -523,7 +528,7 @@ public class SuggestionPermissionFragment extends Fragment {
     private Map<String, String> getDeleteSuggestionPermission() {
         Map<String, String> map = new HashMap<>();
         map.put("AssignPermissionID", FinalDeleteIdStr);
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

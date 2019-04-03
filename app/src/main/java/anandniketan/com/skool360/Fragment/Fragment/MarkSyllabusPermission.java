@@ -347,7 +347,7 @@ public class MarkSyllabusPermission extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -384,6 +384,7 @@ public class MarkSyllabusPermission extends Fragment {
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -430,7 +431,7 @@ public class MarkSyllabusPermission extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -467,6 +468,7 @@ public class MarkSyllabusPermission extends Fragment {
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -527,7 +529,7 @@ public class MarkSyllabusPermission extends Fragment {
             return;
         }
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMarksSyllabusPermission(getResultPermission(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MarkSyllabusModel>() {
+        ApiHandler.getApiService().getMarksSyllabusPermission(getResultPermission(), new retrofit.Callback<MarkSyllabusModel>() {
             @Override
             public void success(MarkSyllabusModel resultPermissionModel, Response response) {
                 Utils.dismissDialog();
@@ -584,6 +586,7 @@ public class MarkSyllabusPermission extends Fragment {
     private Map<String, String> getResultPermission() {
         Map<String, String> map = new HashMap<>();
         map.put("TermId", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -596,7 +599,7 @@ public class MarkSyllabusPermission extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTestNameForMarksSyllabusPermission(getStandardDetail(termId, gradeId), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TestModel>() {
+        ApiHandler.getApiService().getTestNameForMarksSyllabusPermission(getStandardDetail(termId, gradeId), new retrofit.Callback<TestModel>() {
             @Override
             public void success(TestModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -672,6 +675,7 @@ public class MarkSyllabusPermission extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("TermID", termId);
         map.put("GradeID", gradeId);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -683,7 +687,7 @@ public class MarkSyllabusPermission extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().insertMarksSyllabusPermission(getInsertResultPermission(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+        ApiHandler.getApiService().insertMarksSyllabusPermission(getInsertResultPermission(), new retrofit.Callback<InsertMenuPermissionModel>() {
             @Override
             public void success(InsertMenuPermissionModel permissionModel, Response response) {
                 Utils.dismissDialog();

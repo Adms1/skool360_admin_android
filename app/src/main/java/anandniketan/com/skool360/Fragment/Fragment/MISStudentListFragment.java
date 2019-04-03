@@ -353,6 +353,7 @@ public class MISStudentListFragment extends Fragment {
         map.put("TermID", termID);
         map.put("RequestType", requestType);
         map.put("Gender", gender);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -365,7 +366,7 @@ public class MISStudentListFragment extends Fragment {
         progressBar.setVisibility(View.VISIBLE);
 
         //Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISStudentdata(getParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISStudentModel>() {
+        ApiHandler.getApiService().getMISStudentdata(getParams(), new retrofit.Callback<MISStudentModel>() {
             @Override
             public void success(MISStudentModel staffSMSDataModel, Response response) {
                 //Utils.dismissDialog();

@@ -198,7 +198,7 @@ public class HrInformationtechnologyFragment extends Fragment implements DatePic
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getDailyInformationTechnology(getInOutParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<DailyInfoTechnology>() {
+        ApiHandler.getApiService().getDailyInformationTechnology(getInOutParams(), new retrofit.Callback<DailyInfoTechnology>() {
             @Override
             public void success(DailyInfoTechnology announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -254,6 +254,7 @@ public class HrInformationtechnologyFragment extends Fragment implements DatePic
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", fragmentHrAdminBinding.fromdateBtn.getText().toString());
         map.put("EndDate", fragmentHrAdminBinding.todateBtn.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

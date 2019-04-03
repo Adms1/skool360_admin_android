@@ -174,7 +174,7 @@ public class SMSReportFragment extends Fragment implements DatePickerDialog.OnDa
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getAllSMSDetail(getSMSReportDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getAllSMSDetail(getSMSReportDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel inquiryDataModel, Response response) {
                 if (inquiryDataModel == null) {
@@ -235,7 +235,7 @@ public class SMSReportFragment extends Fragment implements DatePickerDialog.OnDa
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", FinalStartDateStr);
         map.put("EndDate", FinalEndDateStr);
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

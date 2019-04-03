@@ -235,7 +235,7 @@ public class StudentLedgerFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getPaymentLedger(getPaymentLedgerDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<AccountFeesStatusModel>() {
+        ApiHandler.getApiService().getPaymentLedger(getPaymentLedgerDetail(), new retrofit.Callback<AccountFeesStatusModel>() {
             @Override
             public void success(AccountFeesStatusModel paymentLedgerModel, Response response) {
                 Utils.dismissDialog();
@@ -284,6 +284,7 @@ public class StudentLedgerFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("studentid", FinalStudentIdStr);
         map.put("TermID", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -296,7 +297,7 @@ public class StudentLedgerFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getAllPaymentLedger(getAllPaymentLedgerDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<AccountFeesStatusModel>() {
+        ApiHandler.getApiService().getAllPaymentLedger(getAllPaymentLedgerDetail(), new retrofit.Callback<AccountFeesStatusModel>() {
             @Override
             public void success(AccountFeesStatusModel allPaymentLedgerModel, Response response) {
                 Utils.dismissDialog();
@@ -341,6 +342,7 @@ public class StudentLedgerFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("studentid", FinalStudentIdStr);
         map.put("TermID", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -390,7 +392,7 @@ public class StudentLedgerFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStudentName(getStudentDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getStudentName(getStudentDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel studentNameModel, Response response) {
 //                Utils.dismissDialog();
@@ -472,6 +474,7 @@ public class StudentLedgerFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("SearchType", "Current Student");
         map.put("InputValue", studentNameStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -484,7 +487,7 @@ public class StudentLedgerFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -521,6 +524,7 @@ public class StudentLedgerFragment extends Fragment {
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

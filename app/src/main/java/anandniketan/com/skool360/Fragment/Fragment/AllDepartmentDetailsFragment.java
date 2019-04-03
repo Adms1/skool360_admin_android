@@ -130,7 +130,7 @@ public class AllDepartmentDetailsFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStudentFullDetail(getStudentFullDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getStudentFullDetail(getStudentFullDetail(), new retrofit.Callback<StudentAttendanceModel>() {
 
             @Override
             public void success(StudentAttendanceModel studentFullDetailModel, Response response) {
@@ -196,6 +196,7 @@ public class AllDepartmentDetailsFragment extends Fragment {
     private Map<String, String> getStudentFullDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("StudentID", AppConfiguration.StudentId);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 }

@@ -151,7 +151,7 @@ public class InOutSummaryDetailsFragment extends Fragment implements DatePickerD
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getEmployeeInOutDetails(getInOutParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<EmployeeInOutDetailsModel>() {
+        ApiHandler.getApiService().getEmployeeInOutDetails(getInOutParams(), new retrofit.Callback<EmployeeInOutDetailsModel>() {
             @Override
             public void success(EmployeeInOutDetailsModel announcementModel, Response response) {
                 Utils.dismissDialog();
@@ -209,6 +209,7 @@ public class InOutSummaryDetailsFragment extends Fragment implements DatePickerD
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", fragmentEmployeePresentDetailBinding.fromdateBtn1.getText().toString());
         map.put("EndDate", fragmentEmployeePresentDetailBinding.todateBtn1.getText().toString());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

@@ -232,7 +232,7 @@ public class StudentAbsentFragment extends Fragment implements DatePickerDialog.
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -269,6 +269,7 @@ public class StudentAbsentFragment extends Fragment implements DatePickerDialog.
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -281,7 +282,7 @@ public class StudentAbsentFragment extends Fragment implements DatePickerDialog.
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getAbsentToday(getAbsentTodayDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getAbsentToday(getAbsentTodayDetail(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel getBulkSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -338,6 +339,7 @@ public class StudentAbsentFragment extends Fragment implements DatePickerDialog.
         map.put("dt", FinalDateStr);
         map.put("grade", FinalStandardIdStr);
         map.put("section", FinalClassIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -558,7 +560,7 @@ public class StudentAbsentFragment extends Fragment implements DatePickerDialog.
                 }
                 if (!finalstudentAbsentIdArray.equalsIgnoreCase("") && !finalmessageMessageLine.equalsIgnoreCase("") && !finalDateStr.equalsIgnoreCase("")) {
                     Utils.showDialog(getActivity());
-                    ApiHandler.getApiService().InsertAbsentTodaySMS(InsertAbsentTodaySMS(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+                    ApiHandler.getApiService().InsertAbsentTodaySMS(InsertAbsentTodaySMS(), new retrofit.Callback<InsertMenuPermissionModel>() {
                         @Override
                         public void success(InsertMenuPermissionModel insertMenuPermissionModel, Response response) {
                             Utils.dismissDialog();
@@ -602,6 +604,7 @@ public class StudentAbsentFragment extends Fragment implements DatePickerDialog.
         map.put("SMS", finalmessageMessageLine);
         map.put("Date", finalDateStr);
         map.put("MobileNo", finalstudentAbsentIdArray);//finalstudentAbsentIdArray  "1|8672952197"
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

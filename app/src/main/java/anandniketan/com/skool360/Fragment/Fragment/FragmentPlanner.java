@@ -292,7 +292,7 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
         Utils.showDialog(getActivity());
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -342,6 +342,7 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -353,7 +354,7 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
             return;
         }
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getPlanner(getPlannerParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<PlannerModel>() {
+        ApiHandler.getApiService().getPlanner(getPlannerParams(), new retrofit.Callback<PlannerModel>() {
             @Override
             public void success(PlannerModel inquiryDataModel, Response response) {
                 if (inquiryDataModel == null) {
@@ -409,6 +410,7 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
 
     private Map<String, String> getPlannerParams() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -420,7 +422,7 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
             return;
         }
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().insertPlanner(getInsertUpdatePlannerParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<PlannerModel>() {
+        ApiHandler.getApiService().insertPlanner(getInsertUpdatePlannerParams(), new retrofit.Callback<PlannerModel>() {
             @Override
             public void success(PlannerModel inquiryDataModel, Response response) {
                 if (inquiryDataModel == null) {
@@ -478,7 +480,7 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
         map.put("Title", fragmentPlannerBinding.titleEdt.getText().toString());
         map.put("StartDate", fragmentPlannerBinding.fromDate1Edt.getText().toString());
         map.put("EndDate", fragmentPlannerBinding.toDate2Edt.getText().toString());
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         if (fragmentPlannerBinding.rbAll.isChecked()) {
             // map.put("GradeID", "0");
             if (standardAdapter != null) {
@@ -511,7 +513,7 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
             return;
         }
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().deletePlanner(getDeletePlannerParams(id), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<PlannerModel>() {
+        ApiHandler.getApiService().deletePlanner(getDeletePlannerParams(id), new retrofit.Callback<PlannerModel>() {
             @Override
             public void success(PlannerModel inquiryDataModel, Response response) {
                 if (inquiryDataModel == null) {
@@ -550,6 +552,7 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
     private Map<String, String> getDeletePlannerParams(String id) {
         Map<String, String> map = new HashMap<>();
         map.put("ID", id);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

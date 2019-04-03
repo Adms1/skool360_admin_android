@@ -939,7 +939,7 @@ public class MISDataListFragment extends Fragment {
         // Utils.showDialog(getActivity());
         progressBar.setVisibility(View.VISIBLE);
 
-        ApiHandler.getApiService().getMISStaffdata(getParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISStaffModel>() {
+        ApiHandler.getApiService().getMISStaffdata(getParams(), new retrofit.Callback<MISStaffModel>() {
             @Override
             public void success(MISStaffModel staffSMSDataModel, Response response) {
                 // Utils.dismissDialog();
@@ -1062,7 +1062,7 @@ public class MISDataListFragment extends Fragment {
         //Utils.showDialog(getActivity());
         progressBar.setVisibility(View.VISIBLE);
 
-        ApiHandler.getApiService().getMISStaffAttendanceDetail(getStaffNewParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISStaffNewDetailModel>() {
+        ApiHandler.getApiService().getMISStaffAttendanceDetail(getStaffNewParams(), new retrofit.Callback<MISStaffNewDetailModel>() {
             @Override
             public void success(MISStaffNewDetailModel staffSMSDataModel, Response response) {
                 //Utils.dismissDialog();
@@ -1160,7 +1160,7 @@ public class MISDataListFragment extends Fragment {
         //Utils.showDialog(getActivity());
         progressBar.setVisibility(View.VISIBLE);
 
-        ApiHandler.getApiService().getMISTaskData(getTaskReportParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISTaskReportDetailModel>() {
+        ApiHandler.getApiService().getMISTaskData(getTaskReportParams(), new retrofit.Callback<MISTaskReportDetailModel>() {
             @Override
             public void success(MISTaskReportDetailModel staffSMSDataModel, Response response) {
                 //Utils.dismissDialog();
@@ -1263,7 +1263,7 @@ public class MISDataListFragment extends Fragment {
         Utils.showDialog(getActivity());
         progressBar.setVisibility(View.VISIBLE);
 
-        ApiHandler.getApiService().getMISAccountByType(getAccountParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISAccountModel>() {
+        ApiHandler.getApiService().getMISAccountByType(getAccountParams(), new retrofit.Callback<MISAccountModel>() {
             @Override
             public void success(MISAccountModel staffSMSDataModel, Response response) {
                 //Utils.dismissDialog();
@@ -1366,6 +1366,7 @@ public class MISDataListFragment extends Fragment {
         // map.put("Date",date);
         map.put("TermID", termID);
         map.put("RequestType", requestType);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1380,7 +1381,7 @@ public class MISDataListFragment extends Fragment {
         //Utils.showDialog(getActivity());
         progressBar.setVisibility(View.VISIBLE);
 
-        ApiHandler.getApiService().getMISNewAddmission(getNewAdmissionParams(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISNewAdmissionModel>() {
+        ApiHandler.getApiService().getMISNewAddmission(getNewAdmissionParams(), new retrofit.Callback<MISNewAdmissionModel>() {
             @Override
             public void success(MISNewAdmissionModel staffSMSDataModel, Response response) {
                 // Utils.dismissDialog();
@@ -1493,7 +1494,7 @@ public class MISDataListFragment extends Fragment {
         Utils.showDialog(getActivity());
         progressBar.setVisibility(View.VISIBLE);
 
-        ApiHandler.getApiService().getAllSMSDetail(getMessageReportDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getAllSMSDetail(getMessageReportDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel inquiryDataModel, Response response) {
                 if (inquiryDataModel == null) {
@@ -1614,6 +1615,7 @@ public class MISDataListFragment extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("StartDate", Utils.getTodaysDate());
         map.put("EndDate", Utils.getTodaysDate());
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1623,6 +1625,7 @@ public class MISDataListFragment extends Fragment {
         // map.put("Date",date);
         map.put("TermID", termID);
         map.put("RequestType", requestType);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1631,6 +1634,7 @@ public class MISDataListFragment extends Fragment {
         map.put("Date", date);
         map.put("TermID", termID);
         map.put("TaskType", requestType);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1640,6 +1644,7 @@ public class MISDataListFragment extends Fragment {
         map.put("TermID", termID);
         map.put("DepartmentID", deptId);
         map.put("RequestType", requestType);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1649,6 +1654,7 @@ public class MISDataListFragment extends Fragment {
         map.put("Date", date);
         map.put("TermID", termID);
         map.put("RequestType", requestType);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -1692,7 +1698,7 @@ public class MISDataListFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getStandardDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -1729,6 +1735,7 @@ public class MISDataListFragment extends Fragment {
 
     private Map<String, String> getStandardDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

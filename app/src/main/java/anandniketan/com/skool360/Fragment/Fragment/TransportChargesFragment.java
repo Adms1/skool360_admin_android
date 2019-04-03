@@ -115,7 +115,7 @@ public class TransportChargesFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -152,6 +152,7 @@ public class TransportChargesFragment extends Fragment {
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -163,7 +164,7 @@ public class TransportChargesFragment extends Fragment {
             return;
         }
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTransportChargesDetail(getTransportChargesDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TransportChargesModel>() {
+        ApiHandler.getApiService().getTransportChargesDetail(getTransportChargesDetail(), new retrofit.Callback<TransportChargesModel>() {
             @Override
             public void success(TransportChargesModel transportChargesModel, Response response) {
 //                Utils.dismissDialog();
@@ -214,6 +215,7 @@ public class TransportChargesFragment extends Fragment {
     private Map<String, String> getTransportChargesDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("Term_ID", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

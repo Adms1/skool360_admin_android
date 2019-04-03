@@ -185,7 +185,7 @@ public class MISFragment_New extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -222,6 +222,7 @@ public class MISFragment_New extends Fragment {
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -297,7 +298,7 @@ public class MISFragment_New extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISdata(getParams(requestType), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISModel>() {
+        ApiHandler.getApiService().getMISdata(getParams(requestType), new retrofit.Callback<MISModel>() {
             @Override
             public void success(MISModel staffSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -385,7 +386,7 @@ public class MISFragment_New extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISdata(getParams(requestType), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISModel>() {
+        ApiHandler.getApiService().getMISdata(getParams(requestType), new retrofit.Callback<MISModel>() {
             @Override
             public void success(MISModel staffSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -470,7 +471,7 @@ public class MISFragment_New extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISdata(getParams(requestType), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISModel>() {
+        ApiHandler.getApiService().getMISdata(getParams(requestType), new retrofit.Callback<MISModel>() {
             @Override
             public void success(MISModel staffSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -556,7 +557,7 @@ public class MISFragment_New extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISdata(getParams(requestType), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISModel>() {
+        ApiHandler.getApiService().getMISdata(getParams(requestType), new retrofit.Callback<MISModel>() {
             @Override
             public void success(MISModel staffSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -643,7 +644,7 @@ public class MISFragment_New extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMISdata(getParams(requestType), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<MISModel>() {
+        ApiHandler.getApiService().getMISdata(getParams(requestType), new retrofit.Callback<MISModel>() {
             @Override
             public void success(MISModel staffSMSDataModel, Response response) {
                 Utils.dismissDialog();
@@ -724,6 +725,7 @@ public class MISFragment_New extends Fragment {
         map.put("Date", Utils.getTodaysDate());
         map.put("TermID", FinalTermIdStr);
         map.put("RequestType", params);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

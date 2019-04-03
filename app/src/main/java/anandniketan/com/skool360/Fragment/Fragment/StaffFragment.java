@@ -285,7 +285,7 @@ public class StaffFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStaffAttendace(getStaffDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getStaffAttendace(getStaffDetail(), new retrofit.Callback<StaffAttendaceModel>() {
 
             @Override
             public void success(StaffAttendaceModel staffUser, Response response) {
@@ -330,6 +330,7 @@ public class StaffFragment extends Fragment {
     private Map<String, String> getStaffDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("Date", Datestr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 }

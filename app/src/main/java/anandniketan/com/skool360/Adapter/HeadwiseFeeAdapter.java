@@ -31,6 +31,7 @@ import anandniketan.com.skool360.R;
 import anandniketan.com.skool360.Utility.ApiClient;
 import anandniketan.com.skool360.Utility.AppConfiguration;
 import anandniketan.com.skool360.Utility.DialogUtils;
+import anandniketan.com.skool360.Utility.PrefUtils;
 import anandniketan.com.skool360.Utility.SpacesItemDecoration;
 import anandniketan.com.skool360.Utility.Utils;
 import anandniketan.com.skool360.Utility.WebServices;
@@ -99,7 +100,7 @@ public class HeadwiseFeeAdapter extends RecyclerView.Adapter<HeadwiseFeeAdapter.
             }
 
             WebServices apiService = ApiClient.getClient().create(WebServices.class);
-            Call<HeadwiseStudent> call = apiService.getHeadWiseFeesCollectionStudent(AppConfiguration.BASEURL + "GetHeadDetailByStudentID?StudentID=" + finalArrayGetFeeModels.get(position).getStudentID() + "&Term=" + termid);
+            Call<HeadwiseStudent> call = apiService.getHeadWiseFeesCollectionStudent(AppConfiguration.BASEURL + "GetHeadDetailByStudentID?StudentID=" + finalArrayGetFeeModels.get(position).getStudentID() + "&Term=" + termid + "&LocationID=" + PrefUtils.getInstance(context).getStringValue("LocationID", "0"));
 
             call.enqueue(new Callback<HeadwiseStudent>() {
 

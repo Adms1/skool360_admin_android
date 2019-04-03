@@ -224,7 +224,7 @@ public class SMSStudentTransportFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -262,6 +262,7 @@ public class SMSStudentTransportFragment extends Fragment {
 
     private Map<String, String> getTermDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -309,7 +310,7 @@ public class SMSStudentTransportFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getRouteDetail(getRouteDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TransportChargesModel>() {
+        ApiHandler.getApiService().getRouteDetail(getRouteDetail(), new retrofit.Callback<TransportChargesModel>() {
             @Override
             public void success(TransportChargesModel routeDetail, Response response) {
 //                Utils.dismissDialog();
@@ -348,7 +349,7 @@ public class SMSStudentTransportFragment extends Fragment {
 
     private Map<String, String> getRouteDetail() {
         Map<String, String> map = new HashMap<>();
-
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -468,7 +469,7 @@ public class SMSStudentTransportFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStudentTransportDetail(getStudentTransportDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getStudentTransportDetail(getStudentTransportDetail(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel studentTransportDetailModel, Response response) {
 //                Utils.dismissDialog();
@@ -534,6 +535,7 @@ public class SMSStudentTransportFragment extends Fragment {
         }
         map.put("PickupPoint", FinalPickupIdStr);
         map.put("GRNO", "");
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -648,7 +650,7 @@ public class SMSStudentTransportFragment extends Fragment {
                 }
                 if (!finalBulkIdArray.equalsIgnoreCase("") && !finalmessageMessageLine.equalsIgnoreCase("") && !finalDateStr.equalsIgnoreCase("")) {
                     Utils.showDialog(getActivity());
-                    ApiHandler.getApiService().InsertBulkSMSData(InsertBulkSMSData(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<InsertMenuPermissionModel>() {
+                    ApiHandler.getApiService().InsertBulkSMSData(InsertBulkSMSData(), new retrofit.Callback<InsertMenuPermissionModel>() {
                         @Override
                         public void success(InsertMenuPermissionModel insertMenuPermissionModel, Response response) {
                             Utils.dismissDialog();
@@ -692,6 +694,7 @@ public class SMSStudentTransportFragment extends Fragment {
         map.put("SMS", finalmessageMessageLine);
         map.put("Date", finalDateStr);
         map.put("MobileNo", finalBulkIdArray);//finalBulkIdArray  "1|8672952197"
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

@@ -203,6 +203,7 @@ public class ViewMarksFragment extends Fragment {
             map.put("TestIDs", FinalTestIDs);
             map.put("GradeID", FinalStandardIdStr + "," + FinalStandardStr);
             map.put("SectionID", FinalSectionIdStr + "," + FinalStandardectionStr);
+            map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
 
         } else {
 
@@ -225,7 +226,7 @@ public class ViewMarksFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStudentViewMarks(getURLDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<ViewMarksModel>() {
+        ApiHandler.getApiService().getStudentViewMarks(getURLDetail(), new retrofit.Callback<ViewMarksModel>() {
             @Override
             public void success(ViewMarksModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -265,7 +266,7 @@ public class ViewMarksFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -301,7 +302,9 @@ public class ViewMarksFragment extends Fragment {
     }
 
     private Map<String, String> getTermDetail() {
-        return new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     public void fillTermSpinner() {
@@ -349,7 +352,7 @@ public class ViewMarksFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getStandardDetail(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStandardModel>() {
+        ApiHandler.getApiService().getStandardDetail(getTermDetail(), new retrofit.Callback<GetStandardModel>() {
             @Override
             public void success(GetStandardModel standardModel, Response response) {
                 Utils.dismissDialog();
@@ -499,7 +502,7 @@ public class ViewMarksFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTestName(getTestNameDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<FinalArrayStudentModel>() {
+        ApiHandler.getApiService().getTestName(getTestNameDetail(), new retrofit.Callback<FinalArrayStudentModel>() {
             @Override
             public void success(FinalArrayStudentModel testNameModel, Response response) {
                 Utils.dismissDialog();
@@ -541,6 +544,7 @@ public class ViewMarksFragment extends Fragment {
     private Map<String, String> getTestNameDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("TermID", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

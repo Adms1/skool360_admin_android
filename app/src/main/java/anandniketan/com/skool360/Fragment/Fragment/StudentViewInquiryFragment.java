@@ -285,7 +285,7 @@ public class StudentViewInquiryFragment extends Fragment implements DatePickerDi
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTerm(getTermDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<TermModel>() {
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
             @Override
             public void success(TermModel termModel, Response response) {
                 Utils.dismissDialog();
@@ -322,7 +322,9 @@ public class StudentViewInquiryFragment extends Fragment implements DatePickerDi
     }
 
     private Map<String, String> getTermDetail() {
-        return new HashMap<>();
+       HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
     }
 
     // CALL InquiryCount API HERE
@@ -334,7 +336,7 @@ public class StudentViewInquiryFragment extends Fragment implements DatePickerDi
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getInquiryCount(getInquiryCountDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentAttendanceModel>() {
+        ApiHandler.getApiService().getInquiryCount(getInquiryCountDetail(), new retrofit.Callback<StudentAttendanceModel>() {
             @Override
             public void success(StudentAttendanceModel inquiryCountModel, Response response) {
 //                Utils.dismissDialog();
@@ -373,6 +375,7 @@ public class StudentViewInquiryFragment extends Fragment implements DatePickerDi
     private Map<String, String> getInquiryCountDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("TermId", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -393,7 +396,7 @@ public class StudentViewInquiryFragment extends Fragment implements DatePickerDi
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getInquiryData(getInquiryDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<StudentInquiryModel>() {
+        ApiHandler.getApiService().getInquiryData(getInquiryDetail(), new retrofit.Callback<StudentInquiryModel>() {
             @Override
             public void success(StudentInquiryModel inquiryDataModel, Response response) {
 
@@ -466,6 +469,7 @@ public class StudentViewInquiryFragment extends Fragment implements DatePickerDi
         // map.put("onlineStatus",FinalOnlineStatusStr);
         map.put("status", FinalStatusIdStr);
         map.put("TermID", FinalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -654,7 +658,7 @@ public class StudentViewInquiryFragment extends Fragment implements DatePickerDi
 
         WebServices apiService = ApiClient.getClient().create(WebServices.class);
 
-        Call<TermModel> call = apiService.getInquiryStatus();
+        Call<TermModel> call = apiService.getInquiryStatus(PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<TermModel>() {
 
             @Override

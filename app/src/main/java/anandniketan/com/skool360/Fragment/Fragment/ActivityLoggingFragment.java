@@ -213,7 +213,7 @@ public class ActivityLoggingFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getMonthlyCount(getMonthlyCountDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getMonthlyCount(getMonthlyCountDetail(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel monthlyCount, Response response) {
                 Utils.dismissDialog();
@@ -263,6 +263,7 @@ public class ActivityLoggingFragment extends Fragment {
 
     private Map<String, String> getMonthlyCountDetail() {
         Map<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -275,7 +276,7 @@ public class ActivityLoggingFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getDateCountPerMonth(getDateCountPerMonthDetail(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getDateCountPerMonth(getDateCountPerMonthDetail(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel datePerMonthCount, Response response) {
                 Utils.dismissDialog();
@@ -320,6 +321,7 @@ public class ActivityLoggingFragment extends Fragment {
     private Map<String, String> getDateCountPerMonthDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("Month", FinalSelectedMonth);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
@@ -332,7 +334,7 @@ public class ActivityLoggingFragment extends Fragment {
         }
 
         Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getLoginDetailsDatewise(getLoginDetailsDatewise(), PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"), new retrofit.Callback<GetStaffSMSDataModel>() {
+        ApiHandler.getApiService().getLoginDetailsDatewise(getLoginDetailsDatewise(), new retrofit.Callback<GetStaffSMSDataModel>() {
             @Override
             public void success(GetStaffSMSDataModel loginDetailModel, Response response) {
                 Utils.dismissDialog();
@@ -377,6 +379,7 @@ public class ActivityLoggingFragment extends Fragment {
     private Map<String, String> getLoginDetailsDatewise() {
         Map<String, String> map = new HashMap<>();
         map.put("date", FinalSelectedDate);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 
