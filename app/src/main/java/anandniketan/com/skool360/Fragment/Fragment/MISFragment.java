@@ -972,9 +972,9 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
 
 
         fragmentMisBinding.spinnerFinance.setAdapter(adapter);
-        FinalFinanaceTermId = spinnerTermMap2.get(1);
+        FinalFinanaceTermId = spinnerTermMap2.get(0);
         AppConfiguration.financeTermId = FinalFinanaceTermId;
-        fragmentMisBinding.spinnerFinance.setSelection(1, false);
+        fragmentMisBinding.spinnerFinance.setSelection(0, false);
 
 
     }

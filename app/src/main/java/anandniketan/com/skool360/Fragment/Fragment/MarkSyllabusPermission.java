@@ -176,6 +176,12 @@ public class MarkSyllabusPermission extends Fragment {
                 Log.d("value", name + " " + getid);
                 FinalTermIdStr = getid;
                 Log.d("FinalTermIdStr", FinalTermIdStr);
+
+                callTestNameForMarksSyllabusPermissionApi(FinalTermIdStr, FinalGradeIsStr);
+
+                if (isRefreshRequired) {
+                    callResultPermission();
+                }
             }
 
             @Override

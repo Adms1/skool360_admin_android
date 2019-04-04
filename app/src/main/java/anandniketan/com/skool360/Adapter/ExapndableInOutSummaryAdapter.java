@@ -21,7 +21,6 @@ import anandniketan.com.skool360.Model.HR.EmployeeInOutSummaryModel;
 import anandniketan.com.skool360.R;
 import anandniketan.com.skool360.Utility.AppConfiguration;
 import anandniketan.com.skool360.Utility.DateUtils;
-import anandniketan.com.skool360.Utility.Utils;
 import anandniketan.com.skool360.calendarview.CalendarListener;
 import anandniketan.com.skool360.calendarview.CustomCalendarView;
 
@@ -33,13 +32,13 @@ public class ExapndableInOutSummaryAdapter extends BaseExpandableListAdapter {
     private int annousID;
     private Fragment fragment = null;
     private FragmentManager fragmentManager = null;
-    private String viewstatus;
+//    private String viewstatus;
 
-    public ExapndableInOutSummaryAdapter(Context context, List<String> listDataHeader, HashMap<String, ArrayList<EmployeeInOutSummaryModel.FinalArray>> listDataChild, String viewstatus) {
+    public ExapndableInOutSummaryAdapter(Context context, List<String> listDataHeader, HashMap<String, ArrayList<EmployeeInOutSummaryModel.FinalArray>> listDataChild) {
         this._context = context;
         this._listDataHeader = listDataHeader;
         this.listChildData = listDataChild;
-        this.viewstatus = viewstatus;
+//        this.viewstatus = viewstatus;
 
     }
 
@@ -97,12 +96,12 @@ public class ExapndableInOutSummaryAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        if (viewstatus.equalsIgnoreCase("true")) {
+//        if (viewstatus.equalsIgnoreCase("true")) {
             return this.listChildData.get(this._listDataHeader.get(groupPosition)).size();
-        } else {
-            Utils.ping(_context, "Access Denied");
-            return 0;
-        }
+//        } else {
+//            Utils.ping(_context, "Access Denied");
+//            return 0;
+//        }
     }
 
     @Override
@@ -145,13 +144,13 @@ public class ExapndableInOutSummaryAdapter extends BaseExpandableListAdapter {
         txt_teachername.setText(headerTitle1);
         txt_dept.setText(headerTitle2);
 
-        if (viewstatus.equalsIgnoreCase("true")) {
+//        if (viewstatus.equalsIgnoreCase("true")) {
             if (isExpanded) {
                 iv_indicator.setImageResource(R.drawable.arrow_1_42_down);
             } else {
                 iv_indicator.setImageResource(R.drawable.arrow_1_42);
             }
-        }
+//        }
         return convertView;
     }
 

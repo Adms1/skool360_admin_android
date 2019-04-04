@@ -137,6 +137,16 @@
                             android:layout_gravity="center"
                             android:visibility="gone" />
 
+                        <TextView
+                            android:id="@+id/tv_no_records_of_finance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="No Records Found"
+                            android:textColor="@color/red"
+                            android:visibility="gone" />
+
                         <LinearLayout
                             android:id="@+id/LL_finance"
                             android:layout_width="match_parent"
@@ -209,16 +219,6 @@
                                         android:visibility="visible" />
 
                                 </LinearLayout>
-
-                                <TextView
-                                    android:id="@+id/tv_no_records_of_finance"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:text="No Records Found"
-                                    android:textColor="@color/red"
-                                    android:visibility="gone" />
 
                             </LinearLayout>
 

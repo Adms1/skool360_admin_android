@@ -69,7 +69,7 @@ public class MenuPermissionFragment extends Fragment {
     private boolean tempAll = false;
     private boolean temp1All = false;
     private boolean temp2All = false;
-    private String viewstatus;
+    private String viewstatus, updatestatus;
 
     private TextView tvHeader;
     private Button btnBack, btnMenu;
@@ -88,6 +88,7 @@ public class MenuPermissionFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         viewstatus = bundle.getString("status");
+        updatestatus = bundle.getString("updatestatus");
 
         return rootView;
     }
@@ -100,7 +101,7 @@ public class MenuPermissionFragment extends Fragment {
         AppConfiguration.firsttimeback = true;
         AppConfiguration.position = 51;
 
-        viewstatus = AppConfiguration.HRstaffseachviewstatus;
+//        viewstatus = AppConfiguration.HRstaffseachviewstatus;
 
         tvHeader = view.findViewById(R.id.textView3);
         btnBack = view.findViewById(R.id.btnBack);
@@ -109,7 +110,6 @@ public class MenuPermissionFragment extends Fragment {
         tvHeader.setText(R.string.menupermission);
         setListners();
         callTeacherApi();
-
 
     }
 
@@ -372,7 +372,7 @@ public class MenuPermissionFragment extends Fragment {
             return;
         }
 
-//        Utils.showDialog(getActivity());
+        Utils.showDialog(getActivity());
         ApiHandler.getApiService().getPageList(getPageListDetail(), new retrofit.Callback<GetPageListModel>() {
             @Override
             public void success(GetPageListModel getPageListModel, Response response) {

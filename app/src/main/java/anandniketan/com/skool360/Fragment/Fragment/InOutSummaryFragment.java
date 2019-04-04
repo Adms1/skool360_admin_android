@@ -53,7 +53,7 @@ public class InOutSummaryFragment extends Fragment {
     private ExapndableInOutSummaryAdapter exapndableInOutSummaryAdapter;
     private List<String> listDataHeader;
     private HashMap<String, ArrayList<EmployeeInOutSummaryModel.FinalArray>> listDataChild;
-    private String viewstatus;
+    //    private String viewstatus;
     private int lastExpandedPosition = -1;
     private TextView tvHeader;
     private Button btnBack, btnMenu;
@@ -82,7 +82,7 @@ public class InOutSummaryFragment extends Fragment {
         mContext = getActivity().getApplicationContext();
 
         Bundle bundle = this.getArguments();
-        viewstatus = bundle.getString("inoutviewstatus");
+//        viewstatus = bundle.getString("inoutviewstatus");
 
         return fragmentInOutSummaryBinding.getRoot();
     }
@@ -95,7 +95,7 @@ public class InOutSummaryFragment extends Fragment {
         AppConfiguration.firsttimeback = true;
         AppConfiguration.position = 51;
 
-        viewstatus = AppConfiguration.HRstaffseachviewstatus;
+//        viewstatus = AppConfiguration.HRstaffseachviewstatus;
 
         tvHeader = view.findViewById(R.id.textView3);
         btnBack = view.findViewById(R.id.btnBack);
@@ -236,7 +236,7 @@ public class InOutSummaryFragment extends Fragment {
                         fragmentInOutSummaryBinding.txtNoRecords.setVisibility(View.GONE);
                         fragmentInOutSummaryBinding.expHeader.setVisibility(View.VISIBLE);
                         fillExpLV();
-                        exapndableInOutSummaryAdapter = new ExapndableInOutSummaryAdapter(getActivity(), listDataHeader, listDataChild, viewstatus);
+                        exapndableInOutSummaryAdapter = new ExapndableInOutSummaryAdapter(getActivity(), listDataHeader, listDataChild);
                         fragmentInOutSummaryBinding.inoutlistList.setAdapter(exapndableInOutSummaryAdapter);
                     } else {
                         fragmentInOutSummaryBinding.txtNoRecords.setVisibility(View.VISIBLE);
