@@ -950,24 +950,19 @@ public interface WebServices {
 
     //Antra from 7/1/2018
 
-    @retrofit2.http.FormUrlEncoded
-    @retrofit2.http.POST
+    @retrofit2.http.GET
     Call<HeadwiseStudent> getHeadWiseFeesCollectionStudent(@Url String url);
 
-    @retrofit2.http.FormUrlEncoded
-    @retrofit2.http.POST
+    @retrofit2.http.GET
     Call<MISHeadwiseFee> getHeadwiseFeeDetail(@Url String url);
 
-    @retrofit2.http.FormUrlEncoded
-    @retrofit2.http.POST
+    @retrofit2.http.GET
     Call<MISStudentRange> getStudentRange(@Url String url);
 
-    @retrofit2.http.FormUrlEncoded
-    @retrofit2.http.POST
+    @retrofit2.http.GET
     Call<TransportMainModel> getTransportDetail(@Url String url);
 
-    @retrofit2.http.FormUrlEncoded
-    @retrofit2.http.POST
+    @retrofit2.http.GET
     Call<MIStudentWiseCalendarModel> getSchoolCalendarDetail(@Url String url);
 
     @retrofit2.http.GET
@@ -976,12 +971,10 @@ public interface WebServices {
     @retrofit2.http.GET
     Call<GalleryDataModel> getGalleryData(@Url String url);
 
-    @retrofit2.http.FormUrlEncoded
-    @retrofit2.http.POST
+    @retrofit2.http.GET
     Call<JsonObject> deleteGalleryData(@Url String url);
 
-    @retrofit2.http.FormUrlEncoded
-    @retrofit2.http.POST
+    @retrofit2.http.GET
     Call<GalleryDataModel> insertGalleryData(@Url String url);
 
     @retrofit2.http.FormUrlEncoded

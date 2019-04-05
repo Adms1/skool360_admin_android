@@ -568,7 +568,7 @@ public class MarkSyllabusPermission extends Fragment {
                                 btnCancel.setVisibility(View.VISIBLE);
                                 UpdatePermission(pos);
                             }
-                        }, status);
+                        }, updatestatus);
                         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
                         rvMainListData.setLayoutManager(mLayoutManager);
                         rvMainListData.setAdapter(resultPermissionAdapter);
@@ -717,9 +717,11 @@ public class MarkSyllabusPermission extends Fragment {
                     rbActive.setChecked(false);
                     rbInActive.setChecked(false);
                     mBtnAddUpdate.setText("Add");
-                    callTermApi();
+                    btnCancel.setVisibility(View.GONE);
+//                    callTermApi();
                     isRefreshRequired = true;
-                    callGradeApi();
+//                    callGradeApi();
+                    callResultPermission();
                 }
             }
 
@@ -778,6 +780,7 @@ public class MarkSyllabusPermission extends Fragment {
             map.put("PermissionID", "0");
 
         }
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

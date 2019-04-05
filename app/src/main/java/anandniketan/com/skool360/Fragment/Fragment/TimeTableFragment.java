@@ -153,7 +153,12 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
 //                if (viewstatus.equalsIgnoreCase("true")) {
                 callStandardApi();
 
-                callTimeTableApi();
+                if (viewstatus.equalsIgnoreCase("true")) {
+
+                    callTimeTableApi();
+                } else {
+                    Utils.ping(getActivity(), "Access Denied");
+                }
 //                } else {
 //                    Utils.ping(getActivity(), "Access Denied");
 //                }
@@ -706,7 +711,7 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
 
     private HashMap<String, String> getTeacherDetail(String teachername) {
         HashMap<String, String> map = new HashMap<>();
-        map.put("TermID", "3");
+        map.put("TermID", FinalTermIdStr);
         map.put("SubjectID", teachername);
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;

@@ -277,19 +277,24 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (btnAdd.getText().toString().equalsIgnoreCase("Update")) {
+                if (!tvTitle.getText().toString().equalsIgnoreCase("") || !tvComment.getText().toString().equalsIgnoreCase("")) {
 
-                    if (editstatus.equalsIgnoreCase("true")) {
+                    if (btnAdd.getText().toString().equalsIgnoreCase("Update")) {
 
-                        callInsertUpdateGalleryDataApi(galid);
+                        if (editstatus.equalsIgnoreCase("true")) {
 
+                            callInsertUpdateGalleryDataApi(galid);
+
+                        } else {
+                            Utils.ping(getActivity(), "Access Denied");
+                        }
                     } else {
-                        Utils.ping(getActivity(), "Access Denied");
+
+                        callInsertUpdateGalleryDataApi("0");
+
                     }
                 } else {
-
-                    callInsertUpdateGalleryDataApi("0");
-
+                    Utils.ping(getContext(), "Please Enter all Details");
                 }
             }
         });

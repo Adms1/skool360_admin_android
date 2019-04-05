@@ -26,12 +26,13 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
     private Fragment fragment = null;
     private FragmentManager fragmentManager = null;
     private Bundle bundle;
+    private String termid;
 
 
-    public MISTaskReportGridAdapter(Context mContext, List<MISTaskReportModel.FinalArray> dataValues) {
+    public MISTaskReportGridAdapter(Context mContext, List<MISTaskReportModel.FinalArray> dataValues, String termid) {
         this.context = mContext;
         this.dataValues = dataValues;
-
+        this.termid = termid;
     }
 
     @Override
@@ -64,7 +65,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("title", "Task Report");
                         bundle.putString("requestType", "Attendance");
                         bundle.putString("requestTitle", "Total Attendance");
-                        bundle.putString("TermID", AppConfiguration.TermId);
+                        bundle.putString("TermID", termid);
                         bundle.putString("countdata", holder.total_txt.getText().toString());
                         bundle.putString("Date", AppConfiguration.taskReportDate);
                         bundle.putString("coundata", holder.total_txt.getText().toString());
@@ -82,7 +83,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("title", "Task Report");
                         bundle.putString("requestType", "HWTotal");
                         bundle.putString("requestTitle", "Homework");
-                        bundle.putString("TermID", AppConfiguration.TermId);
+                        bundle.putString("TermID", termid);
                         bundle.putString("countdata", holder.total_txt.getText().toString());
                         bundle.putString("Date", AppConfiguration.taskReportDate);
 
@@ -100,7 +101,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("title", "Task Report");
                         bundle.putString("requestType", "CWTotal");
                         bundle.putString("requestTitle", "Classwork");
-                        bundle.putString("TermID", AppConfiguration.TermId);
+                        bundle.putString("TermID", termid);
                         bundle.putString("Date", AppConfiguration.taskReportDate);
                         bundle.putString("countdata", holder.total_txt.getText().toString());
 
@@ -128,7 +129,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("title", "Task Report");
                         bundle.putString("requestType", "AttendanceDone");
                         bundle.putString("requestTitle", "Attendance Done");
-                        bundle.putString("TermID", AppConfiguration.TermId);
+                        bundle.putString("TermID", termid);
                         bundle.putString("countdata", holder.total_txt.getText().toString());
                         bundle.putString("Date", AppConfiguration.taskReportDate);
                         bundle.putString("coundata", holder.done_txt.getText().toString());
@@ -147,7 +148,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("title", "Task Report");
                         bundle.putString("requestType", "HWDone");
                         bundle.putString("requestTitle", "Homework Done");
-                        bundle.putString("TermID", AppConfiguration.TermId);
+                        bundle.putString("TermID", termid);
                         bundle.putString("countdata", holder.done_txt.getText().toString());
                         bundle.putString("Date", AppConfiguration.taskReportDate);
 
@@ -165,7 +166,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("title", "Task Report");
                         bundle.putString("requestType", "CWDone");
                         bundle.putString("requestTitle", "Classwork Done");
-                        bundle.putString("TermID", AppConfiguration.TermId);
+                        bundle.putString("TermID", termid);
                         bundle.putString("Date", AppConfiguration.taskReportDate);
                         bundle.putString("countdata", holder.total_txt.getText().toString());
 
@@ -194,7 +195,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("title", "Task Report");
                         bundle.putString("requestType", "AttendanceNotDone");
                         bundle.putString("requestTitle", "Attendance Not Done");
-                        bundle.putString("TermID", AppConfiguration.TermId);
+                        bundle.putString("TermID", termid);
                         bundle.putString("countdata", holder.total_txt.getText().toString());
                         bundle.putString("Date", AppConfiguration.taskReportDate);
                         bundle.putString("coundata", holder.notDone_txt.getText().toString());
@@ -213,7 +214,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("title", "Task Report");
                         bundle.putString("requestType", "HWNotDone");
                         bundle.putString("requestTitle", "Homework Not Done");
-                        bundle.putString("TermID", AppConfiguration.TermId);
+                        bundle.putString("TermID", termid);
                         bundle.putString("countdata", holder.notDone_txt.getText().toString());
                         bundle.putString("Date", AppConfiguration.taskReportDate);
 
@@ -231,7 +232,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("title", "Task Report");
                         bundle.putString("requestType", "CWNotDone");
                         bundle.putString("requestTitle", "Classwork Not Done");
-                        bundle.putString("TermID", AppConfiguration.TermId);
+                        bundle.putString("TermID", termid);
                         bundle.putString("Date", AppConfiguration.taskReportDate);
                         bundle.putString("countdata", holder.notDone_txt.getText().toString());
 

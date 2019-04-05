@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -48,6 +49,12 @@ public class MarkSyllabusPermissionAdapter extends RecyclerView.Adapter<MarkSyll
         holder.testname_txt.setText(mDataList.get(position).getTestName());
         holder.result_status_txt.setText(mDataList.get(position).getStatus());
 
+        if (mDataList.get(position).getStatus().equalsIgnoreCase("InActive")) {
+            holder.llMain.setBackgroundColor(context.getResources().getColor(R.color.red));
+        } else {
+            holder.llMain.setBackgroundColor(context.getResources().getColor(R.color.white1));
+        }
+
         holder.mIvEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,6 +90,7 @@ public class MarkSyllabusPermissionAdapter extends RecyclerView.Adapter<MarkSyll
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView term_txt, type_txt, grade_txt, testname_txt, result_status_txt;
         private ImageView mIvEdit;
+        private LinearLayout llMain;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -92,6 +100,7 @@ public class MarkSyllabusPermissionAdapter extends RecyclerView.Adapter<MarkSyll
             testname_txt = itemView.findViewById(R.id.testname_txt);
             result_status_txt = itemView.findViewById(R.id.result_status_txt);
             mIvEdit = itemView.findViewById(R.id.iv_edt);
+            llMain = itemView.findViewById(R.id.llHeader);
         }
     }
 }

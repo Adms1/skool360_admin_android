@@ -103,15 +103,15 @@ public class MISModel {
 
         @SerializedName("TotalConsistanceAbsent")
         @Expose
-        private String totalConsistanceAbsent;
+        private Integer totalConsistanceAbsent;
 
         @SerializedName("Attendance less then 70%")
         @Expose
-        private String attendance;
+        private Integer attendance;
 
         @SerializedName("Between alumini left")
         @Expose
-        private String betAlumini;
+        private Integer betAlumini;
 
         @SerializedName("DailyEntryTotal")
         @Expose
@@ -200,11 +200,11 @@ public class MISModel {
         @Expose
         private String sMSPending;
 
-        public String getAttendance() {
+        public Integer getAttendance() {
             return attendance;
         }
 
-        public void setAttendance(String attendance) {
+        public void setAttendance(Integer attendance) {
             this.attendance = attendance;
         }
         public Integer getTotalInquiry() {
@@ -223,11 +223,11 @@ public class MISModel {
             this.issueAddmissionForm = issueAddmissionForm;
         }
 
-        public String getBetAlumini() {
+        public Integer getBetAlumini() {
             return betAlumini;
         }
 
-        public void setBetAlumini(String betAlumini) {
+        public void setBetAlumini(Integer betAlumini) {
             this.betAlumini = betAlumini;
         }
 
@@ -442,11 +442,11 @@ public class MISModel {
             this.cWDone = cWDone;
         }
 
-        public String getTotalConsistanceAbsent() {
+        public Integer getTotalConsistanceAbsent() {
             return totalConsistanceAbsent;
         }
 
-        public void setTotalConsistanceAbsent(String totalConsistanceAbsent) {
+        public void setTotalConsistanceAbsent(Integer totalConsistanceAbsent) {
             this.totalConsistanceAbsent = totalConsistanceAbsent;
         }
 

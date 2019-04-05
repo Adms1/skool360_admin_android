@@ -130,25 +130,7 @@
                                 android:textStyle="bold" />
                         </LinearLayout>
 
-                        <ProgressBar
-                            android:id="@+id/progress_finance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-
-                        <TextView
-                            android:id="@+id/tv_no_records_of_finance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="No Records Found"
-                            android:textColor="@color/red"
-                            android:visibility="gone" />
-
                         <LinearLayout
-                            android:id="@+id/LL_finance"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -222,7 +204,25 @@
 
                             </LinearLayout>
 
+                            <ProgressBar
+                                android:id="@+id/progress_finance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tv_no_records_of_finance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="No Records Found"
+                                android:textColor="@color/red"
+                                android:visibility="gone" />
+
                             <LinearLayout
+                                android:id="@+id/LL_finance"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
@@ -1122,7 +1122,6 @@
                                     android:textColor="@color/scheduleheadertextcolor"
                                     android:textSize="@dimen/_11sdp" />
 
-
                             </LinearLayout>
 
                             <LinearLayout
@@ -1223,14 +1222,6 @@
                                 android:textStyle="bold" />
                         </LinearLayout>
 
-
-                        <ProgressBar
-                            android:id="@+id/progress_staff1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-
                         <LinearLayout
                             android:id="@+id/staff_new_innercontainer"
                             android:layout_width="match_parent"
@@ -1288,6 +1279,22 @@
 
                             </LinearLayout>
 
+                            <ProgressBar
+                                android:id="@+id/progress_staff1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tv_no_records_of_staff"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="No Records Found"
+                                android:textColor="@color/red"
+                                android:visibility="gone" />
 
                             <LinearLayout
                                 android:id="@+id/linear_recyler_grid"
@@ -2064,6 +2071,7 @@
                             android:id="@+id/LL_nacontainer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="gone"
                             android:orientation="vertical">
 
 

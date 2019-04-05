@@ -22,6 +22,7 @@ import anandniketan.com.skool360.Interface.editTimetableData;
 import anandniketan.com.skool360.Interface.onDeleteWithId;
 import anandniketan.com.skool360.Model.Staff.Datum;
 import anandniketan.com.skool360.R;
+import anandniketan.com.skool360.Utility.AppConfiguration;
 import anandniketan.com.skool360.databinding.ListGroupTimetableBinding;
 
 /**
@@ -87,7 +88,7 @@ public class ExpandableListAdapterTimeTable extends BaseExpandableListAdapter {
         txtLecture.setText(childData.get(childPosition).getLecture().toString());
         txtSubject.setText(childData.get(childPosition).getSubject());
         txtTeacher.setText(childData.get(childPosition).getTeacherName());
-        Picasso.get().load("http://192.168.1.22:8086/SKOOL360-Design-Icons/Admin/Delete.png").resize(100, 100).into(ivDelete);
+        Picasso.get().load(AppConfiguration.LIVE_BASE_URL + "/SKOOL360-Design-Icons/Admin/Delete.png").resize(100, 100).into(ivDelete);
 
         if (childData.get(childPosition).getSubject().equalsIgnoreCase("") && childData.get(childPosition).getTeacherName().equalsIgnoreCase("")) {
             ivEdit.setVisibility(View.GONE);

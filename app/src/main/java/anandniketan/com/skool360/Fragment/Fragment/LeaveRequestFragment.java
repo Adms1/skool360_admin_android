@@ -209,6 +209,9 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
         if (nytpe.equalsIgnoreCase("notification")) {
             fragmentLeaveRequestBinding.fromdateBtn.setText(ndate);
             fragmentLeaveRequestBinding.todateBtn.setText(Utils.getTodaysDate());
+
+            fragmentLeaveRequestBinding.typeGroup.setEnabled(false);
+
         }
 
 //        fragmentLeaveRequestBinding.fromdateBtn.setText(Utils.getTodaysDate());
@@ -269,7 +272,6 @@ public class LeaveRequestFragment extends Fragment implements OnAdapterItemButto
                 lastExpandedPosition = groupPosition;
             }
         });
-
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
