@@ -813,7 +813,6 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
 
         btnName = "update";
         timeTableDialog(grpos, chpos, "update", sub, staff);
-
     }
 
     @Override

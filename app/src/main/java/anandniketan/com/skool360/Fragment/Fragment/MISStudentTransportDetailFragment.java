@@ -199,52 +199,54 @@ public class MISStudentTransportDetailFragment extends Fragment {
 //
                     if (response.body().getFinalArray().size() > 0) {
 
-                        transportMainArray = response.body().getFinalArray().get(0).getStudentdata();
+                        if (response.body().getFinalArray().get(0).getStudentdata().size() > 0) {
+                            transportMainArray = response.body().getFinalArray().get(0).getStudentdata();
 
-                        List<TransportMainModel.StudentDatum> newArr = transportMainArray;
+                            List<TransportMainModel.StudentDatum> newArr = transportMainArray;
 //                        List<TransportMainModel.StudentDatum> newArr1 = staffSMSDataModel.getFinalArray().get(0).getStudentData();
 
 //                        ArrayList<String> header = new ArrayList<>();
 //                        HashMap<String, ArrayList<TransportMainModel.StudentDatum>> child = new HashMap<>();
 
-                        for (int i = 0; i < newArr.size(); i++) {
+                            for (int i = 0; i < newArr.size(); i++) {
 
-                            lvHeader.add(newArr.get(i).getGrade() + "-" + newArr.get(i).getSection()
-                                    + "|" + newArr.get(i).getStudentname()
-                                    + "|" + newArr.get(i).getGrno() + "|" + newArr.get(i).getPhoneno());
+                                lvHeader.add(newArr.get(i).getGrade() + "-" + newArr.get(i).getSection()
+                                        + "|" + newArr.get(i).getStudentname()
+                                        + "|" + newArr.get(i).getGrno() + "|" + newArr.get(i).getPhoneno());
 
-                            ArrayList<TransportMainModel.StudentDatum> child_child = new ArrayList();
-                            for (int j = 0; j < newArr.size(); j++) {
+                                ArrayList<TransportMainModel.StudentDatum> child_child = new ArrayList();
+                                for (int j = 0; j < newArr.size(); j++) {
 
-                                if (newArr.get(i).getGrno().equalsIgnoreCase(newArr.get(j).getGrno())) {
+                                    if (newArr.get(i).getGrno().equalsIgnoreCase(newArr.get(j).getGrno())) {
 
-                                    child_child.add(newArr.get(j));
+                                        child_child.add(newArr.get(j));
+                                    }
+
+                                    lvChild.put(lvHeader.get(i), child_child);
                                 }
-
-                                lvChild.put(lvHeader.get(i), child_child);
                             }
-                        }
 
-                        if (transportMainArray != null) {
-                            tvNorecord.setVisibility(View.GONE);
-                            if (requestType.equalsIgnoreCase("Personal")) {
+                            if (transportMainArray != null) {
+                                tvNorecord.setVisibility(View.GONE);
+                                if (requestType.equalsIgnoreCase("Personal")) {
 
-                                llHeader.setVisibility(View.VISIBLE);
-                                llHeader2.setVisibility(View.GONE);
+                                    llHeader.setVisibility(View.VISIBLE);
+                                    llHeader2.setVisibility(View.GONE);
 
-                                rvExp.setVisibility(View.GONE);
-                                rvList.setVisibility(View.VISIBLE);
-                                transportDetailAdpapter = new TransportDetailAdpapter(getActivity(), transportMainArray);
-                                rvList.setAdapter(transportDetailAdpapter);
-                            } else {
+                                    rvExp.setVisibility(View.GONE);
+                                    rvList.setVisibility(View.VISIBLE);
+                                    transportDetailAdpapter = new TransportDetailAdpapter(getActivity(), transportMainArray);
+                                    rvList.setAdapter(transportDetailAdpapter);
+                                } else {
 
-                                llHeader.setVisibility(View.GONE);
-                                llHeader2.setVisibility(View.VISIBLE);
+                                    llHeader.setVisibility(View.GONE);
+                                    llHeader2.setVisibility(View.VISIBLE);
 
-                                rvExp.setVisibility(View.VISIBLE);
-                                rvList.setVisibility(View.GONE);
-                                transportExDetailAdpapter = new TransportExDetailAdpapter(getActivity(), lvHeader, lvChild);
-                                rvExp.setAdapter(transportExDetailAdpapter);
+                                    rvExp.setVisibility(View.VISIBLE);
+                                    rvList.setVisibility(View.GONE);
+                                    transportExDetailAdpapter = new TransportExDetailAdpapter(getActivity(), lvHeader, lvChild);
+                                    rvExp.setAdapter(transportExDetailAdpapter);
+                                }
                             }
                         }
                     }

@@ -136,7 +136,13 @@ public class ApplyLeaveFragment extends Fragment implements DatePickerDialog.OnD
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callApplyLeaveListApi();
+
+                if (!etReason.getText().toString().equalsIgnoreCase("") && etReason.getText().toString() != null) {
+
+                    callApplyLeaveListApi();
+                } else {
+                    Utils.ping(getContext(), "Please Enter Valid Reason");
+                }
             }
         });
 

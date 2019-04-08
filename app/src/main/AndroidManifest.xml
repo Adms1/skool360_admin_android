@@ -24,7 +24,7 @@
             android:name="anandniketan.com.skool360.Activity.DashboardActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="adjustNothing"
             android:configChanges="orientation|screenSize|keyboardHidden"/>
 
         <activity

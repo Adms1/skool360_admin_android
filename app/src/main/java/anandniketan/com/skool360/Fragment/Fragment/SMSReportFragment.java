@@ -42,7 +42,7 @@ public class SMSReportFragment extends Fragment implements DatePickerDialog.OnDa
     private static boolean isFromDate = false;
     int Year, Month, Day;
     Calendar calendar;
-    List<StudentAttendanceFinalArray> finalArrayinquiryCountList;
+    List<StudentAttendanceFinalArray> finalArrayinquiryCountList, totalSMSArray;
     String FinalStartDateStr, FinalEndDateStr;
     ExapandableListAdapterSMSRepoetData exapandableListAdapterSMSRepoetData;
     List<String> listDataHeader;
@@ -56,7 +56,7 @@ public class SMSReportFragment extends Fragment implements DatePickerDialog.OnDa
     private int lastExpandedPosition = -1;
     private String viewstatus;
 
-    private TextView tvHeader;
+    private TextView tvHeader, tvTotalSMS, tvDeliveredSMS, tvOtherSMS;
     private Button btnBack, btnMenu;
 
     public SMSReportFragment() {
@@ -80,6 +80,10 @@ public class SMSReportFragment extends Fragment implements DatePickerDialog.OnDa
         tvHeader = view.findViewById(R.id.textView3);
         btnBack = view.findViewById(R.id.btnBack);
         btnMenu = view.findViewById(R.id.btnmenu);
+
+        tvTotalSMS = view.findViewById(R.id.total_sms_txt);
+        tvDeliveredSMS = view.findViewById(R.id.delivered_sms_txt);
+        tvOtherSMS = view.findViewById(R.id.other_sms_txt);
 
         tvHeader.setText(R.string.SMS_report);
 
@@ -163,6 +167,59 @@ public class SMSReportFragment extends Fragment implements DatePickerDialog.OnDa
                 datePickerDialog.show(getActivity().getFragmentManager(), "DatePickerDialog");
             }
         });
+
+        tvTotalSMS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finalArrayinquiryCountList = new ArrayList<>();
+                finalArrayinquiryCountList = totalSMSArray;
+
+                fillExpLV();
+                exapandableListAdapterSMSRepoetData = new ExapandableListAdapterSMSRepoetData(getActivity(), listDataHeader, listDataChild, viewstatus);
+                fragmentSmsreportBinding.lvExpviewsmsreport.setAdapter(exapandableListAdapterSMSRepoetData);
+
+            }
+        });
+
+        tvDeliveredSMS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finalArrayinquiryCountList = new ArrayList<>();
+
+                for (int i = 0; i < totalSMSArray.size(); i++) {
+                    if (totalSMSArray.get(i).getStatus().equalsIgnoreCase("delivered")) {
+                        finalArrayinquiryCountList.add(totalSMSArray.get(i));
+                    }
+                }
+
+                fillExpLV();
+                exapandableListAdapterSMSRepoetData = new ExapandableListAdapterSMSRepoetData(getActivity(), listDataHeader, listDataChild, viewstatus);
+                fragmentSmsreportBinding.lvExpviewsmsreport.setAdapter(exapandableListAdapterSMSRepoetData);
+
+            }
+        });
+
+        tvOtherSMS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finalArrayinquiryCountList = new ArrayList<>();
+
+                for (int i = 0; i < totalSMSArray.size(); i++) {
+                    if (totalSMSArray.get(i).getStatus().equalsIgnoreCase("pending")) {
+                        finalArrayinquiryCountList.add(totalSMSArray.get(i));
+                    }
+                }
+
+                fillExpLV();
+                exapandableListAdapterSMSRepoetData = new ExapandableListAdapterSMSRepoetData(getActivity(), listDataHeader, listDataChild, viewstatus);
+                fragmentSmsreportBinding.lvExpviewsmsreport.setAdapter(exapandableListAdapterSMSRepoetData);
+
+            }
+        });
+
     }
 
     // CALL SMSReportData API HERE
@@ -200,6 +257,9 @@ public class SMSReportFragment extends Fragment implements DatePickerDialog.OnDa
                     fragmentSmsreportBinding.otherSmsTxt.setText("Other SMS : " + inquiryDataModel.getOther());
 
                     finalArrayinquiryCountList = inquiryDataModel.getFinalArray();
+
+                    totalSMSArray = inquiryDataModel.getFinalArray();
+
                     if (finalArrayinquiryCountList != null) {
                         fragmentSmsreportBinding.txtNoRecords.setVisibility(View.GONE);
                         fragmentSmsreportBinding.lvExpHeader.setVisibility(View.VISIBLE);

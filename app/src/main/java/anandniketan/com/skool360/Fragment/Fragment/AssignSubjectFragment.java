@@ -66,7 +66,7 @@ public class AssignSubjectFragment extends Fragment {
     private String getEditValuearray;
     private String[] spinnersubjectIdArray;
     private RadioButton rbActive, rbInactive;
-    private String viewstatus, updatestatus, deletestatus, assignID = "", statusstr = "", finalStatusStr = "";
+    private String viewstatus, updatestatus, deletestatus, assignID = "0", statusstr = "1", finalStatusStr = "";
 
     private String editClassteacherStr, editGradeStr;
 
@@ -207,10 +207,15 @@ public class AssignSubjectFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (updatestatus.equalsIgnoreCase("true")) {
-                    callInsertAssignSubjectApi();
+                if (!fragmentAssignSubjectBinding.teacherSpinner.getSelectedItem().toString().equalsIgnoreCase("--select--")) {
+
+                    if (updatestatus.equalsIgnoreCase("true")) {
+                        callInsertAssignSubjectApi();
+                    } else {
+                        Utils.ping(getActivity(), "Access Denied");
+                    }
                 } else {
-                    Utils.ping(getActivity(), "Access Denied");
+                    Utils.ping(getContext(), "Please Select teacher");
                 }
             }
         });
@@ -479,6 +484,7 @@ public class AssignSubjectFragment extends Fragment {
                     fragmentAssignSubjectBinding.teacherSpinner.setSelection(0);
                     rbActive.setChecked(false);
                     rbInactive.setChecked(false);
+                    btnCancel.setVisibility(View.GONE);
 
                     finalArrayInsertAssignSubjectModelList = insertAssignSubjectModel.getFinalArray();
                     if (finalArrayInsertAssignSubjectModelList != null) {
@@ -598,7 +604,7 @@ public class AssignSubjectFragment extends Fragment {
 
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(mContext, R.layout.spinner_layout, spinnerteacherIdArray);
         fragmentAssignSubjectBinding.teacherSpinner.setAdapter(adapterTerm);
-        fragmentAssignSubjectBinding.teacherSpinner.setSelection(1);
+        fragmentAssignSubjectBinding.teacherSpinner.setSelection(0);
     }
 
     //Use for fill the Subject Spinner

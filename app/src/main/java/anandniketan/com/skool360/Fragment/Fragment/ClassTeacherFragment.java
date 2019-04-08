@@ -233,10 +233,16 @@ public class ClassTeacherFragment extends Fragment {
         fragmentClassTeacherBinding.saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (updatestatus.equalsIgnoreCase("true")) {
-                    callInsertClassTeacherApi();
+
+                if (!fragmentClassTeacherBinding.gradeSpinner.getSelectedItem().toString().equalsIgnoreCase("--select--") && !fragmentClassTeacherBinding.teacherSpinner.getSelectedItem().toString().equalsIgnoreCase("--select--")) {
+
+                    if (updatestatus.equalsIgnoreCase("true")) {
+                        callInsertClassTeacherApi();
+                    } else {
+                        Utils.ping(getActivity(), "Access Denied");
+                    }
                 } else {
-                    Utils.ping(getActivity(), "Access Denied");
+                    Utils.ping(getContext(), "Please Select proper data");
                 }
             }
         });
@@ -622,7 +628,7 @@ public class ClassTeacherFragment extends Fragment {
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(mContext, R.layout.spinner_layout, spinnerstandardIdArray);
         fragmentClassTeacherBinding.gradeSpinner.setAdapter(adapterTerm);
 
-        fragmentClassTeacherBinding.gradeSpinner.setSelection(1);
+        fragmentClassTeacherBinding.gradeSpinner.setSelection(0);
 
     }
 
