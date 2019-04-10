@@ -42,6 +42,49 @@
                         android:weightSum="3">
 
                         <TextView
+                            android:id="@+id/term_txt_view"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8"
+                            android:text="@string/term"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:text=":"
+                            android:textColor="@color/scheduleheadertextcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/term_spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:background="@drawable/dropdown_button"
+                            android:forceHasOverlappingRendering="false"
+                            android:gravity="center"
+                            android:overlapAnchor="false" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
                             android:id="@+id/tvTechers"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"

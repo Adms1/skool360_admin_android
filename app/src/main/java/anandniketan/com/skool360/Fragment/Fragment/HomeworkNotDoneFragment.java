@@ -39,6 +39,8 @@ import anandniketan.com.skool360.Interface.getEmployeeCheck;
 import anandniketan.com.skool360.Model.Staff.FinalArrayStaffModel;
 import anandniketan.com.skool360.Model.Staff.HomeWorkModel;
 import anandniketan.com.skool360.Model.Staff.StaffAttendaceModel;
+import anandniketan.com.skool360.Model.Transport.FinalArrayGetTermModel;
+import anandniketan.com.skool360.Model.Transport.TermModel;
 import anandniketan.com.skool360.R;
 import anandniketan.com.skool360.Utility.ApiClient;
 import anandniketan.com.skool360.Utility.ApiHandler;
@@ -56,12 +58,12 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
     private static String dateFinal;
     String homeworkIdstr;
     String homeworkdetailidstr = "";
-    private String FinalTeacherIdStr, FinalStandardIdStr, FinalTeacherid, FinalSubjectIdStr, FinalStandardId, FinalClassId, FinalSubjectId;
+    List<FinalArrayGetTermModel> finalArrayGetTermModels;
     private TextView tvHeader, tvNoRecords;
     private Button btnBack, btnMenu, btnSumbit;
     private Fragment fragment = null;
     private FragmentManager fragmentManager = null;
-    private Spinner teacherSpinner, gradeSpinner, subjectSpinner;
+    HashMap<Integer, String> spinnerTermMap;
     private Button btnDate, btnSearch;
     private List<FinalArrayStaffModel> finalArrayTeachersModelList, finalArrayGradeModelList = new ArrayList<>(), finalArraySubjectModelList = new ArrayList<>();
     private HashMap<Integer, String> spinnerTeacherMap, spinnerStandardMap, spinnerSubjectMap;
@@ -75,6 +77,8 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
     private RadioGroup rg;
     private LinearLayout llHeader;
     private ArrayList<HomeWorkModel.HomeworkFinalArray> finalArrays;
+    private String finalTermIdStr, FinalTeacherIdStr, FinalStandardIdStr, FinalTeacherid, FinalSubjectIdStr, FinalStandardId, FinalClassId, FinalSubjectId;
+    private Spinner teacherSpinner, gradeSpinner, subjectSpinner, termSpinner;
 
     public HomeworkNotDoneFragment() {
         // Required empty public constructor
@@ -106,11 +110,13 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
         llHeader = view.findViewById(R.id.list_header);
         tvNoRecords = view.findViewById(R.id.txtNoRecords);
         btnSumbit = view.findViewById(R.id.btnSubmit);
+        termSpinner = view.findViewById(R.id.term_spinner);
 
         rvList.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         tvHeader.setText(R.string.homeworknotdone);
 
         setListners();
+        callTermApi();
         callTeacherApi();
 
     }
@@ -175,6 +181,24 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
                 Log.d("FinalTeacherIdStr", FinalTeacherIdStr);
 
                 callStandardApi(finalArrayTeachersModelList.get(position).getPkEmployeeID().toString());
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        termSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String name = termSpinner.getSelectedItem().toString();
+                String getid = spinnerTermMap.get(termSpinner.getSelectedItemPosition());
+
+                Log.d("value", name + " " + getid);
+                finalTermIdStr = getid;
+                Log.d("FinalTermIdStr", finalTermIdStr);
 
             }
 
@@ -693,12 +717,12 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
 
     private Map<String, String> getHomeworkDetail() {
         HashMap<String, String> map = new HashMap<>();
-        map.put("TermID", "3");
+        map.put("TermID", finalTermIdStr);
         map.put("Date", btnDate.getText().toString());
         map.put("StandardID", FinalStandardId);
         map.put("ClassID", FinalClassId);
         map.put("SubjectID", FinalSubjectId);
-        map.put("TeacherID", FinalTeacherid);
+//        map.put("TeacherID", FinalTeacherid);
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
@@ -885,6 +909,92 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(Objects.requireNonNull(getActivity()), R.layout.spinner_layout, spinnersubjectIdArray);
         subjectSpinner.setAdapter(adapterTerm);
         FinalSubjectIdStr = spinnerSubjectMap.get(0);
+    }
+
+    // CALL Term API HERE
+    private void callTermApi() {
+
+        if (!Utils.checkNetwork(getContext())) {
+            Utils.showCustomDialog(getResources().getString(R.string.internet_error), getResources().getString(R.string.internet_connection_error), getActivity());
+            return;
+        }
+
+        Utils.showDialog(getActivity());
+        ApiHandler.getApiService().getTerm(getTermDetail(), new retrofit.Callback<TermModel>() {
+            @Override
+            public void success(TermModel termModel, Response response) {
+                Utils.dismissDialog();
+                if (termModel == null) {
+                    Utils.ping(getContext(), getString(R.string.something_wrong));
+                    return;
+                }
+                if (termModel.getSuccess() == null) {
+                    Utils.ping(getContext(), getString(R.string.something_wrong));
+                    return;
+                }
+                if (termModel.getSuccess().equalsIgnoreCase("false")) {
+                    Utils.ping(getContext(), getString(R.string.false_msg));
+                    return;
+                }
+                if (termModel.getSuccess().equalsIgnoreCase("True")) {
+                    finalArrayGetTermModels = termModel.getFinalArray();
+                    if (finalArrayGetTermModels != null) {
+                        fillTermSpinner();
+                    }
+                }
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Utils.dismissDialog();
+                error.printStackTrace();
+                error.getMessage();
+                Utils.ping(getContext(), getString(R.string.something_wrong));
+            }
+        });
+
+    }
+
+    private Map<String, String> getTermDetail() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
+        return map;
+    }
+
+    //Use for fill the Term Spinner
+    public void fillTermSpinner() {
+        ArrayList<Integer> TermId = new ArrayList<>();
+        for (int i = 0; i < finalArrayGetTermModels.size(); i++) {
+            TermId.add(finalArrayGetTermModels.get(i).getTermId());
+        }
+        ArrayList<String> Term = new ArrayList<>();
+        for (int j = 0; j < finalArrayGetTermModels.size(); j++) {
+            Term.add(finalArrayGetTermModels.get(j).getTerm());
+        }
+
+        String[] spinnertermIdArray = new String[TermId.size()];
+
+        spinnerTermMap = new HashMap<>();
+        for (int i = 0; i < TermId.size(); i++) {
+            spinnerTermMap.put(i, String.valueOf(TermId.get(i)));
+            spinnertermIdArray[i] = Term.get(i).trim();
+        }
+        try {
+            Field popup = Spinner.class.getDeclaredField("mPopup");
+            popup.setAccessible(true);
+
+            // Get private mPopup member variable and try cast to ListPopupWindow
+            android.widget.ListPopupWindow popupWindow = (android.widget.ListPopupWindow) popup.get(termSpinner);
+
+            popupWindow.setHeight(spinnertermIdArray.length > 4 ? 500 : spinnertermIdArray.length * 100);
+        } catch (NoClassDefFoundError | ClassCastException | NoSuchFieldException | IllegalAccessException e) {
+            // silently fail...
+        }
+
+        ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(getContext(), R.layout.spinner_layout, spinnertermIdArray);
+        termSpinner.setAdapter(adapterTerm);
+        termSpinner.setSelection(1);
+        finalTermIdStr = spinnerTermMap.get(0);
     }
 
 }
