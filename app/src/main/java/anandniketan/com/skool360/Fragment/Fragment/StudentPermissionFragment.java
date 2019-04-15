@@ -89,7 +89,7 @@ public class StudentPermissionFragment extends Fragment {
         permissionMap = PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student");
 
         for (int i = 0; i < mThumbNames.length; i++) {
-            if (permissionMap.containsKey(mThumbNames[i]) && permissionMap.get(mThumbNames[i]).getStatus().equalsIgnoreCase("true")) {
+            if (permissionMap.containsKey(mThumbNames[i])) {
 
                 IconHeaderModel iconHeaderModel = new IconHeaderModel();
                 iconHeaderModel.setName(mThumbNames[i]);

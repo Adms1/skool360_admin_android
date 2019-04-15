@@ -23,7 +23,7 @@ public class AppConfiguration {
 
     public static String BASE_API_CONTAINER = "MobileApp_Service.asmx/";
     //                        public static String LIVE_BASE_URL = PrefUtils.getInstance(BaseApp.mAppcontext).getStringValue("live_base_url", "http://103.250.144.109:8085/");
-    public static String LIVE_BASE_URL = "http://192.168.1.13:8089/";
+    public static String LIVE_BASE_URL = "http://192.168.1.6:8089/";
 //    public static String LIVE_BASE_URL_SKOOL = "http://192.168.1.22:8089/";
 //    public static String LIVE_BASE_URL = "http://103.250.144.109:8085/";
 

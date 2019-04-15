@@ -171,7 +171,7 @@ public class StudentAttendanceFinalArray {
     @SerializedName("SMS Communication No.")
     @Expose
     private String sMSCommunicationNo;
-    @SerializedName("Comm. Email ID.")
+    @SerializedName("Comm. Email ID")
     @Expose
     private String sMSCommunicationemail;
     @SerializedName("City")

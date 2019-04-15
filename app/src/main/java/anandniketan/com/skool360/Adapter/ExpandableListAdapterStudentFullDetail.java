@@ -183,7 +183,8 @@ public class ExpandableListAdapterStudentFullDetail extends BaseExpandableListAd
                 transportDetailBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.studetn_list_item_transport_detail, parent, false);
                 convertView = transportDetailBinding.getRoot();
 
-                transportDetailBinding.kmsTxt.setVisibility(View.GONE);
+                transportDetailBinding.kmsTxt.setVisibility(View.VISIBLE);
+                transportDetailBinding.kmsTxt.setText(childData.get(childPosition).getRouteName());
                 transportDetailBinding.pickupTxt.setText(childData.get(childPosition).getPickupBus());
                 transportDetailBinding.pickuppointTxt.setText(childData.get(childPosition).getPickupPoint());
                 transportDetailBinding.pickuptimeTxt.setText(childData.get(childPosition).getPickupPointTime());
@@ -226,6 +227,7 @@ public class ExpandableListAdapterStudentFullDetail extends BaseExpandableListAd
                 communicationDetailBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.student_list_item_communication_detail, parent, false);
                 convertView = communicationDetailBinding.getRoot();
 
+                communicationDetailBinding.smsEmailTxt.setText(childData.get(childPosition).getsMSCommunicationemail());
                 communicationDetailBinding.smsTxt.setText(childData.get(childPosition).getSMSCommunicationNo());
                 communicationDetailBinding.cityTxt.setText(childData.get(childPosition).getCity());
                 communicationDetailBinding.addressTxt.setText(childData.get(childPosition).getAddress());

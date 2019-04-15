@@ -112,7 +112,7 @@ public class AccountFragment extends Fragment {
     public void initViews() {
 
         for (int i = 0; i < mThumbNames.length; i++) {
-            if (permissionMap.containsKey(mThumbNames[i]) && permissionMap.get(mThumbNames[i]).getStatus().equalsIgnoreCase("true")) {
+            if (permissionMap.containsKey(mThumbNames[i])) {
 
                 IconHeaderModel iconHeaderModel = new IconHeaderModel();
                 iconHeaderModel.setName(mThumbNames[i]);

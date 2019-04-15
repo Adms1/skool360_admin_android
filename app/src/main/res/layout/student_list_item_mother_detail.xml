@@ -38,7 +38,7 @@
                 android:text="@string/motherfirstname"
                 android:textAlignment="textStart"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -47,7 +47,7 @@
                 android:text=":"
                 android:textAlignment="center"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/motherfirstname_txt"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="normal" />
         </LinearLayout>
 
@@ -76,7 +76,7 @@
                 android:text="@string/motherlastname"
                 android:textAlignment="textStart"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -85,7 +85,7 @@
                 android:text=":"
                 android:textAlignment="center"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/motherlastname_txt"
@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="normal" />
         </LinearLayout>
 
@@ -115,7 +115,7 @@
                 android:text="@string/motherphoneno"
                 android:textAlignment="textStart"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -124,7 +124,7 @@
                 android:text=":"
                 android:textAlignment="center"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/mphone_txt"
@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="normal" />
         </LinearLayout>
 
@@ -154,7 +154,7 @@
                 android:text="@string/mothermobileno"
                 android:textAlignment="textStart"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -163,7 +163,7 @@
                 android:text=":"
                 android:textAlignment="center"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/mmobile_txt"
@@ -172,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="normal" />
         </LinearLayout>
 
@@ -193,7 +193,7 @@
                 android:text="@string/motheremailaddress"
                 android:textAlignment="textStart"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -202,7 +202,7 @@
                 android:text=":"
                 android:textAlignment="center"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/memail_txt"
@@ -211,7 +211,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="normal" />
         </LinearLayout>
 
@@ -232,7 +232,7 @@
                 android:text="@string/motherqualification"
                 android:textAlignment="textStart"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -241,7 +241,7 @@
                 android:text=":"
                 android:textAlignment="center"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/mqualification_txt"
@@ -250,7 +250,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="normal" />
         </LinearLayout>
 
@@ -270,7 +270,7 @@
                 android:text="@string/motheroccupation"
                 android:textAlignment="textStart"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -279,7 +279,7 @@
                 android:text=":"
                 android:textAlignment="center"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/moccupation_txt"
@@ -288,7 +288,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="normal" />
         </LinearLayout>
 
@@ -308,7 +308,7 @@
                 android:text="@string/motheroragnization"
                 android:textAlignment="textStart"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -317,7 +317,7 @@
                 android:text=":"
                 android:textAlignment="center"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/morganisation_txt"
@@ -326,7 +326,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="normal" />
         </LinearLayout>
 
@@ -346,7 +346,7 @@
                 android:text="@string/motherdesignation"
                 android:textAlignment="textStart"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -355,7 +355,7 @@
                 android:text=":"
                 android:textAlignment="center"
                 android:textColor="@color/scheduleheadertextcolor"
-                android:textSize="@dimen/_9sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/mdesignation_txt"
@@ -364,7 +364,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="normal" />
         </LinearLayout>
 

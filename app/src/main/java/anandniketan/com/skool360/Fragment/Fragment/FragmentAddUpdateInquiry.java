@@ -694,10 +694,10 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
             Utils.ping(getActivity(), "Please select date of birth");
             fragmentAddInquiryBinding.dobTxt.requestFocus();
             return false;
-        } else if (TextUtils.isEmpty(fragmentAddInquiryBinding.previousSchoolTxt.getText().toString())) {
-            Utils.ping(getActivity(), "Please enter student previous school");
-            fragmentAddInquiryBinding.previousSchoolTxt.requestFocus();
-            return false;
+//        } else if (TextUtils.isEmpty(fragmentAddInquiryBinding.previousSchoolTxt.getText().toString())) {
+//            Utils.ping(getActivity(), "Please enter student previous school");
+//            fragmentAddInquiryBinding.previousSchoolTxt.requestFocus();
+//            return false;
 //        }else if(TextUtils.isEmpty(fragmentAddInquiryBinding.fatherFirstnameTxt.getText().toString())){
 //            Utils.ping(getActivity(),"Please enter father firstname");
 //            fragmentAddInquiryBinding.fatherFirstnameTxt.requestFocus();

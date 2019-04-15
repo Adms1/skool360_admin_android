@@ -890,10 +890,12 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
         String[] spinnersubjectIdArray = new String[subId.size()];
 
         spinnerSubjectMap = new HashMap<>();
+
         for (int i = 0; i < subId.size(); i++) {
             spinnerSubjectMap.put(i, String.valueOf(subId.get(i)));
             spinnersubjectIdArray[i] = subjectName.get(i).trim();
         }
+
         try {
             Field popup = Spinner.class.getDeclaredField("mPopup");
             popup.setAccessible(true);

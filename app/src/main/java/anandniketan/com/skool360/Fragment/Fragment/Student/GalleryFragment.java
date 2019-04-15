@@ -197,8 +197,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE:
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -679,7 +678,6 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
 //                            rvList.setAdapter(galleryAdapter);
 //                            galleryAdapter.notifyDataSetChanged();
                         }
-
                     }
                 } else {
                     Utils.dismissDialog();

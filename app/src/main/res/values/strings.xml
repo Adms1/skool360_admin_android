@@ -27,14 +27,14 @@
     <string name="my_leave">MY LEAVE</string>
     <string name="student_permission">PERMISSION</string>
     <string name="resultpermission">RESULT PERMISSION</string>
-    <string name="attendace">STUDENT ATTENDACE</string>
+    <string name="attendace">STUDENT ATTENDANCE</string>
     <string name="student_title">STUDENT</string>
     <string name="allDetails">STUDENT DETAILS</string>
     <string name="searchstaff">SEARCH STAFF</string>
     <string name="staffleave">STAFF LEAVE</string>
     <string name="attendencereport">ATTENDENCE REPORT</string>
     <string name="dailyreport">DAILY REPORT</string>
-    <string name="standardwiseattendace">Standard Wise Attendace</string>
+    <string name="standardwiseattendace">Standard Wise Attendance</string>
     <string name="consistent_absent">Consistence Absent Teacher</string>
     <string name="consistent_absent_student">Consistence Absent Student</string>
     <string name="alert_msg">Alert Msg</string>
@@ -105,7 +105,7 @@
     <string name="complaints_parents">Any Comaplain of Parents by Phone/Email</string>
     <string name="suggestion_by_parent_teacher">Suggestion By Parent/Teacher</string>
 
-    <string name="admission_inquiry">Admission Inquiry</string>
+    <string name="admission_inquiry">Admission Enquiry</string>
     <string name="total_new_admission">Total New Admission</string>
     <string name="event_of_the_day">Event Of The  Day</string>
     <string name="fb_update">FB Update</string>
@@ -148,7 +148,7 @@
     <string name="gender">Gender</string>
     <string name="aadhar">Aadhaar Card No.</string>
     <string name="studenttype">Student Type</string>
-    <string name="acedamic">Acedamic Year</string>
+    <string name="acedamic">Academic Year</string>
     <string name="section">Section</string>
     <string name="assign">Assign To</string>
     <string name="lastschool">Last School</string>
@@ -300,7 +300,7 @@
     <string name="announcment1">Announcment</string>
     <string name="homeworknotdone">Home Work Not Done</string>
 
-    <string name="viewinquiry">VIEW INQUIRY</string>
+    <string name="viewinquiry">VIEW ENQUIRY</string>
     <string name="addinquiry">ADD ENQUIRY</string>
 
     <string name="gallery">Gallery</string>

@@ -59,7 +59,7 @@ public class StudentFragment extends Fragment {
             AppConfiguration.BASEURL_IMAGES + "Student/" + "suggestion.png",
     };
 
-    public String[] mThumbNames = {"Search Student", "View Inquiry", "Student Transport",
+    public String[] mThumbNames = {"Search Student", "View Enquiry", "Student Transport",
             "Permission", "Attendance", "Left/Active", "New Register", "Announcement", "Circular", "Planner", "Gallery", "Leave Request", "Suggestion"};
 
     //    public String[] mThumbNames = {"View Inquiry", "Attendance"};
@@ -120,7 +120,7 @@ public class StudentFragment extends Fragment {
         rvList = view.findViewById(R.id.student_submenu_grid_view);
 
         for (int i = 0; i < mThumbNames.length; i++) {
-            if (permissionMap.containsKey(mThumbNames[i]) && permissionMap.get(mThumbNames[i]).getStatus().equalsIgnoreCase("true")) {
+            if (permissionMap.containsKey(mThumbNames[i])) {
 
                 IconHeaderModel iconHeaderModel = new IconHeaderModel();
                 iconHeaderModel.setName(mThumbNames[i]);
@@ -202,11 +202,11 @@ public class StudentFragment extends Fragment {
                     AppConfiguration.firsttimeback = true;
                     AppConfiguration.position = 11;
 
-                } else if (position == 1 && permissionMap.get("View Inquiry").getStatus().equalsIgnoreCase("true")) {
+                } else if (position == 1 && permissionMap.get("View Enquiry").getStatus().equalsIgnoreCase("true")) {
                     //add fragment in backstack.
                     fragment = new StudentViewInquiryFragment();
                     Bundle bundle = new Bundle();
-                    bundle.putString("status", permissionMap.get("View Inquiry").getIsuserview());
+                    bundle.putString("status", permissionMap.get("View Enquiry").getIsuserview());
                     fragment.setArguments(bundle);
                     fragmentManager = getFragmentManager();
                     if (fragmentManager != null) {

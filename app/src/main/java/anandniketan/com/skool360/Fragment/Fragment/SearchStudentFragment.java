@@ -369,7 +369,7 @@ public class SearchStudentFragment extends Fragment {
 
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(mContext, R.layout.spinner_layout, spinnertermIdArray);
         fragmentSearchStudentBinding.termSpinner.setAdapter(adapterTerm);
-        fragmentSearchStudentBinding.termSpinner.setSelection(1);
+        fragmentSearchStudentBinding.termSpinner.setSelection(0);
 
     }
 
