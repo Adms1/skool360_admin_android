@@ -60,7 +60,7 @@ public class StudentAttendanceFinalArray {
     @SerializedName("Aadhaar Card No.")
     @Expose
     private String aadhaarCardNo;
-    @SerializedName(value = "AcademicYear", alternate = {"Acedamic Year", "Acedemic Year"})
+    @SerializedName(value = "AcademicYear", alternate = {"Acedamic Year", "Acedemic Year", "Academic Year"})
     @Expose
     private String acedamicYear;
     @SerializedName("Grade")

@@ -38,7 +38,8 @@
     <color name="student_back">#efefef</color>
     <color name="gray_light">#c7c8ca</color>
     <color name="header">#010066</color>
-
+    <color name="brush_textColorPurple">#443488</color>
+    <color name="brush_textColorPink">#F6448D</color>
     <color name="blue">#0073b9</color>
 
 

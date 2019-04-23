@@ -288,7 +288,7 @@
     <string name="viewlessonplan">VIEW LESSON PLAN</string>
     <string name="checkpayment">CHEQUE PAYMENT</string>
     <string name="activitylogging">ACTIVITY LOGGING</string>
-    <string name="announcment">ANNOUNCMENT</string>
+    <string name="announcment">ANNOUNCEMENT</string>
     <string name="circular">CIRCULAR</string>
     <string name="planner">PLANNER</string>
     <string name="transportation">Transportation</string>
@@ -297,7 +297,7 @@
     <string name="employeepresentdetail">Employee Present Details</string>
     <string name="inoutsummarydetail">Employee In Out Details</string>
 
-    <string name="announcment1">Announcment</string>
+    <string name="announcment1">Announcement</string>
     <string name="homeworknotdone">Home Work Not Done</string>
 
     <string name="viewinquiry">VIEW ENQUIRY</string>
@@ -382,7 +382,7 @@
     <string name="motherdesignation">Designation</string>
     <string name="transportkms">Transport KMs</string>
     <string name="test">Test</string>
-    <string name="description">Discription</string>
+    <string name="description">Description</string>
     <string name="order">Order</string>
     <string name="inquirycount">Enquiry Count</string>
     <string name="student_name">Megha Shah</string>
@@ -449,8 +449,7 @@
     <string name="active">Active</string>
     <string name="all">All</string>
     <string name="individual">Individual</string>
-    <string name="enter_announcment">Enter Announcment</string>
-    <string name="enter_circular">Enter Circular</string>
+    <string name="enter_announcment">Enter Announcement</string>
     <string name="leave_date">Leave Date</string>
     <string name="leave_days">Leave Days</string>
 
@@ -546,6 +545,8 @@
     <string name="reason">Reason</string>
     <string name="approve_date">Approve Date</string>
     <string name="approve_by">Approve By</string>
+    <string name="reject_date">Reject Date</string>
+    <string name="reject_by">Reject By</string>
     <string name="repair_maintenance"><![CDATA[Repair & Maintenance]]></string>
     <string name="toilets">Toilets</string>
     <string name="wash_area">Wash Area</string>

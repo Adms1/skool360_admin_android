@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="anandniketan.com.skool360"
@@ -21,14 +22,14 @@
         android:theme="@style/AppTheme1">
 
         <activity
-            android:name="anandniketan.com.skool360.Activity.DashboardActivity"
+            android:name="anandniketan.com.skool360.activity.DashboardActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustNothing"
+            android:windowSoftInputMode="adjustPan"
             android:configChanges="orientation|screenSize|keyboardHidden"/>
 
         <activity
-            android:name="anandniketan.com.skool360.Activity.SplashScreen"
+            android:name="anandniketan.com.skool360.activity.SplashScreen"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme"
@@ -51,13 +52,13 @@
             tools:node="replace" />
 
         <activity
-            android:name="anandniketan.com.skool360.Activity.LoginActivity"
+            android:name="anandniketan.com.skool360.activity.LoginActivity"
             android:screenOrientation="portrait"
             android:configChanges="screenLayout|screenSize"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan" />
 
-        <activity android:name="anandniketan.com.skool360.Activity.Server_Error" />
+        <activity android:name="anandniketan.com.skool360.activity.Server_Error" />
 
         <!-- Firebase Notifications -->
         <!--<service android:name=".MyFirebaseMessagingService">-->

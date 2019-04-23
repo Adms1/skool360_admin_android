@@ -66,13 +66,13 @@
             android:weightSum="3">
 
             <TextView
+                android:id="@+id/tvApprovedate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:gravity="left"
-                android:text="@string/approve_date"
                 android:textAlignment="textStart"
                 android:textColor="@color/txt_blue"
                 android:textSize="@dimen/_11sdp"
@@ -157,13 +157,13 @@
             android:weightSum="3">
 
             <TextView
+                android:id="@+id/tvApproveby"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:gravity="left"
-                android:text="@string/approve_by"
                 android:textAlignment="textStart"
                 android:textColor="@color/txt_blue"
                 android:textSize="@dimen/_11sdp"

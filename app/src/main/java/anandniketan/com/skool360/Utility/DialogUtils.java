@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
@@ -14,11 +15,11 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.TextView;
 
 import anandniketan.com.skool360.R;
 
 public class DialogUtils {
-
 
     public static ProgressDialog getProgressDialog(Context context) {
         ProgressDialog progressDialog = new ProgressDialog(context);
@@ -28,6 +29,34 @@ public class DialogUtils {
         progressDialog.setMessage(context.getString(R.string.please_wait));
         return progressDialog;
     }
+
+    public static void showGIFDialog(Context context, @NonNull String username) {
+        final Dialog dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_birthday_wish);
+        GifView gifView = dialog.findViewById(R.id.gifview);
+
+        Button btnClose = dialog.findViewById(R.id.btn_close);
+        gifView.setImageResource(R.drawable.gif_brthday);
+
+        TextView userName = dialog.findViewById(R.id.tv_username);
+
+        userName.setText(username);
+
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+    }
+
 
     public static Dialog createConfirmDialog(Context context, @StringRes int titleId, @StringRes int messageId, View view, DialogInterface.OnClickListener positiveClickListener, DialogInterface.OnClickListener negativeClickListener) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);

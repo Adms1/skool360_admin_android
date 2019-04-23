@@ -58,6 +58,9 @@ public class LogInModel {
         @SerializedName("DesignationName")
         @Expose
         private String designationName;
+        @SerializedName("DOB")
+        @Expose
+        private String dob;
         @SerializedName("DeviceId")
         @Expose
         private String deviceId;
@@ -127,6 +130,14 @@ public class LogInModel {
 
         public void setDesignationName(String designationName) {
             this.designationName = designationName;
+        }
+
+        public String getDob() {
+            return dob;
+        }
+
+        public void setDob(String dob) {
+            this.dob = dob;
         }
 
         public String getDeviceId() {

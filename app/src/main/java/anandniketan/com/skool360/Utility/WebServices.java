@@ -229,7 +229,7 @@ public interface WebServices {
     void getExams(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
-    @POST("/GetTeachers")
+    @POST("/GetTeacherlist")
     void getTeachers(@FieldMap Map<String, String> map, Callback<StaffAttendaceModel> callback);
 
     @FormUrlEncoded
@@ -539,6 +539,14 @@ public interface WebServices {
     @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("GetAllStaffLeaveRequest")
     Call<LeaveRequestModel> getAllStaffLeaveRequest(@retrofit2.http.FieldMap Map<String, String> map);
+
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST("UpdateStudentLeaveRequestStatus")
+    Call<LeaveRequestModel> geUpdateStudentLeaveRequest(@retrofit2.http.FieldMap Map<String, String> map);
+
+    @retrofit2.http.FormUrlEncoded
+    @retrofit2.http.POST("UpdateLeaveStatus")
+    Call<LeaveRequestModel> geUpdateStaffLeaveRequest(@retrofit2.http.FieldMap Map<String, String> map);
 
     @retrofit2.http.FormUrlEncoded
     @retrofit2.http.POST("GetAllStudentLeaveRequest")

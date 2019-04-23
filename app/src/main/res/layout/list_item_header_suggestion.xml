@@ -32,7 +32,6 @@
             android:layout_toRightOf="@+id/sug_colorChange"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="ffvguirbbbbbbbbkfrytughvrbfghb"
             android:textColor="@color/black"
             android:textSize="@dimen/_13sdp"
             android:textStyle="bold" />
@@ -45,7 +44,6 @@
             android:layout_marginLeft="@dimen/_15sdp"
             android:layout_toRightOf="@+id/sug_colorChange"
             android:paddingBottom="@dimen/_5sdp"
-            android:text="23 jun 3029"
             android:textColor="@color/light_blue"
             android:textSize="@dimen/_12sdp" />
 
@@ -56,7 +54,6 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginRight="@dimen/_5sdp"
-            android:text="3 months ago"
             android:textSize="@dimen/_12sdp" />
 
     </RelativeLayout>

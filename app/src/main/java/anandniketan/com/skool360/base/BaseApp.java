@@ -31,6 +31,7 @@ public class BaseApp extends Application {
         // FontsOverride.setDefaultFont(this, "DEFAULT", "Fonts/opensans_regular.ttf");
         mAppcontext = getApplicationContext();
 
+        PrefUtils.getInstance(mAppcontext).setValue("user_birthday_wish", "0");
 //        FontsOverride.setDefaultFont(this, "MONOSPACE", "font/TitilliumWeb-Regular.ttf");
 //        FontsOverride.setDefaultFont(this, "SERIF", "font/TitilliumWeb-Regular.ttf");
 //        FontsOverride.setDefaultFont(this, "SANS_SERIF", "font/TitilliumWeb-Regular.ttf");

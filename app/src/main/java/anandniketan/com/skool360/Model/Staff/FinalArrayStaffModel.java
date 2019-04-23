@@ -34,7 +34,7 @@ public class FinalArrayStaffModel {
     private Integer pkEmployeeID;
     @SerializedName("Emp_Code")
     @Expose
-    private String empCode;
+    private Integer empCode;
     @SerializedName("Pk_ClsTeacherID")
     @Expose
     private Integer pkClsTeacherID;
@@ -180,11 +180,11 @@ public class FinalArrayStaffModel {
         this.pkEmployeeID = pkEmployeeID;
     }
 
-    public String getEmpCode() {
+    public Integer getEmpCode() {
         return empCode;
     }
 
-    public void setEmpCode(String empCode) {
+    public void setEmpCode(Integer empCode) {
         this.empCode = empCode;
     }
 

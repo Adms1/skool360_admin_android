@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
 
-    flavorDimensions "version"
+//    flavorDimensions "version"
 
     compileSdkVersion 26
     defaultConfig {

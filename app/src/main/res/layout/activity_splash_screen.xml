@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="anandniketan.com.shilajadmin.Activity.SplashScreen"
-        android:background="@drawable/home_screen">
+        android:background="@drawable/home_1">
 
         <!--<LinearLayout-->
             <!--android:layout_width="@dimen/_390sdp"-->

@@ -16,6 +16,9 @@ public class StudentAttendanceModel {
     @SerializedName("Year")
     @Expose
     private String year;
+    @SerializedName("Message")
+    @Expose
+    private String message;
     @SerializedName("Term")
     @Expose
     private String term;
@@ -35,6 +38,14 @@ public class StudentAttendanceModel {
 
     public void setSuccess(String success) {
         this.success = success;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public List<StudentAttendanceFinalArray> getFinalArray() {

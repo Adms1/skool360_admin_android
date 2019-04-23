@@ -57,7 +57,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.6"
                                 android:text="@string/select"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -83,10 +83,10 @@
                                     android:id="@+id/rb_enterAnns"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
+                                    android:layout_weight="0.7"
                                     android:checked="true"
                                     android:tag="1"
-                                    android:text="Enter Announcment"
+                                    android:text="@string/enter_announcment"
                                     android:textSize="@dimen/_11sdp" />
 
                                 <RadioButton
@@ -115,7 +115,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.6"
                                 android:text="@string/subject"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -159,7 +159,7 @@
                                 android:id="@+id/standard_txt_view"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.6"
                                 android:text="@string/grade"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -208,7 +208,7 @@
                                 <GridView
                                     android:id="@+id/standard_grid_view"
                                     android:layout_width="match_parent"
-                                    android:layout_height="@dimen/_120sdp"
+                                    android:layout_height="wrap_content"
                                     android:numColumns="3"
                                     android:scrollbars="none" />
 
@@ -223,6 +223,7 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:orientation="horizontal"
+                            android:visibility="gone"
                             android:weightSum="3">
 
                             <TextView
@@ -230,7 +231,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.6"
                                 android:text="@string/is_schedule"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -275,7 +276,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.6"
                                 android:text="@string/date_time"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -333,7 +334,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.6"
                                 android:text="@string/upload_pdf"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -377,7 +378,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.6"
                                 android:text="@string/enter_announcment"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -526,7 +527,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.6"
                                 android:text="@string/status"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -551,7 +552,7 @@
                                     android:id="@+id/active_chk"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="0.8"
+                                    android:layout_weight="0.6"
                                     android:checked="true"
                                     android:tag="1"
                                     android:text="@string/active"

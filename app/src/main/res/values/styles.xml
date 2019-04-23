@@ -91,5 +91,8 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="BrushTextViewNormal" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/brush_font</item>
+    </style>
 
 </resources>

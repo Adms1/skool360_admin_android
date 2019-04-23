@@ -150,6 +150,7 @@
                             android:layout_height="@dimen/_28sdp"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1.2"
+                            android:enabled="false"
                             android:background="@drawable/linear_border"
                             android:textSize="@dimen/_11sdp" />
 

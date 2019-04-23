@@ -57,7 +57,6 @@ public class Utils {
         return ni != null;
     }
 
-
     public static boolean checkNetwork(Context context) {
         boolean wifiAvailable = false;
         boolean mobileAvailable = false;
@@ -381,5 +380,72 @@ public class Utils {
         });
     }
 
+    public static void showUserBirthdayWish(Context context, String Bday) {
+
+        try {
+            if (PrefUtils.getInstance(context).getStringValue("user_birthday_wish", "").equalsIgnoreCase("0")) {
+                if (PrefUtils.getInstance(context).getStringValue("user_birthday", "") != null) {
+                    if (PrefUtils.getInstance(context).getStringValue("user_birthday", "").equals("")) {
+
+                        PrefUtils.getInstance(context).setValue("user_birthday", Bday);
+
+                        String Bday_local = PrefUtils.getInstance(context).getStringValue("user_birthday", "");
+
+                        String[] BdayArray = Bday_local.split("/");
+                        String date = BdayArray[0];
+                        String month = BdayArray[1];
+
+                        if (Utils.checkBirthdayOfUser(Integer.parseInt(month), Integer.parseInt(date))) {
+
+                            String flag = PrefUtils.getInstance(context).getStringValue("user_birthday_wish", "");
+                            if (flag != null && !flag.equalsIgnoreCase("")) {
+                                if (flag.equalsIgnoreCase("0")) {
+//                                    PrefUtils.getInstance(context).setValue("user_birthday_wish", "1");
+                                    PrefUtils.getInstance(context).setValue("user_birthday", "N/A");
+                                    DialogUtils.showGIFDialog(context, "Skool 360");
+
+                                }
+                            }
+                        }
+                    } else {
+
+//                            Utility.setPref(context, "user_birthday", Bday);
+//
+//                            String Bday_local = Utility.getPref(context, "user_birthday");
+//
+//                            String[] BdayArray = Bday_local.split("/");
+//                            String date = BdayArray[0];
+//                            String month = BdayArray[1];
+//
+//                            if (Utility.checkBirthdayOfUser(Integer.parseInt(month), Integer.parseInt(date))) {
+//                                String flag = Utility.getPref(context, "user_birthday_wish");
+//                                if (flag != null && !flag.equalsIgnoreCase("")) {
+//                                    if (flag.equalsIgnoreCase("0")) {
+//                                        Utility.setPref(context, "user_birthday_wish", "1");
+//
+//                                        Utility.setPref(context, "user_birthday", "N/A");
+//                                        DialogUtils.showGIFDialog(context, "Anand Niketan Bhadaj");
+//
+//                                    }
+//                                }
+//                            }
+                    }
+                }
+            } else {
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static boolean checkBirthdayOfUser(int month, int date) {
+
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int monthOfYear = c.get(Calendar.MONTH) + 1;
+        int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
+
+        return (month == monthOfYear) && (date == dayOfMonth);
+    }
 
 }
