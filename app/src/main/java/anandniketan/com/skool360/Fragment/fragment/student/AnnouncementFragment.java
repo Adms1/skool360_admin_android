@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.provider.OpenableColumns;
@@ -147,6 +148,10 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
         //Set Thread Policy
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().build());
         StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().build());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            gridViewStandard.setNestedScrollingEnabled(false);
+        }
 
         return rootView;
     }
@@ -514,7 +519,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
 
         if (TextUtils.isEmpty(fileName)) {
             Long tsLong = System.currentTimeMillis() / 1000;
-            fileName = "Pdf_" + String.valueOf(tsLong) + ".pdf";
+            fileName = "Pdf_" + tsLong + ".pdf";
         }
 //        if(pdfFilePath != null && !TextUtils.isEmpty(pdfFilePath)) {
 //            fileName = pdfFilePath.substring(pdfFilePath.lastIndexOf("/") + 1);
@@ -558,8 +563,8 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
 //                map.put("ScheduleTime", fragmentAnnouncementBinding.timeBtn.getText().toString());
 ////                }
 //            } else {
-//                map.put("ScheduleDate", "");
-//                map.put("ScheduleTime", "");
+            map.put("ScheduleDate", "");
+            map.put("ScheduleTime", "");
 //            }
 
         } catch (Exception ex) {

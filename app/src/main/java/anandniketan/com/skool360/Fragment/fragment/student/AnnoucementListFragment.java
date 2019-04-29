@@ -96,9 +96,7 @@ public class AnnoucementListFragment extends Fragment implements onDeleteWithId,
         setListners();
         callAnnouncementListApi();
 
-
     }
-
 
     public void setListners() {
         fabAddAnnouncement.setOnClickListener(new View.OnClickListener() {
@@ -164,7 +162,10 @@ public class AnnoucementListFragment extends Fragment implements onDeleteWithId,
                         txtNoRecordsAnnouncement.setVisibility(View.GONE);
                         expandableListView.setVisibility(View.VISIBLE);
                         fillExpLV();
-                        expandableListAnnoucementAdapter = new ExpandableListAnnoucement(getActivity(), listDataHeader, listDataChild, onDeleteWithIdRef, onUpdateRecordRef, PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserview(), PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserupdate(), PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserdelete());
+                        expandableListAnnoucementAdapter = new ExpandableListAnnoucement(getActivity(), listDataHeader, listDataChild, onDeleteWithIdRef, onUpdateRecordRef,
+                                PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserview(),
+                                PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserupdate(),
+                                PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserdelete());
                         expandableListView.setAdapter(expandableListAnnoucementAdapter);
                     } else {
                         txtNoRecordsAnnouncement.setVisibility(View.VISIBLE);

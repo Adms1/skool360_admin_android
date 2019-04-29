@@ -909,6 +909,7 @@
             android:layout_marginRight="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:gravity="center"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <TextView
@@ -1052,6 +1053,7 @@
             android:layout_marginRight="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:gravity="center"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <TextView

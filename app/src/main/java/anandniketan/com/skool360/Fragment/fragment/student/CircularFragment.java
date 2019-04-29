@@ -513,7 +513,7 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
 
         if (TextUtils.isEmpty(fileName)) {
             Long tsLong = System.currentTimeMillis() / 1000;
-            fileName = "Pdf_" + String.valueOf(tsLong) + ".pdf";
+            fileName = "Pdf_" + tsLong + ".pdf";
         }
 //        if(pdfFilePath != null && !TextUtils.isEmpty(pdfFilePath)) {
 //            fileName = pdfFilePath.substring(pdfFilePath.lastIndexOf("/") + 1);
@@ -559,8 +559,8 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
 //                    map.put("ScheduleTime", time);
 //                }
 //            } else {
-//                map.put("ScheduleDate", "");
-//                map.put("ScheduleTime", "");
+            map.put("ScheduleDate", "");
+            map.put("ScheduleTime", "");
 //            }
 
         } catch (Exception ex) {
@@ -872,7 +872,6 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
                         FinalSubjectStr = fragmentLayoutCircularBinding.subjectEdt.getText().toString();
 
                         if (standardAdapter != null) {
-
 
                             String[] standards = dataList.get(count).getStandard().split(",");
 

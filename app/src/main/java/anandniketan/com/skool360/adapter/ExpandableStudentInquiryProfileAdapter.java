@@ -105,10 +105,10 @@ public class ExpandableStudentInquiryProfileAdapter extends BaseExpandableListAd
 
 
                 binding.sibling1BrotherSisterTxt.setText(childData.get(childPosition).getSibling1BrotherSister());
-                binding.sibling1SchoolTxt.setText(childData.get(childPosition).getSibling1School());
+//                binding.sibling1SchoolTxt.setText(childData.get(childPosition).getSibling1School());
 
                 binding.sibling2BrotherSisterTxt.setText(childData.get(childPosition).getSibling2BrotherSister());
-                binding.siblingSchool2Txt.setText(childData.get(childPosition).getSibling2School());
+//                binding.siblingSchool2Txt.setText(childData.get(childPosition).getSibling2School());
                 binding.guardianNameTxt.setText(childData.get(childPosition).getNameOfLocalGuardian());
                 binding.guardianContactTxt.setText(childData.get(childPosition).getContactNoOfLocalGuardian());
                 binding.ecnoTxt.setText(childData.get(childPosition).getEmergencyContactNos());

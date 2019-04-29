@@ -55,7 +55,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.7"
                                 android:text="@string/type"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -74,7 +74,7 @@
                                 android:id="@+id/type_group"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2.1"
+                                android:layout_weight="2.2"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -83,14 +83,14 @@
                                     android:layout_weight="0.9"
                                     android:layout_height="wrap_content"
                                     android:checked="true"
-                                    android:tag="1"
+                                    android:tag="1.1"
                                     android:text="@string/leave_date"
                                     android:textSize="@dimen/_11sdp" />
 
                                 <RadioButton
                                     android:id="@+id/rb_appdate"
                                     android:layout_width="0dp"
-                                    android:layout_weight="1.2"
+                                    android:layout_weight="1.1"
                                     android:layout_height="wrap_content"
                                     android:tag="0"
                                     android:text="@string/application_date"
@@ -114,7 +114,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.7"
                                 android:text="@string/date"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -176,7 +176,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="0.8"
+                                android:layout_weight="0.7"
                                 android:text="@string/status"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_11sdp" />
@@ -196,7 +196,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="@dimen/_25sdp"
                                 android:layout_gravity="center"
-                                android:layout_weight="1.4"
+                                android:layout_weight="1.5"
                                 android:background="@drawable/dropdown_button"
                                 android:forceHasOverlappingRendering="false"
                                 android:gravity="center"

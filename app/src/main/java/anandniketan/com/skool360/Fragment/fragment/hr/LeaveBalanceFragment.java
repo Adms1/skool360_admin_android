@@ -252,6 +252,7 @@ public class LeaveBalanceFragment extends Fragment {
     private Map<String, String> getDetail() {
         Map<String, String> map = new HashMap<>();
         map.put("TermID", finalTermIdStr);
+        map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
 

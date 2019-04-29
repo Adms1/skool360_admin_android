@@ -60,6 +60,8 @@ public class ExpandableStaffInquiryProfileAdapter extends BaseExpandableListAdap
                 binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.staff_details_list_item, parent, false);
                 convertView = binding.getRoot();
 
+                TextView bankAcTxt = convertView.findViewById(R.id.bank_ac_txt);
+
                 //binding.tagTxt.setVisibility(View.GONE);
                 binding.nameTxt.setText(childData.get(childPosition).getName());
                 binding.ecodeTxt.setText(childData.get(childPosition).getEmpCode());
@@ -76,7 +78,7 @@ public class ExpandableStaffInquiryProfileAdapter extends BaseExpandableListAdap
                 // binding.siblingInAnandNiketanTxt.setText(childData.get(childPosition).getSiblingInAnandNiketanSchool());
 
                 binding.statusTxt.setText(childData.get(childPosition).getStatus());
-                binding.bankAcTxt.setText(childData.get(childPosition).getBankAccountNo());
+                bankAcTxt.setText("bankbank");
                 binding.pfAcNoTxt.setText(childData.get(childPosition).getPFAccountNo());
                 binding.panTxt.setText(childData.get(childPosition).getPAN());
                 binding.excircularTxt.setText(childData.get(childPosition).getExtraCurricularActitvities());

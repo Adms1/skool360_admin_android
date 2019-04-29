@@ -20,7 +20,10 @@ import android.widget.TextView;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -167,20 +170,35 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     if (!isRecordInUpdate) {
-                    if (finalArrayStandardsList != null) {
-                        if (finalArrayStandardsList.size() > 0) {
+                        if (finalArrayStandardsList != null) {
+                            if (finalArrayStandardsList.size() > 0) {
 
-                            for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
-                                finalArrayStandardsList.get(listsize).setCheckedStatus("1");
-                            }
-                            if (standardAdapter != null) {
-                                standardAdapter.notifyDataSetChanged();
-                                //standardAdapter.disableSelection();
+                                for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
+                                    finalArrayStandardsList.get(listsize).setCheckedStatus("1");
+                                }
+                                if (standardAdapter != null) {
+                                    standardAdapter.notifyDataSetChanged();
+                                    //standardAdapter.disableSelection();
+                                }
                             }
                         }
                     }
-                    }
                     isRecordInUpdate = false;
+                } else {
+                    if (!isRecordInUpdate) {
+                        if (finalArrayStandardsList != null) {
+                            if (finalArrayStandardsList.size() > 0) {
+
+                                for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
+                                    finalArrayStandardsList.get(listsize).setCheckedStatus("0");
+                                }
+                                if (standardAdapter != null) {
+                                    standardAdapter.notifyDataSetChanged();
+                                    //  standardAdapter.enableSelection();
+                                }
+                            }
+                        }
+                    }
                 }
             }
         });
@@ -190,19 +208,37 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     if (!isRecordInUpdate) {
-                    if (finalArrayStandardsList != null) {
-                        if (finalArrayStandardsList.size() > 0) {
+                        if (finalArrayStandardsList != null) {
+                            if (finalArrayStandardsList.size() > 0) {
 
-                            for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
-                                finalArrayStandardsList.get(listsize).setCheckedStatus("0");
-                            }
-                            if (standardAdapter != null) {
-                                standardAdapter.notifyDataSetChanged();
-                                //  standardAdapter.enableSelection();
+                                for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
+                                    finalArrayStandardsList.get(listsize).setCheckedStatus("0");
+                                }
+                                if (standardAdapter != null) {
+                                    standardAdapter.notifyDataSetChanged();
+                                    //  standardAdapter.enableSelection();
+                                }
                             }
                         }
                     }
+                    isRecordInUpdate = false;
+
+                } else {
+                    if (!isRecordInUpdate) {
+                        if (finalArrayStandardsList != null) {
+                            if (finalArrayStandardsList.size() > 0) {
+
+                                for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
+                                    finalArrayStandardsList.get(listsize).setCheckedStatus("1");
+                                }
+                                if (standardAdapter != null) {
+                                    standardAdapter.notifyDataSetChanged();
+                                    //standardAdapter.disableSelection();
+                                }
+                            }
+                        }
                     }
+                    isRecordInUpdate = false;
                 }
             }
         });
@@ -584,8 +620,29 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
 
         } else {
             if (whichdateViewClick == 2) {
-                fragmentPlannerBinding.toDate2Edt.setText(dateFinal);
-                FinalEnddate = dateFinal;
+
+                String inputdayPattern = "dd/MM/yyyy";
+                SimpleDateFormat inputdayFormat = new SimpleDateFormat(inputdayPattern);
+                String dateAfterString = fragmentPlannerBinding.fromDate1Edt.getText().toString();
+
+                try {
+
+                    Date dateBefore = inputdayFormat.parse(dateFinal);
+
+                    Date dateAfter = inputdayFormat.parse(dateAfterString);
+                    long difference = dateAfter.getTime() - dateBefore.getTime();
+                    int daysBetween = (int) (difference / (1000 * 60 * 60 * 24));
+
+                    if (daysBetween > 0) {
+                        Utils.ping(getContext(), "Please Select Proper Date");
+                    } else {
+                        fragmentPlannerBinding.toDate2Edt.setText(dateFinal);
+                        FinalEnddate = dateFinal;
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
 
         }

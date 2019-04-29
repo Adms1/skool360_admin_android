@@ -206,7 +206,7 @@
                     android:text="Responsibilities"
                     android:textAlignment="textStart"
                     android:textColor="@color/scheduleheadertextcolor"
-                    android:textSize="@dimen/_9sdp" />
+                    android:textSize="@dimen/_10sdp" />
 
                 <TextView
                     android:layout_width="@dimen/_10sdp"

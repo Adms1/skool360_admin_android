@@ -128,7 +128,7 @@
             <LinearLayout
                 android:id="@+id/recyler_header"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="@dimen/_5sdp"
                 android:visibility="gone"
                 android:orientation="vertical">

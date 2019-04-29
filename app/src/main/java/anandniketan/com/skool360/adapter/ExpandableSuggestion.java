@@ -85,7 +85,7 @@ public class ExpandableSuggestion extends BaseExpandableListAdapter {
         tvStudent.setText(childData.get(childPosition).getStu_name() + ", " + childData.get(childPosition).getStandard() + " - " + childData.get(childPosition).getClassname());
 
         if (childData.get(childPosition).getSuggestiondatetime() != "") {
-            tvReplyDate.setText(parseDateToddMMyyyy("yyyy-MM-dd'T'HH:mm:ss.SSSS", "dd MMM yyyy HH:mm a", childData.get(childPosition).getSuggestiondatetime()));
+            tvReplyDate.setText(parseDateToddMMyyyy("yyyy-MM-dd'T'HH:mm:ss.SSSS", "dd MMM yyyy hh:mm a", childData.get(childPosition).getSuggestiondatetime()));
         }
 
         if (childData.get(childPosition).getStatus().equalsIgnoreCase("Replying")) {
@@ -252,17 +252,26 @@ public class ExpandableSuggestion extends BaseExpandableListAdapter {
                 String daysBetween = String.valueOf((difference / (1000 * 60 * 60 * 24)));
                 tvSDate.setText(StartTimeStr);
 
-                if (daysBetween.equals("0")) {
-                    ResponseTimeStr = inputtimeFormat.parse(dateHours[0]);
-                    ConvertResponseTimeStr = outputtimeFormat.format(ResponseTimeStr);
-                    Log.d("Time", ConvertResponseTimeStr);
-                    CurrentTimeStr = inputCurrentTimeFormat.parse(CurrentTime);
-                    ConvertCurrentTimeStr = outputCurrentTimeFormat.format(CurrentTimeStr);
-                    Log.d("CurrentTimeCOnvert", ConvertCurrentTimeStr);
+                ResponseTimeStr = inputtimeFormat.parse(dateHours[0]);
+                ConvertResponseTimeStr = outputtimeFormat.format(ResponseTimeStr);
+                Log.d("Time", ConvertResponseTimeStr);
+                CurrentTimeStr = inputCurrentTimeFormat.parse(CurrentTime);
+                ConvertCurrentTimeStr = outputCurrentTimeFormat.format(CurrentTimeStr);
+                Log.d("CurrentTimeCOnvert", ConvertCurrentTimeStr);
+                calculateHours(ConvertCurrentTimeStr, ConvertResponseTimeStr);
 
-                    calculateHours(ConvertCurrentTimeStr, ConvertResponseTimeStr);
+                if (daysBetween.equals("0")) {
+
+//                    calculateHours(ConvertCurrentTimeStr, ConvertResponseTimeStr);
                     SessionDurationHours = SessionDurationHours.replace("-", "");
                     tvSDate.setText(SessionDurationHours + " ago");
+                } else if (daysBetween.equals("1")) {
+                    if (SessionHour > 24) {
+                        tvSDate.setText(daysBetween + " day ago");
+                    } else {
+                        SessionDurationHours = SessionDurationHours.replace("-", "");
+                        tvSDate.setText(SessionDurationHours + " ago");
+                    }
                 } else {
                     tvSDate.setText(daysBetween + " days ago");
                 }
@@ -343,9 +352,17 @@ public class ExpandableSuggestion extends BaseExpandableListAdapter {
             Log.i("======= Hours", " :: " + hours + ":" + min);
 
             if (SessionHour > 0) {
-                SessionDurationHours = SessionHour + " hours";
+                if (SessionHour > 1) {
+                    SessionDurationHours = SessionHour + " hours";
+                } else {
+                    SessionDurationHours = SessionHour + " hour";
+                }
             } else {
-                SessionDurationHours = SessionMinit + " minute";
+                if (SessionMinit > 1) {
+                    SessionDurationHours = SessionMinit + " minutes";
+                } else {
+                    SessionDurationHours = SessionMinit + " minute";
+                }
             }
 
             SessionDurationHours = SessionDurationHours.replace("-", "");

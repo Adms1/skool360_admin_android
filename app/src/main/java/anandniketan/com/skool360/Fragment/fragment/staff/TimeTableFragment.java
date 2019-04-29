@@ -365,10 +365,10 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
                                 onEditRecordWithPosition, onDeleteWithId);
                         fragmentTimeTableBinding.lvExpTimeTable.setAdapter(expandableListAdapterTimeTable);
 
-                        if (!btnName.equalsIgnoreCase("")) {
-                            fragmentTimeTableBinding.lvExpTimeTable.expandGroup(grpposition);
-
-                        }
+//                        if (!btnName.equalsIgnoreCase("")) {
+//                            fragmentTimeTableBinding.lvExpTimeTable.expandGroup(grpposition);
+//
+//                        }
 
                     } else {
                         fragmentTimeTableBinding.txtNoRecordsTimetable.setVisibility(View.VISIBLE);
@@ -584,13 +584,18 @@ public class TimeTableFragment extends Fragment implements onDeleteWithId, EditT
 //                    Utils.ping(getActivity(), getActivity().getString(R.string.something_wrong));
 //                    return;
 //                }
-                if (subjectModel.get("Success").toString().equalsIgnoreCase("false")) {
+                if (subjectModel.get("Success").toString().replaceAll("\"", "").equalsIgnoreCase("false")) {
+
+                    Utils.ping(getActivity(), subjectModel.get("Message").toString().replace("\"", ""));
+                    Log.d("timetable error", subjectModel.get("Message").toString().replace("\"", ""));
+
+                    dialog.dismiss();
 
                     return;
                 }
                 if (subjectModel.get("Success").toString().replace("\"", "").equalsIgnoreCase("True")) {
 
-                    Utils.ping(getActivity(), subjectModel.get("Message").toString());
+                    Utils.ping(getActivity(), subjectModel.get("Message").toString().replace("\"", ""));
 
                     dialog.dismiss();
                     callTimeTableApi();

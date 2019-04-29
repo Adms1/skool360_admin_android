@@ -718,7 +718,7 @@ public class MarkSyllabusPermission extends Fragment {
 
                     markCheckBox.setChecked(false);
                     mSyllabusCheckBox.setChecked(false);
-                    rbActive.setChecked(false);
+                    rbActive.setChecked(true);
                     rbInActive.setChecked(false);
                     mBtnAddUpdate.setText("Add");
                     btnCancel.setVisibility(View.GONE);

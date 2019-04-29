@@ -19,7 +19,10 @@ import android.widget.TextView;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -125,7 +128,7 @@ public class ExamsFragment extends Fragment implements DatePickerDialog.OnDateSe
             public void onClick(View v) {
                 isFromDate = true;
                 datePickerDialog = DatePickerDialog.newInstance(ExamsFragment.this, Year, Month, Day);
-                datePickerDialog.setMaxDate(calendar);
+//                datePickerDialog.setMaxDate(calendar);
                 datePickerDialog.setThemeDark(false);
                 datePickerDialog.setOkText("Done");
                 datePickerDialog.showYearPickerFirst(false);
@@ -137,9 +140,12 @@ public class ExamsFragment extends Fragment implements DatePickerDialog.OnDateSe
         fragmentExamsBinding.endDateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 isFromDate = false;
                 datePickerDialog = DatePickerDialog.newInstance(ExamsFragment.this, Year, Month, Day);
-                datePickerDialog.setMaxDate(calendar);
+
+//                long mintime = Long.getLong(fragmentExamsBinding.startDateBtn.getText().toString());
+
                 datePickerDialog.setThemeDark(false);
                 datePickerDialog.setOkText("Done");
                 datePickerDialog.showYearPickerFirst(false);
@@ -248,7 +254,28 @@ public class ExamsFragment extends Fragment implements DatePickerDialog.OnDateSe
         if (isFromDate) {
             fragmentExamsBinding.startDateBtn.setText(dateFinal);
         } else {
-            fragmentExamsBinding.endDateBtn.setText(dateFinal);
+
+            String inputdayPattern = "dd/MM/yyyy";
+            SimpleDateFormat inputdayFormat = new SimpleDateFormat(inputdayPattern);
+            String dateAfterString = fragmentExamsBinding.startDateBtn.getText().toString();
+
+            try {
+
+                Date dateBefore = inputdayFormat.parse(dateFinal);
+
+                Date dateAfter = inputdayFormat.parse(dateAfterString);
+                long difference = dateAfter.getTime() - dateBefore.getTime();
+                int daysBetween = (int) (difference / (1000 * 60 * 60 * 24));
+
+                if (daysBetween > 0) {
+                    Utils.ping(getContext(), "Please Select Proper Date");
+                } else {
+                    fragmentExamsBinding.endDateBtn.setText(dateFinal);
+                }
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
