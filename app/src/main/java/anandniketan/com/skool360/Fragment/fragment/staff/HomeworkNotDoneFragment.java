@@ -59,11 +59,11 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
     String homeworkIdstr;
     String homeworkdetailidstr = "";
     List<FinalArrayGetTermModel> finalArrayGetTermModels;
+    HashMap<Integer, String> spinnerTermMap;
     private TextView tvHeader, tvNoRecords;
     private Button btnBack, btnMenu, btnSumbit;
     private Fragment fragment = null;
     private FragmentManager fragmentManager = null;
-    HashMap<Integer, String> spinnerTermMap;
     private Button btnDate, btnSearch;
     private List<FinalArrayStaffModel> finalArrayTeachersModelList, finalArrayGradeModelList = new ArrayList<>(), finalArraySubjectModelList = new ArrayList<>();
     private HashMap<Integer, String> spinnerTeacherMap, spinnerStandardMap, spinnerSubjectMap;
@@ -117,7 +117,7 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
 
         setListners();
         callTermApi();
-        callTeacherApi();
+
 
     }
 
@@ -175,12 +175,15 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
                 String name = teacherSpinner.getSelectedItem().toString();
                 String getid = spinnerTeacherMap.get(teacherSpinner.getSelectedItemPosition());
 
-                Log.d("value", name + " " + getid);
-                FinalTeacherIdStr = getid;
-                FinalTeacherid = finalArrayTeachersModelList.get(position).getEmpId().toString();
-                Log.d("FinalTeacherIdStr", FinalTeacherIdStr);
+                if (finalArrayTeachersModelList != null && finalArrayTeachersModelList.size() > 0) {
+                    Log.d("value", name + " " + getid);
+                    FinalTeacherIdStr = getid;
+                    FinalTeacherid = finalArrayTeachersModelList.get(position).getEmpId().toString();
+                    Log.d("FinalTeacherIdStr", FinalTeacherIdStr);
 
-                callStandardApi(finalArrayTeachersModelList.get(position).getEmpId().toString());
+
+                    callStandardApi(finalArrayTeachersModelList.get(position).getEmpId().toString());
+                }
 
             }
 
@@ -199,7 +202,7 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
                 Log.d("value", name + " " + getid);
                 finalTermIdStr = getid;
                 Log.d("FinalTermIdStr", finalTermIdStr);
-
+                callTeacherApi();
             }
 
             @Override
@@ -425,7 +428,7 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTeachers(getTeacherDetail(), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getTeachersbyTerm(getTeacherDetail(), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel teachersModel, Response response) {
                 Utils.dismissDialog();
@@ -438,6 +441,17 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
                     return;
                 }
                 if (teachersModel.getSuccess().equalsIgnoreCase("false")) {
+
+                    finalArrayTeachersModelList.clear();
+
+                    final ArrayAdapter adb = new ArrayAdapter(getActivity(), R.layout.spinner_layout, new ArrayList());
+                    teacherSpinner.setAdapter(adb);
+
+                    FinalTeacherIdStr = "0";
+                    FinalTeacherid = "0";
+
+                    callStandardApi("0");
+
                     Utils.ping(getActivity(), getString(R.string.false_msg));
                     return;
                 }
@@ -462,6 +476,7 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
 
     private Map<String, String> getTeacherDetail() {
         HashMap<String, String> map = new HashMap<>();
+        map.put("TermID", finalTermIdStr);
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
@@ -735,12 +750,12 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
         for (int j = 0; j < finalArrays.size(); j++) {
             homeworkIdstr = finalArrays.get(0).getHomeworkid();
             if (!isEnable) {
-                studentString = new StringBuilder(String.valueOf(finalArrays.get(j).getHomeworkdetailid()) + ","
+                studentString = new StringBuilder(finalArrays.get(j).getHomeworkdetailid() + ","
                         + finalArrays.get(j).getStudentid() + "," +
                         finalArrays.get(j).getHomeworkstatus());
                 isEnable = true;
             } else {
-                studentString.append("|").append(String.valueOf(finalArrays.get(j).getHomeworkdetailid())).append(",").append(finalArrays.get(j).getStudentid()).append(",").append(finalArrays.get(j).getHomeworkstatus());
+                studentString.append("|").append(finalArrays.get(j).getHomeworkdetailid()).append(",").append(finalArrays.get(j).getStudentid()).append(",").append(finalArrays.get(j).getHomeworkstatus());
             }
         }
         newArray.add(studentString.toString());
@@ -778,7 +793,7 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
                     return;
                 }
                 if (response.body().get("Success").toString().replaceAll("\"", "").equalsIgnoreCase("True")) {
-                    Utils.ping(getActivity(), "Save Succesfully");
+                    Utils.ping(getActivity(), "HomeWork status updated successfully.");
                 }
             }
 
@@ -795,7 +810,7 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
 
     private String getHomeworkSubmit() {
 
-        return AppConfiguration.BASEURL + "TeacherStudentHomeworkStatusInsertUpdate?HomeWorkID=" + homeworkIdstr + "&HomeWorkDetailID=" + homeworkdetailidstr + "&StandardID=" + FinalStandardId + "&ClassID=" + FinalClassId + "&SubjectID=" + FinalSubjectId + "&Date=" + btnDate.getText().toString() + "&LocationID=" +  PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0");
+        return AppConfiguration.BASEURL + "TeacherStudentHomeworkStatusInsertUpdate?HomeWorkID=" + homeworkIdstr + "&HomeWorkDetailID=" + homeworkdetailidstr + "&StandardID=" + FinalStandardId + "&ClassID=" + FinalClassId + "&SubjectID=" + FinalSubjectId + "&Date=" + btnDate.getText().toString() + "&LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0");
     }
 
     //Use for fill TeacherNameSpinner
@@ -995,7 +1010,7 @@ public class HomeworkNotDoneFragment extends Fragment implements DatePickerDialo
 
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(getContext(), R.layout.spinner_layout, spinnertermIdArray);
         termSpinner.setAdapter(adapterTerm);
-        termSpinner.setSelection(1);
+        termSpinner.setSelection(0);
         finalTermIdStr = spinnerTermMap.get(0);
     }
 

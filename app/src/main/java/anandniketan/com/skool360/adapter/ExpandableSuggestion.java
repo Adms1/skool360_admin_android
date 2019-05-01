@@ -194,7 +194,6 @@ public class ExpandableSuggestion extends BaseExpandableListAdapter {
         }
         if (headerTitle.length >= 3) {
             headerTitle3 = headerTitle[2];
-
         }
 
 //        Calendar startCalendar = new GregorianCalendar();

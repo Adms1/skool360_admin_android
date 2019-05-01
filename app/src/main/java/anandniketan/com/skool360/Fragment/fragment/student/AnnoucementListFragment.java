@@ -162,11 +162,14 @@ public class AnnoucementListFragment extends Fragment implements onDeleteWithId,
                         txtNoRecordsAnnouncement.setVisibility(View.GONE);
                         expandableListView.setVisibility(View.VISIBLE);
                         fillExpLV();
-                        expandableListAnnoucementAdapter = new ExpandableListAnnoucement(getActivity(), listDataHeader, listDataChild, onDeleteWithIdRef, onUpdateRecordRef,
-                                PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserview(),
-                                PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserupdate(),
-                                PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserdelete());
-                        expandableListView.setAdapter(expandableListAnnoucementAdapter);
+                        if (PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student") != null) {
+                            expandableListAnnoucementAdapter = new ExpandableListAnnoucement(getActivity(), listDataHeader, listDataChild, onDeleteWithIdRef, onUpdateRecordRef,
+                                    PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserview(),
+                                    PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserupdate(),
+                                    PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Announcement").getIsuserdelete());
+                            expandableListView.setAdapter(expandableListAnnoucementAdapter);
+                        }
+
                     } else {
                         txtNoRecordsAnnouncement.setVisibility(View.VISIBLE);
                         expandableListView.setVisibility(View.GONE);
@@ -211,7 +214,6 @@ public class AnnoucementListFragment extends Fragment implements onDeleteWithId,
     public void deleteRecordWithId(String id) {
         callDeleteAnnouncement(id);
     }
-
 
     public void callDeleteAnnouncement(String announcementId) {
         if (!Utils.checkNetwork(mContext)) {

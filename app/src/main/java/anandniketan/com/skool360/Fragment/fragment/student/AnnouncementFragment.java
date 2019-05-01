@@ -38,7 +38,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import anandniketan.com.skool360.Model.Account.FinalArrayStandard;
 import anandniketan.com.skool360.Model.Account.GetStandardModel;
@@ -119,7 +118,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
         fragmentAnnouncementBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_announcement, container, false);
 
         rootView = fragmentAnnouncementBinding.getRoot();
-        mContext = Objects.requireNonNull(getActivity()).getApplicationContext();
+        mContext = getActivity().getApplicationContext();
         radioGroupUploadType = rootView.findViewById(R.id.upload_type_group);
         radioGroupStatus = rootView.findViewById(R.id.status_group);
         radioGroupStandard = rootView.findViewById(R.id.standard_group);
@@ -268,8 +267,8 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
         rbAll.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-//                    if (!isRecordInUpdate) {
+                if (!isRecordInUpdate) {
+                    if (b) {
                         if (finalArrayStandardsList != null) {
                             if (finalArrayStandardsList.size() > 0) {
 
@@ -282,7 +281,20 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                                 }
                             }
                         }
-//                    }
+                    } else {
+                        if (finalArrayStandardsList != null) {
+                            if (finalArrayStandardsList.size() > 0) {
+
+                                for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
+                                    finalArrayStandardsList.get(listsize).setCheckedStatus("0");
+                                }
+                                if (standardAdapter != null) {
+                                    standardAdapter.notifyDataSetChanged();
+                                    //  standardAdapter.enableSelection();
+                                }
+                            }
+                        }
+                    }
                 }
             }
         });
@@ -305,7 +317,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                 datePickerDialog.showYearPickerFirst(false);
                 datePickerDialog.setAccentColor(Color.parseColor("#1B88C8"));
                 datePickerDialog.setTitle("Select Date From DatePickerDialog");
-                datePickerDialog.show(Objects.requireNonNull(getActivity()).getFragmentManager(), "DatePickerDialog");
+                datePickerDialog.show(getActivity().getFragmentManager(), "DatePickerDialog");
             }
         });
 
@@ -317,16 +329,19 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                 timePickerDialog.setOkText("Done");
                 timePickerDialog.setAccentColor(Color.parseColor("#1B88C8"));
                 timePickerDialog.setTitle("Select Time From TimePickerDialog");
-                timePickerDialog.show(Objects.requireNonNull(getActivity()).getFragmentManager(), "TimePickerDialog");
+                timePickerDialog.show(getActivity().getFragmentManager(), "TimePickerDialog");
 
             }
         });
 
         rbIndividual.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-//                    if (!isRecordInUpdate) {
+
+                if (!isRecordInUpdate) {
+                    if (b) {
+
                         if (finalArrayStandardsList != null) {
                             if (finalArrayStandardsList.size() > 0) {
 
@@ -339,7 +354,20 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                                 }
                             }
                         }
-//                    }
+                    } else {
+                        if (finalArrayStandardsList != null) {
+                            if (finalArrayStandardsList.size() > 0) {
+
+                                for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
+                                    finalArrayStandardsList.get(listsize).setCheckedStatus("1");
+                                }
+                                if (standardAdapter != null) {
+                                    standardAdapter.notifyDataSetChanged();
+                                    //standardAdapter.disableSelection();
+                                }
+                            }
+                        }
+                    }
                 }
             }
         });
@@ -350,7 +378,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
 
                 AppConfiguration.position = 55;
                 fragment = new AnnoucementListFragment();
-                fragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+                fragmentManager = getActivity().getSupportFragmentManager();
                 fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_container, fragment).commit();
                 AppConfiguration.firsttimeback = true;
 
@@ -464,7 +492,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
 
                                 AppConfiguration.position = 11;
                                 fragment = new AnnoucementListFragment();
-                                fragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+                                fragmentManager = getActivity().getSupportFragmentManager();
                                 fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_container, fragment).commit();
                                 AppConfiguration.firsttimeback = true;
 
@@ -479,7 +507,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                         }
                         AppConfiguration.position = 11;
                         fragment = new AnnoucementListFragment();
-                        fragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+                        fragmentManager = getActivity().getSupportFragmentManager();
                         fragmentManager.beginTransaction()
                                 .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right)
                                 .replace(R.id.frame_container, fragment).commit();
@@ -611,7 +639,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                                 }
                                 AppConfiguration.position = 11;
                                 fragment = new AnnoucementListFragment();
-                                fragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+                                fragmentManager = getActivity().getSupportFragmentManager();
                                 fragmentManager.beginTransaction().setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.frame_container, fragment).commit();
                                 AppConfiguration.firsttimeback = true;
                             }
@@ -647,7 +675,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                     if (uriString.startsWith("content://")) {
                         Cursor cursor = null;
                         try {
-                            cursor = Objects.requireNonNull(getActivity()).getContentResolver().query(uri, null, null, null, null);
+                            cursor = getActivity().getContentResolver().query(uri, null, null, null, null);
                             if (cursor != null && cursor.moveToFirst()) {
                                 displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
                                 //btnChooseFile.setText(displayName);
@@ -814,7 +842,7 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
 //        timePickerDialog.setOkText("Done");
 //        timePickerDialog.setAccentColor(Color.parseColor("#1B88C8"));
 //        timePickerDialog.setTitle("Select Time From TimePickerDialog");
-//        timePickerDialog.show(Objects.requireNonNull(getActivity()).getFragmentManager(), "TimePickerDialog");
+//        timePickerDialog.show(getActivity().getFragmentManager(), "TimePickerDialog");
 
     }
 
@@ -887,7 +915,10 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                                             }
                                         }
                                     }
-                                    standardAdapter.notifyDataSetChanged();
+
+                                    standardAdapter = new StandardAdapter(mContext, finalArrayStandardsList);
+                                    gridViewStandard.setAdapter(standardAdapter);
+//                                    standardAdapter.notifyDataSetChanged();
 
                                 }
                             }
@@ -919,7 +950,6 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                             }
                         }
 
-
                         if (!TextUtils.isEmpty(dataList.get(count).getGradeStatus())) {
                             if (dataList.get(count).getGradeStatus().equalsIgnoreCase("Individual")) {
                                 fragmentAnnouncementBinding.rbAll.setChecked(false);
@@ -932,10 +962,10 @@ public class AnnouncementFragment extends Fragment implements PermissionUtils.Re
                                 }
                             }
                         }
-
                     }
                 }
             }
+            isRecordInUpdate = false;
         } catch (Exception ex) {
             ex.printStackTrace();
         }

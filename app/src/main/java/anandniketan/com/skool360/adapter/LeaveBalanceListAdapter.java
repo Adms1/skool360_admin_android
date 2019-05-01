@@ -37,7 +37,8 @@ public class LeaveBalanceListAdapter extends RecyclerView.Adapter<LeaveBalanceLi
         LeaveModel.FinalArray dataItem = data.get(position);
 
         try {
-            holder.emp_name_txt.setText(dataItem.getEmployeeName() + "(" + dataItem.getEmployeeID() + ")");
+//            holder.emp_name_txt.setText(dataItem.getEmployeeName() + "(" + dataItem.getEmployeeID() + ")");
+            holder.emp_name_txt.setText(dataItem.getEmployeeName());
             holder.txt_totalPL.setText(String.valueOf(dataItem.getTotalPL()));
             holder.txt_donePL.setText(String.valueOf(dataItem.getPLUSed()));
             holder.txt_doneCL.setText(String.valueOf(dataItem.getCLUsed()));

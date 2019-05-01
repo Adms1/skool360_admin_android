@@ -479,7 +479,6 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10sdp"
-                    android:text="dgvdgvdg"
                     android:textStyle="normal" />
 
             </LinearLayout>

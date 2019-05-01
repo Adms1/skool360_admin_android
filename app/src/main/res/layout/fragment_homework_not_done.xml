@@ -314,7 +314,7 @@
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/round_button"
-                android:text="@string/submit"
+                android:text="@string/update"
                 android:textAllCaps="true"
                 android:textColor="@color/app_bg"
                 android:textSize="@dimen/_11sdp"

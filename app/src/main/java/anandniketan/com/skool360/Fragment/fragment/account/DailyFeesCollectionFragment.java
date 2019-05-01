@@ -101,7 +101,7 @@ public class DailyFeesCollectionFragment extends Fragment implements DatePickerD
         btnBack = view.findViewById(R.id.btnBack);
         btnMenu = view.findViewById(R.id.btnmenu);
 
-        tvHeader.setText(R.string.dailyfeescollection);
+        tvHeader.setText("Date wise Fees Collection");
 
         setListners();
         callTermApi();

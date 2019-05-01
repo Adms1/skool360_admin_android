@@ -278,7 +278,8 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
         rbAll.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
+                if (!isRecordInUpdate) {
+                    if (b) {
                         if (finalArrayStandardsList != null) {
                             if (finalArrayStandardsList.size() > 0) {
 
@@ -291,6 +292,20 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
                                 }
                             }
                         }
+                    } else {
+                        if (finalArrayStandardsList != null) {
+                            if (finalArrayStandardsList.size() > 0) {
+
+                                for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
+                                    finalArrayStandardsList.get(listsize).setCheckedStatus("0");
+                                }
+                                if (standardAdapter != null) {
+                                    standardAdapter.notifyDataSetChanged();
+                                    //  standardAdapter.enableSelection();
+                                }
+                            }
+                        }
+                    }
                 }
             }
         });
@@ -320,8 +335,9 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
         rbIndividual.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-//                    if (!isRecordInUpdate) {
+                if (!isRecordInUpdate) {
+                    if (b) {
+
                         if (finalArrayStandardsList != null) {
                             if (finalArrayStandardsList.size() > 0) {
 
@@ -334,7 +350,22 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
                                 }
                             }
                         }
-//                    }
+                    } else {
+
+                        if (finalArrayStandardsList != null) {
+                            if (finalArrayStandardsList.size() > 0) {
+
+                                for (int listsize = 0; listsize < finalArrayStandardsList.size(); listsize++) {
+                                    finalArrayStandardsList.get(listsize).setCheckedStatus("1");
+                                }
+                                if (standardAdapter != null) {
+                                    standardAdapter.notifyDataSetChanged();
+                                    //standardAdapter.disableSelection();
+                                }
+                            }
+                        }
+
+                    }
                 }
             }
         });
@@ -891,7 +922,8 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
                                             }
                                         }
                                     }
-                                    standardAdapter.notifyDataSetChanged();
+                                    standardAdapter = new StandardAdapter(mContext, finalArrayStandardsList);
+                                    gridViewStandard.setAdapter(standardAdapter);
 
                                 }
                             }
@@ -943,6 +975,7 @@ public class CircularFragment extends Fragment implements PermissionUtils.ReqPer
                     }
                 }
             }
+            isRecordInUpdate = false;
         } catch (Exception ex) {
             ex.printStackTrace();
         }

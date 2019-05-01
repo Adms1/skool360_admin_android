@@ -166,8 +166,10 @@ public class CircularListFragment extends Fragment implements onDeleteWithId, On
                         txtNoRecordsAnnouncement.setVisibility(View.GONE);
                         expandableListView.setVisibility(View.VISIBLE);
                         fillExpLV();
-                        expandableListCircular = new ExpandableListCircular(getActivity(), listDataHeader, listDataChild, onDeleteWithIdRef, onUpdateRecordRef, PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Circular").getIsuserview(), PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Circular").getIsuserupdate(), PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Circular").getIsuserdelete());
-                        expandableListView.setAdapter(expandableListCircular);
+                        if (PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Circular") != null) {
+                            expandableListCircular = new ExpandableListCircular(getActivity(), listDataHeader, listDataChild, onDeleteWithIdRef, onUpdateRecordRef, PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Circular").getIsuserview(), PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Circular").getIsuserupdate(), PrefUtils.getInstance(getActivity()).loadMap(getActivity(), "Student").get("Circular").getIsuserdelete());
+                            expandableListView.setAdapter(expandableListCircular);
+                        }
                     } else {
                         txtNoRecordsAnnouncement.setVisibility(View.VISIBLE);
                         expandableListView.setVisibility(View.GONE);

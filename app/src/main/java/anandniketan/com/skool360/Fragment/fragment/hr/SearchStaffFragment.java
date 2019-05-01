@@ -519,13 +519,14 @@ public class SearchStaffFragment extends Fragment {
 
         FinalTermIdStr = spinnerTermMap.get(0);
         AppConfiguration.TermId = FinalTermIdStr;
-        fragmentStudentViewInquiryBinding.termSpinner.setSelection(1);
+        fragmentStudentViewInquiryBinding.termSpinner.setSelection(0);
 
     }
 
 
     public void fillDesignationSpinner() {
         ArrayList<String> TermId = new ArrayList<String>();
+        TermId.add("0");
         for (int i = 0; i < finalArrayGetDesgModels.size(); i++) {
             TermId.add(finalArrayGetDesgModels.get(i).getDesignationId());
         }
@@ -540,7 +541,7 @@ public class SearchStaffFragment extends Fragment {
         spinnerDesgmMap = new HashMap<Integer, String>();
         spinnerDesgmMap.put(0, "0");
         for (int i = 0; i < TermId.size(); i++) {
-            spinnerDesgmMap.put(i + 1, String.valueOf(TermId.get(i)));
+            spinnerDesgmMap.put(i, String.valueOf(TermId.get(i)));
             spinnertermIdArray[i] = Term.get(i).trim();
         }
         try {
@@ -568,6 +569,7 @@ public class SearchStaffFragment extends Fragment {
 
     public void fillDepartmentnSpinner() {
         ArrayList<String> TermId = new ArrayList<String>();
+        TermId.add("0");
         for (int i = 0; i < finalArrayGetDeptModels.size(); i++) {
             TermId.add(finalArrayGetDeptModels.get(i).getDepartmentId());
         }
@@ -582,20 +584,20 @@ public class SearchStaffFragment extends Fragment {
         spinnerDeptmMap = new HashMap<Integer, String>();
         spinnerDeptmMap.put(0, "0");
         for (int i = 0; i < TermId.size(); i++) {
-            spinnerDeptmMap.put(i + 1, String.valueOf(TermId.get(i)));
+            spinnerDeptmMap.put(i, String.valueOf(TermId.get(i)));
             spinnertermIdArray[i] = Term.get(i).trim();
         }
-        try {
-            Field popup = Spinner.class.getDeclaredField("mPopup");
-            popup.setAccessible(true);
-
-            // Get private mPopup member variable and try cast to ListPopupWindow
-            android.widget.ListPopupWindow popupWindow = (android.widget.ListPopupWindow) popup.get(fragmentStudentViewInquiryBinding.deptSpinner);
-
-            popupWindow.setHeight(spinnertermIdArray.length > 4 ? 500 : spinnertermIdArray.length * 100);
-        } catch (NoClassDefFoundError | ClassCastException | NoSuchFieldException | IllegalAccessException e) {
-            // silently fail...
-        }
+//        try {
+//            Field popup = Spinner.class.getDeclaredField("mPopup");
+//            popup.setAccessible(true);
+//
+//            // Get private mPopup member variable and try cast to ListPopupWindow
+//            android.widget.ListPopupWindow popupWindow = (android.widget.ListPopupWindow) popup.get(fragmentStudentViewInquiryBinding.deptSpinner);
+//
+//            popupWindow.setHeight(spinnertermIdArray.length > 4 ? 500 : spinnertermIdArray.length * 100);
+//        } catch (NoClassDefFoundError | ClassCastException | NoSuchFieldException | IllegalAccessException e) {
+//            // silently fail...
+//        }
 
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(mcontext, R.layout.spinner_layout, spinnertermIdArray);
         fragmentStudentViewInquiryBinding.deptSpinner.setAdapter(adapterTerm);

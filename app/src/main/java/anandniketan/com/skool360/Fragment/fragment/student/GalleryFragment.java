@@ -2,17 +2,14 @@ package anandniketan.com.skool360.Fragment.fragment.student;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -36,9 +33,9 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Objects;
 
 import anandniketan.com.skool360.Interface.OnEditRecordWithPosition;
 import anandniketan.com.skool360.Model.Student.GalleryDataModel;
@@ -46,10 +43,10 @@ import anandniketan.com.skool360.R;
 import anandniketan.com.skool360.Utility.ApiClient;
 import anandniketan.com.skool360.Utility.ApiHandler;
 import anandniketan.com.skool360.Utility.AppConfiguration;
-import anandniketan.com.skool360.Utility.PathUtil;
 import anandniketan.com.skool360.Utility.PrefUtils;
 import anandniketan.com.skool360.Utility.Utils;
 import anandniketan.com.skool360.Utility.WebServices;
+import anandniketan.com.skool360.activity.CustomPhotoGalleryActivity;
 import anandniketan.com.skool360.activity.DashboardActivity;
 import anandniketan.com.skool360.adapter.PhotoAdapter;
 import anandniketan.com.skool360.adapter.Student.GalleryAdapter;
@@ -70,10 +67,10 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
 
     public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 123;
     private static String dateFinal;
-    List<String> imagesEncodedList;
+    private final int PICK_IMAGE_MULTIPLE = 1;
     String imageEncoded, viewstatus, deletestatus, editstatus, galid;
     ArrayList<String> mArrayUri = new ArrayList<>();
-    Uri mImageUri;
+    ArrayList<String> imagesEncodedList;
     ArrayList<GalleryDataModel.photosFinalArray> photoArray = new ArrayList<>();
     private RecyclerView rvList, rvPhotoList;
     private GalleryAdapter galleryAdapter;
@@ -94,6 +91,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
     private ArrayList<GalleryDataModel.photosFinalArray> photoArr;
     //    private InsertPhotoAdapter insertPhotoAdapter;
     private String pdfFilePath = "";
+    private ArrayList<String> imagesPathList;
     private ArrayList<String> imgArray;
 
     public GalleryFragment() {
@@ -226,9 +224,16 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
                 if (checkPermissionREAD_EXTERNAL_STORAGE(getActivity())) {
                     // do your stuff..
 
-                    Intent gallery = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-                    gallery.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-                    startActivityForResult(gallery, 111);
+                    Intent intent = new Intent(getContext(), CustomPhotoGalleryActivity.class);
+                    startActivityForResult(intent, PICK_IMAGE_MULTIPLE);
+
+//                    Fragment galfragment = new NewGalleryFragment();
+//                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, galfragment).commit();
+
+//                    Intent gallery = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+//                    gallery.setType("image/*");
+//                    gallery.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+//                    startActivityForResult(gallery, 111);
 
 //                    Intent intent = new Intent();
 //                    intent.setType("image/*");
@@ -243,7 +248,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
             @Override
             public void onClick(View v) {
 
-                Objects.requireNonNull(getActivity()).getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                getActivity().getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 fragment = new StudentFragment();
                 fragmentManager = getFragmentManager();
                 if (fragmentManager != null) {
@@ -273,7 +278,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
                 datePickerDialog.showYearPickerFirst(false);
                 datePickerDialog.setAccentColor(Color.parseColor("#1B88C8"));
                 datePickerDialog.setTitle("Select Date From DatePickerDialog");
-                datePickerDialog.show(Objects.requireNonNull(getActivity()).getFragmentManager(), "DatePickerDialog");
+                datePickerDialog.show(getActivity().getFragmentManager(), "DatePickerDialog");
             }
         });
 
@@ -327,19 +332,21 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
         // use the FileUtils to get the actual file by uri
         File file = null;
 
-        file = PathUtil.getFile(getActivity(), Uri.parse(fileUri));
+        file = new File(fileUri);
+
+//        file = PathUtil.getFile(getActivity(), Uri.parse(fileUri));
 
         RequestBody requestFile;
         if (file == null) {
             // create RequestBody instance from file
             requestFile =
-                    RequestBody.create(MediaType.parse("multipart/form-data"), fileUri.substring(14));
+                    RequestBody.create(MediaType.parse("multipart/form-data"), fileUri);
 
         } else {
             // create RequestBody instance from file
             requestFile =
                     RequestBody.create(
-                            MediaType.parse(Objects.requireNonNull(getActivity().getContentResolver().getType(Uri.parse(fileUri)))),
+                            MediaType.parse(getActivity().getContentResolver().getType(Uri.parse(fileUri))),
                             file
                     );
         }
@@ -356,9 +363,9 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
 
             List<MultipartBody.Part> parts = new ArrayList<>();
 
-            if (mArrayUri != null && imgArray != null) {
-                for (int i = 0; i < mArrayUri.size(); i++) {
-                    parts.add(prepareFilePart(imgArray.get(i), mArrayUri.get(i)));
+            if (imagesEncodedList != null && imgArray != null) {
+                for (int i = 0; i < imagesEncodedList.size(); i++) {
+                    parts.add(prepareFilePart(imgArray.get(i), imagesEncodedList.get(i)));
                 }
             }
 
@@ -395,107 +402,144 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        try {
-            // When an Image is picked
-            if (requestCode == 111 && resultCode == RESULT_OK
-                    && null != data) {
-                // Get the Image from data
+//        try {
+//            // When an Image is picked
+//            if (requestCode == 111 && resultCode == RESULT_OK
+//                    && null != data) {
+//                // Get the Image from data
+//
+//                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+//                imagesEncodedList = new ArrayList<>();
+//                if (data.getData() != null) {
+//
+//                    mImageUri = data.getData();
+//
+////                    imgpath = new ArrayList<>();
+//                    // Get the cursor
+//                    Cursor cursor = getActivity().getContentResolver().query(mImageUri,
+//                            filePathColumn, null, null, null);
+//                    // Move to first row
+//                    cursor.moveToFirst();
+//
+//                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+//                    imageEncoded = cursor.getString(columnIndex);
+//                    cursor.close();
+//
+//                    mArrayUri.add(mImageUri.toString());
+//
+//                    GalleryDataModel.photosFinalArray photosFinalArray = new GalleryDataModel.photosFinalArray();
+//                    photosFinalArray.setDetailid("1");
+//                    photosFinalArray.setImagepath(mImageUri.toString());
+//                    photoArray.add(photosFinalArray);
+//
+////                    if(btnAdd.getText().toString().equalsIgnoreCase("update")){
+////                        photoAdapter.notifyDataSetChanged();
+////                    }else {
+//                    photoAdapter = new PhotoAdapter(getActivity(), photoArray, new OnEditRecordWithPosition() {
+//                        @Override
+//                        public void getEditpermission(int pos) {
+//                            mArrayUri.remove(pos);
+//                            photoAdapter.notifyDataSetChanged();
+//                        }
+//                    });
+//                    rvPhotoList.setAdapter(photoAdapter);
+////                    }
+////                    gvGallery.setVerticalSpacing(gvGallery.getHorizontalSpacing());
+////                    ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) gvGallery
+////                            .getLayoutParams();
+////                    mlp.setMargins(0, gvGallery.getHorizontalSpacing(), 0, 0);
+//
+//                } else {
+//                    if (data.getClipData() != null) {
+//                        ClipData mClipData = data.getClipData();
+//
+//                        for (int i = 0; i < mClipData.getItemCount(); i++) {
+//
+//                            ClipData.Item item = mClipData.getItemAt(i);
+//                            Uri uri = item.getUri();
+//                            mArrayUri.add(uri.toString());
+//                            // Get the cursor
+//                            Cursor cursor = getActivity().getContentResolver().query(uri, filePathColumn, null, null, null);
+//                            // Move to first row
+//                            cursor.moveToFirst();
+//
+//                            GalleryDataModel.photosFinalArray photosFinalArray = new GalleryDataModel.photosFinalArray();
+//                            photosFinalArray.setDetailid("1");
+//                            photosFinalArray.setImagepath(mArrayUri.toString());
+//                            photoArray.add(photosFinalArray);
+//
+//                            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+//                            imageEncoded = cursor.getString(columnIndex);
+//                            imagesEncodedList.add(imageEncoded);
+//                            cursor.close();
+//
+////                            if(btnAdd.getText().toString().equalsIgnoreCase("update")){
+//                            photoAdapter = new PhotoAdapter(getActivity(), photoArray, new OnEditRecordWithPosition() {
+//                                @Override
+//                                public void getEditpermission(int pos) {
+//                                    mArrayUri.remove(pos);
+//                                    photoAdapter.notifyDataSetChanged();
+//                                }
+//                            });
+//                            photoAdapter.notifyDataSetChanged();
+////                            }else {
+////                                photoAdapter = new PhotoAdapter(getActivity(), imgpath);
+////                                rvPhotoList.setAdapter(photoAdapter);
+////                            }
+////                            rvList.setVerticalSpacing(gvGallery.getHorizontalSpacing());
+////                            ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) gvGallery
+////                                    .getLayoutParams();
+////                            mlp.setMargins(0, gvGallery.getHorizontalSpacing(), 0, 0);
+//
+//                        }
+//                        Log.v("LOG_TAG", "Selected Images" + mArrayUri.size());
+//                    }
+//                }
+//
+//            } else {
+//                Toast.makeText(getActivity(), "You haven't picked Image",
+//                        Toast.LENGTH_LONG).show();
+//            }
+//        } catch (Exception e) {
+//            Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG)
+//                    .show();
+//        }
 
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
-                imagesEncodedList = new ArrayList<>();
-                if (data.getData() != null) {
 
-                    mImageUri = data.getData();
+        if (resultCode == RESULT_OK) {
+            if (requestCode == PICK_IMAGE_MULTIPLE) {
+                imagesEncodedList = new ArrayList<String>();
+                String[] imagesPath = data.getStringExtra("data").split("\\|");
 
-//                    imgpath = new ArrayList<>();
-                    // Get the cursor
-                    Cursor cursor = Objects.requireNonNull(getActivity()).getContentResolver().query(mImageUri,
-                            filePathColumn, null, null, null);
-                    // Move to first row
-                    cursor.moveToFirst();
+                //                    bitmap = BitmapFactory.decodeFile(imagesPath[i]);
+                //                    ImageView imageView = new ImageView(getContext());
+                //                    imageView.setImageBitmap(bitmap);
+                //
+                imagesEncodedList.addAll(Arrays.asList(imagesPath));
 
-                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    imageEncoded = cursor.getString(columnIndex);
-                    cursor.close();
-
-                    mArrayUri.add(mImageUri.toString());
-
+                for (int i = 0; i < imagesEncodedList.size(); i++) {
                     GalleryDataModel.photosFinalArray photosFinalArray = new GalleryDataModel.photosFinalArray();
                     photosFinalArray.setDetailid("1");
-                    photosFinalArray.setImagepath(mImageUri.toString());
+                    photosFinalArray.setImagepath(imagesEncodedList.get(i));
                     photoArray.add(photosFinalArray);
 
-//                    if(btnAdd.getText().toString().equalsIgnoreCase("update")){
-//                        photoAdapter.notifyDataSetChanged();
-//                    }else {
-                    photoAdapter = new PhotoAdapter(getActivity(), photoArray, new OnEditRecordWithPosition() {
-                        @Override
-                        public void getEditpermission(int pos) {
-                            mArrayUri.remove(pos);
-                            photoAdapter.notifyDataSetChanged();
-                        }
-                    });
-                    rvPhotoList.setAdapter(photoAdapter);
-//                    }
-//                    gvGallery.setVerticalSpacing(gvGallery.getHorizontalSpacing());
-//                    ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) gvGallery
-//                            .getLayoutParams();
-//                    mlp.setMargins(0, gvGallery.getHorizontalSpacing(), 0, 0);
-
-                } else {
-                    if (data.getClipData() != null) {
-                        ClipData mClipData = data.getClipData();
-
-                        for (int i = 0; i < mClipData.getItemCount(); i++) {
-
-                            ClipData.Item item = mClipData.getItemAt(i);
-                            Uri uri = item.getUri();
-                            mArrayUri.add(uri.toString());
-                            // Get the cursor
-                            Cursor cursor = Objects.requireNonNull(getActivity()).getContentResolver().query(uri, filePathColumn, null, null, null);
-                            // Move to first row
-                            cursor.moveToFirst();
-
-                            GalleryDataModel.photosFinalArray photosFinalArray = new GalleryDataModel.photosFinalArray();
-                            photosFinalArray.setDetailid("1");
-                            photosFinalArray.setImagepath(mArrayUri.toString());
-                            photoArray.add(photosFinalArray);
-
-                            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                            imageEncoded = cursor.getString(columnIndex);
-                            imagesEncodedList.add(imageEncoded);
-                            cursor.close();
-
-//                            if(btnAdd.getText().toString().equalsIgnoreCase("update")){
-                            photoAdapter = new PhotoAdapter(getActivity(), photoArray, new OnEditRecordWithPosition() {
-                                @Override
-                                public void getEditpermission(int pos) {
-                                    mArrayUri.remove(pos);
-                                    photoAdapter.notifyDataSetChanged();
-                                }
-                            });
-                            photoAdapter.notifyDataSetChanged();
-//                            }else {
-//                                photoAdapter = new PhotoAdapter(getActivity(), imgpath);
-//                                rvPhotoList.setAdapter(photoAdapter);
-//                            }
-//                            rvList.setVerticalSpacing(gvGallery.getHorizontalSpacing());
-//                            ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) gvGallery
-//                                    .getLayoutParams();
-//                            mlp.setMargins(0, gvGallery.getHorizontalSpacing(), 0, 0);
-
-                        }
-                        Log.v("LOG_TAG", "Selected Images" + mArrayUri.size());
-                    }
                 }
 
-            } else {
-                Toast.makeText(getActivity(), "You haven't picked Image",
-                        Toast.LENGTH_LONG).show();
+                Log.d("photosize", "" + photoArray.size());
+
+                photoAdapter = new PhotoAdapter(getActivity(), photoArray, new OnEditRecordWithPosition() {
+                    @Override
+                    public void getEditpermission(int pos) {
+//                            if(pos > 0) {
+//                                photoArray.remove(pos);
+                        Log.d("photosize", "" + photoArray.size());
+//                                photoAdapter.notifyDataSetChanged();
+//                            }
+                    }
+                });
+                rvPhotoList.setAdapter(photoAdapter);
+
             }
-        } catch (Exception e) {
-            Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG)
-                    .show();
         }
 
         super.onActivityResult(requestCode, resultCode, data);
@@ -508,7 +552,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
 
         Call<GalleryDataModel> call = apiService.getGalleryData(AppConfiguration.BASEURL + "GetGalleryData" + "?LocationID=" + PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         call.enqueue(new Callback<GalleryDataModel>() {
-            //
+
             @Override
             public void onResponse(@NonNull Call<GalleryDataModel> call, @NonNull final retrofit2.Response<GalleryDataModel> response) {
                 Utils.dismissDialog();
@@ -635,17 +679,17 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
 
         String images;
         imgArray = new ArrayList<>();
-        for (int i = 0; i < mArrayUri.size(); i++) {
-            if (mArrayUri.get(i).startsWith("content:")) {
+        for (int i = 0; i < imagesEncodedList.size(); i++) {
+//            if (imagesEncodedList.get(i).startsWith("content:")) {
                 try {
                     imgArray.add("Image_" + System.currentTimeMillis() + ".png");
 //                    imgArray.add("" + (i + 1) + "_image_" + PathUtil.getFile(getActivity(), Uri.parse(mArrayUri.get(i))).getName());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            } else {
-                imgArray.add(mArrayUri.get(i).substring(15));
-            }
+//            } else {
+//                imgArray.add(imagesEncodedList.get(i).substring(15));
+//            }
         }
 
         if (imgArray.size() > 0) {

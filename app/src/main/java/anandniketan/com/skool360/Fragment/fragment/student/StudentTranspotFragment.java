@@ -417,7 +417,7 @@ public class StudentTranspotFragment extends Fragment {
 
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(mContext, R.layout.spinner_layout, spinnertermIdArray);
         fragmentStudentTranspotBinding.termSpinner.setAdapter(adapterTerm);
-        fragmentStudentTranspotBinding.termSpinner.setSelection(1);
+        fragmentStudentTranspotBinding.termSpinner.setSelection(0);
 
     }
 

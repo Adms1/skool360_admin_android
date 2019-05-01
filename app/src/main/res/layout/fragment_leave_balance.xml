@@ -38,8 +38,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_3sdp"
+                        android:gravity="center"
                         android:orientation="horizontal"
                         android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/term"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_toLeftOf="@+id/term_spinner"
+                            android:gravity="center"
+                            android:text="Term : "
+                            android:textColor="@color/light_blue"
+                            android:textSize="@dimen/_11sdp" />
 
                         <Spinner
                             android:id="@+id/term_spinner"

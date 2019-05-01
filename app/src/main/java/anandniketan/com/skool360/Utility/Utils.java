@@ -448,4 +448,46 @@ public class Utils {
         return (month == monthOfYear) && (date == dayOfMonth);
     }
 
+    public static boolean dateCompare(Context context, String date) {
+        // Create SimpleDateFormat object
+
+        boolean compare = true;
+
+        SimpleDateFormat sdfo = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+
+            // Get the two dates to be compared
+            Date d1 = sdfo.parse(date);
+            Date d2 = Calendar.getInstance().getTime();
+
+            // Print the dates
+            System.out.println("Date1 : " + sdfo.format(d1));
+            System.out.println("Date2 : " + sdfo.format(d2));
+
+            if (date.equals(new SimpleDateFormat("dd/MM/yyyy").format(new Date()))) {
+                compare = true;
+            } else {
+                // Compare the dates using compareTo()
+                if (d1.compareTo(d2) > 0) {
+
+                    // When Date d1 > Date d2
+//            System.out.println("Date1 is after Date2");
+                    compare = true;
+                } else if (d1.compareTo(d2) < 0) {
+
+                    // When Date d1 < Date d2
+//            System.out.println("Date1 is before Date2");
+                    compare = false;
+                }
+            }
+
+
+        } catch (Exception e) {
+
+        }
+        return compare;
+    }
+
+
 }

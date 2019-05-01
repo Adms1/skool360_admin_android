@@ -88,6 +88,14 @@ public class ExpandableListAnnoucement extends BaseExpandableListAdapter {
         Button btnDelete = convertView.findViewById(R.id.btn_delete);
         Button btnEdit = convertView.findViewById(R.id.btn_edit);
 
+        if (!Utils.dateCompare(_context, childData.get(childPosition).getCreateDate())) {
+            btnEdit.setVisibility(View.GONE);
+            btnDelete.setVisibility(View.GONE);
+        } else {
+            btnEdit.setVisibility(View.VISIBLE);
+            btnDelete.setVisibility(View.VISIBLE);
+        }
+
 
         if (!TextUtils.isEmpty(childData.get(childPosition).getAnnoucementPDF()) || !childData.get(childPosition).getAnnoucementPDF().equalsIgnoreCase("")) {
             LL_PDFView.setVisibility(View.VISIBLE);
@@ -159,8 +167,6 @@ public class ExpandableListAnnoucement extends BaseExpandableListAdapter {
                 } else {
                     Utils.ping(_context, "Access Denied");
                 }
-
-
             }
         });
 

@@ -77,8 +77,12 @@ public class ExpandableStaffInquiryProfileAdapter extends BaseExpandableListAdap
                 binding.bankTxt.setText(childData.get(childPosition).getBankName());
                 // binding.siblingInAnandNiketanTxt.setText(childData.get(childPosition).getSiblingInAnandNiketanSchool());
 
-                binding.statusTxt.setText(childData.get(childPosition).getStatus());
-                bankAcTxt.setText("bankbank");
+                if (childData.get(childPosition).getStatus().toString().equalsIgnoreCase("1")) {
+                    binding.statusTxt.setText("Active");
+                } else {
+                    binding.statusTxt.setText("Inactive");
+                }
+                bankAcTxt.setText(childData.get(childPosition).getBankAccountNo());
                 binding.pfAcNoTxt.setText(childData.get(childPosition).getPFAccountNo());
                 binding.panTxt.setText(childData.get(childPosition).getPAN());
                 binding.excircularTxt.setText(childData.get(childPosition).getExtraCurricularActitvities());

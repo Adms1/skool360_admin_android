@@ -108,6 +108,8 @@ public class DialogUtils {
         webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setSupportZoom(true);
+        webView.getSettings().setBuiltInZoomControls(true);
         webView.loadUrl(webViewUrl);
 
         webView.setWebViewClient(new WebViewClient() {

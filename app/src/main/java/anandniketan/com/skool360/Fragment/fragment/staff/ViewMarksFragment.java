@@ -339,7 +339,7 @@ public class ViewMarksFragment extends Fragment {
 
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(getActivity(), R.layout.spinner_layout, spinnertermIdArray);
         termSpinner.setAdapter(adapterTerm);
-        termSpinner.setSelection(1);
+        termSpinner.setSelection(0);
 
     }
 

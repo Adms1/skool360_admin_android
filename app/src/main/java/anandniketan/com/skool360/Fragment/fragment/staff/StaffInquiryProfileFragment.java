@@ -29,7 +29,6 @@ import anandniketan.com.skool360.databinding.FragmentStaffProfileBinding;
 
 public class StaffInquiryProfileFragment extends Fragment {
 
-
     List<SearchStaffModel.FinalArray> staffFullDetailArray;
     List<String> listDataHeader;
     HashMap<String, List<SearchStaffModel.FinalArray>> listDataChild;

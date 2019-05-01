@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +48,7 @@ public class ExpandableListCircular extends BaseExpandableListAdapter {
     private Fragment fragment = null;
     private FragmentManager fragmentManager = null;
     private String status, updatestatus, deletestatus;
+    private SimpleDateFormat simpleDateFormat;
 
     public ExpandableListCircular(Context context, List<String> listDataHeader, HashMap<String, ArrayList<CircularModel.FinalArray>> listDataChild, onDeleteWithId onDeleteWithIdref, OnUpdateRecord onUpdateRecordRef, String status, String updatestatus, String deletestatus) {
         this._context = context;
@@ -80,6 +82,7 @@ public class ExpandableListCircular extends BaseExpandableListAdapter {
             convertView = infalInflater.inflate(R.layout.list_item_child_circular, null);
         }
 
+        simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
         TextView txtGradelabel, txtGrade, txtPdfLink, txtAnnsLabel;
         LinearLayout Ll_AnnsView, LL_PDFView;
@@ -91,13 +94,20 @@ public class ExpandableListCircular extends BaseExpandableListAdapter {
         Button btnDelete = convertView.findViewById(R.id.btn_delete);
         Button btnEdit = convertView.findViewById(R.id.btn_edit);
 
+        if (!Utils.dateCompare(_context, childData.get(childPosition).getDate())) {
+            btnEdit.setVisibility(View.GONE);
+            btnDelete.setVisibility(View.GONE);
+        } else {
+            btnEdit.setVisibility(View.VISIBLE);
+            btnDelete.setVisibility(View.VISIBLE);
+        }
+
         if (!TextUtils.isEmpty(childData.get(childPosition).getCircularPDF()) || !childData.get(childPosition).getCircularPDF().equalsIgnoreCase("")) {
             LL_PDFView.setVisibility(View.VISIBLE);
             Ll_AnnsView.setVisibility(View.GONE);
         } else {
             LL_PDFView.setVisibility(View.GONE);
             Ll_AnnsView.setVisibility(View.VISIBLE);
-
         }
         standardIDS = childData.get(childPosition).getStandardID();
         standard = childData.get(childPosition).getStandard();
