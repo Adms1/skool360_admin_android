@@ -745,7 +745,7 @@ public class MISDataListFragment extends Fragment {
                     fragmentMisDataBinding.recyclerLinear1.setVisibility(View.VISIBLE);
                     fragmentMisDataBinding.txtNoRecords.setVisibility(View.GONE);
 
-                    fragmentMisDataBinding.tvTxt.setText(requestTitle + ": " + String.valueOf(searchResults.size()));
+                    fragmentMisDataBinding.tvTxt.setText(requestTitle + ": " + searchResults.size());
 
                     misDetailListAdapter = new MISDetailListAdapter(getActivity(), searchResults, 6, requestType);
                     fragmentMisDataBinding.rvMisdataList.setLayoutManager(new LinearLayoutManager(mContext));
@@ -1213,7 +1213,6 @@ public class MISDataListFragment extends Fragment {
                         fragmentMisDataBinding.recyclerLinear.setVisibility(View.VISIBLE);
                         fragmentMisDataBinding.recyclerLinear1.setVisibility(View.VISIBLE);
                         fragmentMisDataBinding.txtNoRecords.setVisibility(View.GONE);
-
 
                         fragmentMisDataBinding.lvHeader2.setVisibility(View.GONE);
                         fragmentMisDataBinding.recyclerLinear1.setVisibility(View.GONE);

@@ -4,7 +4,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -74,7 +73,7 @@ public class MISSchoolCalendarFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_misschool_calendar, container, false);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -83,8 +82,9 @@ public class MISSchoolCalendarFragment extends Fragment {
         tvNoRecord = view.findViewById(R.id.cal_tv_no_records);
         ll = view.findViewById(R.id.cal_ll);
 
-//        expList.setNestedScrollingEnabled(true);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            expList.setNestedScrollingEnabled(true);
+        }
 
 //        try {
 //            if (getArguments() != null) {

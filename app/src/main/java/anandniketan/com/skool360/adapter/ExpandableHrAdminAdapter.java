@@ -57,9 +57,10 @@ public class ExpandableHrAdminAdapter extends BaseExpandableListAdapter {
             convertView = infalInflater.inflate(R.layout.list_item_child_daily_hr_admin, null);
         }
 
-        TextView txt_strength, txt_new_admission, txt_student_db_update, txt_overalladmin, txt_no_of_teacher, txt_no_of_visitor, txt_complain, txt_suggestion, txt_other;
+        TextView txt_strength, txt_withdrawal, txt_new_admission, txt_student_db_update, txt_overalladmin, txt_no_of_teacher, txt_no_of_visitor, txt_complain, txt_suggestion, txt_other;
 
         txt_strength = convertView.findViewById(R.id.txt_strength);
+        txt_withdrawal = convertView.findViewById(R.id.txt_withdrawal);
         txt_new_admission = convertView.findViewById(R.id.txt_new_admission);
         txt_student_db_update = convertView.findViewById(R.id.txt_student_db_update);
         txt_overalladmin = convertView.findViewById(R.id.txt_overalladmin);
@@ -71,6 +72,7 @@ public class ExpandableHrAdminAdapter extends BaseExpandableListAdapter {
         txt_other = convertView.findViewById(R.id.txt_other);
 
         txt_strength.setText(String.valueOf(childData.get(childPosition).getTotalStrengthOfStudents()));
+        txt_withdrawal.setText(String.valueOf(childData.get(childPosition).getWithdrawals()));
         txt_new_admission.setText(String.valueOf(childData.get(childPosition).getNewAdmission()));
         txt_student_db_update.setText(String.valueOf(childData.get(childPosition).getStudentDatabaseUpdating()));
         txt_overalladmin.setText(String.valueOf(childData.get(childPosition).getOverallAdmin()));

@@ -124,7 +124,7 @@
                             android:layout_gravity="center"
                             android:layout_weight="0.33"
                             android:gravity="center"
-                            android:text="@string/classes"
+                            android:text="@string/grade"
                             android:textAlignment="center"
                             android:textColor="@color/app_bg"
                             android:textSize="@dimen/_11sdp" />

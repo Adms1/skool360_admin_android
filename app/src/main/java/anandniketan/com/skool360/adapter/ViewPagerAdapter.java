@@ -29,7 +29,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0: // Fragment # 0 - This will show image
-
                 return MISSchoolCalendarFragment.newInstance(0, datumList.get(position).getData());
             case 1: // Fragment # 1 - This will show image
                 return MISSchoolCalendar2Fragment.newInstance(1, datumList.get(position).getData());

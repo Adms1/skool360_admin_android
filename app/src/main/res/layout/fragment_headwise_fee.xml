@@ -217,7 +217,7 @@
                                 android:layout_height="@dimen/_28sdp"
                                 android:layout_weight="0.3"
                                 android:paddingTop="@dimen/_7sdp"
-                                android:text="@string/classes"
+                                android:text="@string/grade"
                                 android:textAlignment="center"
                                 android:textColor="@color/app_bg"
                                 android:textSize="@dimen/_11sdp" />

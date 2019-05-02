@@ -85,6 +85,9 @@ public class LeaveBalanceAdapter extends BaseExpandableListAdapter {
         Button btnDelete = convertView.findViewById(R.id.applyleave_btn_delete);
         Button btnEdit = convertView.findViewById(R.id.applyleave_btn_edit);
 
+        TextView tvAppdate = convertView.findViewById(R.id.tvApprovedate);
+        TextView tvAppby = convertView.findViewById(R.id.tvApproveby);
+
 //        standardIDS = childData.get(childPosition).getStandardID();
 //        standard = childData.get(childPosition).getStandard();
 //        annousID = childData.get(childPosition).getPKAnnouncmentID();
@@ -105,12 +108,24 @@ public class LeaveBalanceAdapter extends BaseExpandableListAdapter {
             llReason.setVisibility(View.VISIBLE);
             llBottom.setVisibility(View.GONE);
             llPLCL.setVisibility(View.GONE);
-        } else {
+        } else if (childData.get(childPosition).getStatus().equalsIgnoreCase("Approved")) {
             llLeaveDate.setVisibility(View.VISIBLE);
             llApproveDate.setVisibility(View.VISIBLE);
             llLeaveDays.setVisibility(View.VISIBLE);
             llApproveby.setVisibility(View.VISIBLE);
             llReason.setVisibility(View.VISIBLE);
+            tvAppdate.setText("Approve Date");
+            tvAppby.setText("Approve By");
+            llBottom.setVisibility(View.GONE);
+            llPLCL.setVisibility(View.VISIBLE);
+        } else if (childData.get(childPosition).getStatus().equalsIgnoreCase("Rejected")) {
+            llLeaveDate.setVisibility(View.VISIBLE);
+            llApproveDate.setVisibility(View.VISIBLE);
+            llLeaveDays.setVisibility(View.VISIBLE);
+            llApproveby.setVisibility(View.VISIBLE);
+            llReason.setVisibility(View.VISIBLE);
+            tvAppdate.setText("Reject Date");
+            tvAppby.setText("Rejected By");
             llBottom.setVisibility(View.GONE);
             llPLCL.setVisibility(View.VISIBLE);
         }

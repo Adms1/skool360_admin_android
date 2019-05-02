@@ -466,7 +466,7 @@ public class DailyFeesCollectionFragment extends Fragment implements DatePickerD
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<String>(mContext, R.layout.spinner_layout, spinnertermIdArray);
         fragmentDailyFeesCollectionBinding.termSpinner.setAdapter(adapterTerm);
 
-        fragmentDailyFeesCollectionBinding.termSpinner.setSelection(1);
+        fragmentDailyFeesCollectionBinding.termSpinner.setSelection(0);
 
         FinalTermIdStr = spinnerTermMap.get(0);
     }

@@ -227,6 +227,8 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         smsdelivered_txt = rootView.findViewById(R.id.smsdelivered_txt);
         smspedning_txt = rootView.findViewById(R.id.smspedning_txt);
 
+        fragmentMisBinding.rvFinanceList2.setNestedScrollingEnabled(false);
+
         fragmentMisBinding.LLStudentcontainer.setVisibility(View.GONE);
         fragmentMisBinding.LLStaffcontainer.setVisibility(View.GONE);
         fragmentMisBinding.LLAccount.setVisibility(View.GONE);
@@ -1044,7 +1046,7 @@ public class MISFragment extends Fragment implements View.OnClickListener, DateP
         spCalendar.setAdapter(adapter);
         FinalCalendarTermID = spinnerTermMap4.get(1);
         AppConfiguration.calendarTermId = FinalCalendarTermID;
-        spCalendar.setSelection(1, false);
+        spCalendar.setSelection(0, false);
 
     }
 

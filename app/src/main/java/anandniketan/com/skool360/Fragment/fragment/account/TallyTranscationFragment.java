@@ -275,10 +275,9 @@ public class TallyTranscationFragment extends Fragment implements DatePickerDial
 
     public void fillStatusSpinner() {
         ArrayList<String> statusIdArray = new ArrayList<String>();
-        statusIdArray.add("All");
+        statusIdArray.add("-1");
         statusIdArray.add("0");
         statusIdArray.add("1");
-
 
         ArrayList<String> statusdetail = new ArrayList<>();
         statusdetail.add("All");
@@ -422,7 +421,7 @@ public class TallyTranscationFragment extends Fragment implements DatePickerDial
     public void populateSetDate(int year, int month, int day) {
         String d, m, y;
         d = Integer.toString(day);
-        m = Integer.toString(month);
+        m = Integer.toString(month + 1);
         y = Integer.toString(year);
         if (day < 10) {
             d = "0" + d;

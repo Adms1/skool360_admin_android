@@ -234,9 +234,9 @@ public class AccountFragment extends Fragment {
 
                                 AppConfiguration.TermId = "1";
 
-                                fragmentAccountBinding.totalAmountCount.setText("₹" + " " + String.valueOf(feesModelList.getTerm1().get(0).getTotalAmount()));
-                                fragmentAccountBinding.totalReceiveAmountCount.setText("₹" + " " + String.valueOf(feesModelList.getTerm1().get(0).getRecievedAmount()));
-                                fragmentAccountBinding.totalDueAmountCount.setText("₹" + " " + String.valueOf(feesModelList.getTerm1().get(0).getDueAmount()));
+                                fragmentAccountBinding.totalAmountCount.setText("₹" + " " + feesModelList.getTerm1().get(0).getTotalAmount());
+                                fragmentAccountBinding.totalReceiveAmountCount.setText("₹" + " " + feesModelList.getTerm1().get(0).getRecievedAmount());
+                                fragmentAccountBinding.totalDueAmountCount.setText("₹" + " " + feesModelList.getTerm1().get(0).getDueAmount());
 
                                 break;
 
@@ -247,9 +247,9 @@ public class AccountFragment extends Fragment {
 
                                 AppConfiguration.TermId = "2";
 
-                                fragmentAccountBinding.totalAmountCount.setText("₹" + " " + String.valueOf(feesModelList.getTerm2().get(0).getTotalAmount()));
-                                fragmentAccountBinding.totalReceiveAmountCount.setText("₹" + " " + String.valueOf(feesModelList.getTerm2().get(0).getRecievedAmount()));
-                                fragmentAccountBinding.totalDueAmountCount.setText("₹" + " " + String.valueOf(feesModelList.getTerm2().get(0).getDueAmount()));
+                                fragmentAccountBinding.totalAmountCount.setText("₹" + " " + feesModelList.getTerm2().get(0).getTotalAmount());
+                                fragmentAccountBinding.totalReceiveAmountCount.setText("₹" + " " + feesModelList.getTerm2().get(0).getRecievedAmount());
+                                fragmentAccountBinding.totalDueAmountCount.setText("₹" + " " + feesModelList.getTerm2().get(0).getDueAmount());
 
                                 break;
                         }
@@ -342,7 +342,7 @@ public class AccountFragment extends Fragment {
 
         ArrayAdapter<String> adapterTerm = new ArrayAdapter<>(mContext, R.layout.spinner_layout, spinnertermIdArray);
         fragmentAccountBinding.termSpinner.setAdapter(adapterTerm);
-        fragmentAccountBinding.termSpinner.setSelection(1);
+        fragmentAccountBinding.termSpinner.setSelection(0);
 
     }
 
@@ -429,9 +429,9 @@ public class AccountFragment extends Fragment {
 //            formattedString1 = formatter.format(longval1);
 //            formattedString2 = formatter.format(longval2);
 //            formattedString3 = formatter.format(longval3);
-        fragmentAccountBinding.totalAmountCount.setText("₹" + " " + String.valueOf(feesModelList.getTerm1().get(0).getTotalAmount()));
-        fragmentAccountBinding.totalReceiveAmountCount.setText("₹" + " " + String.valueOf(feesModelList.getTerm1().get(0).getRecievedAmount()));
-        fragmentAccountBinding.totalDueAmountCount.setText("₹" + " " + String.valueOf(feesModelList.getTerm1().get(0).getDueAmount()));
+        fragmentAccountBinding.totalAmountCount.setText("₹" + " " + feesModelList.getTerm1().get(0).getTotalAmount());
+        fragmentAccountBinding.totalReceiveAmountCount.setText("₹" + " " + feesModelList.getTerm1().get(0).getRecievedAmount());
+        fragmentAccountBinding.totalDueAmountCount.setText("₹" + " " + feesModelList.getTerm1().get(0).getDueAmount());
 
 //        }
 

@@ -2736,12 +2736,10 @@
                                     app:tabSelectedTextColor="@color/white1"
                                     app:tabTextColor="@color/white1" />
 
-
                                 <android.support.v4.view.ViewPager
                                     android:id="@+id/schoolcalendar_viewPager"
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/_200sdp" />
-
 
                             </LinearLayout>
 
@@ -2752,7 +2750,9 @@
                 </LinearLayout>
 
             </anandniketan.com.skool360.StickyScrollView>
+
         </RelativeLayout>
+
     </RelativeLayout>
 
 </layout>

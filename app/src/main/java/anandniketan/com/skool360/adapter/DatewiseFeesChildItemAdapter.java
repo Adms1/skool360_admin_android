@@ -42,7 +42,7 @@ public class DatewiseFeesChildItemAdapter extends RecyclerView.Adapter<DatewiseF
         holder.paymentmode_txt.setText(result.getPaymentMode());
         holder.date_txt.setText(String.valueOf(result.getCreateDate()));
         holder.term_txt.setText(result.getTerm());
-        holder.amount_txt.setText("₹" + String.valueOf(result.getAmount()));
+        holder.amount_txt.setText("₹" + result.getAmount());
 
         holder.view_txt.setOnClickListener(new View.OnClickListener() {
             @Override

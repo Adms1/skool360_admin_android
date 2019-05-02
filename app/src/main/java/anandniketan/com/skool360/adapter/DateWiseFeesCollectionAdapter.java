@@ -48,7 +48,7 @@ public class DateWiseFeesCollectionAdapter extends RecyclerView.Adapter<DateWise
         holder.studentname_txt.setText(result.getName());
         holder.grnno_txt.setText(result.getGRNO());
         holder.section_txt.setText(result.getStandard() + "-" + result.getClass_());
-        holder.totalPaid_txt.setText("₹" + String.valueOf(result.getAmount()));
+        holder.totalPaid_txt.setText("₹" + result.getAmount());
 
 
         holder.view_txt.setOnClickListener(new View.OnClickListener() {
@@ -67,8 +67,17 @@ public class DateWiseFeesCollectionAdapter extends RecyclerView.Adapter<DateWise
                     TextView tvOpeningBal = dialog.findViewById(R.id.tv_opening_bal);
                     TextView totalFees = dialog.findViewById(R.id.tv_totalfees_bal);
 
-                    tvOpeningBal.setText("₹" + result.getOpeningBalance());
-                    totalFees.setText("₹" + result.getTotalAmt());
+                    if (!result.getOpeningBalance().equalsIgnoreCase("")) {
+                        tvOpeningBal.setText("₹" + result.getOpeningBalance());
+                    } else {
+                        tvOpeningBal.setText("-");
+                    }
+
+                    if (!result.getTotalAmt().equalsIgnoreCase("")) {
+                        totalFees.setText("₹" + result.getTotalAmt());
+                    } else {
+                        totalFees.setText("-");
+                    }
 
                     tvUserName.setText(result.getName() + "(" + result.getGRNO() + ")");
 

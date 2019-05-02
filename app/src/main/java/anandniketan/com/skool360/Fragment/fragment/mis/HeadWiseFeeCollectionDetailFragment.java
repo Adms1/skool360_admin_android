@@ -529,14 +529,20 @@ public class HeadWiseFeeCollectionDetailFragment extends Fragment implements Rec
                 return v;
 
             }
-
         };
 
 
         spAcademic.setAdapter(adapter);
         FinalFinanaceTermId = spinnerTermMap2.get(1);
         AppConfiguration.financeTermId = FinalFinanaceTermId;
-        spAcademic.setSelection(1, false);
+
+        for (int i = 0; i < TermId.size(); i++) {
+            if (TermId.get(i) == Integer.parseInt(termID)) {
+                spAcademic.setSelection(i);
+            } else {
+                spAcademic.setSelection(0, false);
+            }
+        }
 
     }
 

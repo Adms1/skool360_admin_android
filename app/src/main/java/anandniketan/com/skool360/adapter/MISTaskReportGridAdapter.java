@@ -68,7 +68,6 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("TermID", termid);
                         bundle.putString("countdata", holder.total_txt.getText().toString());
                         bundle.putString("Date", AppConfiguration.taskReportDate);
-                        bundle.putString("coundata", holder.total_txt.getText().toString());
 
                         // bundle.putString("deptID",String.valueOf(dataValues.get(position).getDepartmentID()));
                         fragment.setArguments(bundle);
@@ -130,7 +129,6 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("requestType", "AttendanceDone");
                         bundle.putString("requestTitle", "Attendance Done");
                         bundle.putString("TermID", termid);
-                        bundle.putString("countdata", holder.total_txt.getText().toString());
                         bundle.putString("Date", AppConfiguration.taskReportDate);
                         bundle.putString("coundata", holder.done_txt.getText().toString());
 
@@ -168,7 +166,7 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("requestTitle", "Classwork Done");
                         bundle.putString("TermID", termid);
                         bundle.putString("Date", AppConfiguration.taskReportDate);
-                        bundle.putString("countdata", holder.total_txt.getText().toString());
+                        bundle.putString("countdata", holder.done_txt.getText().toString());
 
                         // bundle.putString("deptID",String.valueOf(dataValues.get(position).getDepartmentID()));
                         fragment.setArguments(bundle);
@@ -196,7 +194,6 @@ public class MISTaskReportGridAdapter extends RecyclerView.Adapter<MISTaskReport
                         bundle.putString("requestType", "AttendanceNotDone");
                         bundle.putString("requestTitle", "Attendance Not Done");
                         bundle.putString("TermID", termid);
-                        bundle.putString("countdata", holder.total_txt.getText().toString());
                         bundle.putString("Date", AppConfiguration.taskReportDate);
                         bundle.putString("coundata", holder.notDone_txt.getText().toString());
 
