@@ -26,9 +26,24 @@ public class FinalArrayPageListModel {
     @SerializedName("IsUserDelete")
     @Expose
     private Boolean isUserDelete;
+    @SerializedName("IsUserView")
+    @Expose
+    private Boolean isUserView;
     @SerializedName("Page_URL")
     @Expose
     private String pageURL;
+    @SerializedName("VisibleStatus")
+    @Expose
+    private String visibleStatus;
+    @SerializedName("VisibleIsUpdate")
+    @Expose
+    private String visibleIsUpdate;
+    @SerializedName("VisibleIsDelete")
+    @Expose
+    private String visibleIsDelete;
+    @SerializedName("VisibleIsView")
+    @Expose
+    private String visibleIsView;
 
     public Integer getPKPageID() {
         return pKPageID;
@@ -86,4 +101,67 @@ public class FinalArrayPageListModel {
         this.pageURL = pageURL;
     }
 
+    public Integer getpKPageID() {
+        return pKPageID;
+    }
+
+    public void setpKPageID(Integer pKPageID) {
+        this.pKPageID = pKPageID;
+    }
+
+    public Boolean getUserUpdate() {
+        return isUserUpdate;
+    }
+
+    public void setUserUpdate(Boolean userUpdate) {
+        isUserUpdate = userUpdate;
+    }
+
+    public Boolean getUserDelete() {
+        return isUserDelete;
+    }
+
+    public void setUserDelete(Boolean userDelete) {
+        isUserDelete = userDelete;
+    }
+
+    public Boolean getUserView() {
+        return isUserView;
+    }
+
+    public void setUserView(Boolean userView) {
+        isUserView = userView;
+    }
+
+    public String getVisibleStatus() {
+        return visibleStatus;
+    }
+
+    public void setVisibleStatus(String visibleStatus) {
+        this.visibleStatus = visibleStatus;
+    }
+
+    public String getVisibleIsUpdate() {
+        return visibleIsUpdate;
+    }
+
+    public void setVisibleIsUpdate(String visibleIsUpdate) {
+        this.visibleIsUpdate = visibleIsUpdate;
+    }
+
+    public String getVisibleIsDelete() {
+        return visibleIsDelete;
+    }
+
+    public void setVisibleIsDelete(String visibleIsDelete) {
+        this.visibleIsDelete = visibleIsDelete;
+    }
+
+    public String getVisibleIsView() {
+        return visibleIsView;
+    }
+
+    public void setVisibleIsView(String visibleIsView) {
+        this.visibleIsView = visibleIsView;
+    }
 }

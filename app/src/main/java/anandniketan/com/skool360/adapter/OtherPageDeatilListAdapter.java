@@ -22,9 +22,10 @@ import anandniketan.com.skool360.R;
 
 public class OtherPageDeatilListAdapter extends RecyclerView.Adapter<OtherPageDeatilListAdapter.MyViewHolder> {
     List<FinalArrayPageListModel> pageListmodel;
-    String addAllStr, updateStr, deleteStr;
+    String addAllStr, updateStr, deleteStr, viewStr;
     private Context context;
     private getEmployeeCheck listner;
+    String visibleStatus, visibleUpdate, visibleDelete, visibleView;
 
     public OtherPageDeatilListAdapter(Context mContext, List<FinalArrayPageListModel> pageListmodel, getEmployeeCheck listner) {
         this.context = mContext;
@@ -44,12 +45,49 @@ public class OtherPageDeatilListAdapter extends RecyclerView.Adapter<OtherPageDe
     public void onBindViewHolder(OtherPageDeatilListAdapter.MyViewHolder holder, final int position) {
         String sr = String.valueOf(position + 1);
 
-        holder.other_index_txt.setText(sr);
+//        holder.other_index_txt.setText(sr);
         holder.other_pagename_txt.setText(pageListmodel.get(position).getPageNam());
         holder.other_underpagename_txt.setText(pageListmodel.get(position).getPageUnderName());
         addAllStr = pageListmodel.get(position).getStatus().toString();
         updateStr = pageListmodel.get(position).getIsUserUpdate().toString();
         deleteStr = pageListmodel.get(position).getIsUserDelete().toString();
+        viewStr = pageListmodel.get(position).getUserView().toString();
+
+        visibleView = pageListmodel.get(position).getVisibleIsView();
+        visibleUpdate = pageListmodel.get(position).getVisibleIsUpdate();
+        visibleDelete = pageListmodel.get(position).getVisibleIsDelete();
+        visibleStatus = pageListmodel.get(position).getVisibleStatus();
+
+        if (visibleStatus.equalsIgnoreCase("true")) {
+            holder.other_addall_chk.setVisibility(View.VISIBLE);
+        } else {
+            holder.other_addall_chk.setVisibility(View.INVISIBLE);
+        }
+
+        if (visibleUpdate.equalsIgnoreCase("true")) {
+            holder.other_update_chk.setVisibility(View.VISIBLE);
+        } else {
+            holder.other_update_chk.setVisibility(View.INVISIBLE);
+        }
+
+        if (visibleDelete.equalsIgnoreCase("true")) {
+            holder.other_delete_chk.setVisibility(View.VISIBLE);
+        } else {
+            holder.other_delete_chk.setVisibility(View.INVISIBLE);
+        }
+
+        if (visibleView.equalsIgnoreCase("true")) {
+            holder.other_view_chk.setVisibility(View.VISIBLE);
+        } else {
+            holder.other_view_chk.setVisibility(View.INVISIBLE);
+        }
+
+        if (addAllStr.equalsIgnoreCase("true")) {
+            holder.other_addall_chk.setChecked(true);
+        } else {
+            holder.other_addall_chk.setChecked(false);
+
+        }
 
         if (addAllStr.equalsIgnoreCase("true")) {
             holder.other_addall_chk.setChecked(true);
@@ -68,6 +106,13 @@ public class OtherPageDeatilListAdapter extends RecyclerView.Adapter<OtherPageDe
         } else {
             holder.other_delete_chk.setChecked(false);
         }
+
+        if (viewStr.equalsIgnoreCase("true")) {
+            holder.other_view_chk.setChecked(true);
+        } else {
+            holder.other_view_chk.setChecked(false);
+        }
+
 
         holder.other_addall_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -106,6 +151,19 @@ public class OtherPageDeatilListAdapter extends RecyclerView.Adapter<OtherPageDe
             }
         });
 
+        holder.other_view_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    pageListmodel.get(position).setUserView(true);
+                    listner.getEmployeeSMSCheck();
+                } else {
+                    pageListmodel.get(position).setUserView(false);
+                    listner.getEmployeeSMSCheck();
+                }
+            }
+        });
+
     }
 
     @Override
@@ -130,16 +188,17 @@ public class OtherPageDeatilListAdapter extends RecyclerView.Adapter<OtherPageDe
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView other_index_txt, other_pagename_txt, other_underpagename_txt;
-        CheckBox other_addall_chk, other_update_chk, other_delete_chk;
+        CheckBox other_addall_chk, other_update_chk, other_delete_chk, other_view_chk;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            other_index_txt = itemView.findViewById(R.id.other_index_txt);
+//            other_index_txt = itemView.findViewById(R.id.other_index_txt);
             other_pagename_txt = itemView.findViewById(R.id.other_pagename_txt);
             other_underpagename_txt = itemView.findViewById(R.id.other_underpagename_txt);
             other_addall_chk = itemView.findViewById(R.id.other_addall_chk);
             other_update_chk = itemView.findViewById(R.id.other_update_chk);
             other_delete_chk = itemView.findViewById(R.id.other_delete_chk);
+            other_view_chk = itemView.findViewById(R.id.other_view_chk);
         }
     }
 }

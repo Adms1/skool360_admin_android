@@ -66,19 +66,19 @@ public class ExpandableListAdapterGRstudentdetail extends BaseExpandableListAdap
             binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.gr_student_list_detail, parent, false);
             convertView = binding.getRoot();
 
-            LinearLayout llBoard = convertView.findViewById(R.id.llBoard);
-            LinearLayout llUsername = convertView.findViewById(R.id.llUsername);
-            LinearLayout llPassword = convertView.findViewById(R.id.llPassword);
-            TextView middleTxt = convertView.findViewById(R.id.middle_txt);
-            TextView boardTxt = convertView.findViewById(R.id.board_txt);
-            TextView aadharTxt = convertView.findViewById(R.id.aadhar_txt);
-            TextView acedamicTxt = convertView.findViewById(R.id.acedamic_txt);
-            TextView doaTxt = convertView.findViewById(R.id.doa_txt);
-            TextView doatakenTxt = convertView.findViewById(R.id.doataken_txt);
-            TextView houseTxt = convertView.findViewById(R.id.house_txt);
-            TextView uniqueno = convertView.findViewById(R.id.unq_txt);
-            TextView location = convertView.findViewById(R.id.location_txt);
-            TextView oldgrTxt = convertView.findViewById(R.id.oldgr_txt);
+//            LinearLayout llBoard = convertView.findViewById(R.id.llBoard);
+//            LinearLayout llUsername = convertView.findViewById(R.id.llUsername);
+//            LinearLayout llPassword = convertView.findViewById(R.id.llPassword);
+//            TextView middleTxt = convertView.findViewById(R.id.middle_txt);
+//            TextView boardTxt = convertView.findViewById(R.id.board_txt);
+//            TextView aadharTxt = convertView.findViewById(R.id.aadhar_txt);
+//            TextView acedamicTxt = convertView.findViewById(R.id.acedamic_txt);
+//            TextView doaTxt = convertView.findViewById(R.id.doa_txt);
+//            TextView doatakenTxt = convertView.findViewById(R.id.doataken_txt);
+//            TextView houseTxt = convertView.findViewById(R.id.house_txt);
+//            TextView uniqueno = convertView.findViewById(R.id.unq_txt);
+//            TextView location = convertView.findViewById(R.id.location_txt);
+//            TextView oldgrTxt = convertView.findViewById(R.id.oldgr_txt);
 
 //            TextView tagTxt = convertView.findViewById(R.id.tag_txt);
 //            TextView firstnameTxt = convertView.findViewById(R.id.firstname_txt);
@@ -146,10 +146,10 @@ public class ExpandableListAdapterGRstudentdetail extends BaseExpandableListAdap
             transportDetailBinding.llKm.setVisibility(View.VISIBLE);
             transportDetailBinding.kmTxt.setText(childData.get(childPosition).getTransportKMs());
             transportDetailBinding.kmsTxt.setText(childData.get(childPosition).getRouteName());
-            transportDetailBinding.pickupTxt.setText(childData.get(childPosition).getPickupBus());
+//            transportDetailBinding.pickupTxt.setText(childData.get(childPosition).getPickupBus());
             transportDetailBinding.pickuppointTxt.setText(childData.get(childPosition).getPickupPoint());
             transportDetailBinding.pickuptimeTxt.setText(childData.get(childPosition).getPickupPointTime());
-            transportDetailBinding.dropbusTxt.setText(childData.get(childPosition).getDropBus());
+//            transportDetailBinding.dropbusTxt.setText(childData.get(childPosition).getDropBus());
             transportDetailBinding.droppointTxt.setText(childData.get(childPosition).getDropPoint());
             transportDetailBinding.droptimeTxt.setText(childData.get(childPosition).getDropPointTime());
 

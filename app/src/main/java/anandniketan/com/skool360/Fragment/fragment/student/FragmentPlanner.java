@@ -302,7 +302,7 @@ public class FragmentPlanner extends Fragment implements OnEditRecordWithPositio
                 fragmentPlannerBinding.titleEdt.setText("");
                 fragmentPlannerBinding.rbAll.setChecked(true);
                 fragmentPlannerBinding.rbHoliday.setChecked(true);
-
+                PK_ID = "0";
                 if (finalArrayStandardsList != null) {
                     if (finalArrayStandardsList.size() > 0) {
 

@@ -194,7 +194,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
                     FinalStandardStr = name;
                 }
                 Log.d("StandardName", FinalStandardStr);
-                fillSection();
+//                fillSection();
 
                 //  Log.d("FinalTermDetailIdStr", FinalTermDetailIdStr);
 
@@ -224,31 +224,31 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
 
             }
         });
-        fragmentAddInquiryBinding.sectionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedsectionstr = fragmentAddInquiryBinding.sectionSpinner.getSelectedItem().toString();
-                String getid = spinnerSectionMap.get(fragmentAddInquiryBinding.sectionSpinner.getSelectedItemPosition());
-
-                Log.d("value", selectedsectionstr + " " + getid);
-                FinalClassIdStr = getid;
-
-                if (selectedsectionstr.equalsIgnoreCase("All") || selectedsectionstr.equalsIgnoreCase("Select")) {
-                    FinalSectionStr = "0";
-
-                } else {
-                    FinalSectionStr = selectedsectionstr;
-
-                }
-
-                Log.d("FinalClassIdStr", FinalSectionStr);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+//        fragmentAddInquiryBinding.sectionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String selectedsectionstr = fragmentAddInquiryBinding.sectionSpinner.getSelectedItem().toString();
+//                String getid = spinnerSectionMap.get(fragmentAddInquiryBinding.sectionSpinner.getSelectedItemPosition());
+//
+//                Log.d("value", selectedsectionstr + " " + getid);
+//                FinalClassIdStr = getid;
+//
+//                if (selectedsectionstr.equalsIgnoreCase("All") || selectedsectionstr.equalsIgnoreCase("Select")) {
+//                    FinalSectionStr = "0";
+//
+//                } else {
+//                    FinalSectionStr = selectedsectionstr;
+//
+//                }
+//
+//                Log.d("FinalClassIdStr", FinalSectionStr);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -515,65 +515,65 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
 
     }
 
-    public void fillSection() {
-        ArrayList<String> sectionname = new ArrayList<>();
-        ArrayList<Integer> sectionId = new ArrayList<>();
-        ArrayList<String> firstSectionValue = new ArrayList<String>();
-        firstSectionValue.add("--Select--");
-        ArrayList<Integer> firstSectionId = new ArrayList<>();
-        firstSectionId.add(0);
-
-        if (StandardName.equalsIgnoreCase("All")) {
-            for (int j = 0; j < firstSectionValue.size(); j++) {
-                sectionname.add(firstSectionValue.get(j));
-            }
-            for (int i = 0; i < firstSectionId.size(); i++) {
-                sectionId.add(firstSectionId.get(i));
-            }
-
-        }
-        for (int z = 0; z < finalArrayStandardsList.size(); z++) {
-            if (StandardName.equalsIgnoreCase(finalArrayStandardsList.get(z).getStandard())) {
-                for (int j = 0; j < firstSectionValue.size(); j++) {
-                    sectionname.add(firstSectionValue.get(j));
-                    for (int i = 0; i < finalArrayStandardsList.get(z).getSectionDetail().size(); i++) {
-                        sectionname.add(finalArrayStandardsList.get(z).getSectionDetail().get(i).getSection());
-                    }
-                }
-                for (int j = 0; j < firstSectionId.size(); j++) {
-                    sectionId.add(firstSectionId.get(j));
-                    for (int m = 0; m < finalArrayStandardsList.get(z).getSectionDetail().size(); m++) {
-                        sectionId.add(finalArrayStandardsList.get(z).getSectionDetail().get(m).getSectionID());
-                    }
-                }
-            }
-        }
-
-        String[] spinnersectionIdArray = new String[sectionId.size()];
-
-        spinnerSectionMap = new HashMap<>();
-        for (int i = 0; i < sectionId.size(); i++) {
-            spinnerSectionMap.put(i, String.valueOf(sectionId.get(i)));
-            spinnersectionIdArray[i] = sectionname.get(i).trim();
-        }
-//        try {
-//            Field popup = Spinner.class.getDeclaredField("mPopup");
-//            popup.setAccessible(true);
+//    public void fillSection() {
+//        ArrayList<String> sectionname = new ArrayList<>();
+//        ArrayList<Integer> sectionId = new ArrayList<>();
+//        ArrayList<String> firstSectionValue = new ArrayList<String>();
+//        firstSectionValue.add("--Select--");
+//        ArrayList<Integer> firstSectionId = new ArrayList<>();
+//        firstSectionId.add(0);
 //
-//            // Get private mPopup member variable and try cast to ListPopupWindow
-//            android.widget.ListPopupWindow popupWindow = (android.widget.ListPopupWindow) popup.get(fragmentAddInquiryBinding.sectionSpinner);
+//        if (StandardName.equalsIgnoreCase("All")) {
+//            for (int j = 0; j < firstSectionValue.size(); j++) {
+//                sectionname.add(firstSectionValue.get(j));
+//            }
+//            for (int i = 0; i < firstSectionId.size(); i++) {
+//                sectionId.add(firstSectionId.get(i));
+//            }
 //
-//            popupWindow.setHeight(spinnersectionIdArray.length > 4 ? 500 : spinnersectionIdArray.length * 100);
-//        } catch (NoClassDefFoundError | ClassCastException | NoSuchFieldException | IllegalAccessException e) {
-//            // silently fail...
 //        }
-        ArrayAdapter<String> adapterstandard = new ArrayAdapter<>(mContext, R.layout.spinner_layout, spinnersectionIdArray);
-        fragmentAddInquiryBinding.sectionSpinner.setAdapter(adapterstandard);
-
-        FinalSectionStr = spinnerSectionMap.get(0);
-        FinalClassIdStr = spinnerSectionMap.get(0);
-
-    }
+//        for (int z = 0; z < finalArrayStandardsList.size(); z++) {
+//            if (StandardName.equalsIgnoreCase(finalArrayStandardsList.get(z).getStandard())) {
+//                for (int j = 0; j < firstSectionValue.size(); j++) {
+//                    sectionname.add(firstSectionValue.get(j));
+//                    for (int i = 0; i < finalArrayStandardsList.get(z).getSectionDetail().size(); i++) {
+//                        sectionname.add(finalArrayStandardsList.get(z).getSectionDetail().get(i).getSection());
+//                    }
+//                }
+//                for (int j = 0; j < firstSectionId.size(); j++) {
+//                    sectionId.add(firstSectionId.get(j));
+//                    for (int m = 0; m < finalArrayStandardsList.get(z).getSectionDetail().size(); m++) {
+//                        sectionId.add(finalArrayStandardsList.get(z).getSectionDetail().get(m).getSectionID());
+//                    }
+//                }
+//            }
+//        }
+//
+//        String[] spinnersectionIdArray = new String[sectionId.size()];
+//
+//        spinnerSectionMap = new HashMap<>();
+//        for (int i = 0; i < sectionId.size(); i++) {
+//            spinnerSectionMap.put(i, String.valueOf(sectionId.get(i)));
+//            spinnersectionIdArray[i] = sectionname.get(i).trim();
+//        }
+////        try {
+////            Field popup = Spinner.class.getDeclaredField("mPopup");
+////            popup.setAccessible(true);
+////
+////            // Get private mPopup member variable and try cast to ListPopupWindow
+////            android.widget.ListPopupWindow popupWindow = (android.widget.ListPopupWindow) popup.get(fragmentAddInquiryBinding.sectionSpinner);
+////
+////            popupWindow.setHeight(spinnersectionIdArray.length > 4 ? 500 : spinnersectionIdArray.length * 100);
+////        } catch (NoClassDefFoundError | ClassCastException | NoSuchFieldException | IllegalAccessException e) {
+////            // silently fail...
+////        }
+//        ArrayAdapter<String> adapterstandard = new ArrayAdapter<>(mContext, R.layout.spinner_layout, spinnersectionIdArray);
+//        fragmentAddInquiryBinding.sectionSpinner.setAdapter(adapterstandard);
+//
+//        FinalSectionStr = spinnerSectionMap.get(0);
+//        FinalClassIdStr = spinnerSectionMap.get(0);
+//
+//    }
 
     private void callInsertEnquiry() {
 
@@ -633,7 +633,7 @@ public class FragmentAddUpdateInquiry extends Fragment implements DatePickerDial
         map.put("StudentMName", fragmentAddInquiryBinding.middleTxt.getText().toString() == null || fragmentAddInquiryBinding.middleTxt.getText().toString().length() <= 0 ? "" : fragmentAddInquiryBinding.middleTxt.getText().toString());
         map.put("Gender", FinalGender);
         map.put("GradeID", FinalStandardIdStr);
-        map.put("SectionID", FinalClassIdStr);
+        map.put("SectionID", "0");
         map.put("TermID", FinalTermIdStr);
         map.put("Date", fragmentAddInquiryBinding.dateTxt.getText().toString());
         map.put("StudentDOB", fragmentAddInquiryBinding.dobTxt.getText().toString());

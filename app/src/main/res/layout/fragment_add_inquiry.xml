@@ -233,7 +233,7 @@
                                 android:layout_width="@dimen/_80sdp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="@string/grade_section"
+                                android:text="@string/grade"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/scheduleheadertextcolor"
                                 android:textSize="@dimen/_10ssp" />
@@ -255,7 +255,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="@dimen/_5sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:layout_weight="0.4"
+                                android:layout_weight="1"
                                 android:background="@drawable/dropdown_button"
                                 android:forceHasOverlappingRendering="false"
                                 android:imeOptions="actionNext"
@@ -263,20 +263,20 @@
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_11sdp" />
 
-                            <Spinner
-                                android:id="@+id/section_spinner"
-                                android:layout_width="0dp"
-                                android:layout_height="@dimen/_30sdp"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginLeft="@dimen/_5sdp"
-                                android:layout_marginRight="@dimen/_5sdp"
-                                android:layout_weight="0.6"
-                                android:background="@drawable/dropdown_button"
-                                android:forceHasOverlappingRendering="false"
-                                android:imeOptions="actionNext"
-                                android:overlapAnchor="false"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_11sdp" />
+                            <!--<Spinner-->
+                            <!--android:id="@+id/section_spinner"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="@dimen/_30sdp"-->
+                            <!--android:layout_gravity="center_vertical"-->
+                            <!--android:layout_marginLeft="@dimen/_5sdp"-->
+                            <!--android:layout_marginRight="@dimen/_5sdp"-->
+                            <!--android:layout_weight="0.6"-->
+                            <!--android:background="@drawable/dropdown_button"-->
+                            <!--android:forceHasOverlappingRendering="false"-->
+                            <!--android:imeOptions="actionNext"-->
+                            <!--android:overlapAnchor="false"-->
+                            <!--android:textColor="@color/black"-->
+                            <!--android:textSize="@dimen/_11sdp" />-->
 
                         </LinearLayout>
 
@@ -359,19 +359,17 @@
 
                             <Spinner
                                 android:id="@+id/session_spinner"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_30sdp"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="@dimen/_5sdp"
-                                android:layout_marginRight="@dimen/_35sdp"
-                                android:layout_weight="0.5"
                                 android:background="@drawable/dropdown_button"
                                 android:forceHasOverlappingRendering="false"
                                 android:gravity="center|center_vertical"
                                 android:imeOptions="actionNext"
                                 android:overlapAnchor="false"
-                                android:paddingBottom="1dp"
                                 android:paddingTop="@dimen/_5sdp"
+                                android:paddingBottom="1dp"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_11sdp" />
                         </LinearLayout>

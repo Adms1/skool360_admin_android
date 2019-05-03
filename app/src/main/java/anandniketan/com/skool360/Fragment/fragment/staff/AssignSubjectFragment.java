@@ -225,7 +225,7 @@ public class AssignSubjectFragment extends Fragment {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                assignID = "0";
                 fragmentAssignSubjectBinding.saveBtn.setText(R.string.save);
                 fragmentAssignSubjectBinding.termSpinner.setSelection(0);
                 fragmentAssignSubjectBinding.teacherSpinner.setSelection(0);

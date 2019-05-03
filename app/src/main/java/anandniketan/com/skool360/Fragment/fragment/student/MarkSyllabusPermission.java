@@ -262,7 +262,7 @@ public class MarkSyllabusPermission extends Fragment {
 
                 mBtnAddUpdate.setText(R.string.Add);
 
-                sp_term.setSelection(1);
+                sp_term.setSelection(0);
                 markCheckBox.setChecked(false);
                 mSyllabusCheckBox.setChecked(false);
                 sp_grade.setSelection(0);

@@ -312,6 +312,7 @@ public class GalleryFragment extends Fragment implements OnEditRecordWithPositio
             public void onClick(View v) {
 
                 btnAdd.setText(R.string.Add);
+                galid = "0";
 
                 tvTitle.setText("");
                 tvDate.setText(Utils.getTodaysDate());

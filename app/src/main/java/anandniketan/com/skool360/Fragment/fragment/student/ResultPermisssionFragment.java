@@ -190,6 +190,7 @@ public class ResultPermisssionFragment extends Fragment {
                 fragmentResultPermisssionBinding.termDetailSpinner.setSelection(0);
                 fragmentResultPermisssionBinding.doneChk.setChecked(true);
 
+
                 if (finalArrayStandardsList.size() > 0) {
                     for (int i = 0; i < finalArrayStandardsList.size(); i++) {
                         finalArrayStandardsList.get(i).setCheckedStatus("0");
@@ -502,7 +503,7 @@ public class ResultPermisssionFragment extends Fragment {
                     return;
                 }
                 if (permissionModel.getSuccess().equalsIgnoreCase("True")) {
-//                    Utils.ping(mContext, getString(R.string.true_msg));
+                    Utils.ping(mContext, "report card updated successfully.");
                     callResultPermission();
                 }
             }

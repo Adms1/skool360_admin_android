@@ -108,7 +108,7 @@ public class FinalArrayStaffModel {
     @Expose
     private String day;
 
-    @SerializedName("EmployeeName")
+    @SerializedName(value = "Emp Name", alternate = {"EmployeeName", "Emp_Name"})
     @Expose
     private String empName;
 

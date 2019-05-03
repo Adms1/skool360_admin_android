@@ -66,6 +66,7 @@ public class MenuPermissionFragment extends Fragment {
     private boolean temp = false;
     private boolean temp1 = false;
     private boolean temp2 = false;
+    private boolean temp3 = false;
     private boolean tempAll = false;
     private boolean temp1All = false;
     private boolean temp2All = false;
@@ -109,8 +110,8 @@ public class MenuPermissionFragment extends Fragment {
 
         tvHeader.setText(R.string.menupermission);
         setListners();
-        callTeacherApi();
-
+//        callTeacherApi();
+        callTeacherApi("Teacher");
     }
 
 
@@ -141,7 +142,7 @@ public class MenuPermissionFragment extends Fragment {
 
                 Log.d("value", name + " " + getid);
 //                FinalTeacherIdStr = getid;
-                FinalTeacherIdStr = finalArrayTeachersModelList.get(position).getEmpId().toString();
+                FinalTeacherIdStr = finalArrayTeachersModelList.get(position).getPkEmployeeID().toString();
                 Log.d("FinalTeacherIdStr", FinalTeacherIdStr);
                 callPageListApi();
             }
@@ -166,7 +167,8 @@ public class MenuPermissionFragment extends Fragment {
                             fragmentMenuPermissionBinding.otherAddallChk.setChecked(false);
                             fragmentMenuPermissionBinding.otherUpdateChk.setChecked(false);
                             fragmentMenuPermissionBinding.otherDeleteChk.setChecked(false);
-                            callPageListApi();
+//                            callPageListApi();
+                            callTeacherApi("Teacher");
                             break;
 
                         case R.id.other_radiobutton:
@@ -175,7 +177,8 @@ public class MenuPermissionFragment extends Fragment {
                             fragmentMenuPermissionBinding.addallChk.setChecked(false);
                             fragmentMenuPermissionBinding.updateChk.setChecked(false);
                             fragmentMenuPermissionBinding.deleteChk.setChecked(false);
-                            callPageListApi();
+//                            callPageListApi();
+                            callTeacherApi("Other");
                             break;
                         default:
                             break;
@@ -255,6 +258,25 @@ public class MenuPermissionFragment extends Fragment {
                 }
             }
         });
+        fragmentMenuPermissionBinding.viewChk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    for (int i = 0; i < finalArrayPageListModelList.size(); i++) {
+                        finalArrayPageListModelList.get(i).setUserView(true);
+                    }
+                    pageDeatilListAdapter.notifyDataSetChanged();
+                    temp3 = false;
+                } else {
+                    if (!temp3) {
+                        for (int i = 0; i < finalArrayPageListModelList.size(); i++) {
+                            finalArrayPageListModelList.get(i).setUserView(false);
+                        }
+                        pageDeatilListAdapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
         fragmentMenuPermissionBinding.otherAddallChk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -312,11 +334,30 @@ public class MenuPermissionFragment extends Fragment {
                 }
             }
         });
+        fragmentMenuPermissionBinding.otherViewChk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    for (int i = 0; i < finalArrayPageListModelList.size(); i++) {
+                        finalArrayPageListModelList.get(i).setUserView(true);
+                    }
+                    otherPageDeatilListAdapter.notifyDataSetChanged();
+                    temp3 = false;
+                } else {
+                    if (!temp3) {
+                        for (int i = 0; i < finalArrayPageListModelList.size(); i++) {
+                            finalArrayPageListModelList.get(i).setUserView(false);
+                        }
+                        otherPageDeatilListAdapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
 
     }
 
-    // CALL Teacher API HERE
-    private void callTeacherApi() {
+    //     CALL Teacher API HERE
+    private void callTeacherApi(String type) {
 
         if (!Utils.checkNetwork(mContext)) {
             Utils.showCustomDialog(getResources().getString(R.string.internet_error), getResources().getString(R.string.internet_connection_error), getActivity());
@@ -324,7 +365,7 @@ public class MenuPermissionFragment extends Fragment {
         }
 
 //        Utils.showDialog(getActivity());
-        ApiHandler.getApiService().getTeachers(getTeacherDetail(), new retrofit.Callback<StaffAttendaceModel>() {
+        ApiHandler.getApiService().getEmpForMenuPermission(getTeacherDetail(type), new retrofit.Callback<StaffAttendaceModel>() {
             @Override
             public void success(StaffAttendaceModel teachersModel, Response response) {
                 Utils.dismissDialog();
@@ -359,8 +400,9 @@ public class MenuPermissionFragment extends Fragment {
 
     }
 
-    private Map<String, String> getTeacherDetail() {
+    private Map<String, String> getTeacherDetail(String type) {
         Map<String, String> map = new HashMap<>();
+        map.put("Type", type);
         map.put("LocationID", PrefUtils.getInstance(getActivity()).getStringValue("LocationID", "0"));
         return map;
     }
@@ -485,7 +527,7 @@ public class MenuPermissionFragment extends Fragment {
     public void fillTeacherSpinner() {
         ArrayList<Integer> TeacherId = new ArrayList<Integer>();
         for (int i = 0; i < finalArrayTeachersModelList.size(); i++) {
-            TeacherId.add(finalArrayTeachersModelList.get(i).getEmpCode());
+            TeacherId.add(finalArrayTeachersModelList.get(i).getPkEmployeeID());
         }
         ArrayList<String> Teacher = new ArrayList<String>();
         for (int j = 0; j < finalArrayTeachersModelList.size(); j++) {
@@ -494,7 +536,7 @@ public class MenuPermissionFragment extends Fragment {
 
         String[] spinnerteacherIdArray = new String[TeacherId.size()];
 
-        spinnerTeacherMap = new HashMap<Integer, String>();
+        spinnerTeacherMap = new HashMap<>();
         for (int i = 0; i < TeacherId.size(); i++) {
             spinnerTeacherMap.put(i, String.valueOf(TeacherId.get(i)));
             spinnerteacherIdArray[i] = Teacher.get(i).trim();
@@ -539,7 +581,7 @@ public class MenuPermissionFragment extends Fragment {
                 public void getEmployeeSMSCheck() {
                     List<FinalArrayPageListModel> updatedData = pageDeatilListAdapter.getDatas();
                     Boolean data = false;
-                    int count = 0, count1 = 0, count2 = 0;
+                    int count = 0, count1 = 0, count2 = 0, count3 = 0;
 
                     for (int i = 0; i < updatedData.size(); i++) {
                         if (updatedData.get(i).getStatus().equals(true)) {
@@ -559,6 +601,12 @@ public class MenuPermissionFragment extends Fragment {
                             count2++;
                         } else {
                             count2--;
+                        }
+                        if (updatedData.get(i).getUserView().equals(true)) {
+                            data = true;
+                            count3++;
+                        } else {
+                            count3--;
                         }
                     }
 
@@ -580,6 +628,12 @@ public class MenuPermissionFragment extends Fragment {
                         temp2 = true;
                         fragmentMenuPermissionBinding.deleteChk.setChecked(false);
                     }
+                    if (count3 == updatedData.size()) {
+                        fragmentMenuPermissionBinding.viewChk.setChecked(true);
+                    } else {
+                        temp3 = true;
+                        fragmentMenuPermissionBinding.viewChk.setChecked(false);
+                    }
                     if (data) {
                         fragmentMenuPermissionBinding.saveBtn.setEnabled(true);
                         fragmentMenuPermissionBinding.saveBtn.setAlpha(1);
@@ -597,8 +651,9 @@ public class MenuPermissionFragment extends Fragment {
             ArrayList<String> list = new ArrayList<>();
             ArrayList<String> list1 = new ArrayList<>();
             ArrayList<String> list2 = new ArrayList<>();
+            ArrayList<String> list3 = new ArrayList<>();
 
-            int checkAll = 0, checkAll1 = 0, checkAll2 = 0;
+            int checkAll = 0, checkAll1 = 0, checkAll2 = 0, checkview = 0;
             for (int i = 0; i < finalArrayPageListModelList.size(); i++) {
                 if (finalArrayPageListModelList.get(i).getStatus().equals(true)) {
                     list.add(finalArrayPageListModelList.get(i).getStatus().toString());
@@ -617,6 +672,12 @@ public class MenuPermissionFragment extends Fragment {
                     checkAll2++;
                 } else {
                     checkAll2--;
+                }
+                if (finalArrayPageListModelList.get(i).getUserView().equals(true)) {
+                    list3.add(finalArrayPageListModelList.get(i).getUserView().toString());
+                    checkview++;
+                } else {
+                    checkview--;
                 }
             }
             if (checkAll == list.size()) {
@@ -644,6 +705,15 @@ public class MenuPermissionFragment extends Fragment {
                 }
             }
 
+            if (checkview == list3.size()) {
+                if (list3.size() > 0 && checkview > 0) {
+                    check = true;
+                    fragmentMenuPermissionBinding.viewChk.setChecked(true);
+                } else {
+                    fragmentMenuPermissionBinding.viewChk.setChecked(false);
+                }
+            }
+
 
         } else if (Finalflag.equalsIgnoreCase("Other")) {
             fragmentMenuPermissionBinding.pageListDetailList.setVisibility(View.GONE);
@@ -660,7 +730,7 @@ public class MenuPermissionFragment extends Fragment {
                 public void getEmployeeSMSCheck() {
                     List<FinalArrayPageListModel> updatedData = otherPageDeatilListAdapter.getDatas();
                     Boolean data = false;
-                    int count = 0, count1 = 0, count2 = 0;
+                    int count = 0, count1 = 0, count2 = 0, count3 = 0;
 
                     for (int i = 0; i < updatedData.size(); i++) {
                         if (updatedData.get(i).getStatus().equals(true)) {
@@ -680,6 +750,12 @@ public class MenuPermissionFragment extends Fragment {
                             count2++;
                         } else {
                             count2--;
+                        }
+                        if (updatedData.get(i).getUserView().equals(true)) {
+                            data = true;
+                            count3++;
+                        } else {
+                            count3--;
                         }
                     }
 
@@ -701,6 +777,12 @@ public class MenuPermissionFragment extends Fragment {
                         temp2 = true;
                         fragmentMenuPermissionBinding.otherDeleteChk.setChecked(false);
                     }
+                    if (count3 == updatedData.size()) {
+                        fragmentMenuPermissionBinding.otherViewChk.setChecked(true);
+                    } else {
+                        temp3 = true;
+                        fragmentMenuPermissionBinding.otherViewChk.setChecked(false);
+                    }
                     if (data) {
                         fragmentMenuPermissionBinding.saveBtn.setEnabled(true);
                         fragmentMenuPermissionBinding.saveBtn.setAlpha(1);
@@ -717,8 +799,9 @@ public class MenuPermissionFragment extends Fragment {
             ArrayList<String> list = new ArrayList<>();
             ArrayList<String> list1 = new ArrayList<>();
             ArrayList<String> list2 = new ArrayList<>();
+            ArrayList<String> list3 = new ArrayList<>();
 
-            int checkAll = 0, checkAll1 = 0, checkAll2 = 0;
+            int checkAll = 0, checkAll1 = 0, checkAll2 = 0, checkview = 0;
             for (int i = 0; i < finalArrayPageListModelList.size(); i++) {
                 if (finalArrayPageListModelList.get(i).getStatus().equals(true)) {
                     list.add(finalArrayPageListModelList.get(i).getStatus().toString());
@@ -737,6 +820,12 @@ public class MenuPermissionFragment extends Fragment {
                     checkAll2++;
                 } else {
                     checkAll2--;
+                }
+                if (finalArrayPageListModelList.get(i).getUserView().equals(true)) {
+                    list3.add(finalArrayPageListModelList.get(i).getUserView().toString());
+                    checkview++;
+                } else {
+                    checkview--;
                 }
             }
             if (checkAll == list.size()) {
@@ -763,7 +852,14 @@ public class MenuPermissionFragment extends Fragment {
                     fragmentMenuPermissionBinding.otherDeleteChk.setChecked(false);
                 }
             }
-
+            if (checkview == list3.size()) {
+                if (list3.size() > 0 && checkview > 0) {
+                    check = true;
+                    fragmentMenuPermissionBinding.otherViewChk.setChecked(true);
+                } else {
+                    fragmentMenuPermissionBinding.otherViewChk.setChecked(false);
+                }
+            }
 
         }
     }
@@ -775,13 +871,29 @@ public class MenuPermissionFragment extends Fragment {
             List<FinalArrayPageListModel> array = pageDeatilListAdapter.getDatas();
             int j;
             for (j = 0; j < array.size(); j++) {
-                if (array.get(j).getStatus().equals(true) || array.get(j).getIsUserUpdate().equals(true) || array.get(j).getIsUserDelete().equals(true)) {
-                    id.add(array.get(j).getPKPageID() + "|" + array.get(j).getPageURL() + "|" + array.get(j).getStatus()
-                            + "|" + array.get(j).getIsUserUpdate() + "|" + array.get(j).getIsUserDelete());
+                if (array.get(j).getStatus().equals(true) || array.get(j).getIsUserUpdate().equals(true) || array.get(j).getIsUserDelete().equals(true) || array.get(j).getUserView().equals(true)) {
+                    id.add(array.get(j).getPKPageID()
+                            + "|" + array.get(j).getPageURL()
+                            + "|" + array.get(j).getStatus()
+                            + "|" + array.get(j).getIsUserUpdate()
+                            + "|" + array.get(j).getIsUserDelete()
+                            + "|" + array.get(j).getUserView()
+                            + "|" + array.get(j).getVisibleStatus()
+                            + "|" + array.get(j).getVisibleIsUpdate()
+                            + "|" + array.get(j).getVisibleIsDelete()
+                            + "|" + array.get(j).getVisibleIsView());
                     Log.d("Statuscheckid", "" + id.size());
                 } else {
-                    id.remove(array.get(j).getPKPageID() + "|" + array.get(j).getPageURL() + "|" + array.get(j).getStatus()
-                            + "|" + array.get(j).getIsUserUpdate() + "|" + array.get(j).getIsUserDelete());
+                    id.remove(array.get(j).getPKPageID()
+                            + "|" + array.get(j).getPageURL()
+                            + "|" + array.get(j).getStatus()
+                            + "|" + array.get(j).getIsUserUpdate()
+                            + "|" + array.get(j).getIsUserDelete()
+                            + "|" + array.get(j).getUserView()
+                            + "|" + array.get(j).getVisibleStatus()
+                            + "|" + array.get(j).getVisibleIsUpdate()
+                            + "|" + array.get(j).getVisibleIsDelete()
+                            + "|" + array.get(j).getVisibleIsView());
                     Log.d("StatusUncheckid", "" + id.size());
                 }
             }
@@ -793,13 +905,29 @@ public class MenuPermissionFragment extends Fragment {
             List<FinalArrayPageListModel> array = otherPageDeatilListAdapter.getDatas();
             int j;
             for (j = 0; j < array.size(); j++) {
-                if (array.get(j).getStatus().equals(true) || array.get(j).getIsUserUpdate().equals(true) || array.get(j).getIsUserDelete().equals(true)) {
-                    id.add(array.get(j).getPKPageID() + "|" + array.get(j).getPageURL() + "|" + array.get(j).getStatus()
-                            + "|" + array.get(j).getIsUserUpdate() + "|" + array.get(j).getIsUserDelete());
+                if (array.get(j).getStatus().equals(true) || array.get(j).getIsUserUpdate().equals(true) || array.get(j).getIsUserDelete().equals(true) || array.get(j).getUserView().equals(true)) {
+                    id.add(array.get(j).getPKPageID()
+                            + "|" + array.get(j).getPageURL()
+                            + "|" + array.get(j).getStatus()
+                            + "|" + array.get(j).getIsUserUpdate()
+                            + "|" + array.get(j).getIsUserDelete()
+                            + "|" + array.get(j).getUserView()
+                            + "|" + array.get(j).getVisibleStatus()
+                            + "|" + array.get(j).getVisibleIsUpdate()
+                            + "|" + array.get(j).getVisibleIsDelete()
+                            + "|" + array.get(j).getVisibleIsView());
                     Log.d("Statuscheckid", "" + id.size());
                 } else {
-                    id.remove(array.get(j).getPKPageID() + "|" + array.get(j).getPageURL() + "|" + array.get(j).getStatus()
-                            + "|" + array.get(j).getIsUserUpdate() + "|" + array.get(j).getIsUserDelete());
+                    id.remove(array.get(j).getPKPageID()
+                            + "|" + array.get(j).getPageURL()
+                            + "|" + array.get(j).getStatus()
+                            + "|" + array.get(j).getIsUserUpdate()
+                            + "|" + array.get(j).getIsUserDelete()
+                            + "|" + array.get(j).getUserView()
+                            + "|" + array.get(j).getVisibleStatus()
+                            + "|" + array.get(j).getVisibleIsUpdate()
+                            + "|" + array.get(j).getVisibleIsDelete()
+                            + "|" + array.get(j).getVisibleIsView());
                     Log.d("StatusUncheckid", "" + id.size());
                 }
             }
