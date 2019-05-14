@@ -316,7 +316,14 @@ public class SearchStudentFragment extends Fragment {
                     parentName.clear();
 
                     for (int i = 0; i < parentsNameModel.getFinalArray().size(); i++) {
-                        parentName.add(parentsNameModel.getFinalArray().get(i).getName());
+                        if (parentName.size() > 0) {
+                            if (!parentName.contains(parentsNameModel.getFinalArray().get(i).getName())) {
+                                parentName.add(parentsNameModel.getFinalArray().get(i).getName());
+                            }
+                        } else {
+                            parentName.add(parentsNameModel.getFinalArray().get(i).getName());
+                        }
+
                     }
                     final ArrayAdapter adb = new ArrayAdapter(mContext, R.layout.spinner_layout, parentName);
                     fragmentSearchStudentBinding.parentsnameTxt.setThreshold(1);
@@ -461,7 +468,14 @@ public class SearchStudentFragment extends Fragment {
                 if (studentNameModel.getSuccess().equalsIgnoreCase("True")) {
                     studentName.clear();
                     for (int i = 0; i < studentNameModel.getFinalArray().size(); i++) {
-                        studentName.add(studentNameModel.getFinalArray().get(i).getName());
+
+                        if (studentName.size() > 0) {
+                            if (!studentName.contains(studentNameModel.getFinalArray().get(i).getName())) {
+                                studentName.add(studentNameModel.getFinalArray().get(i).getName());
+                            }
+                        } else {
+                            studentName.add(studentNameModel.getFinalArray().get(i).getName());
+                        }
                     }
                     final ArrayAdapter adb = new ArrayAdapter(mContext, R.layout.spinner_layout, studentName);
                     fragmentSearchStudentBinding.studentnameTxt.setThreshold(1);
