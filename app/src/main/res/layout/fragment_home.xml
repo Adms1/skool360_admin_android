@@ -76,8 +76,8 @@
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="@dimen/_43sdp"
-                        android:layout_marginEnd="@dimen/_30sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
                         android:background="@drawable/menu" />
 
                 </RelativeLayout>
